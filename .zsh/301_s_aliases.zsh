@@ -9,7 +9,6 @@ alias -s py=python
 alias -s zip=zipinfo
 alias -s tgz=gzcat
 alias -s tbz=bzcat
-alias -s sh=cat
 alias -s txt=cat
 alias -s xml=cat
 
