@@ -1,0 +1,5 @@
+# .gitignore
+.zsh/modules/
+
+.zsh/.zcompdump
+
