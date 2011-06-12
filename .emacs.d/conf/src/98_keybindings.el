@@ -1,0 +1,43 @@
+; 08_keybindings.el
+
+; Option(ALT)はCommandと入れ替え
+(setq ns-command-modifier (quote meta))
+(setq ns-alternate-modifier (quote super))
+
+;; global-set-key
+(define-key global-map [?¥] [?\\])                   ; ¥はバックスラッシュに変更
+(global-set-key (kbd "C-x C-b") 'bs-show)            ; バッファ一覧をまともに
+(global-set-key (kbd "C-h") 'delete-backward-char)   ; C-hは後退
+(global-set-key (kbd "C-t") 'fold-dwim-toggle)       ; 折りたたみ
+(global-set-key (kbd "C-=") 'indent-region)          ; indent
+(global-set-key (kbd "C-;") 'my-anything)
+(global-set-key (kbd "M-;") 'anything-execute-anything-command)
+(global-set-key (kbd "M-h") 'Helper-help)            ; Helper-help
+(global-set-key (kbd "C-x g") 'goto-line)            ; goto-line(M-g g ---> C-x g)
+(global-set-key (kbd "C-x e") 'eval-last-sexp)       ; eval-last-sexp
+(global-set-key (kbd "C-c a") 'align)
+(global-set-key (kbd "C-c e") 'smart_execute)        ; 50_c.el
+(global-set-key (kbd "C-c n") 'toggle-transparency)  ; 01_frame.el
+(global-set-key (kbd "C-c r") 'query-replace)        ; replace
+(global-set-key (kbd "C-c t") 'multi-term)           ; Terminal
+;(global-set-key (kbd "C-t") 'other-window-or-split) ; 01_frame.el
+(global-set-key (kbd "C-c C-k") '(lambda () (interactive) (kill-line 0)))
+(global-set-key (kbd "C-c C-c") 'executable-interpret)
+(global-set-key (kbd "C-M-i") 'indent-region)
+(global-set-key (kbd "C-M-g") 'anything-grep)
+(global-set-key (kbd "C-M-y") 'anything-show-kill-ring)
+
+;;;;;;;;;;;;;;;;
+; key-chord.el ;
+;;;;;;;;;;;;;;;;
+(require 'key-chord)
+(setq key-chord-mode t)
+(setq key-chord-two-keys-delay 0.01)
+(setq key-chord-one-key-delay 0.01)
+(key-chord-define-global "gl"  'goto-line)
+(key-chord-define-global "re"  'replace-string)
+;(key-chord-define-global ",."  "<>ﾂ･C-b")
+;(key-chord-define-global "qq"  "the ")
+;(key-chord-define-global "qw"  "the ")
+;(key-chord-define c++-mode-map ";;"  "ﾂ･C-e;")
+

@@ -1,0 +1,3 @@
+#name : int *xxx = yyy;
+# --
+$>int *${1:name} = ${2:value};

@@ -1,0 +1,3 @@
+#name : void xxx = yyy;
+# --
+$>void ${1:name} = ${2:value};

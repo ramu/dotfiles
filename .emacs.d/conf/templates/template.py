@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
+# %file% -
+# Copyright (C) by %name% <%mail%>
+
+class %file%():
+    def __init__(self):
+        pass
+
+    def start(self):
+        pass
+
+
+if __name__ == '__main__':
+    %file%.start()
+    print 'Done.'

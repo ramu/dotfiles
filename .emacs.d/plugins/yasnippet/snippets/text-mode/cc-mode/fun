@@ -1,0 +1,6 @@
+#name: type function(xxx) { ... }
+# --
+${1:void} ${2:function_name}(${3:void})
+{
+    $0
+}

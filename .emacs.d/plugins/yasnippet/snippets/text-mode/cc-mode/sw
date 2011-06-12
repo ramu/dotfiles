@@ -1,0 +1,13 @@
+#name : switch (...) { ... }
+# --
+$>switch ( ${1:cond} ) {
+$>case ${2:1}:
+$>    break;
+$>case ${3:2}:
+$>    break;
+$>case ${4:3}:
+$>    break;
+$>default:
+$>    $0
+$>    break;
+$>}
