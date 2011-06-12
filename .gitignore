@@ -1,5 +1,12 @@
 # .gitignore
+# zsh
 .zsh/modules/
-
 .zsh/.zcompdump
+
+# emacs
+.emacs.d/*.elc
+.emacs.d/conf/*.elc
+.emacs.d/conf/src/10_twittering-mode.el
+.emacs.d/conf/src/10_tramp.el
+.emacs.d/elisp/
 
