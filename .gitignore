@@ -3,6 +3,9 @@
 .zsh/modules/
 .zsh/.zcompdump
 
+# mercurial
+.hg/
+
 # emacs
 .emacs.d/*.elc
 .emacs.d/conf/*.elc

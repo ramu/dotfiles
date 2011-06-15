@@ -1,0 +1,14 @@
+[ui]
+username = ramusara <ramusara@gmail.com>
+editor   = /usr/bin/vim
+
+[alias]
+
+[extensions]
+color    = 
+info     = ~/dotfiles/.hg/info.py
+graphlog = 
+
+[hooks]
+commit = `afplay ~/sounds/happykids.wav > /dev/null 2>&1 &`
+
