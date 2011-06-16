@@ -1,0 +1,13 @@
+[user]
+    name  = ramusara
+    email = ramusara@gmail.com
+
+[color]
+    branch      = auto
+    diff        = auto
+    interactive = auto
+    status      = auto
+    ui          = auto
+
+[core]
+    editor = /usr/bin/vim
