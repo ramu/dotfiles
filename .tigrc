@@ -13,6 +13,9 @@ set line-graphics        = "UTF-8"
 set line-number-interval = 1
 set tab-size             = 4
 
+# color
+color cursor white black
+
 # bind
 bind generic g move-first-line
 bind generic G move-last-line
