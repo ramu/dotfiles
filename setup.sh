@@ -9,6 +9,7 @@ ln -sf ~/dotfiles/.zsh    ~/.zsh
 
 # git
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/.tigrc     ~/.tigrc
 
 # mercurial
 ln -sf ~/dotfiles/.hgrc ~/.hgrc
