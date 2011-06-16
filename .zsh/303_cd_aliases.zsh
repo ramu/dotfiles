@@ -1,9 +1,12 @@
 #!/bin/zsh
-# alias - org
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+# alias - cd
+for i in {0..8}; do
+   _DOTS="..`repeat $i echo -n '.'`"
+   _DOTSPATH=`repeat $i echo -n "/.."`
+   alias $_DOTS="cd ..${_DOTSPATH}"
+done
 alias cdc='cd ~/work/c/'
+alias cdd='cd ~/dotfiles/'
 alias cdg='cd ~/work/git/'
 alias cdh='cd ~/work/haskell/'
 alias cdj='cd ~/work/java/'
