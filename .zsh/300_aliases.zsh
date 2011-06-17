@@ -5,6 +5,7 @@ alias df='df -H'
 alias ebc='emacs -batch -f batch-byte-compile'
 alias ei='easy_install'
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+## g ##
 alias ga='git add'
 alias gb='git branch'
 alias gc='git clone'
@@ -23,8 +24,30 @@ alias gr='git reset'
 alias grep='grep --color=auto'
 alias gs='git status -sb'
 alias gsh='git show'
-alias hserve='hg serve'
+## h ##
+alias ha='hg annotate'
+alias har='hg archive'
+alias hb='hg branch'
+alias hc='hg cat'
+alias hco='hg commit'             # hg copy...
+alias hcl='hg clone'
+alias hh='hg heads'
+alias hi='hg init'
 alias history='history 1'
+alias hl='hg log'
+alias hm='hg merge'
+alias hp='hg push'
+alias hpa='hg parents'
+alias hpu='hg pull'
+alias hr='hg rollback'
+alias hrem='hg remove'
+alias hres='hg resolve'
+alias hrev='hg revert'
+alias hs='hg status'
+alias hserve='hg serve'
+alias ht='hg tag'
+alias hu='hg update'
+## i ##
 alias ip='ifconfig | grep "inet "'
 alias javac='javac -J-Dfile.encoding=UTF8'
 alias ls='ls -AFG'
@@ -45,11 +68,11 @@ alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
 alias wcat='wget -q -O -'
 alias zmv='noglob zmv -W'
 
-# +g(command_name)
+### +g(command_name)
 alias objdump='gobjdump'
 alias libtoolize='glibtoolize'
 
-# Directory Bookmarks
+### Directory Bookmarks
 alias m1='alias g1="cd `pwd`"'
 alias m2='alias g2="cd `pwd`"'
 alias m3='alias g3="cd `pwd`"'
@@ -61,7 +84,7 @@ alias m8='alias g8="cd `pwd`"'
 alias m9='alias g9="cd `pwd`"'
 alias lma='alias | grep -e "g[0-9]=" | grep -v "m[0-9]" | sed "s/^g/alias g/g"'
 
-# numbers(chmod)
+### numbers(chmod)
 alias 644='chmod 644'
 alias 755='chmod 755'
 alias 777='chmod 777'
