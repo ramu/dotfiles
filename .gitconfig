@@ -9,6 +9,9 @@
     status      = auto
     ui          = auto
 
+[push]
+    default = tracking
+
 [core]
     editor   = /usr/bin/vim
     autocrlf = input
