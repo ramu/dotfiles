@@ -26,6 +26,13 @@
 (global-set-key (kbd "C-M-i") 'indent-region)
 (global-set-key (kbd "C-M-g") 'anything-grep)
 (global-set-key (kbd "C-M-y") 'anything-show-kill-ring)
+; magit
+(global-set-key (kbd "M-g i") 'magit-init)           ; git init
+(global-set-key (kbd "M-g s") 'magit-status)         ; git status
+(global-set-key (kbd "M-g a") 'magit-stage-item)     ; git add
+(global-set-key (kbd "M-g l") 'magit-log)            ; git add
+(global-set-key (kbd "M-g c") 'magit-log-edit)       ; git commit
+
 
 ;;;;;;;;;;;;;;;;
 ; key-chord.el ;
