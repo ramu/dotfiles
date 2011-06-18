@@ -6,8 +6,9 @@ editor   = /usr/bin/vim
 
 [extensions]
 color    = 
-info     = ~/dotfiles/.hg/info.py
 graphlog = 
+hgext.mq = 
+info     = ~/dotfiles/.hg/info.py
 
 [hooks]
 commit = `afplay ~/sounds/happykids.wav > /dev/null 2>&1 &`
