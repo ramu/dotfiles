@@ -1,5 +1,6 @@
 #!/bin/zsh
 # set options
+setopt always_last_prompt  #
 setopt auto_list           #
 setopt auto_menu           # 補完キー連打で順に補完候補を自動補完
 setopt auto_pushd          # auto pushd command. 
