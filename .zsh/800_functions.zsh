@@ -7,16 +7,7 @@ function mkcd() { mkdir $1 && cd $1 }
 #-----------------------------------------------------------
 # cd && ls
 #    function cd() {builtin cd $@ && ls -aF --show-control-char --color=auto}
-function cd() {
-  if [ $# = 0 ]; then
-    builtin cd
-  elif [ -f $1 ]; then
-    builtin cd $1:h
-  else
-    builtin cd $*
-  fi
-  ls -AFG
-}
+function chpwd() { ls -AFG }
 
 #-----------------------------------------------------------
 # accept-line-with-url
