@@ -1,7 +1,10 @@
 #!/bin/zsh
 # completion
-# auto-fu ... http://d.hatena.ne.jp/hchbaw/20100526/1274886125   @hchbaw
-# config  ... http://d.hatena.ne.jp/tarao/20100531/1275322620    @tarao
+# zsh-syntax-highlighting ... https://github.com/nicoulaj/zsh-syntax-highlighting
+source ~/.zsh/modules/zsh-syntax-highlighting.zsh
+
+# auto-fu                 ... http://d.hatena.ne.jp/hchbaw/20100526/1274886125   @hchbaw
+# config                  ... http://d.hatena.ne.jp/tarao/20100531/1275322620    @tarao
 zstyle ':completion:*' menu select
 zstyle ':completion:*' format '%F{white}%d%f'
 zstyle ':completion:*' group-name ''
