@@ -38,6 +38,7 @@ alias grev='git revert'
 alias gs='git status -sb'
 alias gserve='git instaweb'
 alias gsh='git show'
+alias gshb='git show-branch'
 alias gt='git tag'
 alias gtl='git tag -l -n'
 ## h ##
