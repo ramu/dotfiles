@@ -34,3 +34,13 @@ alias -g RED='2> >(redrev)'
 #   ./$0
 #}
 
+#------------------------------------------------------------
+# cdup
+fucntion cdup () {
+  echo
+  cd ..
+  zle reset-prompt
+}
+zle -N cdup
+bindkey '\^' cdup
+
