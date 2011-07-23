@@ -13,8 +13,10 @@
     default = tracking
 
 [core]
-    editor   = /usr/bin/vim
-    autocrlf = input
+    pager     = less
+    editor    = /usr/bin/vim
+    autocrlf  = input
+    quotepath = false
 
 [merge]
     keepBackup = false
