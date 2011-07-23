@@ -11,7 +11,7 @@
 (global-set-key (kbd "C-t") 'fold-dwim-toggle)       ; 折りたたみ
 (global-set-key (kbd "C-=") 'indent-region)          ; indent
 (global-set-key (kbd "C-;") 'my-anything)
-(global-set-key (kbd "M-;") 'anything-execute-anything-command)
+(global-set-key (kbd "M-;") 'anything-execute-extended-command)
 (global-set-key (kbd "M-h") 'Helper-help)            ; Helper-help
 (global-set-key (kbd "C-x g") 'goto-line)            ; goto-line(M-g g ---> C-x g)
 (global-set-key (kbd "C-x e") 'eval-last-sexp)       ; eval-last-sexp
