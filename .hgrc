@@ -7,8 +7,16 @@ editor   = /usr/bin/vim
 [extensions]
 color    = 
 graphlog = 
-hgext.mq = 
+mq       = 
 info     = ~/dotfiles/.hg/info.py
+rebase   =
+pager    =
+record   =
+
+[pager]
+pager  = LESS='FSRX' less
+quiet  = True
+ignore = version, help, update
 
 [hooks]
 commit = `afplay ~/sounds/happykids.wav > /dev/null 2>&1 &`
