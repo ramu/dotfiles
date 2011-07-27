@@ -1,4 +1,7 @@
 ;; 09_util.el
+; ps-print-buffer
+(setq ps-multibyte-buffer 'non-latin-printer)
+
 ; hippie-expand
 (global-set-key "\C-^" 'hippie-expand)
 (setq hippie-expand-try-functions-list
