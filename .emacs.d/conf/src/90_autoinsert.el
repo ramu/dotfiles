@@ -20,21 +20,21 @@
 (setq auto-insert-directory "~/.emacs.d/conf/templates/")
 (setq auto-insert-alist
   (append '(
-    ("\\.c$"        . ["template.c"        my-template])  ;; c
-    ("\\.h$"        . ["template.h"        my-template])  ;; c header
-    ("\\.cc$"       . ["template.cc"       my-template])  ;; c++
-    ("\\.hpp$"      . ["template.hpp"      my-template])  ;; c++ header
-    ("_test\\.py$"  . ["unit_template.py"  my-template])  ;; python
-    ("\\.py$"       . ["template.py"       my-template])  ;; python
-    ("\\.pl$"       . ["template.pl"       my-template])) ;; perl
+    ("\\.c$"         . ["template.c"        my-template])  ;; c
+    ("\\.h$"         . ["template.h"        my-template])  ;; c header
+    ("\\.cc$"        . ["template.cc"       my-template])  ;; c++
+    ("\\.hpp$"       . ["template.hpp"      my-template])  ;; c++ header
+    ("test_.*\\.py$" . ["test_template.py"  my-template])  ;; python
+    ("\\.py$"        . ["template.py"       my-template])  ;; python
+    ("\\.pl$"        . ["template.pl"       my-template])) ;; perl
   auto-insert-alist))
 
 (defun buffer-file-name-nondirectory ()
   (file-name-nondirectory (buffer-file-name)))
 (defun python-module-name ()
-  (substring (buffer-file-name-nondirectory) 0 -8))
+  (substring (buffer-file-name-nondirectory) 5 -3))
 (defun python-test-case-name ()
-  (concat (capitalize (python-module-name)) "Test"))
+  (concat "Test" (capitalize (python-module-name))))
 
 ; replace
 (defvar template-replacements-alists
