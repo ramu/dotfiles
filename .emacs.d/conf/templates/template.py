@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-
+#
 # %file% -
 # Copyright (C) by %name% <%mail%>
 
-class %file%():
+
+class %file-without-ext%():
     def __init__(self):
         pass
 
