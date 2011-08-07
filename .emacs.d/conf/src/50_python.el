@@ -5,7 +5,7 @@
 (defun python-lite:setup ()
   (let ((key-map '(("\C-c\C-@" . python-lite:eval/compile)
                    ("\C-c\C-u" . python-lite:insert-module)
-                   ("\C-x !"   . python-lite:pydoc)
+                   ("\M-p"     . python-lite:pydoc)
                    ("\C-x \""  . python-lite:webhelp)
                    )))
     (loop for (k . fun) in key-map
@@ -20,7 +20,7 @@
                 ;;; python-lite:setup
                 (define-key python-mode-map (kbd "C-c C-@") 'python-lite:eval/compile)
                 (define-key python-mode-map (kbd "C-c C-u") 'python-lite:insert-module)
-                (define-key python-mode-map (kbd "C-x !")   'python-lite:pydoc)
+                (define-key python-mode-map (kbd "M-p")     'python-lite:pydoc)
                 (define-key python-mode-map (kbd "C-x \"")  'python-lite:webhelp)
                 ;;; indent
                 (setq indent-tabs-mode nil)

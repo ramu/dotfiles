@@ -2,6 +2,7 @@
 ; perl
 ;=====================
 (require 'set-perl5lib)
+(require 'cperl-mode)
 
 ;; perlbrew
 (require 'perlbrew)
@@ -12,7 +13,9 @@
 
 ;; cperl-mode-hook
 (add-hook 'cperl-mode-hook
-          (function (lambda ()
+          (lambda ()
+            ;; perl-doc
+            (local-set-key (kbd "M-p") 'cperl-perldoc)
             (setq cperl-indent-level 4)
             (setq cperl-indent-parens-as-block t)
             (setq cperl-indent-tabs-mode nil)
@@ -21,10 +24,8 @@
             (setq cperl-label-offset -4)
             (setq cperl-close-paren-offset -4)
             (setq cperl-tab-always-indent nil)
-            (hs-minor-mode t))))
+            (hs-minor-mode t)))
 
-;; perl-doc
-(global-set-key "\M-p" 'cperl-perldoc)
 
 ;; perl-tidy
 (defun perltidy-region ()
