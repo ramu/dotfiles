@@ -23,5 +23,7 @@
 (push '("*Backtrace*"            :width 50                 :noselect t) popwin:special-display-config)
 (push '("*imenu-tree*"           :width 50 :position right)             popwin:special-display-config)
 
+
 ;; bottom
 (push '(" *auto-async-byte-compile*" :height 25 :position bottom :noselect t) popwin:special-display-config)
+(push '("*Test Result*"              :height 25 :position bottom :noselect t :stick t) popwin:special-display-config)
