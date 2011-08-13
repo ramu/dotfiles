@@ -9,6 +9,7 @@
 (add-to-list 'load-path "~/.emacs.d/auto-install/")
 (add-to-list 'load-path "~/.emacs.d/elisp/riece/")
 (add-to-list 'load-path "~/.emacs.d/elisp/scala-mode")
+(add-to-list 'load-path "~/.emacs.d/elisp/google-maps")
 (add-to-list 'load-path "~/.emacs.d/plugins/magit/share/emacs/site-lisp")
 (add-to-list 'load-path "/Applications/MacPorts/Emacs.app/Contents/Resource/lisp/w3m/")
 (add-to-list 'load-path "~/scala/bin/")
