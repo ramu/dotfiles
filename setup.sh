@@ -17,3 +17,5 @@ ln -sf ~/dotfiles/.hgrc ~/.hgrc
 # emacs
 ln -sf ~/dotfiles/.emacs.d ~/.emacs.d
 
+# screen
+ln -sf ~/dotfiles/.screenrc ~/.screenrc

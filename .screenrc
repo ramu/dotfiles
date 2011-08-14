@@ -1,0 +1,31 @@
+# encode
+defutf8 on
+defkanji utf-8
+encoding utf-8 utf-8
+defencoding utf-8
+
+startup_message off             # 起動時のMessage非表示
+vbell off                       # visual bell off
+defencoding utf-8               # default encoding utf-8
+termcapinfo xterm* ti@:te@      # use mouse
+escape z                      # prefix key
+shelltitle "% |$SHELL"          # title
+defscrollback 100000            # コマンド履歴保存行数
+autodetach on                   # auto detach
+
+# 最下部のステータスバー
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "[$USER@%1`][%4Y/%02m/%02d %02c:%02s] %`%-w%{=b bw}%n %t%{-}%+w"
+
+# bind
+bind + eval 'resize +1'
+bind - eval 'resize -1'
+bind k eval 'kill'
+bind n eval 'focus down'
+bind o eval 'focus'
+bind p eval 'focus up'
+bind q eval 'only'
+bind r eval 'remove'
+bind s eval split focus 'select 0'
+bind v eval 'split -v' focus 'select 0'
