@@ -14,10 +14,20 @@ if is-at-least 4.3.10; then
    zstyle ':vcs_info:git:*' actionformats '(%s)-[%b|%a] %c%u'
 fi
 
-function _update_vcs_info_msg() {
-   psvar=()
-   LANG=en_US.UTF-8 vcs_info
-   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+# not pushed
+function git_not_pushed() {
+   if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
+      head="$(git rev-parse HEAD 2>/dev/null)"
+      if [[ $? -eq 0 ]]; then
+         for x in $(git rev-parse --remotes)
+         do
+            if [ "$head" = "$x" ]; then
+               return 0
+            fi
+         done
+         echo "*NP*"
+      fi
+   fi
+   return 0
 }
-add-zsh-hook precmd _update_vcs_info_msg
 
