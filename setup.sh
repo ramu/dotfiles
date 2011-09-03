@@ -6,6 +6,7 @@
 ln -sf ~/dotfiles/.zshrc  ~/.zshrc
 ln -sf ~/dotfiles/.zshenv ~/.zshenv
 ln -sf ~/dotfiles/.zsh    ~/.zsh
+mkdir ~/.zsh_history/
 
 # git
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
