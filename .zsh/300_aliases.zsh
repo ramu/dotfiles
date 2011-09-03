@@ -4,7 +4,9 @@ alias clean='rm -f *~'
 alias df='df -H'
 alias ebc='emacs -batch -f batch-byte-compile'
 alias ei='easy_install'
+if [ `uname` = "Darwin" ]; then
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+fi
 ## g ##
 alias ga='git add'
 alias gau='git add -u'
@@ -89,8 +91,10 @@ alias scala='scala -classpath .'
 alias seq='gseq'
 alias tig='tig --all'
 alias val='valgrind'
+if [ `uname` = "Darwin" ]; then
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
+fi
 alias wcat='wget -q -O -'
 alias zmv='noglob zmv -W'
 
