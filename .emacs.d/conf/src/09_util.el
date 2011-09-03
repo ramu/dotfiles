@@ -57,6 +57,9 @@
 (setq scroll-bar-mode nil)
 ; スクロールバーを右に表示
 ;(set-scroll-bar-mode 'right)
+; auto scroll
+(setq grep-scroll-output t)
+(setq compilation-scroll-output t)
 
 ; 時計表示
 (setq display-time-24hr-format t)
