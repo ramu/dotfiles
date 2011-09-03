@@ -1,7 +1,7 @@
 #!/bin/zsh
 # completion
 # zsh-syntax-highlighting ... https://github.com/nicoulaj/zsh-syntax-highlighting
-source ~/.zsh/modules/zsh-syntax-highlighting.zsh
+source ~/.zsh/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # auto-fu                 ... http://d.hatena.ne.jp/hchbaw/20100526/1274886125   @hchbaw
 # config                  ... http://d.hatena.ne.jp/tarao/20100531/1275322620    @tarao

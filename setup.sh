@@ -1,26 +1,26 @@
 #!/bin/sh
 cd
 
-########
-# link #
-########
-# zsh
+### zsh
 ln -sf ~/dotfiles/.zshrc  ~/.zshrc
 ln -sf ~/dotfiles/.zshenv ~/.zshenv
 ln -sf ~/dotfiles/.zsh    ~/.zsh
 mkdir ~/.zsh_history/
+mkdir ~/.zsh/modules/
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+mv zsh-syntax-highlighting ~/.zsh/modules/
 
-# git
+### git
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.tigrc     ~/.tigrc
 
-# mercurial
+### mercurial
 ln -sf ~/dotfiles/.hgrc ~/.hgrc
 
-# emacs
+### emacs
 ln -sf ~/dotfiles/.emacs.d ~/.emacs.d
 
-# screen
+### screen
 ln -sf ~/dotfiles/.screenrc ~/.screenrc
 
 ############
