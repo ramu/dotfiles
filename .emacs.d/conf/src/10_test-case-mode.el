@@ -6,5 +6,5 @@
 (require 'test-case-pynose)
 
 (add-hook 'find-file-hook 'enable-test-case-mode-if-test)
-(add-hook 'compilation-finish-function 'test-case-compilation-finish-run-all)
-(add-hook 'after-save-hook (lambda () (when test-case-mode (test-case-run))))
+(add-hook 'compilation-finish-functions 'test-case-compilation-finish-run-all)
+(add-hook 'after-save-hook (lambda () (if test-case-mode (test-case-run))))
