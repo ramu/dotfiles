@@ -2,6 +2,8 @@
 ;; env
 (setenv "EMACS" "t")
 (setenv "RUBYLIB" "/Applications/Emacs.app/Contents/Resources/lib/ruby/site_ruby/")
+(setenv "JAVA_HOME" "/Library/Java/Home")
+(setenv "ANT_HOME" "/Library/Java/ant")
 
 ;; load-path
 (add-to-list 'load-path "~/.emacs.d/elisp/apel")

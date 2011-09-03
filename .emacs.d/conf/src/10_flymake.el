@@ -89,6 +89,33 @@
 ;          '("\\.py\\'" flymake-pyflakes-init)))
 
 
+;;;;;;;;;;;;;;;;;;;;
+; flymake for java ;
+;;;;;;;;;;;;;;;;;;;;
+;; redefine to remove "check-syntax" target
+(defun flymake-get-make-cmdline (source base-dir)
+  (list "make"
+        (list "-s"
+              "-C"
+              base-dir
+              (concat "CHK_SOURCES=" source)
+               "SYNTAX_CHECK_MODE=1")))
+
+
+;; specify that flymake use ant instead of make
+(setcdr (assoc "\\.java\\'" flymake-allowed-file-name-masks)
+        '(flymake-simple-ant-java-init flymake-simple-java-cleanup))
+
+;; redefine to remove "check-syntax" target
+(defun flymake-get-ant-cmdline (source base-dir)
+  (list "ant"
+        (list "-buildfile"
+              (concat base-dir "/" "build.xml"))))
+
+(add-hook 'java-mode-hook
+          '(lambda ()
+             (flymake-mode t)))
+
 
 ;;;;;;;;;;
 ; etc... ;
@@ -131,3 +158,8 @@
                                               compile)
   (mapc 'fringe-helper-remove flymake-fringe-overlays)
   (setq flymake-fringe-overlays nil))
+
+
+
+
+
