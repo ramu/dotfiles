@@ -14,5 +14,6 @@ class %file-without-ext%():
 
 
 if __name__ == '__main__':
-    %file%.start()
-    print 'Done.'
+    obj = %file-without-ext%()
+    obj.start()
+    print('Done.')
