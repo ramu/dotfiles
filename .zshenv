@@ -15,7 +15,7 @@ done
 unset rc
 
 # screen
-if [[ $TERM != "screen" && $EMACS != "t" ]]; then
-    screen
+if [[ $TERM != "screen-256color" && $EMACS != "t" ]]; then
+    tmux
 fi
 

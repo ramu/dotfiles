@@ -23,6 +23,9 @@ ln -sf ~/dotfiles/.emacs.d ~/.emacs.d
 ### screen
 ln -sf ~/dotfiles/.screenrc ~/.screenrc
 
+### tmux
+ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+
 ############
 # perlbrew #
 ############
