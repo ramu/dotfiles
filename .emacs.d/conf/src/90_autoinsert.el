@@ -26,7 +26,8 @@
     ("\\.hpp$"       . ["template.hpp"      my-template])  ;; c++ header
     ("test_.*\\.py$" . ["test_template.py"  my-template])  ;; python
     ("\\.py$"        . ["template.py"       my-template])  ;; python
-    ("\\.pl$"        . ["template.pl"       my-template])) ;; perl
+    ("\\.pl$"        . ["template.pl"       my-template])  ;; perl
+    ("\\.htm[l]?$"   . ["template.html"     my-template])) ;; html
   auto-insert-alist))
 
 (defun buffer-file-name-nondirectory ()
