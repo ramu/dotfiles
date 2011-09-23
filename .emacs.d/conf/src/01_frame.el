@@ -32,6 +32,9 @@
 ;; フレームのタイトル指定
 (setq frame-title-format (concat "%b - emacs@" system-name))
 
+;; fringe-mode
+(fringe-mode 0)
+
 ;;;;; 左側に行数表示
 (require 'linum)
 (setq linum-format "%5d ")
