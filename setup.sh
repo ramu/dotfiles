@@ -26,6 +26,10 @@ ln -sf ~/dotfiles/.screenrc ~/.screenrc
 ### tmux
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
+### vim
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/.vim ~/.vim
+
 ############
 # perlbrew #
 ############
