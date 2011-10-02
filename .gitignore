@@ -13,3 +13,8 @@
 .emacs.d/conf/src/10_tramp.el
 .emacs.d/elisp/
 
+# vim
+.vim/.netrwhist
+.vim/autoload/
+.vim/bundle/
+.vim/neobundle/
