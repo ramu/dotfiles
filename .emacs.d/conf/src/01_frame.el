@@ -33,7 +33,7 @@
 (setq frame-title-format (concat "%b - emacs@" system-name))
 
 ;; fringe-mode
-(fringe-mode 0)
+(fringe-mode "left-only")
 
 ;;;;; 左側に行数表示
 (require 'linum)
