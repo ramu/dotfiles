@@ -14,7 +14,7 @@
 
 [core]
     pager     = less
-    editor    = /usr/bin/vim
+    editor    = /Applications/Emacs.app/Contents/MacOS/bin/emacsclient
     autocrlf  = input
     quotepath = false
 

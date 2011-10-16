@@ -6,6 +6,8 @@ alias ebc='emacs -batch -f batch-byte-compile'
 alias ei='easy_install'
 if [ `uname` = "Darwin" ]; then
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
+alias ec='emacsclient'
 fi
 ## g ##
 alias ga='git add'

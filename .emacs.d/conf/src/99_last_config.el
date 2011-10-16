@@ -11,3 +11,7 @@
 ;(setq default-buffer-file-coding-system 'utf-8)
 
 (put 'upcase-region 'disabled nil)
+
+(require 'server)
+(unless (server-running-p)
+  (server-start))
