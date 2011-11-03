@@ -1,4 +1,4 @@
-;;; 10_org-mode.el --- 
+;;; 10_org-mode.el ---
 (require 'org)
 
 ; Emacs technic bible(P.275)

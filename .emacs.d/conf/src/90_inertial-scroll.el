@@ -1,4 +1,4 @@
-;;; 90_inertial-scroll.el --- 
+;;; 90_inertial-scroll.el ---
 (require 'inertial-scroll)
 (inertias-global-minor-mode 1)
 
@@ -6,7 +6,7 @@
 (setq inertias-friction 2000)
 (setq inertias-update-time 5)
 (setq inertias-rest-coef 0.1)
-(setq inertias-global-minor-mode-map 
+(setq inertias-global-minor-mode-map
       (inertias-define-keymap
         '(
           ;; Mouse wheel scrolling

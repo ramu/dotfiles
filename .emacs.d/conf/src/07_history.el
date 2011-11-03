@@ -3,7 +3,7 @@
 (setq make-backup-files t)
 ; 保存場所
 (setq backup-directory-alist
-      (cons (cons "\\.*$" (expand-file-name "~/.emacs.d/history/backup"))
+      (cons (cons "\\.*$" (expand-file-name "~/.emacs.d/var/history/backup"))
             backup-directory-alist))
 
 ; 世代バックアップ
@@ -17,7 +17,7 @@
 (setq vc-mode-backup-files t)
 
 ; 履歴を次回Emacs起動時にも保存する
-(setq savehist-file "~/.emacs.d/history/history")
+(setq savehist-file "~/.emacs.d/var/history/history")
 (savehist-mode t)
 ; 履歴保存件数
 (setq history-length 1000)

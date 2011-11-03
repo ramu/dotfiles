@@ -1,4 +1,4 @@
-;;; 10_bf-mode.el --- 
+;;; 10_bf-mode.el ---
 (require 'bf-mode)
 
 ;; 別ウィンドウに表示するサイズの上限

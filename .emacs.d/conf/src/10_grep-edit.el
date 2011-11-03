@@ -1,4 +1,4 @@
-;;; 10_grep-edit.el --- 
+;;; 10_grep-edit.el ---
 (require 'grep-edit)
 
 

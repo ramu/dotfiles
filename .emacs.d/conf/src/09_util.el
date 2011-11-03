@@ -75,6 +75,8 @@
 ;; バックアップに関する設定
 (setq make-backup-files nil)  ; バックアップファイルを作成しない
 (setq auto-save-default nil)  ; #filename#を作成しない
+(setq auto-save-list-file-name nil)
+(setq auto-save-list-file-prefix nil)
 
 ; 警告音を消す
 (setq visible-bell t)
@@ -110,8 +112,8 @@
 ; region color
 (set-face-background 'region "darkgreen")
 
-; .emacsファイルを開くショートカット
-(global-set-key [(f7)] '(lambda ()(interactive)(find-file "~/.emacs")))
+; .emacs.d/init.elファイルを開くショートカット
+(global-set-key [(f7)] '(lambda ()(interactive)(find-file "~/.emacs.d/init.el")))
 
 ; flyspell-mode(スペルチェッカ)
 (setq flyspell-mode t)

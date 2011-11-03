@@ -1,4 +1,4 @@
-;;; 10_migemo.el --- 
+;;; 10_migemo.el ---
 ; ローマ字のまま日本語をインクリメンタルサーチ
 ;(require 'migemo)
 ;(setq migemo-command "/Users/ramusara/.rvm/rubies/ruby-1.8.7-p334/bin/ruby"

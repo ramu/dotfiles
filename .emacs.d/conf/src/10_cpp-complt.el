@@ -1,4 +1,4 @@
-;;; 10_cpp-complt.el --- 
+;;; 10_cpp-complt.el ---
 (require 'cpp-complt)
 
 (add-hook 'c-mode-common-hook
@@ -8,7 +8,7 @@
         (local-set-key "\C-c#" 'cpp-complt-ifdef-region)
         (cpp-complt-init))))
 
-(setq cpp-complt-standard-header-path 
+(setq cpp-complt-standard-header-path
       '("/usr/include/"
         "/usr/include/c++/4.2.1/"
         "/opt/local/include/"

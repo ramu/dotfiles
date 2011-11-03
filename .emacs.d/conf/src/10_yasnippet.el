@@ -1,7 +1,7 @@
-;;; 10_yasnippet.el --- 
+;;; 10_yasnippet.el ---
 (require 'yasnippet)
 (yas/initialize)
-(yas/load-directory "~/.emacs.d/plugins/yasnippet")
+(yas/load-directory "~/.emacs.d/share/plugins/yasnippet")
 (setq yas/prompt-functions '(yas/dropdown-prompt))
 
 ;;; yasnippet + flymake

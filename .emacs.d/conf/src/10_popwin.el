@@ -1,4 +1,4 @@
-;;; 10_popwin.el --- 
+;;; 10_popwin.el ---
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 (setq popwin:popup-window-position 'right)

@@ -1,4 +1,4 @@
-;;; 10_tempbuf.el --- 
+;;; 10_tempbuf.el ---
 (require 'tempbuf)
 (setq tempbuf-life-extension-ratio 0
       tempbuf-minimum-timeout 1)

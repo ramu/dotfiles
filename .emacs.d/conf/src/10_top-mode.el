@@ -1,4 +1,4 @@
-;;; 10_top-mode.el --- 
+;;; 10_top-mode.el ---
 (require 'top-mode)
 
 (defun topo-auto-refresh (rate)

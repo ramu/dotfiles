@@ -1,8 +1,7 @@
-;=====================
-; perl
-;=====================
+;;; 50_perl.el
 (require 'set-perl5lib)
 (require 'cperl-mode)
+(require 'perl-completion)
 
 ;; perlbrew
 (require 'perlbrew)
@@ -24,6 +23,7 @@
             (setq cperl-label-offset -4)
             (setq cperl-close-paren-offset -4)
             (setq cperl-tab-always-indent nil)
+            (add-to-list 'ac-sources 'ac-source-perl-completion)
             (hs-minor-mode t)))
 
 

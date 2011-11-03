@@ -1,2 +1,2 @@
-;;; 10_imenu+.el --- 
+;;; 10_imenu+.el ---
 (require 'imenu+)

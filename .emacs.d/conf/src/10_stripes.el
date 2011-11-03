@@ -1,6 +1,6 @@
-;;; 10_stripes.el --- 
+;;; 10_stripes.el ---
 (require 'stripes)
 (set-face-background 'stripes-face "#114422")
-5544")
+;5544")
 
 (stripes-mode t)

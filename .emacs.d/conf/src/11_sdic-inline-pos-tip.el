@@ -1,4 +1,4 @@
-;;; 11_sdic-inline-pos-tip.el --- 
+;;; 11_sdic-inline-pos-tip.el ---
 (require 'sdic-inline-pos-tip)
 (setq sdic-inline-search-func 'sdic-inline-search-word-with-stem)
 (setq sdic-inline-display-func 'sdic-inline-pos-tip-show)

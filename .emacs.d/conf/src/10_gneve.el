@@ -14,7 +14,7 @@
   (define-key gneve-mode-map "\C-e" 'mark-start)
   (define-key gneve-mode-map "\C-r" 'mark-end)
   (define-key gneve-mode-map "H" 'write-marks))
- 
+
 (defun gneve-mode()
   "EDL and mplayer based GNU Emacs video editing mode"
   (interactive)

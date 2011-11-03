@@ -1,4 +1,4 @@
-;;; 10_multi-term.el --- 
+;;; 10_multi-term.el ---
 (require 'multi-term)
 
 (setq multi-term-program "/bin/zsh")

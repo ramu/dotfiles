@@ -1,2 +1,2 @@
-;;; 10_company.el --- 
+;;; 10_company.el ---
 (require 'company)

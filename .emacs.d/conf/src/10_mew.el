@@ -1,4 +1,4 @@
-;;; 10_mew.el --- 
+;;; 10_mew.el ---
 (autoload 'mew "mew" nil t)
 (autoload 'mew-send "mew" nil t)
 

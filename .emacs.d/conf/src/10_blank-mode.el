@@ -1,4 +1,4 @@
-;;; 10_blank-mode.el --- 
+;;; 10_blank-mode.el ---
 (require 'blank-mode)
 
 (setq blank-space-regexp "\\(　+\\)")

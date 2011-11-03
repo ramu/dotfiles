@@ -1,4 +1,4 @@
-;;; 10_w3m.el --- 
+;;; 10_w3m.el ---
 (require 'w3m-load)
 (autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
 (autoload 'w3m-find-file "w3m" "w3m interface function for local file." t)
@@ -9,9 +9,9 @@
 
 ; set-variables
 (setq w3m-icon-directory "/Applications/MacPorts/Emacs.app/Contents/Resource/etc/w3m/")
-(setq w3m-namazu-tmp-file-name "~/.nmz.html")
-(setq w3m-namazu-index-file "~/.w3m-namazu.index")
-(setq w3m-bookmark-file "~/.w3m/bookmark.html") 
+(setq w3m-namazu-tmp-file-name "~/.w3m/.nmz.html")
+(setq w3m-namazu-index-file "~/.w3m/.w3m-namazu.index")
+(setq w3m-bookmark-file "~/.w3m/bookmark.html")
 (setq w3m-home-page "http://www.google.co.jp")
 (setq w3m-default-display-inline-images t)
 

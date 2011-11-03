@@ -1,2 +1,2 @@
-;;; 10_etop.el --- 
+;;; 10_etop.el ---
 (require 'etop)

@@ -15,23 +15,23 @@
 ;; clang
 ;(setq clang-completion-prefix-header "~/.emacs.d/ac-dict/stdafx.pch")
 ;(setq clang-completion-pch "/Users/ramusara/.emacs.d/ac-dict/stdafx.pch")
-;(setq clang-completion-flags (split-string "-Wall -std=gnu++98 -I. -I/usr/local/include/gtk-2.0 
-;-I/usr/local/include/gtk-2.0/gdk -I/usr/local/include/gtk-2.0/gtk -I/usr/local/include/atk-1.0 
+;(setq clang-completion-flags (split-string "-Wall -std=gnu++98 -I. -I/usr/local/include/gtk-2.0
+;-I/usr/local/include/gtk-2.0/gdk -I/usr/local/include/gtk-2.0/gtk -I/usr/local/include/atk-1.0
 ;-I/usr/local/include/pango-1.0_
 ;-I/usr/local/include/glib-2.0 -I/usr/lib/glib-2.0/glib/ -I/usr/local/include/glib-2.0/glib/"))
 
 ;; auto-complete-clang
 ; 下記コマンドで予め.pchファイルを作成しておく。
 ; clang -cc1 -x c++-header stdafx.hh -emit-pch -o stdafx.pch -D_GNU_SOURCE -g
-(setq ac-clang-prefix-header "/Users/ramusara/.emacs.d/ac-dict/stdafx.pch")
-(setq ac-clang-flags '("-w" "-ferror-limit" "1" "-std=gnu++98" "-I."))
+;(setq ac-clang-prefix-header "/Users/ramusara/.emacs.d/share/ac-dict/stdafx.pch")
+;(setq ac-clang-flags '("-w" "-ferror-limit" "1" "-std=gnu++98" "-I."))
 
 ;; config
 (global-auto-complete-mode t)
 (set-face-background 'ac-candidate-face "lightgray")
 (set-face-background 'ac-selection-face "steelblue")
-(set-face-background 'ac-clang-candidate-face "lightgray")
-(set-face-background 'ac-clang-selection-face "steelblue")
+;(set-face-background 'ac-clang-candidate-face "lightgray")
+;(set-face-background 'ac-clang-selection-face "steelblue")
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
 
@@ -43,14 +43,17 @@
 (setq ac-use-comphist t)                 ; 補完推測機能を利用するか
 (setq ac-quick-help-delay 0)             ; クイックヘルプを表示するまでの時間（秒）を実数で指定
 (setq ac-stop-flymake-on-completing nil) ; 補完時にflymakeを中止
-(setq ac-comphist-file "~/.emacs.d/history/ac-comphist.dat")
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(setq ac-comphist-file "~/.emacs.d/var/ac-comphist.dat")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/share/ac-dict")
 
 ;; source
 (setq-default ac-sources '(ac-source-filename ac-source-words-in-same-mode-buffers ac-source-abbrev))
 (add-hook 'emacs-lisp-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-symbols t)))
 (add-hook 'python-mode-hook     (lambda () (add-to-list 'ac-sources 'ac-source-yasnippet)))
-(add-hook 'c-mode-common-hook   (lambda () (add-to-list 'ac-sources '(ac-source-clang ac-source-gtags ac-source-yasnippet))))
-(add-hook 'c-mode-hook          (lambda () (add-to-list 'ac-sources '(ac-source-gtags ac-source-yasnippet ac-source-clang))))
-(add-hook 'c++-mode-hook        (lambda () (add-to-list 'ac-sources '(ac-source-yasnippet ac-source-clang))))
+;(add-hook 'c-mode-common-hook   (lambda () (add-to-list 'ac-sources '(ac-source-clang ac-source-gtags ac-source-yasnippet))))
+(add-hook 'c-mode-common-hook   (lambda () (add-to-list 'ac-sources '(ac-source-gtags ac-source-yasnippet))))
+;(add-hook 'c-mode-hook          (lambda () (add-to-list 'ac-sources '(ac-source-gtags ac-source-yasnippet ac-source-clang))))
+(add-hook 'c-mode-hook          (lambda () (add-to-list 'ac-sources '(ac-source-gtags ac-source-yasnippet))))
+;(add-hook 'c++-mode-hook        (lambda () (add-to-list 'ac-sources '(ac-source-yasnippet ac-source-clang))))
+(add-hook 'c++-mode-hook        (lambda () (add-to-list 'ac-sources '(ac-source-yasnippet))))
 

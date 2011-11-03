@@ -1,4 +1,4 @@
-;;; 10_archive-region.el --- 
+;;; 10_archive-region.el ---
 ;;; Commentary:
 ;;
 ;; Extend C-w to have archive feature.

@@ -1,4 +1,4 @@
-;;; 50_html.el --- 
+;;; 50_html.el ---
 ;; default browser
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "open")

@@ -1,2 +1,2 @@
-;;; 10_e2wm.el --- 
+;;; 10_e2wm.el ---
 (require 'e2wm)

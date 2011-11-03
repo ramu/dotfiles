@@ -1,4 +1,4 @@
-;;; 10_fold-dwim.el --- 
+;;; 10_fold-dwim.el ---
 (require 'hideshow)
 (require 'fold-dwim)
 

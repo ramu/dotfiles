@@ -1,7 +1,5 @@
-;==========================
-; programming language c
-;==========================
-
+;;; 50_c.el
+;;; Programming Language C
 (require 'cc-mode)
 
 (add-hook 'c-mode-common-hook
@@ -20,6 +18,8 @@
               (c-set-style "k&r")
               (setq c-basic-offset tab-width)
               (setq indent-tabs-mode nil)
+              (set (make-local-variable 'eldoc-idle-delay) 0.20)
+              (c-turn-on-eldoc-mode)
               (hs-minor-mode t)))
 
 ; (c/c++)現在開いているファイル名から拡張子を消した名称(実行ファイル)を実行
@@ -35,3 +35,6 @@
 ;(require 'hideif)
 ;(add-hook 'c-mode-common-hook 'hide-ifdef-mode)
 
+;;; c-eldoc
+(require 'c-eldoc)
+(setq c-eldoc-cpp-command "/usr/bin/cpp")

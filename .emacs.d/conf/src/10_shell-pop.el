@@ -1,4 +1,4 @@
-;;; 10_shell-pop.el --- 
+;;; 10_shell-pop.el ---
 (require 'shell-pop)
 (shell-pop-set-internal-mode "ansi-term")
 (shell-pop-set-internal-mode-shell "/bin/zsh")

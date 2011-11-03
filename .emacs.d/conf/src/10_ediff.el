@@ -1,4 +1,4 @@
-;;; 10_ediff.el --- 
+;;; 10_ediff.el ---
 (require 'ediff)
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq-default ediff-auto-refine-limit 10000)

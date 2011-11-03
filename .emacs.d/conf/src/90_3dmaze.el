@@ -1,3 +1,3 @@
-;;; 90_3dmaze.el --- 
+;;; 90_3dmaze.el ---
 (require '3dmaze)
 

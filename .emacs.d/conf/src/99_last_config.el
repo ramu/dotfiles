@@ -1,5 +1,6 @@
-;;; 99_last_config.el --- 
+;;; 99_last_config.el ---
 ; 最後に設定したい項目用
+
 ;; 言語／文字コードに関する設定
 (set-language-environment "Japanese")
 (prefer-coding-system 'utf-8-unix)

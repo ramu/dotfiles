@@ -1,4 +1,4 @@
-;;; 90_calendar.el --- 
+;;; 90_calendar.el ---
 (require 'calendar)
 
 ;; keybind
@@ -19,3 +19,13 @@
 (setq calendar-weekend-marker 'diary)
 (add-hook 'today-visible-calendar-hook 'calendar-mark-weekend)
 (add-hook 'today-invisible-calendar-hook 'calendar-mark-weekend)
+
+;; japanese-holidays
+(add-hook 'calendar-load-hook
+          (lambda ()
+            (setq calendar-holidays (append japanese-holidays local-holidays other-holidays))))
+
+
+;;; calfw
+(require 'calfw)
+;;; (cfw:open-calendar-buffer)

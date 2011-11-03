@@ -1,3 +1,3 @@
-;;; 10_sticky.el --- 
+;;; 10_sticky.el ---
 (require 'sticky)
 (use-sticky-key ?\; sticky-alist:ja)

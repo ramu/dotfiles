@@ -1,4 +1,4 @@
-;;; 10_dont-type-twice.el --- 
+;;; 10_dont-type-twice.el ---
 (require 'dont-type-twice)
 (global-dont-type-twice t)
 

@@ -1,4 +1,4 @@
-;;; 10_yafastnav.el --- 
+;;; 10_yafastnav.el ---
 (require 'yafastnav)
 (global-set-key (kbd "C-:") 'yafastnav-jump-to-current-screen)
 

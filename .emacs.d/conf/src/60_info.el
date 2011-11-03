@@ -1,11 +1,11 @@
-;;; 60_info.el --- 
+;;; 60_info.el ---
 ;; info
 (require 'info)
 (require 'info+)
 (setq Info-directory-list
-      (cons (expand-file-name "~/.emacs.d/info/")
+      (cons (expand-file-name "~/.emacs.d/share/info/")
             Info-default-directory-list))
-(add-to-list 'Info-directory-list "~/info")
+(add-to-list 'Info-directory-list "~/.emacs.d/share/info/")
 
 
 

@@ -1,4 +1,4 @@
-;;; 10_smartchr.el --- 
+;;; 10_smartchr.el ---
 (require 'smartchr)
 
 (global-set-key (kbd "=") (smartchr '("=" " = " " == " "==")))

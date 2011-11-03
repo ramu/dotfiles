@@ -1,4 +1,4 @@
-;;; 10_one-key.el --- 
+;;; 10_one-key.el ---
 (require 'one-key)
 (require 'one-key-config)
 

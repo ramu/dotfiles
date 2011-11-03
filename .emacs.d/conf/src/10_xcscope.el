@@ -1,2 +1,2 @@
-;;; 10_xcscope.el --- 
+;;; 10_xcscope.el ---
 (require 'xcscope)

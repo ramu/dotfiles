@@ -1,4 +1,4 @@
-;;; 10_lambda-mode.el --- 
+;;; 10_lambda-mode.el ---
 (require 'lambda-mode)
 
 (add-hook 'python-mode-hook 'lambda-mode t)

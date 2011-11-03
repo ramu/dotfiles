@@ -28,8 +28,8 @@
 (setq anything-input-idle-delay 0.1)
 (setq anything-candidate-number-limit 30)
 (setq anything-quick-update t)
-(setq anything-c-filelist-file-name "/Users/ramusara/.emacs.d/plugins/ruby/all.filelist")
-(setq anything-grep-candidates-fast-firectory-regexp "^/Users/ramusara/.emacs.d/plugins/ruby")
+(setq anything-c-filelist-file-name "/Users/ramusara/.emacs.d/share/plugins/ruby/all.filelist")
+(setq anything-grep-candidates-fast-firectory-regexp "^/Users/ramusara/.emacs.d/share/plugins/ruby")
 (setq descbinds-anything-window-style 'split-window)
 (setq anything-enable-shortcuts 'alphabet)
 (anything-lisp-complete-symbol-set-timer 150)
@@ -62,7 +62,7 @@
 
 
 ; anything-c-adaptive-history
-(setq anything-c-adaptive-history-file "~/.emacs.d/history/anything-c-adaptive-history")
+(setq anything-c-adaptive-history-file "~/.emacs.d/var/anything-c-adaptive-history")
 
 ; anything-mac-itunes.el
 (when (eq system-type 'darwin)

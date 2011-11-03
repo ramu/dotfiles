@@ -1,4 +1,4 @@
-;;; 10_dired.el --- 
+;;; 10_dired.el ---
 ; diredでファイル名変更できる - wdired.el
 (require 'dired)
 (require 'dired+)

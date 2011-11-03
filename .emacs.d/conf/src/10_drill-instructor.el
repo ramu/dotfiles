@@ -1,4 +1,4 @@
-;;; 10_drill-instructor.el --- 
+;;; 10_drill-instructor.el ---
 (require 'drill-instructor)
 (setq drill-instructor-global t)
 

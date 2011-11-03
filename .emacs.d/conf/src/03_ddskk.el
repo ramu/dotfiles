@@ -1,4 +1,4 @@
-;;; 03_ddskk.el --- 
+;;; 03_ddskk.el ---
 (require 'skk-autoloads)
 (global-set-key "\C-x\C-j" 'skk-mode)
 (global-set-key "\C-xj" 'skk-auto-fill-mode)

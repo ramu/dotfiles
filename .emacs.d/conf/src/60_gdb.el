@@ -1,4 +1,4 @@
-;;; 60_gdb.el --- 
+;;; 60_gdb.el ---
 ; 有用なバッファを開く
 (setq gdb-many-windows t)
 

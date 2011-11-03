@@ -17,7 +17,7 @@
 (setq auto-insert-query nil)
 
 ; 各ファイルに応じてテンプレートを切り替える
-(setq auto-insert-directory "~/.emacs.d/conf/templates/")
+(setq auto-insert-directory "~/.emacs.d/conf/share/templates/")
 (setq auto-insert-alist
   (append '(
     ("\\.c$"         . ["template.c"        my-template])  ;; c

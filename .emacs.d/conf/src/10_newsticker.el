@@ -1,4 +1,4 @@
-;;; 10_newsticker.el --- 
+;;; 10_newsticker.el ---
 (setq newsticker-url-list
       '(("Linux World" "http://www.linuxworld.com/rss/linux-news.xml")
         ("Linux.com" "http://www.linux.com/feature?theme=rss")))

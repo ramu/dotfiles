@@ -1,4 +1,4 @@
-;;; 10_viewer.el --- 
+;;; 10_viewer.el ---
 (require 'viewer)
 (viewer-stay-in-setup)
 (setq viewer-modeline-color-unwritable "tomato"

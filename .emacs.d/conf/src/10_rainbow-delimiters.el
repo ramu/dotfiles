@@ -1,4 +1,4 @@
-;;; rainbow-delimiters.el --- 
+;;; rainbow-delimiters.el ---
 (require 'rainbow-delimiters)
 
 (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
