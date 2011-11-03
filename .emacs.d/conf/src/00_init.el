@@ -7,6 +7,7 @@
 
 ;; load-path
 (add-to-list 'load-path "~/.emacs.d/elisp/apel")
+(add-to-list 'load-path "~/.emacs.d/share/slime")
 (add-to-list 'load-path "~/work/git/twittering-mode/")
 (add-to-list 'load-path "~/.emacs.d/auto-install/")
 (add-to-list 'load-path "~/.emacs.d/elisp/riece/")

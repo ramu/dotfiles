@@ -22,7 +22,14 @@
 (push '("*Shell Command Output*" :width 55 :position right :noselect t) popwin:special-display-config)
 (push '("*Backtrace*"            :width 55                 :noselect t) popwin:special-display-config)
 (push '("*imenu-tree*"           :width 55 :position right)             popwin:special-display-config)
-
+(push '("*slime-apropos*"        :width 55 :position right)             popwin:special-display-config)
+(push '("*slime-macroexpansion*" :width 55 :position right)             popwin:special-display-config)
+(push '("*slime-description*"    :width 55 :position right)             popwin:special-display-config)
+(push '("*slime-compilation*"    :width 55 :position right :noselect t) popwin:special-display-config)
+(push '("*slime-xref*"           :width 55 :position right)             popwin:special-display-config)
+(push '(sldb-mode                :width 55 :position right :stick t)    popwin:special-display-config)
+(push '(slime-repl-mode          :width 55 :position right)             popwin:special-display-config)
+(push '(slime-connection-list-mode :width 55 :position right)           popwin:special-display-config)
 
 ;; bottom
 (push '(" *auto-async-byte-compile*" :height 25 :position bottom :noselect t) popwin:special-display-config)
