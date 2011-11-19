@@ -54,3 +54,6 @@ let buftabs_in_statusline = 1
 
 " matchit
 :runtime macros/matchit.vim
+
+" YankRing
+let g:yankring_history_dir = $HOME."/log/"
