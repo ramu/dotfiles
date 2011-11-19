@@ -12,6 +12,7 @@
 .emacs.d/conf/src/10_twittering-mode.el
 .emacs.d/conf/src/10_tramp.el
 .emacs.d/elisp/
+.emacs.d/private/
 
 # vim
 .vim/.netrwhist
