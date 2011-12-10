@@ -22,7 +22,6 @@
 (global-set-key (kbd "C-c t") 'multi-term)           ; Terminal
 ;(global-set-key (kbd "C-t") 'other-window-or-split) ; 01_frame.el
 (global-set-key (kbd "C-c C-k") '(lambda () (interactive) (kill-line 0)))
-(global-set-key (kbd "C-c C-c") 'executable-interpret)
 (global-set-key (kbd "C-M-i") 'indent-region)
 (global-set-key (kbd "C-M-g") 'anything-grep)
 (global-set-key (kbd "C-M-y") 'anything-show-kill-ring)
@@ -48,3 +47,12 @@
 ;(key-chord-define-global "qw"  "the ")
 ;(key-chord-define c++-mode-map ";;"  "ﾂ･C-e;")
 
+
+; my-map
+(defvar my-map "")
+(setq my-map (make-sparse-keymap))
+(mapc (lambda (x)
+          (define-key my-map (car x) (cdr x))
+          (global-set-key (car x) (cdr x)))
+        '(("\C-c\C-c" . quickrun)))
+(easy-mmode-define-minor-mode my-mode "Grab keys" t "" my-map)
