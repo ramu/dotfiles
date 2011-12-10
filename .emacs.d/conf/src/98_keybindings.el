@@ -7,12 +7,12 @@
 ;; global-set-key
 (define-key global-map [?¥] [?\\])                   ; ¥はバックスラッシュに変更
 (global-set-key (kbd "C-x C-b") 'bs-show)            ; バッファ一覧をまともに
-(global-set-key (kbd "C-h") 'delete-backward-char)   ; C-hは後退
+(global-set-key (kbd "C-h") 'delete-backward-char)   ; C-hは後退(1文字)
+(global-set-key (kbd "M-h") 'backward-kill-word)     ; M-hは後退(単語)
 (global-set-key (kbd "C-t") 'fold-dwim-toggle)       ; 折りたたみ
 (global-set-key (kbd "C-=") 'indent-region)          ; indent
 (global-set-key (kbd "C-;") 'my-anything)
 (global-set-key (kbd "M-;") 'anything-execute-extended-command)
-(global-set-key (kbd "M-h") 'Helper-help)            ; Helper-help
 (global-set-key (kbd "C-x g") 'goto-line)            ; goto-line(M-g g ---> C-x g)
 (global-set-key (kbd "C-x e") 'eval-last-sexp)       ; eval-last-sexp
 (global-set-key (kbd "C-c a") 'align)
