@@ -1,24 +1,26 @@
-;;; 10_flymake.el
+;;;; 10_flymake.el
 (require 'flymake)
 (require 'flymake-extension)
 (require 'fringe-helper)
 (require 'flymake-growl)
 
-;; flymake-extension
+;; color変更
+(set-face-background 'flymake-errline "red4")
+(set-face-background 'flymake-warnline "dark slate blue")
+(setq flymake-no-changes-timeout 5)  ; 待ち時間
+
+;;; flymake-extension ---
+;; http://www.emacswiki.org/emacs/flymake-extension.el
 (setq flymake-extension-use-showtip nil)
 (setq flymake-extension-auto-show t)
 
-; color変更
-(set-face-background 'flymake-errline "red4")
-(set-face-background 'flymake-warnline "dark slate blue")
+;;; flymake-shell.el ---
+;; flymake(shell)
+;; http://www.emacswiki.org/cgi-bin/wiki/FlymakeShell
+(require 'flymake-shell)
+(add-hook 'sh-mode-hook 'flymake-shell-load)
 
-; 待ち時間
-(setq flymake-no-changes-timeout 5)
-
-
-;;;;;;;;;;;;;;;;;;;;
-; flymake for c    ;
-;;;;;;;;;;;;;;;;;;;;
+;;; flymake for c
 (defun flymake-cc-init ()
   (let* ((temp-file (flymake-init-create-temp-buffer-copy
                      'flymake-create-temp-inplace))
@@ -26,26 +28,19 @@
                      temp-file
                      (file-name-directory buffer-file-name))))
    (list "g++" (list "-I." "-Wall" "-Wextra" "-fsyntax-only" local-file))))
-
 (push '("\\.cpp$" flymake-cc-init) flymake-allowed-file-name-masks)
 (push '("\\.hpp$" flymake-cc-init) flymake-allowed-file-name-masks)
 (push '("\\.cc$"  flymake-cc-init) flymake-allowed-file-name-masks)
 (push '("\\.c$"   flymake-cc-init) flymake-allowed-file-name-masks)
 (push '("\\.h$"   flymake-cc-init) flymake-allowed-file-name-masks)
-
 (add-hook 'c-mode-common-hook (lambda () (flymake-mode t)))
 
-
-;;;;;;;;;;;;;;;;;;;;
-; flymake for perl ;
-;;;;;;;;;;;;;;;;;;;;
+;;; flymake for perl
 (require 'set-perl5lib)
-
 (defvar flymake-perl-err-line-patterns '(("\\(.*\\) at \\([^ \n]+\\) line \\([0-9]+\\)[,.\n]" 2 3 nil 1)))
 (defconst flymake-allowed-perl-file-name-masks '(("\\.pl$" flymake-perl-init)
                                                  ("\\.pm$" flymake-perl-init)
                                                  ("\\.t$"  flymake-perl-init)))
-
 (defun flymake-perl-init ()
   (let* ((temp-file (flymake-init-create-temp-buffer-copy
                     'flymake-create-temp-inplace))
@@ -53,7 +48,6 @@
                     temp-file
                     (file-name-directory buffer-file-name))))
     (list "perl" (list "-wc" local-file))))
-
 (defun flymake-perl-load ()
   (interactive)
   (set-perl5lib)
@@ -63,7 +57,6 @@
   (setq flymake-allowed-file-name-masks (append flymake-allowed-file-name-masks flymake-allowed-perl-file-name-masks))
   (setq flymake-err-line-patterns flymake-perl-err-line-patterns)
   (flymake-mode t))
-
 (defun next-flymake-error ()
   (interactive)
   (flymake-goto-next-error)
@@ -73,10 +66,7 @@
 (global-set-key "\M-e" 'next-flymake-error)
 (add-hook 'cperl-mode-hook 'flymake-perl-load)
 
-
-;;;;;;;;;;;;;;;;;;;;;;
-; flymake for python ;
-;;;;;;;;;;;;;;;;;;;;;;
+;;; flymake for python
 ;(when (load "flymake" t)
 ;  (defun flymake-pyflakes-init ()
 ;    (let* ((temp-file (flymake-init-create-temp-buffer-copy
@@ -89,9 +79,7 @@
 ;          '("\\.py\\'" flymake-pyflakes-init)))
 
 
-;;;;;;;;;;;;;;;;;;;;
-; flymake for java ;
-;;;;;;;;;;;;;;;;;;;;
+;;; flymake for java
 ;; redefine to remove "check-syntax" target
 (defun flymake-get-make-cmdline (source base-dir)
   (list "make"
@@ -100,25 +88,18 @@
               base-dir
               (concat "CHK_SOURCES=" source)
                "SYNTAX_CHECK_MODE=1")))
-
-
 ;; specify that flymake use ant instead of make
 (setcdr (assoc "\\.java\\'" flymake-allowed-file-name-masks)
         '(flymake-simple-ant-java-init flymake-simple-java-cleanup))
-
 ;; redefine to remove "check-syntax" target
 (defun flymake-get-ant-cmdline (source base-dir)
   (list "ant"
         (list "-buildfile"
               (concat base-dir "/" "build.xml"))))
-
 (add-hook 'java-mode-hook
-          '(lambda ()
-             (flymake-mode t)))
+          '(lambda () (flymake-mode t)))
 
-;;;;;;;;;;;;;;;;;;;;
-; flymake for html ;
-;;;;;;;;;;;;;;;;;;;;
+;;; flymake for html
 (defun flymake-html-init ()
 	  (let* ((temp-file (flymake-init-create-temp-buffer-copy
 	                     'flymake-create-temp-inplace))
@@ -133,13 +114,10 @@
                nil 1 2 4))
 
 (add-hook 'html-mode-hook
-          '(lambda ()
-             (flymake-mode t)))
+          '(lambda () (flymake-mode t)))
 
-;;;;;;;;;;
-; etc... ;
-;;;;;;;;;;
-;;; minibufferに表示
+;;; etc...
+;; minibufferに表示
 ; growl使うので不要
 ;(defun credmp/flymake-display-err-minibuf ()
 ;  "Displays the error/warnings for the current line in the minubuffer"
@@ -177,8 +155,3 @@
                                               compile)
   (mapc 'fringe-helper-remove flymake-fringe-overlays)
   (setq flymake-fringe-overlays nil))
-
-
-
-
-

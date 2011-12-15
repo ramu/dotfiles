@@ -1,20 +1,14 @@
-;================
-; autoinsert
-;================
-
+;;;; 90_autoinsert.el
 (require 'autoinsert)
 (add-hook 'find-file-hooks 'auto-insert)
 (add-hook 'find-file-not-found-hooks 'auto-insert)
 
-; user-mail-addressのデフォルト値生成に使われる変数にセット
+;; user-mail-addressのデフォルト値生成に使われる変数にセット
 (setq mail-host-address "ramusara@gmail.com")
 (setq user-mail-address "ramusara@gmail.com")
 
-; auto-insert-mode有効
-(auto-insert-mode t)
-
-; テンプレート挿入時に尋ねない
-(setq auto-insert-query nil)
+(auto-insert-mode t)          ; auto-insert-mode有効
+(setq auto-insert-query nil)  ; テンプレート挿入時に尋ねない
 
 ; 各ファイルに応じてテンプレートを切り替える
 (setq auto-insert-directory "~/.emacs.d/conf/share/templates/")
@@ -37,7 +31,7 @@
 (defun python-test-case-name ()
   (concat "Test" (capitalize (python-module-name))))
 
-; replace
+;; replace
 (defvar template-replacements-alists
   '(("%file%"             . (lambda () (file-name-nondirectory (buffer-file-name))))
     ("%name%"             . user-full-name)

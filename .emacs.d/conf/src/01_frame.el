@@ -1,4 +1,4 @@
-;; 01_frame.el
+;;;; 01_frame.el
 (setq initial-frame-alist
   (append (list
            '(foreground-color . "white")  ;; font-color

@@ -1,4 +1,4 @@
-;; 00_init.el
+;;;; 00_init.el
 ;; env
 (setenv "EMACS" "t")
 (setenv "RUBYLIB" "/Applications/Emacs.app/Contents/Resources/lib/ruby/site_ruby/")
