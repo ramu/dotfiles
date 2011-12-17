@@ -8,16 +8,23 @@
 (sequential-command-setup-keys)
 
 
-;;; smartchr.el ---
+;;; key-combo.el ---
 ;; 特定の文字を連続して入力すると別の文字列に変換
-;; http://tech.kayac.com/archive/emacs-tips-smartchr.html
-(require 'smartchr)
-(global-set-key (kbd "=") (smartchr '("=" " = " " == " "==")))
-(global-set-key (kbd "!") (smartchr '("!" " != " "!!")))
-(global-set-key (kbd "{") (smartchr '("{" "{`!!'}" "{{")))
-(global-set-key (kbd "[") (smartchr '("[" "[`!!']" "[[")))
-(global-set-key (kbd "<") (smartchr '("<" "<<" " <= " " =< ")))
-(global-set-key (kbd ">") (smartchr '(">" ">>" " >= " " => "  " => '`!!''" " => \"`!!'\"")))
+;; https://raw.github.com/uk-ar/key-combo/master/key-combo.el
+(require 'key-combo)
+(key-combo-define-global (kbd "=") '(" = " " == " " === " ))
+(key-combo-define-global (kbd "=>") " => ")
+(key-combo-define-global (kbd ">") " > ")
+(key-combo-define-global (kbd ">=") " >= ")
+(key-combo-define-global (kbd "<") " < ")
+(key-combo-define-global (kbd "<=") " <= ")
+(key-combo-define-global (kbd "<>") " <> ")
+;(key-combo-define-global (kbd "{") "{")
+;(key-combo-define-global (kbd "{") "{`!!'}")
+;(key-combo-define-global (kbd "[") '("["))
+;(key-combo-define-global (kbd "[") "[`!!']")
+(key-combo-define-global (kbd "!") "!")
+(key-combo-define-global (kbd "!=") " != ")
 
 
 ;;; sticky.el ---
