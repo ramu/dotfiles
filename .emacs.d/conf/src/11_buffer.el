@@ -9,8 +9,8 @@
 (add-hook 'find-file-hooks 'turn-on-tempbuf-mode)
 (add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
 (add-hook 'compilation-mode-hook 'turn-on-tempbuf-mode)
-(add-hook 'completion-list-mode-hook 'turn-on-tempbuf-mode)
-(add-hook 'view-mode-hook 'turn-on-tempbuf-mode)
+;(add-hook 'completion-list-mode-hook 'turn-on-tempbuf-mode)
+;(add-hook 'view-mode-hook 'turn-on-tempbuf-mode)
 
 ;;; auto-save-buffers.el
 ;; 自動保存
