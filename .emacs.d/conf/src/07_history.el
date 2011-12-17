@@ -36,11 +36,11 @@
 
 ;;; revive.el
 ;; 開いてるバッファ状態を保存／復元
-(autoload 'save-current-configuration "revive" "Save status" t)
-(autoload 'resume "revive" "Resume Emacs" t)
-(autoload 'wipe "revive" "Wipe emacs" t)
-(add-hook 'kill-emacs-hook 'save-current-configuration)
-(resume)
+;(autoload 'save-current-configuration "revive" "Save status" t)
+;(autoload 'resume "revive" "Resume Emacs" t)
+;(autoload 'wipe "revive" "Wipe emacs" t)
+;(add-hook 'kill-emacs-hook 'save-current-configuration)
+;(resume)
 
 ;;; recentf-ext.el
 ;; recentfの拡張。switch-to-bufferでアクセスしたファイルも対象、diredも対象
