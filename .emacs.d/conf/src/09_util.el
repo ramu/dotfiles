@@ -181,9 +181,9 @@
 ;;; color-theme.el
 ;; face customize
 ;; http://www.emacswiki.org/emacs/ColorTheme
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-hober)
+;(require 'color-theme)
+;(color-theme-initialize)
+;(color-theme-hober)
 
 ;;; e-palette.el
 ;; カラーパレット
