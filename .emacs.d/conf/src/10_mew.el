@@ -2,7 +2,7 @@
 (autoload 'mew "mew" nil t)
 (autoload 'mew-send "mew" nil t)
 
-;(load "~/.emacs.d/secret/my-config-gmail")
+(load "~/.emacs.d/private/.mew.el")
 (setq mew-ssl-verify-level 0)
 (setq mew-use-unread-mark t) ;; U:unread mark
 
