@@ -308,7 +308,8 @@
 ;(setq migemo-use-frequent-pattern-alist t)
 ;(migemo-init)
 
-
+;; 色々なファイルの色付け
+(require 'generic-x)
 
 
 
