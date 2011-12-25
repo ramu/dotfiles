@@ -1,4 +1,5 @@
 ;; 10_anything.el
+(eval-when-compile (require 'cl))
 (require 'anything)
 (require 'anything-startup)
 (require 'anything-complete)
@@ -29,14 +30,11 @@
 (setq anything-candidate-number-limit 30)
 (setq anything-quick-update t)
 (setq anything-c-filelist-file-name "/Users/ramusara/.emacs.d/share/plugins/ruby/all.filelist")
-(setq anything-grep-candidates-fast-firectory-regexp "^/Users/ramusara/.emacs.d/share/plugins/ruby")
 (setq descbinds-anything-window-style 'split-window)
 (setq anything-enable-shortcuts 'alphabet)
 (anything-lisp-complete-symbol-set-timer 150)
 (setq anything-samewindow nil)
 
-; anything-etags
-(require 'anything-etags)
 
 ; anything-c-moccur.el
 (require 'anything-c-moccur)
@@ -101,7 +99,6 @@
 
 
 ;; anything-font-families
-(require 'cl)
 (defun anything-font-families ()
   "Preconfigured `anything' for font family."
   (interactive)
