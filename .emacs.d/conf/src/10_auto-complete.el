@@ -42,7 +42,7 @@
 (setq ac-use-quick-help t)               ; クイックヘルプを利用するか
 (setq ac-use-comphist t)                 ; 補完推測機能を利用するか
 (setq ac-quick-help-delay 0)             ; クイックヘルプを表示するまでの時間（秒）を実数で指定
-(setq ac-stop-flymake-on-completing nil) ; 補完時にflymakeを中止
+(setq ac-stop-flymake-on-completing t)   ; 補完時にflymakeを中止
 (setq ac-comphist-file "~/.emacs.d/var/ac-comphist.dat")
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/share/ac-dict")
 
