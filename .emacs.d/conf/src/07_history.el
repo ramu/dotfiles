@@ -45,10 +45,10 @@
 ;;; recentf-ext.el
 ;; recentfの拡張。switch-to-bufferでアクセスしたファイルも対象、diredも対象
 ;; http://d.hatena.ne.jp/rubikitch/20091224/recentf
-(require 'recentf-ext)
-(setq recentf-max-items 10)
+;(require 'recentf-ext)
+(setq recentf-max-menu-items 10)
 (setq recentf-max-saved-items 20)
-(setq recentf-save-file (expand-file-name"~/.emacs.d/var/.recentf"))
+(setq recentf-save-file (expand-file-name "~/.emacs.d/var/.recentf"))
 
 ;;; session.el
 ;; mini buffer や kill-ring 等の履歴を次回起動時に利用できる
