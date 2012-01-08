@@ -1,6 +1,19 @@
 ;;;; 90_input.el ---
 
 
+;;; smartrep.el
+;; 連続操作の省力化
+;; http://sheephead.homelinux.org/2011/12/19/6930/
+(require 'smartrep)
+(smartrep-define-key
+ global-map "C-q" '(("n" . (lambda () (scroll-other-window 1)))
+                    ("p" . (lambda () (scroll-other-window -1)))
+                    ("N" . 'scroll-other-window)
+                    ("P" . (lambda () (scroll-other-window '-)))
+                    ("a" . (lambda () (beginning-of-buffer-other-window 0)))
+                    ("e" . (lambda () (end-of-buffer-other-window 0)))))
+
+
 ;;; srep.el
 ;; excelのオートフィルのような繰り返し
 ;; https://github.com/kmorimoto/srep

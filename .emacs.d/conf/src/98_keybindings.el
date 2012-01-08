@@ -6,6 +6,8 @@
 
 ;;; global-set-key
 (define-key global-map [?¥] [?\\])                     ; ¥はバックスラッシュに変更
+(defvar ctl-q-map (make-keymap))
+(define-key global-map "\C-q" ctl-q-map)               ; C-qを利用できるように置き換え
 (global-set-key (kbd "C-x C-b") 'bs-show)              ; バッファ一覧をまともに
 (global-set-key (kbd "C-h") 'delete-backward-char)     ; C-hは後退(1文字)
 (global-set-key (kbd "M-h") 'backward-kill-word)       ; M-hは後退(単語)
