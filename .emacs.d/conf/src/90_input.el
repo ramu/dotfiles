@@ -62,8 +62,6 @@
 ;;; dmacro.el ---
 ;; キー操作の繰返し検出 & 実行
 ;; http://www.pitecan.com/DynamicMacro/
-(defconst *dmacro-key* "\C-t" "繰返し指定キー")
-(global-set-key *dmacro-key* 'dmacro-exec)
 (autoload 'dmacro-exec "dmacro" t nil)
 
 
