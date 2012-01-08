@@ -16,3 +16,8 @@
 (require 'install-elisp)
 (setq install-elisp-repository-directory "~/.emacs.d/elisp/src/")
 
+;;; emacs-bundle.el
+;; emacs bundle
+;; http://kozo2.hatenablog.com/entry/2011/12/31/184442
+(load "~/.emacs.d/elisp/bundle.elc")
+(setq bundle-install-directory (expand-file-name "~/.emacs.d/elisp/src/bundle/"))
