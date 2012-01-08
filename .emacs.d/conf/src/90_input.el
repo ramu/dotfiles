@@ -1,6 +1,12 @@
 ;;;; 90_input.el ---
 
 
+;;; srep.el
+;; excelのオートフィルのような繰り返し
+;; https://github.com/kmorimoto/srep
+(require 'srep)
+
+
 ;;; sequential-config.el
 ;; 同じコマンドを連続実行することで挙動を変える（行頭→先頭など）
 ;; http://d.hatena.ne.jp/rubikitch/20090219/sequential_command
