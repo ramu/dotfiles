@@ -4,6 +4,7 @@
 (require 'auto-complete-yasnippet)
 (require 'auto-complete-config)
 ;(require 'auto-complete-clang)
+(require 'pcomplete)
 
 ;; default
 (ac-config-default)
@@ -46,9 +47,14 @@
 (setq ac-comphist-file "~/.emacs.d/var/ac-comphist.dat")
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/share/ac-dict")
 
+(add-to-list 'ac-modes 'eshell-mode)
+(ac-define-source pcomplete
+  '((candidates . pcomplete-completions)))
+
 ;; source
 (setq-default ac-sources '(ac-source-filename ac-source-words-in-same-mode-buffers ac-source-abbrev))
 (add-hook 'emacs-lisp-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-symbols t)))
+(add-hook 'eshell-mode-hook     (lambda () (add-to-list 'ac-sources '(ac-source-pcomplete ac-source-dictionary ac-source-symbols))))
 (add-hook 'python-mode-hook     (lambda () (add-to-list 'ac-sources 'ac-source-yasnippet)))
 ;(add-hook 'c-mode-common-hook   (lambda () (add-to-list 'ac-sources '(ac-source-clang ac-source-gtags ac-source-yasnippet))))
 (add-hook 'c-mode-common-hook   (lambda () (add-to-list 'ac-sources '(ac-source-gtags ac-source-yasnippet))))
