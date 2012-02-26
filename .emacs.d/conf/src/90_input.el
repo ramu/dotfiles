@@ -1,5 +1,10 @@
 ;;;; 90_input.el ---
 
+;;; sequential-config.el
+;; 同じコマンドを連続実行することで挙動を変える（行頭→先頭など）
+;; http://d.hatena.ne.jp/rubikitch/20090219/sequential_command
+(require 'sequential-command-config)
+(sequential-command-setup-keys)
 
 ;;; smartrep.el
 ;; 連続操作の省力化
@@ -23,19 +28,10 @@
                     ("A" . (lambda () (beginning-of-buffer-other-window 0)))
                     ("B" . (lambda () (end-of-buffer-other-window 0)))))
 
-
 ;;; srep.el
 ;; excelのオートフィルのような繰り返し
 ;; https://github.com/kmorimoto/srep
 (require 'srep)
-
-
-;;; sequential-config.el
-;; 同じコマンドを連続実行することで挙動を変える（行頭→先頭など）
-;; http://d.hatena.ne.jp/rubikitch/20090219/sequential_command
-(require 'sequential-command-config)
-(sequential-command-setup-keys)
-
 
 ;;; key-combo.el ---
 ;; 特定の文字を連続して入力すると別の文字列に変換
