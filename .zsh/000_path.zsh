@@ -10,6 +10,7 @@ PATH=$PATH:/usr/sbin
 PATH=$PATH:/Users/ramusara/scala/bin
 PATH=$PATH:/Users/ramusara/Android/android-ndk-r5b
 PATH=$PATH:/Library/Java/ant/bin
+PATH=/Users/ramusara/.rbenv/bin:$PATH
 
-[[ -s "/Users/ramusara/.rvm/scripts/rvm" ]] && source "/Users/ramusara/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
+eval "$(rbenv init -)"
+source /usr/local/Cellar/rbenv/0.3.0/completions/rbenv.zsh
