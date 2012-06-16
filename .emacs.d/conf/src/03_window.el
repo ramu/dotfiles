@@ -85,6 +85,7 @@
 (push '(" *undo-tree*"           :width 55 :position right)             popwin:special-display-config)
 (push '("*Kill Ring*"            :width 55 :position right)             popwin:special-display-config)
 (push '("*Shell Command Output*" :width 55 :position right :noselect t) popwin:special-display-config)
+(push '("*quickrun*"             :width 55 :position right :noselect t) popwin:special-display-config)
 (push '("*Backtrace*"            :width 55                 :noselect t) popwin:special-display-config)
 (push '("*imenu-tree*"           :width 55 :position right)             popwin:special-display-config)
 (push '("*slime-apropos*"        :width 55 :position right)             popwin:special-display-config)
