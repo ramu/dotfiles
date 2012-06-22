@@ -24,6 +24,7 @@
 (global-set-key (kbd "C-c t") 'multi-term)             ; Terminal
 ;(global-set-key (kbd "C-t") 'other-window-or-split)   ; 01_frame.el
 (global-set-key (kbd "C-c l") 'se/make-summary-buffer) ; summarye
+(global-set-key (kbd "C-c k") '(lambda () (interactive) (kill-buffer (current-buffer))))
 (global-set-key (kbd "C-c C-k") '(lambda () (interactive) (kill-line 0)))
 (global-set-key (kbd "C-M-i") 'indent-region)
 (global-set-key (kbd "C-M-g") 'anything-grep)
