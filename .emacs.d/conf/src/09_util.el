@@ -70,8 +70,8 @@
 (setq auto-save-list-file-name nil)
 (setq auto-save-list-file-prefix nil)
 
-;; 警告音を消す
-(setq visible-bell t)
+;; 警告音を消す(beep/flash off)
+(setq ring-bell-function 'ignore)
 
 ;; カーソルが行頭にある場合も行全体削除
 (setq kill-whole-line t)
