@@ -2,7 +2,7 @@
 
 ;;; Option(ALT)はCommandと入れ替え
 (setq ns-command-modifier (quote meta))
-(setq ns-alternate-modifier (quote super))
+(setq ns-alternate-modifier (quote Super))
 
 ;;; global-set-key
 (define-key global-map [?¥] [?\\])                     ; ¥はバックスラッシュに変更
