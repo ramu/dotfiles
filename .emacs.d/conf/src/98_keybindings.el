@@ -56,4 +56,4 @@
           (define-key my-map (car x) (cdr x))
           (global-set-key (car x) (cdr x)))
         '(("\C-c\C-c" . quickrun)))
-(easy-mmode-define-minor-mode my-mode "Grab keys" t "" my-map)
+(easy-mmode-define-minor-mode my-mode "Grab keys" t " my-map" my-map)
