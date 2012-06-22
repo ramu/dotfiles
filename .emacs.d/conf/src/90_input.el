@@ -118,7 +118,7 @@
 
 
 ;;; one-key.el
-(require 'one-key)
+(require 'one-key-default)
 (require 'one-key-config)
 (define-key global-map "\C-xr" 'one-key-menu-Register-and-Rectangle)
 ;; one-key menu for Register and Rectangle
@@ -159,5 +159,4 @@
 ;; Uncomment and edit following line to add this menu to toplevel menu.
 ;;(add-to-list 'one-key-toplevel-alist '(("type key here" . "Register and Rectangle") . one-key-menu-Register-and-Rectangle))
 (require 'one-key-default)
-;(one-key-default-setup-keys)
-
+(one-key-default-setup-keys)
