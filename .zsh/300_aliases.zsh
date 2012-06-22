@@ -13,6 +13,7 @@ fi
 alias ga='git add'
 alias gau='git add -u'
 alias gaa='git add -A'
+alias gap='git add -p'
 alias gbr='git branch -v'
 alias gbrd='git branch -d'
 alias gbl='git blame'
