@@ -81,6 +81,7 @@
 (push '("*anything complete*"    :width 55 :position right)             popwin:special-display-config)
 (push '("*anything kill-ring*"   :width 55 :position right)             popwin:special-display-config)
 (push '("*anything grep"         :width 55 :position right :regexp t)   popwin:special-display-config)
+(push '("*Anything Find File*"   :width 55 :position right :regexp t)   popwin:special-display-config)
 (push '("*my-anything*"          :width 55 :position right)             popwin:special-display-config)
 (push '(" *undo-tree*"           :width 55 :position right)             popwin:special-display-config)
 (push '("*Kill Ring*"            :width 55 :position right)             popwin:special-display-config)

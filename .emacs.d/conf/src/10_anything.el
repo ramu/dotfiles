@@ -31,7 +31,8 @@
 (setq anything-quick-update t)
 (setq anything-c-filelist-file-name "/Users/ramusara/.emacs.d/share/plugins/ruby/all.filelist")
 (setq descbinds-anything-window-style 'split-window)
-(setq anything-enable-shortcuts 'alphabet)
+(setq anything-enable-shortcuts 'prefix)
+(define-key anything-map "@" 'anything-select-with-prefix-shortcut)
 (anything-lisp-complete-symbol-set-timer 150)
 (setq anything-samewindow nil)
 
@@ -143,3 +144,7 @@
 (define-key ac-complete-mode-map (kbd "C-M-]") 'ac-complete-with-anything)
 
 ;; persistent-actionを自動的に実行し、任意の箇所をハイライト
+
+;; describe-anything
+(require 'descbinds-anything)
+(descbinds-anything-install)
