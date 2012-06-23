@@ -4,10 +4,14 @@
 (setq ns-command-modifier (quote meta))
 (setq ns-alternate-modifier (quote Super))
 
+;;; prefix-keyとして利用できるように置き換え
+(defvar ctl-q-map (make-keymap))
+(defvar alt-g-map (make-keymap))
+(define-key global-map "\C-q" ctl-q-map)
+(define-key global-map "\M-g" alt-g-map)
+
 ;;; global-set-key
 (define-key global-map [?¥] [?\\])                     ; ¥はバックスラッシュに変更
-(defvar ctl-q-map (make-keymap))
-(define-key global-map "\C-q" ctl-q-map)               ; C-qを利用できるように置き換え
 (global-set-key (kbd "C-x C-b") 'bs-show)              ; バッファ一覧をまともに
 (global-set-key (kbd "C-h") 'delete-backward-char)     ; C-hは後退(1文字)
 (global-set-key (kbd "M-h") 'backward-kill-word)       ; M-hは後退(単語)
@@ -49,6 +53,27 @@
 ;(key-chord-define-global "qw"  "the ")
 ;(key-chord-define c++-mode-map ";;"  "ﾂ･C-e;")
 
+;;; smartrep.el
+;; 連続操作の省力化
+;; http://sheephead.homelinux.org/2011/12/19/6930/
+(require 'smartrep)
+(smartrep-define-key
+ global-map "C-q" '(; current window
+                    ("h" . 'backward-char)
+                    ("j" . (lambda () (scroll-up 1)))
+                    ("k" . (lambda () (scroll-down 1)))
+                    ("l" . 'forward-char)
+                    ("a" . 'beginning-of-buffer)
+                    ("e" . 'end-of-buffer)
+                    ("b" . 'scroll-down)
+                    ("SPC" . 'scroll-up)
+                    ; other window
+                    ("n" . (lambda () (scroll-other-window 1)))
+                    ("p" . (lambda () (scroll-other-window -1)))
+                    ("N" . 'scroll-other-window)
+                    ("P" . (lambda () (scroll-other-window '-)))
+                    ("A" . (lambda () (beginning-of-buffer-other-window 0)))
+                    ("B" . (lambda () (end-of-buffer-other-window 0)))))
 
 ;;; my-map
 (defvar my-map "")
