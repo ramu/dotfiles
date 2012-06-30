@@ -15,7 +15,7 @@
       anything-c-source-imenu
       anything-c-source-recentf
       anything-c-source-man-pages
-      anything-c-source-info-pages
+;      anything-c-source-info-pages
       anything-c-source-emacs-commands
       anything-c-source-emacs-functions
       anything-c-source-files-in-current-dir)
