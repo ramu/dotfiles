@@ -82,3 +82,7 @@ function gem() {
   fi
 }
 
+#-----------------------------------------------------------
+# mkdir && git init
+function mkdir_git_init() { mkdir $1 && cd $1 && git init }
+
