@@ -1,2 +1,4 @@
 ;;; 50_scala.el
-(require 'scala-mode-auto)
+(require '00_common)
+
+(my-require-and-when 'scala-mode-auto)

@@ -1,3 +1,5 @@
 ;;; 50_go.el ---
-(require 'go-mode-load)
+(require '00_common)
+
+(my-require-and-when 'go-mode-load)
 

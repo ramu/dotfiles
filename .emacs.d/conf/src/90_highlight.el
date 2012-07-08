@@ -1,26 +1,23 @@
 ;;;; 90_highlight.el ---
-(eval-when-compile (require 'cl))
-
+(require '00_common)
 
 ;;; highlight-indentation.el
 ;; function made to show vertical guide lines of indentation levels (spaces only).
 ;; http://www.emacswiki.org/emacs/HighlightIndentation
-(require 'highlight-indentation)
-(setq highlight-indent-active t)
-
+(my-require-and-when 'highlight-indentation
+  (setq highlight-indent-active t))
 
 ;;; 現在カーソルのある行をハイライト表示する
-(require 'hl-line)
-(defface my-hlline-face
-  '((((class color) (background dark))
-    (:background "#333" t))
-   (((class color) (background light))
-    (:background "ForestGreen"))
-    (t (:bold t)))
-  "*Face used by hi-ilne." :group 'hoge)
-(setq hl-line-face 'my-hlline-face)
-(global-hl-line-mode t)
-
+(my-require-and-when 'hl-line
+  (defface my-hlline-face
+    '((((class color) (background dark))
+      (:background "#333" t))
+     (((class color) (background light))
+      (:background "ForestGreen"))
+      (t (:bold t)))
+    "*Face used by hi-ilne." :group 'hoge)
+  (setq hl-line-face 'my-hlline-face)
+  (global-hl-line-mode t))
 
 ;;; 全角スペース、タブに色付け
 (defface my-face-b-1 '((t (:background "NavajoWhite4"))) nil :group 'my-faces)
@@ -45,19 +42,18 @@
 
 
 ;;; blank-mode.el
-(require 'blank-mode)
-(setq blank-space-regexp "\\(　+\\)")
-(set-face-background 'blank-space "#000000")
-(set-face-background 'blank-newline "#000000")
-(defface blank-space
-  '((((class color)(background dark))
-     (:background "grey20"      :foreground "aquamarine3"))
-    (((class color)(background light))
-     (:background "LightYellow" :foreground "aquamarine3"))
-    (t (:inverse-video t)))
-  "Face used to visualize SPACE."
-  :group 'blank)
-
+(my-require-and-when 'blank-mode
+  (setq blank-space-regexp "\\(　+\\)")
+  (set-face-background 'blank-space "#000000")
+  (set-face-background 'blank-newline "#000000")
+  (defface blank-space
+    '((((class color)(background dark))
+       (:background "grey20"      :foreground "aquamarine3"))
+      (((class color)(background light))
+       (:background "LightYellow" :foreground "aquamarine3"))
+      (t (:inverse-video t)))
+    "Face used to visualize SPACE."
+    :group 'blank))
 
 ;;; blink cursor
 ;; カーソルを虹色表示
@@ -80,24 +76,23 @@
             (setq timer nil)))))
 (cute-cursor t)
 
-
 ;;; rainbow-delimiters.el
-(require 'rainbow-delimiters)
-(add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'shell-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
-;; colors
-(set-face-foreground 'rainbow-delimiters-depth-1-face  "#4455AA")  ; Grey
-(set-face-foreground 'rainbow-delimiters-depth-2-face  "#33AA33")  ; Green
-(set-face-foreground 'rainbow-delimiters-depth-3-face  "#3333AA")  ; Blue
-(set-face-foreground 'rainbow-delimiters-depth-4-face  "#AA3333")  ; Red
-(set-face-foreground 'rainbow-delimiters-depth-5-face  "#AAAA33")  ; Yellow
-(set-face-foreground 'rainbow-delimiters-depth-6-face  "#AA33AA")  ; Purple
-(set-face-foreground 'rainbow-delimiters-depth-7-face  "#33AAAA")  ; light-blue
-(set-face-foreground 'rainbow-delimiters-depth-8-face  "#777777")  ; Grey...
-(set-face-foreground 'rainbow-delimiters-depth-9-face  "#666666")  ; Grey....
-(set-face-foreground 'rainbow-delimiters-depth-10-face "#555555")  ; Grey...
-(set-face-foreground 'rainbow-delimiters-depth-11-face "#444444")  ; Grey...
-(set-face-foreground 'rainbow-delimiters-depth-12-face "#333333")  ; Grey...
-; test -> (((((((((((())))))))))))
-
+(my-require-and-when 'rainbow-delimiters
+  (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
+  (add-hook 'shell-mode-hook 'rainbow-delimiters-mode)
+  (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+  ;; colors
+  (set-face-foreground 'rainbow-delimiters-depth-1-face  "#4455AA")  ; Grey
+  (set-face-foreground 'rainbow-delimiters-depth-2-face  "#33AA33")  ; Green
+  (set-face-foreground 'rainbow-delimiters-depth-3-face  "#3333AA")  ; Blue
+  (set-face-foreground 'rainbow-delimiters-depth-4-face  "#AA3333")  ; Red
+  (set-face-foreground 'rainbow-delimiters-depth-5-face  "#AAAA33")  ; Yellow
+  (set-face-foreground 'rainbow-delimiters-depth-6-face  "#AA33AA")  ; Purple
+  (set-face-foreground 'rainbow-delimiters-depth-7-face  "#33AAAA")  ; light-blue
+  (set-face-foreground 'rainbow-delimiters-depth-8-face  "#777777")  ; Grey...
+  (set-face-foreground 'rainbow-delimiters-depth-9-face  "#666666")  ; Grey....
+  (set-face-foreground 'rainbow-delimiters-depth-10-face "#555555")  ; Grey...
+  (set-face-foreground 'rainbow-delimiters-depth-11-face "#444444")  ; Grey...
+  (set-face-foreground 'rainbow-delimiters-depth-12-face "#333333")  ; Grey...
+  ; test -> (((((((((((())))))))))))
+  )

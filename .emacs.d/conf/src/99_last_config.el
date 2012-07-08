@@ -1,5 +1,6 @@
 ;;; 99_last_config.el ---
 ; 最後に設定したい項目用
+(require '00_common)
 
 ;; 言語／文字コードに関する設定
 (set-language-environment "Japanese")
@@ -13,6 +14,6 @@
 
 (put 'upcase-region 'disabled nil)
 
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+(my-require-and-when 'server
+  (unless (server-running-p)
+    (server-start)))

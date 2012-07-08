@@ -1,4 +1,5 @@
 ;;;; 09_util.el
+(require '00_common)
 
 ;; ps-print-buffer
 (setq ps-multibyte-buffer 'non-latin-printer)
@@ -130,9 +131,9 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; ファイル名がかぶった場合にディレクトリ名を表示
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
-(setq uniquify-ignore-buffers-re "*[^*]+*")
+(my-require-and-when 'uniquify
+  (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+  (setq uniquify-ignore-buffers-re "*[^*]+*"))
 
 ;; バッファきりかえ強化
 ;(iswitchb-mode t)
@@ -141,27 +142,27 @@
 ;(setq iswitchb-prompt-newbuffer nil)
 
 ;; 矩形を選択しやすくする
-(require 'cua-mode nil t)
-(cua-mode t)
-;; これをいれないとC-c C-v辺りを乗っ取られる
-(setq cua-enable-cua-keys nil)
+(my-require-and-when 'cua-mode
+  (cua-mode t)
+  ;; これをいれないとC-c C-v辺りを乗っ取られる
+  (setq cua-enable-cua-keys nil))
 
 ;;; view-mode関連(Emacs technic bible参考)
 ;; read-only fileはview-modeで開く
 (setq view-read-only t)
 ;; 書き込み不能ファイルの場合はview-modeを抜けない
-;(require 'viewer)
-;(viewer-stay-in-setup)
-;; kj同時押しでview-modeきりかえ
-;(require 'key-chord)
-;(setq key-chord-two-keys-delay 0.04)
-;(key-chord-define-global "kj" 'view-mode)
-;; view-modeの場合はmode-lineに色をつける
-;(setq viewer-modeline-color-unwritable "tomato")
-;(setq viewer-modeline-color-view "orange")
-;(viewer-change-modeline-color-setup)
-;; 特定のファイルは必ずview-modeで開く
-;(setq view-mode-by-default-regexp "¥¥.log$")
+;(my-require-and-when 'viewer
+;  (viewer-stay-in-setup)
+;  ; kj同時押しでview-modeきりかえ
+;  (my-require-and-when 'key-chord
+;    (setq key-chord-two-keys-delay 0.04)
+;    (key-chord-define-global "kj" 'view-mode))
+;  ; view-modeの場合はmode-lineに色をつける
+;  (setq viewer-modeline-color-unwritable "tomato")
+;  (setq viewer-modeline-color-view "orange")
+;  (viewer-change-modeline-color-setup)
+;  ; 特定のファイルは必ずview-modeで開く
+;  (setq view-mode-by-default-regexp "¥¥.log$"))
 
 ;; 終了時にプロセス確認しない
 (defadvice save-buffers-kill-terminal (before my-save-buffers-kill-terminal activate)
@@ -170,32 +171,32 @@
       (set-process-query-on-exit-flag p nil))))
 
 ;;; wordcount.el
-(require 'word-count)
+(my-require-and-when 'word-count)
 
 ;;; zlc.el
 ;; zsh ライクな補完
 ;; http://d.hatena.ne.jp/mooz/20101003/p1
-(require 'zlc)
-(setq zlc-select-completion-immediately t)
+(my-require-and-when 'zlc
+  (setq zlc-select-completion-immediately t))
 
 ;;; color-theme.el
 ;; face customize
 ;; http://www.emacswiki.org/emacs/ColorTheme
-;(require 'color-theme)
-;(color-theme-initialize)
-;(color-theme-hober)
+;(my-require-and-when 'color-theme
+;  (color-theme-initialize)
+;  (color-theme-hober))
 
 ;;; e-palette.el
 ;; カラーパレット
 ;; http://fujim.tumblr.com/post/361299617/emacs-e-palette-el
-(require 'e-palette)
-(define-key global-map [f2] 'e-palette)
+(my-require-and-when 'e-palette
+  (define-key global-map [f2] 'e-palette))
 
 ;;; fold-dwim.el
 ;; 現在カーソルがある行のノードをワンキーで表示，非表示
 ;; http://www.emacswiki.org/emacs/FoldDwim
-(require 'hideshow)
-(require 'fold-dwim)
+(my-require-and-when 'hideshow)
+(my-require-and-when 'fold-dwim)
 
 ;;; keisen.el
 ;; カーソル移動やマウスで表や線を書く
@@ -211,107 +212,106 @@
 
 ;;; ediff.el
 ;; Emacs diff
-(require 'ediff)
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
-(setq-default ediff-auto-refine-limit 10000)
-;;ediff関連のバッファを一つのフレームにまとめる
-;(setq ediff-window-setup-function 'ediff-setup-windows-plain)
-;; 縦分割
-(setq ediff-split-window-function 'split-window-horizontally)
-(add-hook 'ediff-mode-hook
-          (lambda ()
-            ;; diff-A(left)
-            ;; 選択
-            (set-face-foreground ediff-current-diff-face-A "black")
-            (set-face-background ediff-current-diff-face-A "#FF6600")
-            (set-face-foreground ediff-current-diff-face-B "black")
-            (set-face-background ediff-current-diff-face-B "#FF6600")
-            (set-face-foreground ediff-current-diff-face-C "black")
-            (set-face-background ediff-current-diff-face-C "#FF6600")
-            (make-face-bold-italic ediff-current-diff-face-A)
-            (make-face-bold-italic ediff-current-diff-face-B)
-            (make-face-bold-italic ediff-current-diff-face-C)
-            ;; 差分(選択時)
-            (set-face-foreground ediff-fine-diff-face-A "black")
-            (set-face-background ediff-fine-diff-face-A "#99FF00")
-            (set-face-foreground ediff-fine-diff-face-B "black")
-            (set-face-background ediff-fine-diff-face-B "#99FF00")
-            (set-face-foreground ediff-fine-diff-face-C "black")
-            (set-face-background ediff-fine-diff-face-C "#99FF00")
-            ;; 追加
-            (set-face-foreground ediff-even-diff-face-A "black")
-            (set-face-background ediff-even-diff-face-A "#FF9900")
-            (set-face-foreground ediff-even-diff-face-B "black")
-            (set-face-background ediff-even-diff-face-B "#FF9900")
-            (set-face-foreground ediff-even-diff-face-C "black")
-            (set-face-background ediff-even-diff-face-C "#FF9900")
-            ;; 未選択
-            (set-face-foreground ediff-odd-diff-face-A "black")
-            (set-face-background ediff-odd-diff-face-A "#FF9900")
-            (set-face-foreground ediff-odd-diff-face-B "black")
-            (set-face-background ediff-odd-diff-face-B "#FF9900")
-            (set-face-foreground ediff-odd-diff-face-C "black")
-            (set-face-background ediff-odd-diff-face-C "#FF9900")))
+(my-require-and-when 'ediff
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+  (setq-default ediff-auto-refine-limit 10000)
+  ;;ediff関連のバッファを一つのフレームにまとめる
+  ;(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+  ;; 縦分割
+  (setq ediff-split-window-function 'split-window-horizontally)
+  (add-hook 'ediff-mode-hook
+            (lambda ()
+              ;; diff-A(left)
+              ;; 選択
+              (set-face-foreground ediff-current-diff-face-A "black")
+              (set-face-background ediff-current-diff-face-A "#FF6600")
+              (set-face-foreground ediff-current-diff-face-B "black")
+              (set-face-background ediff-current-diff-face-B "#FF6600")
+              (set-face-foreground ediff-current-diff-face-C "black")
+              (set-face-background ediff-current-diff-face-C "#FF6600")
+              (make-face-bold-italic ediff-current-diff-face-A)
+              (make-face-bold-italic ediff-current-diff-face-B)
+              (make-face-bold-italic ediff-current-diff-face-C)
+              ;; 差分(選択時)
+              (set-face-foreground ediff-fine-diff-face-A "black")
+              (set-face-background ediff-fine-diff-face-A "#99FF00")
+              (set-face-foreground ediff-fine-diff-face-B "black")
+              (set-face-background ediff-fine-diff-face-B "#99FF00")
+              (set-face-foreground ediff-fine-diff-face-C "black")
+              (set-face-background ediff-fine-diff-face-C "#99FF00")
+              ;; 追加
+              (set-face-foreground ediff-even-diff-face-A "black")
+              (set-face-background ediff-even-diff-face-A "#FF9900")
+              (set-face-foreground ediff-even-diff-face-B "black")
+              (set-face-background ediff-even-diff-face-B "#FF9900")
+              (set-face-foreground ediff-even-diff-face-C "black")
+              (set-face-background ediff-even-diff-face-C "#FF9900")
+              ;; 未選択
+              (set-face-foreground ediff-odd-diff-face-A "black")
+              (set-face-background ediff-odd-diff-face-A "#FF9900")
+              (set-face-foreground ediff-odd-diff-face-B "black")
+              (set-face-background ediff-odd-diff-face-B "#FF9900")
+              (set-face-foreground ediff-odd-diff-face-C "black")
+              (set-face-background ediff-odd-diff-face-C "#FF9900"))))
 
 ;;; bm.el
 ;; バッファにしおりをつけておき，その場所を巡回することができる．
-(setq-default bm-buffer-persistence nil)
-(setq bm-restore-repository-on-load t)
-(require 'bm)
-(add-hook 'after-init-hook 'bm-repository-load)
-(add-hook 'find-file-hooks 'bm-buffer-restore)
-(add-hook 'kill-buffer-hook 'bm-buffer-save)
-(add-hook 'after-save-hook 'bm-buffer-save)
-(add-hook 'after-revert-hook 'bm-buffer-restore)
-(add-hook 'kill-emacs-hook '(lambda nil
-                              (bm-buffer-save-all)
-                              (bm-repository-save)))
-(add-hook 'vc-before-checkin-hook 'bm-buffer-restore)
-(setq bookmark-default-file "~/.emacs.d/private/.emacs.bmk")
-(global-set-key (kbd "M-@") 'bm-toggle)
-(global-set-key (kbd "M-[") 'bm-previous)
-(global-set-key (kbd "M-]") 'bm-next)
+(my-require-and-when 'bm
+  (setq-default bm-buffer-persistence nil)
+  (setq bm-restore-repository-on-load t)
+  (add-hook 'after-init-hook 'bm-repository-load)
+  (add-hook 'find-file-hooks 'bm-buffer-restore)
+  (add-hook 'kill-buffer-hook 'bm-buffer-save)
+  (add-hook 'after-save-hook 'bm-buffer-save)
+  (add-hook 'after-revert-hook 'bm-buffer-restore)
+  (add-hook 'kill-emacs-hook '(lambda nil
+                                (bm-buffer-save-all)
+                                (bm-repository-save)))
+  (add-hook 'vc-before-checkin-hook 'bm-buffer-restore)
+  (setq bookmark-default-file "~/.emacs.d/private/.emacs.bmk")
+  (global-set-key (kbd "M-@") 'bm-toggle)
+  (global-set-key (kbd "M-[") 'bm-previous)
+  (global-set-key (kbd "M-]") 'bm-next))
 
 ;;; tramp.el
 ;; リモートファイルの編集
 ;; http://www.xemacs.org/Documentation/packages/html/tramp_ja.html#SEC_Top
-(require 'tramp)
-(setq tramp-default-method "ssh")
-(add-to-list 'tramp-default-proxies-alist '("\\'" "\\`root\\'" "/ssh:%h:"))
-(add-to-list 'tramp-default-proxies-alist '("localhost\\'" "\\`root\\'" nil))
+(my-require-and-when 'tramp
+  (setq tramp-default-method "ssh")
+  (add-to-list 'tramp-default-proxies-alist '("\\'" "\\`root\\'" "/ssh:%h:"))
+  (add-to-list 'tramp-default-proxies-alist '("localhost\\'" "\\`root\\'" nil)))
 
 ;;; minor-mode-hack.el
 ;; マイナーモード衝突問題を解決する
 ;; http://www.emacswiki.org/emacs/minor-mode-hack.el
-(require 'minor-mode-hack)
+(my-require-and-when 'minor-mode-hack)
 
 ;;; archive-region.el
 ;; Move region to archive file instead of killing
 ;; http://www.emacswiki.org/emacs/archive-region.el
-(require 'archive-region)
+(my-require-and-when 'archive-region)
 
 ;;; open-junk-file.el
 ;; 使い捨てコード用ファイルを開く
 ;; http://www.emacswiki.org/emacs/open-junk-file.el
-(require 'open-junk-file)
-(setq open-junk-file-format "~/junk/%Y-%m-%d-%H%M%S.") ; ファイル名デフォルト
+(my-require-and-when 'open-junk-file
+  (setq open-junk-file-format "~/junk/%Y-%m-%d-%H%M%S."))
+
 
 ;;; migemo.el
 ; ローマ字のまま日本語をインクリメンタルサーチ
-;(require 'migemo)
-;(setq migemo-command "/Users/ramusara/.rvm/rubies/ruby-1.8.7-p334/bin/ruby"
-;(setq migemo-command "migemo"
-;(setq migemo-command "/usr/local/bin/migemo"
-;      migemo-options '("-t" "emacs"))
-;(setq migemo-directory "/usr/local/share/migemo")
-;(setq migemo-use-pattern-alist t)
-;(setq migemo-use-frequent-pattern-alist t)
-;(migemo-init)
+;(my-require-and-when 'migemo
+;  (setq migemo-command "/Users/ramusara/.rvm/rubies/ruby-1.8.7-p334/bin/ruby"
+;  (setq migemo-command "migemo"
+;  (setq migemo-command "/usr/local/bin/migemo"
+;        migemo-options '("-t" "emacs"))
+;  (setq migemo-directory "/usr/local/share/migemo")
+;  (setq migemo-use-pattern-alist t)
+;  (setq migemo-use-frequent-pattern-alist t)
+;  (migemo-init))
 
 ;; 色々なファイルの色付け
-(require 'generic-x)
-
-
+(my-require-and-when 'generic-x)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -435,7 +435,7 @@
 (add-hook 'after-revert-hook
           (lambda ()
             (when auto-revert-tail-mode
-              (end-of-buffer))))
+              (goto-char (point-max)))))
 
 ;; topcoder
 (defun topcoder-setup ()
@@ -485,3 +485,4 @@
           (function (lambda ()
                       (unless (member "*scratch*" (my-buffer-name-list))
                         (my-make-scratch 1)))))
+

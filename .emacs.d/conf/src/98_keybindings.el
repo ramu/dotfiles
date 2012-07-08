@@ -1,4 +1,5 @@
 ;;;; 98_keybindings.el
+(require '00_common)
 
 ;;; Option(ALT)はCommandと入れ替え
 (setq ns-command-modifier (quote meta))
@@ -46,38 +47,39 @@
 
 
 ;;; key-chord.el
-(require 'key-chord)
-(setq key-chord-mode t)
-(setq key-chord-two-keys-delay 0.01)
-(setq key-chord-one-key-delay 0.01)
-(key-chord-define-global "gl"  'goto-line)
-(key-chord-define-global "re"  'replace-string)
-;(key-chord-define-global ",."  "<>ﾂ･C-b")
-;(key-chord-define-global "qq"  "the ")
-;(key-chord-define-global "qw"  "the ")
-;(key-chord-define c++-mode-map ";;"  "ﾂ･C-e;")
+(my-require-and-when 'key-chord
+  (setq key-chord-mode t)
+  (setq key-chord-two-keys-delay 0.01)
+  (setq key-chord-one-key-delay 0.01)
+  (key-chord-define-global "gl"  'goto-line)
+  (key-chord-define-global "re"  'replace-string)
+  ;(key-chord-define-global ",."  "<>ﾂ･C-b")
+  ;(key-chord-define-global "qq"  "the ")
+  ;(key-chord-define-global "qw"  "the ")
+  ;(key-chord-define c++-mode-map ";;"  "ﾂ･C-e;")
+  )
 
 ;;; smartrep.el
 ;; 連続操作の省力化
 ;; http://sheephead.homelinux.org/2011/12/19/6930/
-(require 'smartrep)
-(smartrep-define-key
- global-map "C-q" '(; current window
-                    ("h" . 'backward-char)
-                    ("j" . (lambda () (scroll-up 1)))
-                    ("k" . (lambda () (scroll-down 1)))
-                    ("l" . 'forward-char)
-                    ("a" . 'beginning-of-buffer)
-                    ("e" . 'end-of-buffer)
-                    ("b" . 'scroll-down)
-                    ("SPC" . 'scroll-up)
-                    ; other window
-                    ("n" . (lambda () (scroll-other-window 1)))
-                    ("p" . (lambda () (scroll-other-window -1)))
-                    ("N" . 'scroll-other-window)
-                    ("P" . (lambda () (scroll-other-window '-)))
-                    ("A" . (lambda () (beginning-of-buffer-other-window 0)))
-                    ("B" . (lambda () (end-of-buffer-other-window 0)))))
+(my-require-and-when 'smartrep
+  (smartrep-define-key
+   global-map "C-q" '(; current window
+                      ("h" . 'backward-char)
+                      ("j" . (lambda () (scroll-up 1)))
+                      ("k" . (lambda () (scroll-down 1)))
+                      ("l" . 'forward-char)
+                      ("a" . 'beginning-of-buffer)
+                      ("e" . 'end-of-buffer)
+                      ("b" . 'scroll-down)
+                      ("SPC" . 'scroll-up)
+                      ; other window
+                      ("n" . (lambda () (scroll-other-window 1)))
+                      ("p" . (lambda () (scroll-other-window -1)))
+                      ("N" . 'scroll-other-window)
+                      ("P" . (lambda () (scroll-other-window '-)))
+                      ("A" . (lambda () (beginning-of-buffer-other-window 0)))
+                      ("B" . (lambda () (end-of-buffer-other-window 0))))))
 
 ;;; my-map
 (defvar my-map "")

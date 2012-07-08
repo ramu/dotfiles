@@ -1,8 +1,9 @@
 ;;; 10_newsticker.el ---
-(setq newsticker-url-list
-      '(("Linux World" "http://www.linuxworld.com/rss/linux-news.xml")
-        ("Linux.com" "http://www.linux.com/feature?theme=rss")))
+(require '00_common)
 
-(autoload 'w3m-region "w3m" "Render region in current buffer and replace wit result." t)
-(setq newsticker-html-renderer 'w3m-region)
-(setq browse-url-browser-function 'w3m-browse-url)
+(my-autoload-and-when 'w3m-region "w3m-region"
+  (setq newsticker-url-list
+        '(("Linux World" "http://www.linuxworld.com/rss/linux-news.xml")
+          ("Linux.com" "http://www.linux.com/feature?theme=rss")))
+  (setq newsticker-html-renderer 'w3m-region)
+  (setq browse-url-browser-function 'w3m-browse-url))

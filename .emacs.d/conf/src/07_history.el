@@ -1,4 +1,6 @@
 ;;;; 07_history.el
+(require '00_common)
+
 (setq make-backup-files t)     ; バックアップ作成
 (setq version-control t)       ; 世代バックアップ
 (setq delete-old-versions t)   ; 古いもの消すのに確認しない
@@ -19,20 +21,20 @@
 
 ;;; kill-summary.el
 ;; キルリングの一覧を表示し選択ヤンクできるようにする
-(autoload 'kill-summary "kill-summary" nil t)
-(define-key global-map (kbd "C-x C-y") 'kill-summary)
+(my-autoload-and-when 'kill-summary "kill-summary"
+                      (define-key global-map (kbd "C-x C-y") 'kill-summary))
 
 ;;; undo-tree.el
 ;; undo の履歴を木構造で表示、操作
-(require 'undo-tree)
-(global-undo-tree-mode)
-(setq undo-tree-visualizer-timestamps t)
+(my-require-and-when 'undo-tree
+  (global-undo-tree-mode)
+  (setq undo-tree-visualizer-timestamps t))
 
 ;;; windows.el
 ;; ウィンドウの分割形態の切り替え
-(require 'windows)
-(win:startup-with-window)
-(define-key ctl-x-map "C" 'see-you-again)
+(my-require-and-when 'windows
+  (win:startup-with-window)
+  (define-key ctl-x-map "C" 'see-you-again))
 
 ;;; revive.el
 ;; 開いてるバッファ状態を保存／復元
@@ -52,12 +54,13 @@
 
 ;;; session.el
 ;; mini buffer や kill-ring 等の履歴を次回起動時に利用できる
-(require 'session)
-(setq session-initialize '(de-saveplace session keys menus places)
-      session-globals-include '((kill-ring 50)
-                                (session-file-alist 500 t)
-                                (file-name-history 10000)))
-(setq session-globals-max-string 100000000)
-(setq history-length t)
-(setq session-save-file (expand-file-name "~/.emacs.d/var/.session"))
-(add-hook 'after-init-hook 'session-initialize)
+(my-require-and-when 'session
+  (setq session-initialize '(de-saveplace session keys menus places)
+        session-globals-include '((kill-ring 50)
+                                  (session-file-alist 500 t)
+                                  (file-name-history 10000)))
+  (setq session-globals-max-string 100000000)
+  (setq history-length t)
+  (setq session-save-file (expand-file-name "~/.emacs.d/var/.session"))
+  (add-hook 'after-init-hook 'session-initialize))
+
