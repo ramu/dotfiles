@@ -24,6 +24,10 @@
 (my-autoload-and-when 'kill-summary "kill-summary"
                       (define-key global-map (kbd "C-x C-y") 'kill-summary))
 
+;;; undohist.el
+(my-require-and-when 'undohist
+  (undohist-initialize))
+
 ;;; undo-tree.el
 ;; undo の履歴を木構造で表示、操作
 (my-require-and-when 'undo-tree
