@@ -153,5 +153,11 @@
                                                 compile)
     (mapc 'fringe-helper-remove flymake-fringe-overlays)
     (setq flymake-fringe-overlays nil))
-  )
+
+  ;;; xml用flymake設定
+  (add-hook 'nxml-mode-hook (lambda () (flymake-mode t)))
+  (defun flymake-xml-init ()
+    (list "xmllint" (list "--valid"
+                          (flymake-init-create-temp-buffer-copy
+                           'flymake-create-temp-inplace)))))
 
