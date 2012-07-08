@@ -91,6 +91,7 @@
   (push '("*quickrun*"             :width 55 :position right :noselect t) popwin:special-display-config)
   (push '("*Backtrace*"            :width 55                 :noselect t) popwin:special-display-config)
   (push '("*imenu-tree*"           :width 55 :position right)             popwin:special-display-config)
+  (push '("*Occur*"                :width 55 :position right)             popwin:special-display-config)
   (push '("*slime-apropos*"        :width 55 :position right)             popwin:special-display-config)
   (push '("*slime-macroexpansion*" :width 55 :position right)             popwin:special-display-config)
   (push '("*slime-description*"    :width 55 :position right)             popwin:special-display-config)
