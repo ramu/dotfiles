@@ -35,23 +35,24 @@
 (setq frame-title-format (concat "%b - emacs@" system-name))
 
 ;; fringe-mode
-(fringe-mode "left-only")
+;(fringe-mode "left-only")
 
 ;;;;; 左側に行数表示
-(my-require-and-when 'linum
-  (setq linum-format "%5d ")
-  (defvar mylinum-mode-name nil)
-  (setq mylinum-mode-name '(emacs-lisp-mode-hook slime-mode-hook sh-mode-hook text-mode-hook
-                             php-mode-hook python-mode-hook ruby-mode-hook
-                             css-mode-hook yaml-mode-hook org-mode-hook
-                             howm-mode-hook js2-mode-hook javascript-mode-hook
-                             smarty-mode-hook html-helper-mode-hook))
-  (mapc (lambda (hook-name) (add-hook hook-name (lambda () (linum-mode t)))) mylinum-mode-name))
+;(my-require-and-when 'linum
+;  (setq linum-format "%5d ")
+;  (defvar mylinum-mode-name nil)
+;  (setq mylinum-mode-name '(emacs-lisp-mode-hook slime-mode-hook sh-mode-hook text-mode-hook
+;                             php-mode-hook python-mode-hook ruby-mode-hook
+;                             css-mode-hook yaml-mode-hook org-mode-hook
+;                             howm-mode-hook js2-mode-hook javascript-mode-hook
+;                             smarty-mode-hook html-helper-mode-hook))
+;  (mapc (lambda (hook-name) (add-hook hook-name (lambda () (linum-mode t)))) mylinum-mode-name))
+
+;; scrollbarは不要
+(toggle-scroll-bar 0)
 
 ;;;;; 左側に行数表示(line-num.el) ---> 現在位置も分かる拡張版(yalinum.el)
 ;;;;; 相性問題？不安定なので使用中止
-;; scrollbarは不要(yalinumで対応)
-(toggle-scroll-bar 0)
 ;(require 'yalinum)
 ;(setq yalinum-line-number-display-format "%5d")
 ;
