@@ -31,7 +31,6 @@
   (setq anything-candidate-number-limit 30)
   (setq anything-quick-update t)
   (setq anything-c-filelist-file-name "/Users/ramusara/.emacs.d/share/plugins/ruby/all.filelist")
-  (setq descbinds-anything-window-style 'split-window)
   (setq anything-enable-shortcuts 'prefix)
   (define-key anything-map "@" 'anything-select-with-prefix-shortcut)
   (anything-lisp-complete-symbol-set-timer 150)
@@ -140,5 +139,6 @@
   ;; persistent-actionを自動的に実行し、任意の箇所をハイライト
   ;; describe-anything
   (my-require-and-when 'descbinds-anything
+    (setq descbinds-anything-window-style 'split-window)
     (descbinds-anything-install)))
 
