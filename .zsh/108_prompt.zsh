@@ -2,6 +2,9 @@
 # prompt
 promptinit
 
+# 実行したプロセスの消費時間が下記値を超えたら統計情報表示
+REPORTTIME=3
+
 # set prompt
 case ${UID} in
 0)
