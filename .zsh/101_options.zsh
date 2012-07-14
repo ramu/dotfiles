@@ -28,4 +28,4 @@ setopt numeric_glob_sort   #
 setopt prompt_subst        # プロンプトにescape sequence(環境変数)を通す
 setopt pushd_ignore_dups   #
 setopt rec_exact           #
-
+setopt transient_rprompt   # コマンド実行後に右プロンプトを消す
