@@ -9,7 +9,7 @@ alias f='file'
 alias g='grep'                    # gcc, g++, gdb, git...
 alias h='history'
 alias i='info'
-alias j='jobs'
+#alias j='_z'                     # j = alias _z (z.sh)
 alias k='kill'
 alias k9='kill -9'
 alias l='ls'
