@@ -14,6 +14,8 @@ zstyle ':completion:*' keep-prefix
 zstyle ':completion:*' remote-access false
 zstyle ':completion:*' completer _oldlist _complete _match _ignored \
     _approximate _list _history
+zstyle ':completion:*' use-cache yes
+zstyle ':completion:*' verbose yes
 autoload -U compinit
 compinit
 
