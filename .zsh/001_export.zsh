@@ -12,3 +12,5 @@ export TZ='JST-9'
 export JUNIT_HOME='/usr/local/java/junit/'
 export CLASSPATH="${CLASSPATH}:$JUNIT_HOME/junit.jar"
 export RSENSE_HOME='/opt/rsense/'
+
+export VIRTUALENV_USE_DISTRIBUTE=true
