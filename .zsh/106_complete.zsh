@@ -31,6 +31,7 @@ function zle-line-init () { auto-fu-init }
 zle -N zle-line-init
 zstyle ':auto-fu:highlight' input bold
 zstyle ':auto-fu:highlight' completion fg=white
+zstyle ':auto-fu:highlight' completion/one fg=white,bold,underline
 zstyle ':auto-fu:var' postdisplay ''
 function afu+cancel () {
     afu-clearing-maybe
