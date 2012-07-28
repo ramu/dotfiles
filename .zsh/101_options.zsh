@@ -23,6 +23,7 @@ setopt mark_dirs           # Directory / auto
 setopt multios             # multi redirect/pipe
 setopt no_beep             #
 setopt no_list_beep        # 
+setopt noflowcontrol       # no flowcontrol
 setopt notify              # 
 setopt numeric_glob_sort   # 
 setopt prompt_subst        # プロンプトにescape sequence(環境変数)を通す
