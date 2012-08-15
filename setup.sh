@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 cd
 
 ### zsh
@@ -30,9 +30,19 @@ ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.vim ~/.vim
 
-############
-# perlbrew #
-############
+### curl
+HOSTNAME=`hostname`
+if [ $HOSTNAME = "ubuntu" ];
+then
+  apt-get install curl
+fi
+if [ ! -x "`which curl`" ];
+then
+  echo "curl is not installed."
+  exit 255
+fi
+
+### perlbrew
 curl -L http://xrl.us/perlbrewinstall | bash
 ~/perl5/perlbrew/bin/perlbrew init
 source ~/perl5/perlbrew/etc/bashrc
@@ -40,9 +50,7 @@ perlbrew install -j 5 perl-5.14.1
 perlbrew switch perl-5.14.1
 perlbrew install-cpanm
 
-##############
-# pythonbrew #
-##############
+### pythonbrew
 curl -kLO https://github.com/utahta/pythonbrew/raw/master/pythonbrew-install
 chmod +x pythonbrew-install
 ./pythonbrew-install
