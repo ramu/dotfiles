@@ -6,7 +6,7 @@ ln -sf ~/dotfiles/.zshrc  ~/.zshrc
 ln -sf ~/dotfiles/.zshenv ~/.zshenv
 ln -sf ~/dotfiles/.zsh    ~/.zsh
 mkdir ~/.zsh_history/
-mkdir ~/.zsh/modules/
+mkdir ~/dotfiles/modules/
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 mv zsh-syntax-highlighting ~/.zsh/modules/
 
