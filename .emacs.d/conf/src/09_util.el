@@ -143,7 +143,7 @@
 
 ;; cua-mode - 矩形を選択しやすくする
 (cua-mode t)
-(setq cua-enable-cua-keys nil)) ;; これをいれないとC-c C-v辺りを乗っ取られる
+(setq cua-enable-cua-keys nil) ;; これをいれないとC-c C-v辺りを乗っ取られる
 
 ;;; view-mode関連(Emacs technic bible参考)
 ;; read-only fileはview-modeで開く
