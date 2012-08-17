@@ -1,6 +1,10 @@
 ;;;; 09_util.el
 (require '00_common)
 
+;; yspel.el
+; 校正支援
+(my-require-and-when 'yspel)
+
 ;; ps-print-buffer
 (setq ps-multibyte-buffer 'non-latin-printer)
 
