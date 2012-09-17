@@ -1,6 +1,11 @@
 ;;;; 90_highlight.el ---
 (require '00_common)
 
+; カーソル上のシンボル自動ハイライト
+(my-require-and-when 'auto-highlight-symbol
+  (global-auto-highlight-symbol-mode t)
+  (ahs-set-idle-interval 0.5))
+
 ;;; highlight-indentation.el
 ;; function made to show vertical guide lines of indentation levels (spaces only).
 ;; http://www.emacswiki.org/emacs/HighlightIndentation
