@@ -1,5 +1,7 @@
 #!/bin/zsh
 # alias
+alias bi='brew install'
+alias bs='brew search'
 alias clean='rm -f *~'
 alias df='df -H'
 alias ebc='emacs -batch -f batch-byte-compile'
