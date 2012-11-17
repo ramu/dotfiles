@@ -30,6 +30,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'ujihisa/quickrun'
 NeoBundle 'vim-scripts/buftabs'
+NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'scrooloose/syntastic'
 
 NeoBundle 'sudo.vim'
@@ -71,3 +72,8 @@ let g:yankring_history_dir = $HOME."/log/"
 " syntastic
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
+
+" Tlist
+let Tlist_Show_One_File = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Exit_OnlyWindows = 1
