@@ -28,6 +28,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'ujihisa/quickrun'
 NeoBundle 'vim-scripts/buftabs'
+NeoBundle 'scrooloose/syntastic'
 
 NeoBundle 'sudo.vim'
 NeoBundle 'DirDiff.vim'
@@ -57,3 +58,7 @@ let buftabs_in_statusline = 1
 
 " YankRing
 let g:yankring_history_dir = $HOME."/log/"
+
+" syntastic
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 2
