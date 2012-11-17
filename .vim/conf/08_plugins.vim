@@ -3,8 +3,10 @@
 "---------------
 " Neobundle
 filetype off
-set rtp+=~/.vim/neobundle/
-call neobundle#rc()
+if has('vim_starting')
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#rc(expand('~/.vim/bundle'))
 
 NeoBundle 'corntrace/bufexplorer'
 NeoBundle 'houtsnip/vim-emacscommandline'
@@ -35,6 +37,13 @@ NeoBundle 'DirDiff.vim'
 NeoBundle 'YankRing.vim'
 
 filetype plugin indent on
+
+" Installation check.
+if neobundle#exists_not_installed_bundles()
+   echomsg 'Not installed bundles : ' .
+            \ string(neobundle#get_not_installed_bundle_names())
+   echomsg 'Please execute ":NeoBundleInstall" command.'
+endif
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
