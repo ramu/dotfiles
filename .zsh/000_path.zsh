@@ -14,6 +14,8 @@ PATH=$PATH:/Library/Java/ant/bin
 PATH=$PATH:/usr/share/grails/bin
 PATH=$PATH:/usr/share/griffon/bin
 PATH=/Users/ramusara/.rbenv/bin:$PATH
+PATH=/Users/ramusara/work/gae/go_engine:$PATH
+
 
 eval "$(rbenv init -)"
 source /usr/local/Cellar/rbenv/0.3.0/completions/rbenv.zsh
