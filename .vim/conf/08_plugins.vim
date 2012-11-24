@@ -20,6 +20,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/neobundle.vim'
@@ -48,7 +49,12 @@ endif
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
-imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" neosnippet
+imap <C-k> <plug>(neosnippet_expand_or_jump)
+smap <C-k> <plug>(neosnippet_expand_or_jump)
+imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " vimproc
 let g:vimproc_dll_path = $HOME."/.vim/autoload/proc.so"
