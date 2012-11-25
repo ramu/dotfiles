@@ -7,6 +7,7 @@ for i in {0..8}; do
 done
 alias cdc='cd ~/work/c/'
 alias cdd='cd ~/dotfiles/'
+alias cdD='cd ~/Downloads/'
 alias cdg='cd ~/work/git/'
 alias cdh='cd ~/work/haskell/'
 alias cdj='cd ~/work/java/'
