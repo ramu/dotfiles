@@ -8,6 +8,7 @@
                 ;; ";"とRETで自動改行+インデント
                 ;(c-toggle-auto-hungry-state 1)
                 (define-key c-mode-map "\C-m" 'newline-and-indent)
+                (define-key c-mode-map "\C-]" 'find-tag)
                 (c-set-offset 'substatement-open 0)
                 (c-set-offset 'case-label '+)
                 (c-set-offset 'arglist-cont-nonempty '+)
