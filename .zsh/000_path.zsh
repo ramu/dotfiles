@@ -16,6 +16,7 @@ PATH=$PATH:/usr/share/griffon/bin
 PATH=/Users/ramusara/.rbenv/bin:$PATH
 PATH=/Users/ramusara/work/gae/go_engine:$PATH
 PATH=/Users/ramusara/work/java/maven/bin:$PATH
+PATH=/usr/local/heroku/bin:$PATH
 
 
 eval "$(rbenv init -)"
