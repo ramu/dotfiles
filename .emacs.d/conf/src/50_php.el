@@ -18,7 +18,43 @@
       (define-key php-mode-map "\C-\M-e" 'php-end-of-defun)
       ))
 
+  ;;; cakephp
+  (my-require-and-when 'cake
+    (global-cake t)
+    (cake-set-default-keymap))
+  (add-to-list 'auto-mode-alist '("\\.ctp$" . php-mode))
+
   ;;; phpdoc
   (my-require-and-when 'phpdoc
     (add-hook 'php-mode-hook (lambda () (eldoc-mode t)))))
+
+(defun php-indent-hook ()
+  (setq indent-tabs-mode nil)
+  (setq c-basic-offset 2)
+  (c-set-offset 'arglist-intro '+)
+  (c-set-offset 'arglist-close 0))
+
+(defun php-completion-hook ()
+  (my-require-and-when 'php-completion
+    (php-completion-mode t)
+    (define-key php-mode-map (kbd "C-o") 'phpcmp-complete)
+    (my-require-and-when 'auto-complete
+      (make-variable-buffer-local 'ac-sources)
+      (add-to-list 'ac-sources 'ac-source-php-completion)
+      (auto-complete-mode t))))
+
+(add-hook 'php-mode-hook 'php-indent-hook)
+(add-hook 'php-mode-hook 'php-completion-hook)
+
+
+
+; mmm-mode in php
+(my-require-and-when 'mmm-mode
+  (setq mmm-global-mode 'maybe)
+  (mmm-add-mode-ext-class nil "\\.php?\\'" 'html-php)
+  (mmm-add-classes '((html-php
+                      :submode php-mode
+                      :front "<\\?\\(php\\)?"
+                      :back "\\?>")))
+  (add-to-list 'auto-mode-alist '("\\.php?\\'" . xml-mode)))
 
