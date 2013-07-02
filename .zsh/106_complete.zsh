@@ -16,6 +16,7 @@ zstyle ':completion:*' completer _oldlist _complete _match _ignored \
     _approximate _list _history
 zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' verbose yes
+zstyle ':completion:*' accept-exact '*(N)'
 autoload -U compinit
 compinit
 
