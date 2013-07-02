@@ -82,6 +82,11 @@
                       ("A" . (lambda () (beginning-of-buffer-other-window 0)))
                       ("B" . (lambda () (end-of-buffer-other-window 0))))))
 
+;;; expand-region
+(my-require-and-when 'expand-region
+  (global-set-key (kbd "C-@") 'er/expand-region)
+  (global-set-key (kbd "C-M-@") 'er/contract-region))
+
 ;;; my-map
 (defvar my-map "")
 (setq my-map (make-sparse-keymap))
