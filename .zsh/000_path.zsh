@@ -17,6 +17,7 @@ PATH=/Users/ramusara/.rbenv/bin:$PATH
 PATH=/Users/ramusara/work/gae/go_engine:$PATH
 PATH=/Users/ramusara/work/java/maven/bin:$PATH
 PATH=/usr/local/heroku/bin:$PATH
+PATH=/Applications/MAMP/bin/php/php5.4.10/bin:$PATH
 
 
 eval "$(rbenv init -)"
