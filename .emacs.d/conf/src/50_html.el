@@ -12,7 +12,9 @@
   (add-hook 'sgml-mode-hook 'zencoding-mode)
   ;(add-hook 'html-mode-hook 'zencoding-mode)
   ;(add-hook 'xml-mode-hook  'zencoding-mode)
-  ;(add-hook 'php-mode-hook  'zencoding-mode)
+  (add-hook 'php-mode-hook  'zencoding-mode)
+  (define-key zencoding-mode-keymap (kbd "C-c C-m") 'zencoding-expand-line)
+  (define-key zencoding-preview-keymap (kbd "C-c C-m") 'zencoding-preview-accept)
   (define-key zencoding-mode-keymap (kbd "M-<RET>") 'zencoding-expand-yas))
 
 ;;; less-css-mode
