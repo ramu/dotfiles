@@ -8,7 +8,7 @@ function mkcd() { mkdir $1 && cd $1 }
 # cd && ls
 #    function cd() {builtin cd $@ && ls -aF --show-control-char --color=auto}
 function chpwd() {
-  ls_result=$(CLICOLOR_FORCE=1 COLUMNS=$COLUMNS command ls -aCFG | sed $'/^\e\[[0-9;]*m$/d')
+  ls_result=$(CLICOLOR_FORCE=1 COLUMNS=$COLUMNS command ls -AqCFG | sed $'/^\e\[[0-9;]*m$/d')
   ls_lines=`echo "$ls_result" | wc -l | tr -d ' '`
   if [ $ls_lines -gt 10 ]; then
     echo "$ls_result" | head -n 5
