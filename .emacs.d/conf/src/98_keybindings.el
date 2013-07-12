@@ -13,6 +13,7 @@
 
 ;;; global-set-key
 (define-key global-map [?¥] [?\\])                     ; ¥はバックスラッシュに変更
+(define-key cua-global-keymap cua-rectangle-mark-key 'cua-set-rectangle-mark)
 (global-set-key (kbd "C-x C-b") 'bs-show)              ; バッファ一覧をまともに
 (global-set-key (kbd "C-x C-f") 'anything-find-files)
 (global-set-key (kbd "C-x C-i") 'anything-info-at-point)
