@@ -7,5 +7,5 @@ autoload -Uz vcs_info
 autoload -Uz zmv
 autoload -U promptinit
 autoload compinit
-compinit
+compinit -u
 
