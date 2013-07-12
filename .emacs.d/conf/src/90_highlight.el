@@ -16,7 +16,7 @@
 (my-require-and-when 'hl-line
   (defface my-hlline-face
     '((((class color) (background dark))
-      (:background "#333" t))
+      (:background "#226688" t))
      (((class color) (background light))
       (:background "ForestGreen"))
       (t (:bold t)))
