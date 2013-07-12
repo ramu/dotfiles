@@ -1,6 +1,14 @@
 ;;;; 09_util.el
 (require '00_common)
 
+;; mark-multiple
+(my-require-and-when 'multiple-cursors
+  (global-set-key (kbd "C-S-c c") 'mc/edit-lines)
+  (global-set-key (kbd "C-S-c r") 'mc/mark-all-in-region)
+  (global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-c C-*") 'mc/mark-all-like-this))
+
 ;; yspel.el
 ; 校正支援
 (my-require-and-when 'yspel)
