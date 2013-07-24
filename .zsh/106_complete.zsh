@@ -19,6 +19,7 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*' accept-exact '*(N)'
 autoload -U compinit
 compinit
+compdef -d rake
 
 # incremental completion
 function () { # precompile
