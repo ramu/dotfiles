@@ -97,3 +97,10 @@ function gem() {
 # mkdir && git init
 function mkdir_git_init() { mkdir $1 && cd $1 && git init }
 
+#-----------------------------------------------------------
+# rails new $1 --skip-bundle + cd $1
+rails-new--skip-bundle() {
+   rails new $1 --skip-bundle
+   cd $1
+}
+
