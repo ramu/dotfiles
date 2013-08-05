@@ -31,3 +31,5 @@
 [diff]
     external = ~/dotfiles/scripts/p4diff.sh
 
+[credential]
+	helper = osxkeychain
