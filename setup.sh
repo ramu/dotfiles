@@ -1,14 +1,18 @@
 #!/bin/bash
 cd
+mkdir ~/log/
+mkdir ~/bin/
+mkdir ~/tmp/
 
 ### zsh
 ln -sf ~/dotfiles/.zshrc  ~/.zshrc
 ln -sf ~/dotfiles/.zshenv ~/.zshenv
 ln -sf ~/dotfiles/.zsh    ~/.zsh
-mkdir ~/.zsh_history/
-mkdir ~/dotfiles/modules/
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-mv zsh-syntax-highlighting ~/.zsh/modules/
+mkdir ~/log/.zsh_history/
+mkdir ~/.zsh/modules/
+mkdir 
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/modules/
+git clone git://github.com/hchbaw/auto-fu.zsh.git ~/.zsh/modules/auto-fu/
 
 ### git
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
@@ -29,6 +33,8 @@ ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 ### vim
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.vim ~/.vim
+mkdir -p ~/.vim/bundle
+git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 ### curl
 HOSTNAME=`hostname`

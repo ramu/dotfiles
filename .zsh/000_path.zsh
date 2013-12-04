@@ -21,4 +21,4 @@ PATH=/Applications/MAMP/bin/php/php5.4.10/bin:$PATH
 
 
 eval "$(rbenv init -)"
-source /usr/local/Cellar/rbenv/0.3.0/completions/rbenv.zsh
+source /usr/local/Cellar/rbenv/0.4.0/completions/rbenv.zsh

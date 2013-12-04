@@ -103,10 +103,6 @@ alias tig='tig --all'
 alias tspon='tmux set-window-option synchronize-panes on'
 alias tspoff='tmux set-window-option synchronize-panes off'
 alias val='valgrind'
-if [ `uname` = "Darwin" ]; then
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
-fi
 alias wcat='wget -q -O -'
 alias zmv='noglob zmv -W'
 
