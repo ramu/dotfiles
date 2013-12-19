@@ -2,7 +2,7 @@
 # export 
 export ANDROIDNDK_HOME=/Users/ramusara/Android/android-ndk-r5b
 if [ `uname` = "Darwin" ]; then
-export EDITOR=/Application/MacVim.app/Contents/MacOS/Vim
+export EDITOR=/usr/local/bin/vim
 elif [ `uname` = "Linux" ]; then
 export EDITOR=/bin/vi
 fi
