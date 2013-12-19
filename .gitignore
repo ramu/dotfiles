@@ -2,6 +2,7 @@
 # zsh
 .zsh/modules/
 .zsh/.zcompdump
+.zsh/.z
 
 # mercurial
 .hg/
