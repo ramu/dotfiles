@@ -50,6 +50,9 @@
 ;; ホイールマウス使用
 (mouse-wheel-mode t)
 
+;; マウスで選択するとコピー
+(setq mouse-drag-copy-region t)
+
 ;; カーソルのある行/列番号表示
 (setq line-number-mode t)
 (setq column-number-mode t)
