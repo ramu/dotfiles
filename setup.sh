@@ -17,6 +17,8 @@ git clone git://github.com/hchbaw/auto-fu.zsh.git ~/.zsh/modules/auto-fu/
 ### git
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.tigrc     ~/.tigrc
+curl https://raw.github.com/git/git/master/contrib/diff-highlight/diff-highlight > ~/bin/diff-highlight
+chmod 755 ~/bin/diff-highlight
 
 ### mercurial
 ln -sf ~/dotfiles/.hgrc ~/.hgrc
