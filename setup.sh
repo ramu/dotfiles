@@ -10,7 +10,6 @@ ln -sf ~/dotfiles/.zshenv ~/.zshenv
 ln -sf ~/dotfiles/.zsh    ~/.zsh
 mkdir ~/log/.zsh_history/
 mkdir ~/.zsh/modules/
-mkdir 
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/modules/
 git clone git://github.com/hchbaw/auto-fu.zsh.git ~/.zsh/modules/auto-fu/
 
@@ -22,6 +21,8 @@ chmod 755 ~/bin/diff-highlight
 
 ### mercurial
 ln -sf ~/dotfiles/.hgrc ~/.hgrc
+mkdir ~/dotfiles/.hg
+curl http://mercurial.selenic.com/wiki/InfoExtension?action=AttachFile&do=get&target=info.py > ~/dotfiles/.hg/info.py
 
 ### emacs
 ln -sf ~/dotfiles/.emacs.d ~/.emacs.d
