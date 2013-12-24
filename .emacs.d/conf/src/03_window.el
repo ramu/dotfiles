@@ -1,6 +1,8 @@
 ;;;; 03_window.el
 (require '00_common)
 
+;;; popup.el
+;; ポップアップメニュー、カスケードポップアップメニュー、ツールチップの実現
 ;;; popup-select-window.el
 ;; ウィンドウ分割(3つ以上)の時、popup-menu*を使い縦型インラインで選択、移動先ウィンドウを選択
 ;; http://www.emacswiki.org/emacs/popup-select-window.el
@@ -11,10 +13,10 @@
 ;;; hiwin.el
 ; 非アクティブなバッファ背景色を変更する
 ; https://github.com/tomoya/hiwin-mode
-(my-require-and-when 'hiwin
-  (setq hiwin-deactive-color "#222222")
-  (setq hiwin-readonly-color "#030310")
-  (hiwin-mode t))
+;(my-require-and-when 'hiwin
+;  (setq hiwin-deactive-color "#222222")
+;  (setq hiwin-readonly-color "#030310")
+;  (hiwin-mode t))
 
 ;;; stripes.el
 ;; 偶数行の背景色を変更
@@ -39,11 +41,6 @@
 ;; emacs内Window管理ツール
 ;; http://d.hatena.ne.jp/kiwanami/20100528/1275038929
 (my-require-and-when 'e2wm)
-
-;;; popup.el
-;; ポップアップメニュー、カスケードポップアップメニュー、ツールチップの実現
-;; http://d.hatena.ne.jp/m2ym/20091213/1260678801
-(my-require-and-when 'popup)
 
 ;;; elscreen.el
 ;; ElScreenは window-configuration-to-register / jump-to-register と同様のことを、

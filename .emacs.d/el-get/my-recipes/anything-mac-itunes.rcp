@@ -1,0 +1,4 @@
+(:name anything-mac-itunes
+:type http
+:description "Use iTunes on Mac with anything.el"
+:url "https://gist.github.com/yaotti/725271/raw/efc3c1f9451166dd162a407179359c2a1a5708a6/anything-mac-itunes.el")

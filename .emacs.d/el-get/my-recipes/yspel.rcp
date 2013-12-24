@@ -1,0 +1,5 @@
+(:name yspel
+:type github
+:description "spell check"
+:pkgname "yama-natuki/yspel"
+:branch "master")

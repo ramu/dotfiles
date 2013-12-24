@@ -7,12 +7,6 @@
 (my-require-and-when 'jaunte
   (global-set-key (kbd "C-:") 'jaunte))
 
-;;; yafastnav.el
-;; Hit a Hint
-;; http://d.hatena.ne.jp/tm8st/20100924/1285322484
-;(my-require-and-when 'yafastnav
-;  (global-set-key (kbd "C-:") 'yafastnav-jump-to-current-screen))
-
 ;;; inertial-scroll.el
 ;; Šµ«ƒXƒNƒ[ƒ‹
 ;; http://d.hatena.ne.jp/kiwanami/20101008/1286518936

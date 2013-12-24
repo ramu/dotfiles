@@ -183,8 +183,8 @@
     (dolist (p (process-list))
       (set-process-query-on-exit-flag p nil))))
 
-;;; wordcount.el
-(my-require-and-when 'word-count)
+;;; Wordcount mode
+(my-require-and-when 'wc-mode)
 
 ;;; zlc.el
 ;; zsh ライクな補完

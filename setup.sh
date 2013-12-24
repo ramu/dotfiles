@@ -26,6 +26,7 @@ curl http://mercurial.selenic.com/wiki/InfoExtension?action=AttachFile&do=get&ta
 
 ### emacs
 ln -sf ~/dotfiles/.emacs.d ~/.emacs.d
+mkdir ~/dotfiles/.emacs.d/history
 
 ### screen
 ln -sf ~/dotfiles/.screenrc ~/.screenrc

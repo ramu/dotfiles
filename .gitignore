@@ -13,6 +13,12 @@
 .emacs.d/conf/src/10_twittering-mode.el
 .emacs.d/elisp/
 .emacs.d/private/
+.emacs.d/elpa/
+.emacs.d/tramp
+.emacs.d/undohist/
+.emacs.d/var/
+.emacs.d/el-get/*
+!/.emacs.d/el-get/my-recipes/*
 
 # vim
 .vim/.netrwhist

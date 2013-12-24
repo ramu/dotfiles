@@ -8,8 +8,8 @@
            '(border-color     . "black")  ;; border-color
            '(mouse-color      . "white")  ;; mouse-color
            '(cursor-color     . "white")  ;; cursor-color
-           '(width            . 220    )  ;; frame-width
-           '(height           . 90     )  ;; frame-height
+           '(width            . 202    )  ;; frame-width
+           '(height           . 62     )  ;; frame-height
            '(top              . 1      )  ;; frame-top(Y)
            '(left             . 1      )  ;; frame-left(X)
            '(alpha            . (85 85))  ;; alpha
@@ -18,13 +18,19 @@
 (setq default-frame-alist initial-frame-alist)
 (setq window-min-width 1)
 
+;; full-screen
+(set-frame-parameter nil 'fullscreen 'fullscreen)
+(defun toggle-fullscreen()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+
 ;; 透過
-(if window-system (progn
-    (set-background-color "Black")
-    (set-foreground-color "LightGray")
-    (set-cursor-color "Gray")
-    (set-frame-parameter (selected-frame) 'alpha '(85 30))
-))
+(if window-system
+    (progn
+      (set-background-color "Black")
+      (set-foreground-color "LightGray")
+      (set-cursor-color "Gray")
+      (set-frame-parameter (selected-frame) 'alpha '(85 30))))
 ;; Set transparency of emacs
 (defun transparency (value)
     "Sets the transparency of the frame window. 0=transparent/100=opaque"

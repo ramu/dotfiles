@@ -1,0 +1,12 @@
+(:name riece
+ :type http-tar
+ :options ("xzf")
+ :description "IRC client"
+ :url "http://dl.sv.gnu.org/releases/riece/riece-8.0.0.tar.gz"
+ :build `(
+          ("./configure") 
+          ("make" ,(concat "EMACS=" el-get-emacs))
+         )
+ :load-path ("lisp")
+)
+

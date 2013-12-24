@@ -1,7 +1,7 @@
 ;;; 50_perl.el
 (require '00_common)
 
-(my-require-and-when 'set-perl5lib)
+(my-require-and-when 'set-perl5lib-path)
 (my-require-and-when 'cperl-mode)
 (my-require-and-when 'perl-completion)
 

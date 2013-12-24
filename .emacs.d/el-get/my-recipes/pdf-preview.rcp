@@ -1,0 +1,4 @@
+(:name pdf-preview
+:type http
+:description "preview text from the buffer as pdf files through PostScript"
+:url "http://svn.sourceforge.jp/svnroot/macemacsjp/pdf-preview/trunk/pdf-preview.el")

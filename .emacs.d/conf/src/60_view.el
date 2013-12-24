@@ -1,4 +1,4 @@
-;;;; 11_view.el ---
+;;;; 60_view.el ---
 (require '00_common)
 
 ;;; pdf-preview.el

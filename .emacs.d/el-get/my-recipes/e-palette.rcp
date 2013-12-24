@@ -1,0 +1,5 @@
+(:name e-palette
+:type github
+:description "Emacs Color Palette http://fujim.tumblr.com/post/361299617/emacs-e-palette-el"
+:pkgname "keiji0/e-palette"
+:branch "master")

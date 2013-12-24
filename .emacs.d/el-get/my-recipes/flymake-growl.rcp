@@ -1,0 +1,4 @@
+(:name flymake-growl
+:type http
+:description "flymake growl"
+:url "https://gist.github.com/kawaguchi/754920/raw/839fb87621a7487d663bb9ce1e97e24dc7ff397a/flymake-growl.el")

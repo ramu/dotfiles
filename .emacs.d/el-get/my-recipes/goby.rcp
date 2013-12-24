@@ -1,0 +1,5 @@
+(:name goby
+:type github
+:description "Goby is a WYSIWYG presentation tool"
+:pkgname "kazu-yamamoto/Goby"
+:branch "master")

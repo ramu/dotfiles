@@ -14,7 +14,7 @@
 ;; Tiny functionality enhancements for evaluating sexps
 ;; http://d.hatena.ne.jp/hchbaw/20091119/1258641758
 ;; http://www.emacswiki.org/emacs/eval-sexp-fu.el
-(my-require-and-when 'eval-seqp-fu
+(my-require-and-when 'eval-sexp-fu
   (turn-on-eval-sexp-fu-flash-mode))
 
 ;;; slime.el

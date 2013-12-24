@@ -1,0 +1,5 @@
+(:name hiwin
+:type github
+:description "Visible active window on Emacs"
+:pkgname "tomoya/hiwin-mode"
+:branch "master")

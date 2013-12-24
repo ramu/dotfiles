@@ -1,0 +1,5 @@
+(:name dont-type-twice
+:type github
+:description "Supports your effective text editing."
+:pkgname "fukamachi/dont-type-twice-el"
+:branch "master")

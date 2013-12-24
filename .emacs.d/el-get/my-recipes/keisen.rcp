@@ -1,0 +1,4 @@
+(:name keisen
+:type http
+:description "provide facility for drawing ruled-line"
+:url "http://www.pitecan.com/Keisen/keisen.el")

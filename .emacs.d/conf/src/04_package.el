@@ -16,18 +16,3 @@
 ;; http://www.emacswiki.org/emacs/install-elisp.el
 (my-require-and-when 'install-elisp
   (setq install-elisp-repository-directory "~/.emacs.d/elisp/src/"))
-
-;;; emacs-bundle.el
-;; emacs bundle
-;; http://kozo2.hatenablog.com/entry/2011/12/31/184442
-(my-load-and-when "~/.emacs.d/elisp/bundle.elc"
-  (setq bundle-install-directory (expand-file-name "~/.emacs.d/elisp/src/bundle/")))
-
-;;; package/melpa
-(my-require-and-when 'package
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-  (package-initialize)
-
-  (my-require-and-when 'melpa))
-
