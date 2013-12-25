@@ -25,6 +25,7 @@ setopt no_beep             #
 setopt no_list_beep        # 
 setopt noflowcontrol       # no flowcontrol
 setopt notify              # 
+setopt nonomatch           # no "glob no match"
 setopt numeric_glob_sort   # 
 setopt prompt_subst        # プロンプトにescape sequence(環境変数)を通す
 setopt pushd_ignore_dups   #
