@@ -282,6 +282,7 @@
                                 (bm-repository-save)))
   (add-hook 'vc-before-checkin-hook 'bm-buffer-restore)
   (setq bookmark-default-file "~/.emacs.d/private/.emacs.bmk")
+  (setq bm-repository-file (expand-file-name "~/.emacs.d/var/.bm-repository"))
   (global-set-key (kbd "M-@") 'bm-toggle)
   (global-set-key (kbd "M-[") 'bm-previous)
   (global-set-key (kbd "M-]") 'bm-next))
