@@ -21,7 +21,9 @@ case ${UID} in
   SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
   ;;
 *)
-  PROMPT="${WINDOW:+[$WINDOW]}[$RED%n@%m$GREEN:%~%{$reset_color%}]%#
+  [ -n "$TMUX" ] &&
+     PROMPT='%{${fg[blue]}%}$(tmux display -p "[#I-#P]")${reset_color}'
+  PROMPT="${PROMPT}${WINDOW:+[$WINDOW]}[$RED%n@%m$GREEN:%~%{$reset_color%}]%#
 %(?.%{$fg[yellow]%}.%{$fg[blue]%})%(?!(*'-') <!(*;-;%)? <)%{${reset_color}%} "
   PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
   SPROMPT="%{$fg[red]%}%{$suggest%}(*'~'%)? < もしかして %B%r%b %{$fg[red]%}かな?[n,y,a,e]:%{${reset_color}%} "
