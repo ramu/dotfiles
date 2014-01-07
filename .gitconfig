@@ -25,3 +25,6 @@
 
 [credential]
 	helper = osxkeychain
+
+[merge]
+    ff = false
