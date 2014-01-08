@@ -84,3 +84,6 @@ let g:syntastic_auto_loc_list = 2
 let Tlist_Show_One_File = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_Exit_OnlyWindows = 1
+
+" unite
+let g:unite_data_directory = '~/.vim/tmp/.unite'
