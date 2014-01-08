@@ -39,4 +39,4 @@ set statusline=%=\[%{(&fenc!=''?&fenc:&enc)}/%{&ff}]\[%03l,%03v]
 let g:buftabs_active_highlight_group="Visual"
 
 " log
-set viminfo+=n~/log/viminfo.txt
+set viminfo+=n~/.vim/tmp/viminfo.txt
