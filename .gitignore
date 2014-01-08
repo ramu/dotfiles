@@ -25,3 +25,4 @@
 .vim/autoload/
 .vim/bundle/
 .vim/neobundle/
+.vim/tmp/

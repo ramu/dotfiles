@@ -49,6 +49,7 @@ endif
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_temporary_dir = '~/.vim/tmp/.neocomplcache'
 
 " neosnippet
 imap <C-k> <plug>(neosnippet_expand_or_jump)
