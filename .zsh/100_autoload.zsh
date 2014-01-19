@@ -9,3 +9,5 @@ autoload -U promptinit
 autoload compinit
 compinit -u
 
+fpath=($HOME/.zsh/modules/cd-gitroot(N-/) $fpath)
+autoload -Uz cd-gitroot
