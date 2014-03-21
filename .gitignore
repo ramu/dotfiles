@@ -17,6 +17,7 @@
 .emacs.d/tramp
 .emacs.d/undohist/
 .emacs.d/var/
+.emacs.d/share/Warp/
 .emacs.d/el-get/*
 !/.emacs.d/el-get/my-recipes/*
 

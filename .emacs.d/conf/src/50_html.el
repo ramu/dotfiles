@@ -4,8 +4,6 @@
 ;;; default browser
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "open")
-(add-hook 'html-mode-hook (lambda ()
-                            (html-autoview-mode)))
 
 ;;; zencoding-mode.el
 (my-require-and-when 'zencoding-mode
@@ -20,3 +18,9 @@
 ;;; less-css-mode
 (my-require-and-when 'less-css-mode)
 
+;;; Warp
+(my-require-and-when 'warp
+  (add-hook 'html-mode-hook 'warp-mode)
+  (add-to-list 'warp-format-converter-alist
+               '("\\.md\\|\\.markdown" t (lambda ()
+                                           '("markdown")))))
