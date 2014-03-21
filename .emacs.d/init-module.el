@@ -65,7 +65,6 @@
     c-eldoc
     go-mode
     groovy-mode
-    zencoding-mode
     less-css-mode
     js2-mode
     lispxmp
@@ -194,6 +193,7 @@
     set-perl5lib-path
     eval-sexp-fu
     lambda-mode
+    emmet-mode
     ;; emacs-w3m -> autoconf error
     ;; text-translator -> bzr execute-find
     ;; anything-c-yasnippet -> 切り捨てる？(http://d.hatena.ne.jp/sugyan/20120111/1326288445)

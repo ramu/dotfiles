@@ -5,15 +5,17 @@
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "open")
 
-;;; zencoding-mode.el
-(my-require-and-when 'zencoding-mode
-  (add-hook 'sgml-mode-hook 'zencoding-mode)
-  ;(add-hook 'html-mode-hook 'zencoding-mode)
-  ;(add-hook 'xml-mode-hook  'zencoding-mode)
-  (add-hook 'php-mode-hook  'zencoding-mode)
-  (define-key zencoding-mode-keymap (kbd "C-c C-m") 'zencoding-expand-line)
-  (define-key zencoding-preview-keymap (kbd "C-c C-m") 'zencoding-preview-accept)
-  (define-key zencoding-mode-keymap (kbd "M-<RET>") 'zencoding-expand-yas))
+;;; emmet-mode.el
+(my-require-and-when 'emmet-mode
+  (add-hook 'sgml-mode-hook 'emmet-mode)
+  (add-hook 'css-mode-hook 'emmet-mode)
+  ;(add-hook 'html-mode-hook 'emmet-mode)
+  ;(add-hook 'xml-mode-hook  'emmet-mode)
+  (add-hook 'php-mode-hook 'emmet-mode)
+  (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2)))
+  (define-key emmet-mode-keymap (kbd "C-j") nil)
+  (define-key emmet-mode-keymap (kbd "C-c C-m") 'emmet-expand-line)
+  (define-key emmet-preview-keymap (kbd "C-c C-m") 'emmet-preview-accept))
 
 ;;; less-css-mode
 (my-require-and-when 'less-css-mode)
