@@ -190,7 +190,6 @@
     wc-mode
     e-palette
     set-perl5lib-path
-    flymake-growl
     eval-sexp-fu
     lambda-mode
     ;; emacs-w3m -> autoconf error

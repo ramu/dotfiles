@@ -2,7 +2,6 @@
 (require '00_common)
 
 (my-require-and-when 'flymake
-  (my-require-and-when 'flymake-growl)
 
   (my-require-and-when 'flymake-extension
     ;;; flymake-extension ---
