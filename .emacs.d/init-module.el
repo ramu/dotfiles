@@ -51,6 +51,7 @@
     erc
     flymake
     flymake-shell
+    flymake-jshint
     google-maps
     helm
     mew

@@ -113,6 +113,11 @@
                  nil 1 2 4))
   (add-hook 'html-mode-hook '(lambda () (flymake-mode t)))
 
+  ;;; flymake for javascript
+  (add-hook 'js2-mode-hook '(lambda ()
+                              (require 'flymake-jshint)
+                              (flymake-jshint-load)))
+
   ;;; etc...
   ;; minibufferに表示
   ; growl使うので不要
