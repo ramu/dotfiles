@@ -18,7 +18,7 @@
 
 ;; path
 (dolist (dirs (list
-               "/usr/bin/"
+                "/usr/bin/"
                 "/usr/sbin/"
                 "/sbin/"
                 "/usr/X11/bin/"
