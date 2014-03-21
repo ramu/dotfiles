@@ -86,6 +86,7 @@
     rvm
     rsense
     scala-mode
+    markdown-mode
     ;;;;;;;;;;; 60_
     info
     info+
