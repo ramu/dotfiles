@@ -108,6 +108,34 @@
                 (-3 . "%p")
                 "-%-"))
 
+; モードラインの表示文字を短縮表示(http://d.hatena.ne.jp/syohex/20130131/1359646452)
+(defvar mode-line-cleaner-alist
+  '(;; minor-mode
+    (my-mode . " my")
+    (lisp-mode . "el")
+    (lisp-interaction-mode . "li")
+    (paredit-mode . "pe")
+    (ruby-block-mode . " rb")
+    (drill-instructor . " d")
+    (undo-tree-mode . " ut")
+    (flymake-mode . " fm")
+    ;; Major mode
+    (fundamental-mode . "F")
+    (emacs-lisp-mode . "El")
+    (python-mode . "PY")
+    (ruby-mode . "RB")))
+
+(defun clean-mode-line ()
+  (interactive)
+  (loop for (mode . mode-str) in mode-line-cleaner-alist
+        do
+        (let ((old-mode-str (cdr (assq mode minor-mode-alist))))
+          (when old-mode-str
+            (setcar old-mode-str mode-str))
+          (when (eq mode major-mode)
+            (setq mode-name mode-str)))))
+(add-hook 'after-change-major-mode-hook 'clean-mode-line)
+
 ;; toggle transparency
 (defun toggle-transparency ()
   (interactive)
