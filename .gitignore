@@ -12,6 +12,7 @@
 .emacs.d/conf/*.elc
 .emacs.d/conf/src/10_twittering-mode.el
 .emacs.d/elisp/
+.emacs.d/eshell/
 .emacs.d/private/
 .emacs.d/elpa/
 .emacs.d/tramp
