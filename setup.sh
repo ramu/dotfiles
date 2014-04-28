@@ -71,3 +71,5 @@ pythonbrew install 2.7.2
 pythonbrew switch 2.7.2
 rm pythonbrew-install
 
+### homebrew
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
