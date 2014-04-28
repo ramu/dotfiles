@@ -4,6 +4,8 @@
 (global-set-key "\C-c,," 'howm-menu)
 (setq howm-directory "~/Dropbox/files/howm/")
 (setq howm-file-name-format "%Y-%m-%d.howm")
+(setq howm-history-file "~/.emacs.d/var/history/.howm-history")
+(setq howm-keyword-file "~/.emacs.d/var/history/.howm-keys")
 
 (mapc
  (lambda (f)
