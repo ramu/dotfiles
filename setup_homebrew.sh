@@ -61,4 +61,5 @@ brew cask install skype
 brew cask install sourcetree
 brew cask install vagrant
 brew cask install virtualbox
+brew cask install yorufukurou
 
