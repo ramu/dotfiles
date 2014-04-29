@@ -42,25 +42,6 @@
 ;; http://d.hatena.ne.jp/kiwanami/20100528/1275038929
 (my-require-and-when 'e2wm)
 
-;;; elscreen.el
-;; ElScreenは window-configuration-to-register / jump-to-register と同様のことを、
-;; GNU Screenのようなより洗練されたインターフェイスで提供することを目的としたものです。
-;; http://www.morishima.net/~naoto/elscreen-ja/
-(my-require-and-when 'elscreen
-  ; 自動でスクリーン作成
-  (defmacro elscreen-create-automatically (ad-do-it)
-    `(if (not (elscreen-one-screen-p))
-         ,ad-do-it
-       (elscreen-create)
-       (elscreen-notify-screen-modification 'force-immediately)
-       (elscreen-message "New screen is automatically created")))
-  (defadvice elscreen-next (around elscreen-create-automatically activate)
-    (elscreen-create-automatically ad-do-it))
-  (defadvice elscreen-previous (around elscreen-previous activate)
-    (elscreen-create-automatically ad-do-it))
-  (defadvice elscreen-toggle (around elscreen-create-automatically activate)
-    (elscreen-create-automatically ad-do-it)))
-
 ;;; popwin.el
 ;; ヘルプバッファや補完バッファをポップアップで表示
 ;; http://d.hatena.ne.jp/m2ym/20110120/1295524932
