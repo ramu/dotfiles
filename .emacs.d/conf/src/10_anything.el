@@ -140,5 +140,19 @@
   ;; describe-anything
   (my-require-and-when 'descbinds-anything
     (setq descbinds-anything-window-style 'split-window)
-    (descbinds-anything-install)))
+    (descbinds-anything-install))
 
+  ;; anything-howm
+  (my-require-and-when 'anything-howm
+    (setq anything-howm-recent-menu-number-limit 600)
+    (setq anything-howm-data-directory "~/Dropbox/files/howm")
+    (global-set-key (kbd "C-c C-:") 'anything-howm-menu-command)
+    (global-set-key (kbd "C-c C-;") 'anything-cached-howm-menu)
+    ;; anything-howm用
+    (defun my-anything-howm ()
+      (interactive)
+      (anything-other-buffer
+        '(anything-c-source-buffers+-howm-title
+          anything-c-source-recentf)
+        "*my-anything-howm*"))
+    (global-set-key (kbd "C-c C-n") 'my-anything-howm)))
