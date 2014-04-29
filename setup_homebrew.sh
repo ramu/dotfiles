@@ -60,6 +60,7 @@ brew cask install iterm2
 brew cask install sequel-pro
 brew cask install skype
 brew cask install sourcetree
+brew cask install the-unarchiver
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install yorufukurou
