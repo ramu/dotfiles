@@ -56,7 +56,9 @@ brew cask install google-chrome
 brew cask install google-drive
 brew cask install google-hangouts
 brew cask install iterm2
+brew cask install sequel-pro
 brew cask install skype
 brew cask install sourcetree
 brew cask install vagrant
 brew cask install virtualbox
+
