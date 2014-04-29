@@ -329,6 +329,15 @@
 ;; 色々なファイルの色付け
 (my-require-and-when 'generic-x)
 
+;;モードラインに検索コマンド実行中に,現在の入力にマッチするバッファ内の語数と現在のマッチ位置を表示
+(my-require-and-when 'anzu
+  (setq anzu-use-migemo t)
+  (setq anzu-minimum-input-length 3)
+  (setq anzu-search-threshold 100)
+  (set-face-attribute 'anzu-mode-line nil
+                      :foreground "blue" :weight 'bold)
+  (global-anzu-mode +1))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 以下、ちょっと長い設定/function

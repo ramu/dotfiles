@@ -34,6 +34,7 @@
     open-junk-file
     migemo
     bookmark
+    anzu
     ;;;;;;;;;;; 10_
     anything
     anything-complete
