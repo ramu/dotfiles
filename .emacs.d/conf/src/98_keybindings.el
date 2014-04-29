@@ -15,16 +15,16 @@
 (define-key global-map [?¥] [?\\])                     ; ¥はバックスラッシュに変更
 (define-key cua-global-keymap cua-rectangle-mark-key 'cua-set-rectangle-mark)
 (global-set-key (kbd "C-x C-b") 'bs-show)              ; バッファ一覧をまともに
-(global-set-key (kbd "C-x C-f") 'anything-find-files)
-(global-set-key (kbd "C-x C-i") 'anything-info-at-point)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x C-i") 'helm-info-at-point)
 
-(global-set-key (kbd "M-y") 'anything-show-kill-ring)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-h") 'delete-backward-char)     ; C-hは後退(1文字)
 (global-set-key (kbd "M-h") 'backward-kill-word)       ; M-hは後退(単語)
 (global-set-key (kbd "C-t") 'dmacro-exec)              ; dmacro
 (global-set-key (kbd "C-=") 'indent-region)            ; indent
-(global-set-key (kbd "C-;") 'my-anything)
-(global-set-key (kbd "M-;") 'anything-execute-extended-command)
+(global-set-key (kbd "C-;") 'my-helm)                  ; helm
+(global-set-key (kbd "M-;") 'helm-M-x)                 ; helm
 (global-set-key (kbd "C-x g") 'goto-line)              ; goto-line(M-g g ---> C-x g)
 (global-set-key (kbd "C-x e") 'eval-last-sexp)         ; eval-last-sexp
 (global-set-key (kbd "C-c a") 'align)
@@ -38,8 +38,7 @@
 (global-set-key (kbd "C-c C-k") '(lambda () (interactive) (kill-line 0)))
 (global-set-key (kbd "C-c C-l") 'toggle-truncate-lines)
 (global-set-key (kbd "C-M-i") 'indent-region)
-(global-set-key (kbd "C-M-g") 'anything-grep)
-(global-set-key (kbd "C-M-y") 'anything-show-kill-ring)
+(global-set-key (kbd "C-M-g") 'helm-do-grep)
 ;; magit
 (global-set-key (kbd "M-g i") 'magit-init)             ; git init
 (global-set-key (kbd "M-g s") 'magit-status)           ; git status

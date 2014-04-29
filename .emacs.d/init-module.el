@@ -44,6 +44,7 @@
     descbinds-anything
     auto-complete
     auto-complete-clang
+    ac-helm
     pcomplete
     pos-tip
     dired+
@@ -54,6 +55,12 @@
     flymake-jshint
     google-maps
     helm
+    helm-c-moccur
+    helm-c-yasnippet
+    helm-descbinds
+    helm-gtags
+    helm-pydoc
+    helm-rails
     mew
     multi-term
     org
