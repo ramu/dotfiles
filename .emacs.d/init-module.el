@@ -125,6 +125,7 @@
     hl-line
     blank-mode
     rainbow-delimiters
+    rainbow-mode
     sequential-command
     key-combo
     sticky
