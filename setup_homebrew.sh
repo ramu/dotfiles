@@ -50,6 +50,7 @@ brew install zsh
 
 brew cask install adobe-reader
 brew cask install alfred
+brew cask install cyberduck
 brew cask install dropbox
 brew cask install github
 brew cask install google-chrome
@@ -62,4 +63,3 @@ brew cask install sourcetree
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install yorufukurou
-
