@@ -23,7 +23,7 @@
 (global-set-key (kbd "M-h") 'backward-kill-word)       ; M-hは後退(単語)
 (global-set-key (kbd "C-t") 'dmacro-exec)              ; dmacro
 (global-set-key (kbd "C-=") 'indent-region)            ; indent
-(global-set-key (kbd "C-;") 'my-helm)                  ; helm
+(global-set-key (kbd "C-:") 'my-helm)                  ; helm
 (global-set-key (kbd "M-;") 'helm-M-x)                 ; helm
 (global-set-key (kbd "C-x g") 'goto-line)              ; goto-line(M-g g ---> C-x g)
 (global-set-key (kbd "C-x e") 'eval-last-sexp)         ; eval-last-sexp

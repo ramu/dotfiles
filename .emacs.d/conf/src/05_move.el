@@ -5,7 +5,7 @@
 ;; Hit a Hint
 ;; http://kawaguchi.posterous.com/emacshit-a-hint
 (my-require-and-when 'jaunte
-  (global-set-key (kbd "C-:") 'jaunte))
+  (global-set-key (kbd "C-;") 'jaunte))
 
 ;;; inertial-scroll.el
 ;; Šµ«ƒXƒNƒ[ƒ‹
