@@ -18,3 +18,17 @@
                                              'js-send-buffer-and-go)
                               (local-set-key "\C-cl"
                                              'js-load-file-and-go))))
+
+(my-require-and-when 'coffee-mode
+  (add-to-list 'auto-mode-alist '("\.coffee$" . coffee-mode))
+  (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+
+  (define-key coffee-mode-map (kbd "C-c C-c") 'coffee-compile-buffer)
+  (define-key coffee-mode-map (kbd "C-j") 'coffee-newline-and-indent)
+
+  (defun coffee-custom ()
+    "coffee-mode-hook"
+    (and (set (make-local-variable 'tab-width) 2)
+         (set (make-local-variable 'coffee-tab-width) 2)))
+  (add-hook 'coffee-mode-hook
+            '(lambda () (coffee-custom))))

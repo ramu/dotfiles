@@ -96,6 +96,7 @@
     scala-mode
     scss-mode
     markdown-mode
+    coffee-mode
     ;;;;;;;;;;; 60_
     info
     info+
