@@ -14,12 +14,12 @@
   (setq interpreter-mode-alist (append '(("ruby" . ruby-mode)) interpreter-mode-alist))
   (add-hook 'ruby-mode-hook
             '(lambda ()
-               (inf-ruby-keys)
+               (inf-ruby-minor-mode)
                ;;; ruby-electric
                (ruby-electric-mode t)
                ;;; ruby-block
                (ruby-block-mode t)
-               (ruby-block-highlight-toggle t)
+               (setq ruby-block-highlight-toggle t)
                (setq ruby-block-delay 0)
                ;; 何もしない
                ;(setq ruby-block-highlight-toggle 'noghing)
