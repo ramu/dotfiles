@@ -342,7 +342,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 以下、ちょっと長い設定/function
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ,と.をbufferの切り替えに利用する
+;; >と<をbufferの切り替えに利用する
 (defvar my-ignore-blst
   '("*Help*" "*Compile-Log*"))
 (defvar my-visible-blst nil)
@@ -386,8 +386,8 @@
     (my-show-buffer-list (if pos "[-->] " "[<--] ") (if pos " > " " < " )))
   (setq this-command 'my-operate-buffer))
 
-(global-set-key [?\C-,] (lambda () (interactive) (my-operate-buffer nil)))
-(global-set-key [?\C-.] (lambda () (interactive) (my-operate-buffer t)))
+(global-set-key [?\C-<] (lambda () (interactive) (my-operate-buffer nil)))
+(global-set-key [?\C->] (lambda () (interactive) (my-operate-buffer t)))
 
 
 
