@@ -56,6 +56,8 @@
     flymake
     flymake-shell
     flymake-jshint
+    flycheck
+    flycheck-color-mode-line
     google-maps
     helm
     helm-c-moccur
@@ -94,8 +96,9 @@
     ruby-block
     ruby-electric
     inf-ruby
-    rvm
     rsense
+    rbenv
+    rubocop
     scala-mode
     scss-mode
     markdown-mode

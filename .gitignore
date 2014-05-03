@@ -19,6 +19,7 @@
 .emacs.d/undohist/
 .emacs.d/var/
 .emacs.d/share/Warp/
+.emacs.d/share/rsense-0.3/
 .emacs.d/el-get/*
 !/.emacs.d/el-get/my-recipes/*
 

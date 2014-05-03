@@ -5,6 +5,7 @@
   (my-require-and-when 'ruby-block)
   (my-require-and-when 'ruby-electric)
   (my-require-and-when 'inf-ruby)
+  (my-require-and-when 'rubocop)
 
   (setq ruby-indent-level 2)
   (setq ruby-indent-tabs-mode nil)
@@ -21,24 +22,23 @@
                (ruby-block-mode t)
                (setq ruby-block-highlight-toggle t)
                (setq ruby-block-delay 0)
-               ;; 何もしない
-               ;(setq ruby-block-highlight-toggle 'noghing)
-               ;; ミニバッファに表示
-               ;(setq ruby-block-highlight-toggle 'minibuffer)
-               ;; オーバレイする
-               ;(setq ruby-block-highlight-toggle 'overlay)
-               ;; ミニバッファに表示し, かつ, オーバレイする.
-               ;(setq ruby-block-highlight-toggle t)
                ;;; rsense
                (add-to-list 'ac-sources 'ac-source-rsense-method)
                (add-to-list 'ac-sources 'ac-source-rsense-constant)
-               ))
+               (define-key ruby-mode-map (kbd "C-c .") 'rsense-complete)
+               (define-key ruby-mode-map (kbd "C-?") 'rsense-type-help)
+               ;;; rubocop
+               (rubocop-mode)
+               ;;; flycheck
+               (flycheck-mode)
+               (define-key ruby-mode-map (kbd "C-.") 'flycheck-next-error)
+               (define-key ruby-mode-map (kbd "C-,") 'flycheck-previous-error)))
 
-  ;;; rvm
-  (my-require-and-when 'rvm
-    (rvm-use-default))
+  (my-require-and-when 'rbenv
+    (setq rbenv-executable "rbenv")
+    (rbenv-use-global)
+    (global-rbenv-mode))
 
-  ;;; rsense.el
   (my-require-and-when 'rsense
-    (setq rsense-home "/opt/rsense")
+    (setq rsense-home (expand-file-name "~/.emacs.d/share/rsense-0.3"))
     (add-to-list 'load-path (concat rsense-home "/etc"))))

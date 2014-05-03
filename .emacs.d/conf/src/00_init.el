@@ -30,7 +30,9 @@
                 "/Users/ramusara/scala/bin/"
                 "/Users/ramusara/.pythonbrew/pythons/current/bin/"
                 "/Users/ramusara/perl5/perlbrew/bin/"
-                "/Users/ramusara/perl5/perlbrew/perls/current/bin/"))
+                "/Users/ramusara/perl5/perlbrew/perls/current/bin/"
+                "/Users/ramusara/.rbenv/shims/"
+                "/Users/ramusara/.rbenv/bin/"))
 (when
    (setenv "PATH" (concat dirs ":" (getenv "PATH")))
    (setq exec-path (append (list dirs) exec-path))))
