@@ -103,6 +103,7 @@
     scss-mode
     markdown-mode
     coffee-mode
+    json-mode
     ;;;;;;;;;;; 60_
     info
     info+

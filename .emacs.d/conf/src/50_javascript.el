@@ -32,3 +32,10 @@
          (set (make-local-variable 'coffee-tab-width) 2)))
   (add-hook 'coffee-mode-hook
             '(lambda () (coffee-custom))))
+
+(my-require-and-when 'json-mode
+  (add-hook 'json-mode-hook
+            '(lambda ()
+               (flycheck-mode)
+               (define-key json-mode-map (kbd "C-.") 'flycheck-next-error)
+               (define-key json-mode-map (kbd "C-,") 'flycheck-previous-error))))
