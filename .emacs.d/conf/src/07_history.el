@@ -32,6 +32,7 @@
 ;; undo の履歴を木構造で表示、操作
 (my-require-and-when 'undo-tree
   (global-undo-tree-mode)
+  (define-key undo-tree-map (kbd "C-?") nil)
   (setq undo-tree-visualizer-timestamps t))
 
 ;;; windows.el
