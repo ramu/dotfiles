@@ -39,6 +39,8 @@
 (global-set-key (kbd "C-c C-l") 'toggle-truncate-lines)
 (global-set-key (kbd "C-M-i") 'indent-region)
 (global-set-key (kbd "C-M-g") 'helm-do-grep)
+(global-set-key (kbd "M-+") 'e2wm:start-management)
+
 ;; magit
 (global-set-key (kbd "M-g i") 'magit-init)             ; git init
 (global-set-key (kbd "M-g s") 'magit-status)           ; git status
