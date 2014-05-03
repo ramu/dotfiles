@@ -18,7 +18,8 @@
   (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
   (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
   (add-hook 'lisp-mode-hook 'enable-paredit-mode)
-  (add-hook 'ielm-mode-hook 'enable-paredit-mode))
+  (add-hook 'ielm-mode-hook 'enable-paredit-mode)
+  (define-key paredit-mode-map (kbd "M-;") nil))
 
 ;;; summarye.el
 ;; 関数の一覧を表示
