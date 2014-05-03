@@ -20,6 +20,8 @@
     grep-a-lot
     undohist
     undo-tree
+    tree-mode
+    windata
     recentf-ext
     session
     multiple-cursors
