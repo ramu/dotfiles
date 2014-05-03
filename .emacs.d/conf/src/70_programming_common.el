@@ -158,3 +158,6 @@
 ;; eldoc-extension.el ; 使えない?
 ;(my-require-and-when 'eldoc-extension)
 
+;; git-gutter+
+(my-require-and-when 'git-gutter-fringe+
+  (global-git-gutter+-mode))
