@@ -36,7 +36,7 @@
   (add-hook 'c-mode-common-hook (lambda () (flymake-mode t)))
 
   ;;; flymake for perl
-  (require 'set-perl5lib)
+  (my-require-and-when 'set-perl5lib)
   (defvar flymake-perl-err-line-patterns '(("\\(.*\\) at \\([^ \n]+\\) line \\([0-9]+\\)[,.\n]" 2 3 nil 1)))
   (defconst flymake-allowed-perl-file-name-masks '(("\\.pl$" flymake-perl-init)
                                                    ("\\.pm$" flymake-perl-init)
