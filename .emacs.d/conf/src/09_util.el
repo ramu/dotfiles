@@ -118,7 +118,7 @@
 (setq transient-mark-mode t)
 
 ;; region color
-(set-face-background 'region "darkgreen")
+(set-face-background 'region "#3333BB")
 
 ;; .emacs.d/init.elファイルを開くショートカット
 (global-set-key [(f7)] '(lambda ()(interactive)(find-file "~/.emacs.d/init.el")))
