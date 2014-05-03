@@ -70,4 +70,57 @@
   (my-require-and-when 'helm-rails)
 
   (my-require-and-when 'ac-helm
-    (define-key ac-complete-mode-map (kbd "C-M-]") 'ac-complete-with-helm)))
+    (define-key ac-complete-mode-map (kbd "C-M-]") 'ac-complete-with-helm))
+
+  ;; http://fukuyama.co/helm-dash
+  (my-require-and-when 'helm-dash
+    (my-require-and-when 'esqlite)
+    (setq helm-dash-docsets-path (expand-file-name "~/.emacs.d/var/.docsets"))
+    (setq helm-dash-min-length 3)
+
+    (defun my-set-doctype-for-helm-dash ()
+      (setq-local helm-dash-docsets
+                  (case major-mode
+                    (sgml-mode '("Emmet"))
+                    (js2-mode '("JavaScript" "NodeJS" "UnderscoreJS" "AngularJS" "Compass" "EmberJS" "Express" "HTML" "Haml" "Jasmine" "KnockoutJS" "RequireJS" "Sass" "UnderscoreJS" "jQuery" "jQuery_Mobile"))
+                    (less-css-mode '("Less"))
+                    (markdown-mode '("Markdown"))
+                    (css-mode '("CSS"))
+                    (scss-mode '("CSS" "Compass"))
+                    (shell-script-mode '("Bash"))
+                    (common-lisp-mode '("Common_Lisp"))
+                    (cc-mode '("C" "C++"))
+                    (ruby-mode '("Ruby" "Ruby_on_Rails_4"))
+                    (scala-mode '("Scala"))
+                    (php-mode '("PHP"))
+                    (python-mode '("Python_3"))
+                    (cperl-mode '("Perl"))
+                    (go-mode '("Go"))
+                    (lisp-mode '("Emacs_Lisp"))
+                    (coffee-mode '("CoffeeScript")))))
+    (dolist (hook (list 'sgml-mode 'js2-mode-hook 'less-css-mode-hook 'markdown-mode-hook 'css-mode-hook 'scss-mode-hook 'shell-script-mode 'common-lisp-mode
+                        'cc-mode 'ruby-mode 'scala-mode 'php-mode 'python-mode 'cperl-mode 'go-mode 'lisp-mode 'coffee-mode))
+      (add-hook hook 'my-set-doctype-for-helm-dash))
+    (setq helm-dash-completing-read-func
+          (lambda ($name $docsets)
+            (helm :sources `((name . ,$name)
+                             (candidates . ,$docsets)
+                             (action . (lambda ($cand) $cand))))))
+    (defun my-helm-dash-install-docset ()
+      (interactive)
+      (unless (boundp 'my-helm-dash-available-docsets-cache)
+        (setq my-helm-dash-available-docsets-cache (helm-dash-available-docsets)))
+      (cl-letf (((symbol-function 'helm-dash-available-docsets)
+                 (lambda () my-helm-dash-available-docsets-cache)))
+        (helm-dash-install-docset)))
+    (defun my-helm-dash-install-from-list ($list)
+      (dolist ($name $list)
+        (let ((helm-dash-completing-read-func
+               (lambda (_i1 _i2) $name)))
+          (cl-letf (((symbol-function 'helm-dash-available-docsets)
+                     (lambda () nil)))
+            (helm-dash-install-docset $name)))))
+    ; (helm-dash-installed-docsets)
+    ; (insert (format "\n%s" (helm-dash-available-docsets)))
+    ; (my-helm-dash-install-from-list '("AngularJS" "BackboneJS" "Bash" "C++" "C" "CoffeeScript" "Common_Lisp" "Compass" "Emacs_Lisp" "EmberJS" "Emmet" "Express" "Go" "HTML" "Haml" "Haskell" "Jasmine" "JavaScript" "KnockoutJS" "Less" "Markdown" "NodeJS" "PHP" "Perl" "Python_3" "RequireJS" "Ruby" "Ruby_on_Rails_4" "Sass" "Scala" "UnderscoreJS" "jQuery" "jQuery_Mobile"))
+    ))
