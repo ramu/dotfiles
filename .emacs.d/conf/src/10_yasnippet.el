@@ -2,9 +2,8 @@
 (require '00_common)
 
 (my-require-and-when 'yasnippet
-  (yas/initialize)
-  (yas/load-directory "~/.emacs.d/share/plugins/yasnippet")
-  (setq yas/prompt-functions '(yas/dropdown-prompt))
+  (setq yas-snippet-dirs '("/Users/ramusara/.emacs.d/plugins/yasnippet/snippets/text-mode"))
+  (yas-global-mode 1)
 
   ;;; yasnippet + flymake
   (defvar flymake-is-active-flag nil)
