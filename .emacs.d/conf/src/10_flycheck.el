@@ -1,6 +1,7 @@
 ;;; 10_flycheck.el ---
 (my-require-and-when 'flycheck
   (my-require-and-when 'flycheck-color-mode-line)
+  (setq flycheck-display-errors-delay '0.1)
 
   (flycheck-define-checker ruby-rubocop
                            "A Ruby syntax and style checker using the RuboCop tool."
