@@ -22,6 +22,8 @@
   ; global key設定はまとめてやる
   (define-key helm-map (kbd "C-M-n") 'helm-next-source)
   (define-key helm-map (kbd "C-M-p") 'helm-previous-source)
+  (define-key helm-map (kbd "C-h") 'delete-backward-char)
+  (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
 
   ;; config
   (setq helm-idle-delay 0.1)
