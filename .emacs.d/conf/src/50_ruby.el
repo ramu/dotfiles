@@ -42,3 +42,15 @@
   (my-require-and-when 'rsense
     (setq rsense-home (expand-file-name "~/.emacs.d/share/rsense-0.3"))
     (add-to-list 'load-path (concat rsense-home "/etc"))))
+
+;; rails
+(my-require-and-when 'rinari
+  (setq rinari-minor-mode-prefixes (list "'"))
+  (add-hook 'ruby-mode-hook 'rinari-minor-mode)
+  (add-hook 'coffee-mode-hook 'rinari-minor-mode)
+
+  (my-require-and-when 'rspec-mode
+    (eval-after-load 'rspec-mode '(rspec-install-snippets)))
+
+  (my-require-and-when 'rhtml-mode
+    (add-hook 'rhtml-mode-hook (lambda () (rinari-launch)))))

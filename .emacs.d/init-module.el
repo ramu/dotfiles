@@ -92,6 +92,9 @@
     ipython
     pysmell
     pymacs
+    rhtml-mode
+    rinari
+    rspec-mode
     ruby-mode
     ruby-block
     ruby-electric
