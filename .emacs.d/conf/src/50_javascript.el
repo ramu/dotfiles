@@ -20,7 +20,7 @@
                                              'js-load-file-and-go))))
 
 (my-require-and-when 'coffee-mode
-  (add-to-list 'auto-mode-alist '("\.coffee$" . coffee-mode))
+  (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
   (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 
   (define-key coffee-mode-map (kbd "C-c C-c") 'coffee-compile-buffer)
