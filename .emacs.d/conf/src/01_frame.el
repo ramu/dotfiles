@@ -112,9 +112,9 @@
 (defvar mode-line-cleaner-alist
   '(;; minor-mode
     (my-mode . " my")
-    (lisp-mode . "el")
-    (lisp-interaction-mode . "li")
-    (paredit-mode . "pe")
+    (lisp-mode . " el")
+    (lisp-interaction-mode . " li")
+    (paredit-mode . " pe")
     (ruby-block-mode . " rb")
     (drill-instructor . " d")
     (undo-tree-mode . " ut")
