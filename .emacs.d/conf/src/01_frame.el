@@ -119,6 +119,7 @@
     (drill-instructor . " d")
     (undo-tree-mode . " ut")
     (flymake-mode . " fm")
+    (git-gutter+-mode . " gg")
     ;; Major mode
     (fundamental-mode . "F")
     (emacs-lisp-mode . "El")
