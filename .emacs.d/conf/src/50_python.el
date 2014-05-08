@@ -15,7 +15,7 @@
 
   ;; python-mode
   (my-require-and-when 'python-mode
-    (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
+    (add-auto-mode 'python-mode "\\.py$")
     (setq interpreter-mode-alist (cons '("python" . python-mode) interpreter-mode-alist))
     (autoload 'python-mode "python-mode" "Python editing mode." t)
 

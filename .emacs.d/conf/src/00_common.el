@@ -27,4 +27,9 @@
          ,@body)
      (message "autoLoad error: %s" ,file)))
 
+(defun add-auto-mode (mode &rest patterns)
+  "Add auto-mode-alist"
+  (dolist (pattern patterns)
+    (add-to-list 'auto-mode-alist (cons pattern mode))))
+
 (provide '00_common)

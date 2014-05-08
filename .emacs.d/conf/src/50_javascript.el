@@ -2,7 +2,7 @@
 (require '00_common)
 
 (my-require-and-when 'js2-mode
-                    (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode)))
+  (add-auto-mode 'js2-mode "\\.js$"))
 
 (my-require-and-when 'js-comint
   (setq inferior-js-program-command "env NODE_NO_READLINE=1 node")
@@ -20,8 +20,7 @@
                                              'js-load-file-and-go))))
 
 (my-require-and-when 'coffee-mode
-  (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
-  (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+  (add-auto-mode 'coffee-mode "\\.coffee$" "Cakefile")
 
   (define-key coffee-mode-map (kbd "C-c C-c") 'coffee-compile-buffer)
   (define-key coffee-mode-map (kbd "C-j") 'coffee-newline-and-indent)

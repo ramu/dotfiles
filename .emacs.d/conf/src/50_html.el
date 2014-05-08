@@ -44,7 +44,7 @@
   (newline-and-indent))
 
 (my-require-and-when 'scss-mode
-  (add-to-list 'auto-mode-alist '("\\.\\(scss\\|css\\)\\'" . scss-mode))
+  (add-auto-mode 'scss-mode "\\.\\(scss\\|css\\)\\'")
   (add-hook 'scss-mode-hook 'ac-css-mode-setup)
   (add-hook 'scss-mode-hook
             (lambda ()

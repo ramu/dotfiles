@@ -17,12 +17,12 @@
       (define-key php-mode-map "\C-\M-a" 'php-beginning-of-defun)
       (define-key php-mode-map "\C-\M-e" 'php-end-of-defun)
       ))
+  (add-auto-mode 'php-mode "\\.ctp$")
 
   ;;; cakephp
   (my-require-and-when 'cake
     (global-cake t)
     (cake-set-default-keymap))
-  (add-to-list 'auto-mode-alist '("\\.ctp$" . php-mode))
 
   ;;; phpdoc
   (my-require-and-when 'phpdoc
@@ -56,5 +56,4 @@
                       :submode php-mode
                       :front "<\\?\\(php\\)?"
                       :back "\\?>")))
-  (add-to-list 'auto-mode-alist '("\\.php?\\'" . xml-mode)))
-
+  (add-auto-mode 'xml-mode "\\.php?\\'"))

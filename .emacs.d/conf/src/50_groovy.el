@@ -5,7 +5,7 @@
   ; turn on syntax highlighting
   (global-font-lock-mode 1)
 
-  (add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
+  (add-auto-mode 'groovy-mode "\\.groovy$")
   (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
   ; make Groovy mode electric by default.

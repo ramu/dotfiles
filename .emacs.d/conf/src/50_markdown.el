@@ -2,9 +2,7 @@
 (require '00_common)
 
 (my-require-and-when 'markdown-mode
-  (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
-  (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-  (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
+  (add-auto-mode 'markdown-mode "\\.text\\'" "\\.markdown\\'" "\\.md\\'"))
 
 ;;; Warp
 (my-require-and-when 'warp

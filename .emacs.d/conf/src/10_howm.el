@@ -15,4 +15,4 @@
              howm-keyword-to-kill-ring))
 
 (add-hook 'org-mode-hook 'howm-mode)
-(add-to-list 'auto-mode-alist '("\\.howm$" . org-mode))
+(add-auto-mode 'org-mode "\\.howm$")

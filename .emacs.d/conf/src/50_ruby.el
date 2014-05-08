@@ -9,10 +9,7 @@
 
   (setq ruby-indent-level 2)
   (setq ruby-indent-tabs-mode nil)
-  (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
-  (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
-  (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
-  (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+  (add-auto-mode 'ruby-mode "\\.rb$" "Capfile$" "Gemfile$" "Rakefile$")
   (setq interpreter-mode-alist (append '(("ruby" . ruby-mode)) interpreter-mode-alist))
   (add-hook 'ruby-mode-hook
             '(lambda ()
