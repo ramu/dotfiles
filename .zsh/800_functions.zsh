@@ -104,3 +104,12 @@ rails-new--skip-bundle() {
    cd $1
 }
 
+#-----------------------------------------------------------
+# rails new $1 + cd $1 + git init/add/commit
+rails-new-and-git-setup() {
+   rails new $1
+   cd $1
+   git init
+   git add .
+   git commit -m 'Initialize repository'
+}
