@@ -39,7 +39,7 @@
   ; helm-c-moccur.el
   (my-require-and-when 'helm-c-moccur
     (setq moccur-split-word t)
-    (global-set-key (kbd "M-s") 'helm-c-moccur-occur-by-moccur)
+    ;(global-set-key (kbd "M-s") 'helm-c-moccur-occur-by-moccur)
     (define-key isearch-mode-map (kbd "C-o") 'helm-c-moccur-from-isearch)
     (define-key isearch-mode-map (kbd "C-M-o") 'isearch-occur)
     (setq anything-c-moccur-anything-idle-delay 0.1
@@ -48,6 +48,12 @@
           anything-c-moccur-enable-initial-pattern t))
 
   (my-require-and-when 'helm-c-moccur)
+
+  (my-require-and-when 'helm-swoop
+    (setq helm-swoop-split-with-multiple-windows nil)
+    (setq helm-swoop-split-direction 'split-window-horizontally)
+    (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+    (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop))
 
   (my-require-and-when 'helm-c-yasnippet
     (setq helm-yas-space-match-any-greedy t)

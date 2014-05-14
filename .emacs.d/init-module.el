@@ -67,6 +67,7 @@
     helm-pydoc
     helm-rails
     helm-dash
+    helm-swoop
     mew
     multi-term
     org
