@@ -1,6 +1,10 @@
 ;;;; 09_util.el
 (require '00_common)
 
+;; move-text
+(my-require-and-when 'move-text
+  (move-text-default-bindings))
+
 ;; mark-multiple
 (my-require-and-when 'multiple-cursors
   (global-set-key (kbd "C-S-c c") 'mc/edit-lines)

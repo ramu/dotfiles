@@ -37,6 +37,7 @@
     migemo
     bookmark
     anzu
+    move-text
     ;;;;;;;;;;; 10_
     anything
     anything-complete
