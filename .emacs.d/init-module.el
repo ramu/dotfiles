@@ -62,6 +62,7 @@
     helm
     helm-c-moccur
     helm-c-yasnippet
+    helm-css-scss
     helm-descbinds
     helm-gtags
     helm-pydoc

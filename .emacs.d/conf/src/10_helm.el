@@ -49,6 +49,14 @@
 
   (my-require-and-when 'helm-c-moccur)
 
+  (my-require-and-when 'helm-css-scss
+    (setq helm-css-scss-insert-close-comment-depth 2)
+    (setq helm-css-scss-split-direction 'split-window-horizontally)
+
+    (dolist ($hook '(css-mode-hook scss-mode-hook))
+      (add-hook $hook (lambda ()
+                        (local-set-key (kbd "C-:") 'helm-css-scss)))))
+
   (my-require-and-when 'helm-swoop
     (setq helm-swoop-split-with-multiple-windows nil)
     (setq helm-swoop-split-direction 'split-window-horizontally)
