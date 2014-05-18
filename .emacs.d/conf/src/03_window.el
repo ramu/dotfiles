@@ -58,7 +58,7 @@
   (push '("^\*[aA]nything.+\*$"      :position right :regexp t)   popwin:special-display-config)
   (push '("*my-anything*"            :position right)             popwin:special-display-config)
   (push '("*my-helm*"                :position right)             popwin:special-display-config)
-  (push '("^\*helm.+\*$"             :position right :regexp t)   popwin:special-display-config)
+  (push '("^\*[hH]elm.+\*$"          :position right :regexp t)   popwin:special-display-config)
   (push '(" *undo-tree*"             :position right)             popwin:special-display-config)
   (push '("*Kill Ring*"              :position right)             popwin:special-display-config)
   (push '("*Shell Command Output*"   :position right :noselect t) popwin:special-display-config)
