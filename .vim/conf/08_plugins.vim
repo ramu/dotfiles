@@ -33,6 +33,7 @@ NeoBundle 'ujihisa/quickrun'
 NeoBundle 'vim-scripts/buftabs'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-rails'
 
 NeoBundle 'sudo.vim'
 NeoBundle 'DirDiff.vim'
