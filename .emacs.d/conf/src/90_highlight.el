@@ -13,6 +13,8 @@
 
 ;; 行末の空白表示
 (setq-default show-trailing-whitespace t)
+(add-hook 'term-mode-hook '(lambda ()
+                             (setq show-trailing-whitespace nil)))
 
 ;; region high-light
 (setq transient-mark-mode t)
