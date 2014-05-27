@@ -138,6 +138,7 @@
     auto-highlight-symbol
     highlight-indentation
     hl-line
+    hl-line+
     blank-mode
     rainbow-delimiters
     rainbow-mode

@@ -13,7 +13,7 @@
   (setq highlight-indent-active t))
 
 ;;; 現在カーソルのある行をハイライト表示する
-(my-require-and-when 'hl-line
+(my-require-and-when 'hl-line+
   (defface my-hlline-face
     '((((class color) (background dark))
       (:background "#226688" t))
@@ -22,6 +22,10 @@
       (t (:bold t)))
     "*Face used by hi-ilne." :group 'hoge)
   (setq hl-line-face 'my-hlline-face)
+  (add-hook 'term-mode-hook '(lambda ()
+                               (set (make-local-variable 'hl-line-range-function)
+                                    (lambda ()
+                                      '(0 . 0)))))
   (global-hl-line-mode t))
 
 ;;; 全角スペース、タブに色付け
