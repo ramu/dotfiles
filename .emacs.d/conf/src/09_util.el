@@ -61,10 +61,6 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
-;; カーソル点滅
-(blink-cursor-mode t)
-(setq blink-cursor-interval 0.7)
-
 ;; スクロールバーを消す
 (setq scroll-bar-mode nil)
 ;; スクロールバーを右に表示
@@ -108,21 +104,6 @@
 
 ;; ツールバー非表示
 (tool-bar-mode -1)
-
-;; 対応する括弧を光らせる(グラフィック環境のみ)
-(show-paren-mode t)
-(setq show-paren-style 'expression)
-(set-face-background 'show-paren-match-face "#222277")
-;(set-face-underline-p 'show-paren-match-face "lightblue")
-
-;; 行末の空白表示
-(setq-default show-trailing-whitespace t)
-
-;; region high-light
-(setq transient-mark-mode t)
-
-;; region color
-(set-face-background 'region "#3333BB")
 
 ;; .emacs.d/init.elファイルを開くショートカット
 (global-set-key [(f7)] '(lambda ()(interactive)(find-file "~/.emacs.d/init.el")))
@@ -315,7 +296,6 @@
 (my-require-and-when 'open-junk-file
   (setq open-junk-file-format "~/junk/%Y-%m-%d-%H%M%S."))
 
-
 ;;; migemo.el
 ; ローマ字のまま日本語をインクリメンタルサーチ
 (my-require-and-when 'migemo
@@ -329,9 +309,6 @@
   (add-hook 'minibuffer-setup-hook 'mac-change-language-to-us)
   (add-hook 'isearch-mode-hook 'mac-change-language-to-us)
   (migemo-init))
-
-;; 色々なファイルの色付け
-(my-require-and-when 'generic-x)
 
 ;;モードラインに検索コマンド実行中に,現在の入力にマッチするバッファ内の語数と現在のマッチ位置を表示
 (my-require-and-when 'anzu

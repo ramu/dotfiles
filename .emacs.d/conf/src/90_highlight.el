@@ -1,6 +1,28 @@
 ;;;; 90_highlight.el ---
 (require '00_common)
 
+;; カーソル点滅
+(blink-cursor-mode t)
+(setq blink-cursor-interval 0.7)
+
+;; 対応する括弧を光らせる(グラフィック環境のみ)
+(show-paren-mode t)
+(setq show-paren-style 'expression)
+(set-face-background 'show-paren-match-face "#222277")
+;(set-face-underline-p 'show-paren-match-face "lightblue")
+
+;; 行末の空白表示
+(setq-default show-trailing-whitespace t)
+
+;; region high-light
+(setq transient-mark-mode t)
+
+;; region color
+(set-face-background 'region "#3333BB")
+
+;; 色々なファイルの色付け
+(my-require-and-when 'generic-x)
+
 ; カーソル上のシンボル自動ハイライト
 (my-require-and-when 'auto-highlight-symbol
   (global-auto-highlight-symbol-mode t)
