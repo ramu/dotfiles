@@ -24,7 +24,7 @@ if [ -d $ZDOTDIR/$UNAME ]; then
     unset rc
 fi
 
-# screen
+# tmux
 if [[ $TERM != "screen-256color" && $EMACS != "t" ]]; then
     tmux
 fi
