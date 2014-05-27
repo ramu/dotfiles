@@ -3,7 +3,7 @@ ZDOTDIR=~/.zsh
 UNAME=`uname`
 
 # emacs configuration
-if [[ $EMACS = "t" ]]; then
+if [[ "$EMACS" != "" ]]; then
     unsetopt zle
     export PATH=""
 fi
@@ -25,7 +25,7 @@ if [ -d $ZDOTDIR/$UNAME ]; then
 fi
 
 # tmux
-if [[ $TERM != "screen-256color" && $EMACS != "t" ]]; then
+if [[ $TERM != "screen-256color" && $EMACS = "" ]]; then
     tmux
 fi
 
