@@ -143,6 +143,7 @@
     rainbow-delimiters
     rainbow-mode
     sequential-command
+    twittering-mode
     key-combo
     sticky
     key-chord
