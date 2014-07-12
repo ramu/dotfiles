@@ -20,6 +20,7 @@ brew install gdbm
 brew install gettext
 brew install git
 brew install git-flow
+brew install html2text
 brew install hub
 brew install jpeg
 brew install jq
