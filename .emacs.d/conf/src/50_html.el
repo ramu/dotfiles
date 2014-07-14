@@ -38,6 +38,12 @@
   (previous-line)
   (indent-for-tab-command))
 
+(defun my-css-electric-pair-brace-sameline ()
+  (interactive)
+  (insert "{}")
+  (backward-char)
+  (indent-for-tab-command))
+
 (defun my-semicolon-ret ()
   (interactive)
   (insert ";")
@@ -48,7 +54,8 @@
   (add-hook 'scss-mode-hook 'ac-css-mode-setup)
   (add-hook 'scss-mode-hook
             (lambda ()
-              (define-key scss-mode-map "\M-{" 'my-css-electric-pair-brace)
+              (define-key scss-mode-map "{" 'my-css-electric-pair-brace)
+              (define-key scss-mode-map "\M-{" 'my-css-electric-pair-brace-sameline)
               (define-key scss-mode-map ";" 'my-semicolon-ret)
               (setq css-indent-offset 2)
               (setq scss-compile-at-save nil)
