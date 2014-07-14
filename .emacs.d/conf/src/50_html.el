@@ -47,7 +47,10 @@
 (defun my-semicolon-ret ()
   (interactive)
   (insert ";")
-  (newline-and-indent))
+  (if (search-forward "}" (point-at-eol) t)
+      (progn (search-backward ";")
+             (forward-char))
+    (newline-and-indent)))
 
 (my-require-and-when 'scss-mode
   (add-auto-mode 'scss-mode "\\.\\(scss\\|css\\)\\'")
