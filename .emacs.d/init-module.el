@@ -38,6 +38,7 @@
     bookmark
     anzu
     move-text
+    sublimity
     ;;;;;;;;;;; 10_
     anything
     anything-complete

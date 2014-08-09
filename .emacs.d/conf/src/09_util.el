@@ -1,6 +1,13 @@
 ;;;; 09_util.el
 (require '00_common)
 
+;; sublimity
+(my-require-and-when 'sublimity
+  (my-require-and-when 'sublimity-scroll)
+  (my-require-and-when 'sublimity-map)
+  (my-require-and-when 'sublimity-attractive)
+  (sublimity-mode 1))
+
 ;; move-text
 (my-require-and-when 'move-text
   (move-text-default-bindings))
