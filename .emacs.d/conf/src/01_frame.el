@@ -95,7 +95,10 @@
                 mode-line-modified
                 mode-line-frame-identification
                 mode-line-buffer-identification
-                " "
+                (line-number-mode "(%l,")
+                (column-number-mode "%c:")
+                (-3 . "%p")
+                ") "
                 global-mode-string
                 " %[("
                 mode-name
@@ -103,9 +106,6 @@
                 minor-mode-alist
                 "%n" ")%]-"
                 (which-func-mode ("" which-func-format "-"))
-                (line-number-mode "L%l-")
-                (column-number-mode "C%c-")
-                (-3 . "%p")
                 "-%-"))
 
 ; モードラインの表示文字を短縮表示(http://d.hatena.ne.jp/syohex/20130131/1359646452)
