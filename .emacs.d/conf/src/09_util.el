@@ -8,8 +8,7 @@
 (my-require-and-when 'sublimity
   (my-require-and-when 'sublimity-scroll)
   (my-require-and-when 'sublimity-map)
-  (my-require-and-when 'sublimity-attractive)
-  (sublimity-mode 1))
+  (my-require-and-when 'sublimity-attractive))
 
 ;; move-text
 (my-require-and-when 'move-text
