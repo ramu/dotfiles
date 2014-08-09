@@ -106,6 +106,7 @@
                 minor-mode-alist
                 "%n" ")%]-"
                 (which-func-mode ("" which-func-format "-"))
+                (:eval (list (nyan-create)))
                 "-%-"))
 
 ; モードラインの表示文字を短縮表示(http://d.hatena.ne.jp/syohex/20130131/1359646452)

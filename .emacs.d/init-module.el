@@ -39,6 +39,7 @@
     anzu
     move-text
     sublimity
+    nyan-mode
     ;;;;;;;;;;; 10_
     anything
     anything-complete

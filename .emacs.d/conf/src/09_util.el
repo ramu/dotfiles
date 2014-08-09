@@ -1,6 +1,13 @@
 ;;;; 09_util.el
 (require '00_common)
 
+;; nyan-mode
+(my-require-and-when 'nyan-mode
+  (setq nyan-animation-frame-interval 0.1)
+  (setq nyan-bar-length 8)
+  (nyan-mode)
+  (nyan-start-animation))
+
 ;; emacs-neotree
 (my-require-and-when 'neotree)
 
