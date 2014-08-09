@@ -227,6 +227,7 @@
     pcsv
     git-gutter-plus
     git-gutter-fringe-plus
+    neotree
     ;; emacs-w3m -> autoconf error
     ;; text-translator -> bzr execute-find
     ;; anything-c-yasnippet -> 切り捨てる？(http://d.hatena.ne.jp/sugyan/20120111/1326288445)

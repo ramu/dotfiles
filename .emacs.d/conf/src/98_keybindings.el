@@ -40,6 +40,7 @@
 (global-set-key (kbd "C-M-i") 'indent-region)
 (global-set-key (kbd "C-M-g") 'helm-do-grep)
 (global-set-key (kbd "M-+") 'e2wm:start-management)
+(global-set-key [f8] 'neotree-toggle)
 
 ;; magit
 (global-set-key (kbd "M-g i") 'magit-init)             ; git init

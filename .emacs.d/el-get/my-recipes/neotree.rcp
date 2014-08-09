@@ -1,0 +1,4 @@
+(:name neotree
+ :type github
+ :description "A emacs tree plugin like NerdTree for Vim."
+ :pkgname "jaypei/emacs-neotree")

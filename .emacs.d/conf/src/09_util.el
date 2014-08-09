@@ -1,6 +1,9 @@
 ;;;; 09_util.el
 (require '00_common)
 
+;; emacs-neotree
+(my-require-and-when 'neotree)
+
 ;; sublimity
 (my-require-and-when 'sublimity
   (my-require-and-when 'sublimity-scroll)
