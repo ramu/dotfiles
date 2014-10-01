@@ -22,9 +22,16 @@
     editor    = vim
     autocrlf  = input
     quotepath = false
+	excludesfile = /Users/ramusara/.gitignore_global
 
 [credential]
 	helper = osxkeychain
 
 [merge]
     ff = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
