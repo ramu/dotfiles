@@ -4,6 +4,11 @@ alias bi='brew install'
 alias bs='brew search'
 alias clean='rm -f *~'
 alias df='df -H'
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
 alias ebc='emacs -batch -f batch-byte-compile'
 alias ei='easy_install'
 if [ `uname` = "Darwin" ]; then
