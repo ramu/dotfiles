@@ -4,6 +4,7 @@ require 'minitest/autorun'
 require 'minitest/unit'
 require './%testee%'
 
+# %test_class%
 class %test_class% < MiniTest::Unit::TestCase
   def setup
     @sut = %cap-testee%.new
