@@ -111,7 +111,7 @@
   (my-autoload-and-when 'enable-test-case-mode-if-test "test-case-mode")
   (my-autoload-and-when 'test-case-find-all-tests "test-case-mode")
   (my-autoload-and-when 'test-case-compilation-finish-run-all "test-case-mode")
-  (my-require-and-when 'test-case-pynose)
+  ;(my-require-and-when 'test-case-pynose)
   (add-hook 'find-file-hook 'enable-test-case-mode-if-test)
   (add-hook 'compilation-finish-functions 'test-case-compilation-finish-run-all)
   (add-hook 'after-save-hook (lambda () (if test-case-mode (test-case-run)))))
