@@ -1,4 +1,6 @@
-#name : each { |...| ... }
+#name : each do |...| ... end
 #group : collections
 # --
-each { |${e}| $0 }
+each do |${e}|
+  $0
+end
