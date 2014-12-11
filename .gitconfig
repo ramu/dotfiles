@@ -29,6 +29,8 @@
 
 [merge]
     ff = false
+[pull]
+   rebase = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
