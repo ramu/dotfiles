@@ -23,6 +23,7 @@
     autocrlf  = input
     quotepath = false
 	excludesfile = /Users/ramusara/.gitignore_global
+    precomposeunicode = true
 
 [credential]
 	helper = osxkeychain
