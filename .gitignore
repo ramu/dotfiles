@@ -1,7 +1,7 @@
 # .gitignore
 # zsh
 .zsh/modules/
-.zsh/.zcompdump
+.zsh/.zcompdump*
 .zsh/.z
 
 # mercurial
