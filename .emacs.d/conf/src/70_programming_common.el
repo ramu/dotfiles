@@ -142,7 +142,8 @@
 ;; A Emacs mode for Git.
 ;; http://philjackson.github.com/magit/
 (my-require-and-when 'magit
-  (set-face-foreground 'magit-diff-add "green"))
+  (set-face-foreground 'magit-diff-add "green")
+  (set-face-background 'magit-item-highlight "#00000"))
 
 ;;; eldoc.el
 ;; カーソル位置の関数の仮引数をエコーエリアに表示
