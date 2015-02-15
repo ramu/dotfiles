@@ -94,7 +94,7 @@
 ;;; guide-key
 (my-require-and-when 'guide-key
   (setq guide-key/guide-key-sequence
-        '("C-x r" "C-x 4"
+        '("C-x r" "C-x 4" "M-g"
           (org-mode "C-c C-x")
           (outline-minor-mode "C-c @")))
   (setq guide-key/highlight-command-regexp "rectangle\\|register\\|org-clock")
