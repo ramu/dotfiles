@@ -152,6 +152,7 @@
     smartrep
     expand-region
     server
+    guide-key
     ))
 (let ((not-installed (loop for x in install-package-list
                            when (not (package-installed-p x))
@@ -199,7 +200,6 @@
     drill-instructor
     dmacro
     ddskk
-    one-key
     navi2ch
     yspel
     dont-type-twice
