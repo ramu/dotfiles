@@ -40,7 +40,11 @@
 ;;; e2wm.el
 ;; emacs内Window管理ツール
 ;; http://d.hatena.ne.jp/kiwanami/20100528/1275038929
-(my-require-and-when 'e2wm)
+(my-require-and-when 'e2wm
+  (my-require-and-when 'e2wm-vcs)
+  (e2wm:add-keymap e2wm:pst-minor-mode-keymap
+                   '(("M-w" . e2wm:dp-magit))
+                   e2wm:prefix-key))
 
 ;;; popwin.el
 ;; ヘルプバッファや補完バッファをポップアップで表示
