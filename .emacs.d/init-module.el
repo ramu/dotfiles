@@ -112,6 +112,7 @@
     markdown-mode
     coffee-mode
     json-mode
+    web-mode
     ;;;;;;;;;;; 60_
     info
     info+

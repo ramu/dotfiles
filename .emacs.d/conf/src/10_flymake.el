@@ -112,6 +112,7 @@
                '("line \\([0-9]+\\) column \\([0-9]+\\) - \\(Warning\\|Error\\): \\(.*\\)"
                  nil 1 2 4))
   (add-hook 'html-mode-hook '(lambda () (flymake-mode t)))
+  (add-hook 'web-mode-hook '(lambda () (flymake-mode t)))
 
   ;;; flymake for javascript
   (add-hook 'js2-mode-hook '(lambda ()
