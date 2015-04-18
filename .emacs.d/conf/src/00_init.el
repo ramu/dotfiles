@@ -27,6 +27,7 @@
                 "/bin/"
                 "/usr/local/bin/"
                 "/opt/local/bin/"
+                "/Users/ramusara/bin/"
                 "/Users/ramusara/scala/bin/"
                 "/Users/ramusara/.pythonbrew/pythons/current/bin/"
                 "/Users/ramusara/perl5/perlbrew/bin/"
