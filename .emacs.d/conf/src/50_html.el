@@ -45,7 +45,7 @@
   (add-hook 'emmet-mode-hook (lambda ()
                                (setq emmet-indentation 2)
                                (setq emmet-move-cursor-between-quotes t)))
-  (define-key emmet-mode-keymap (kbd "C-j") nil)
+  (define-key emmet-mode-keymap (kbd "C-c C-j") 'emmet-expand-yas)
   (define-key emmet-mode-keymap (kbd "C-c TAB") 'emmet-expand-line)
   (define-key emmet-preview-keymap (kbd "C-c C-m") 'emmet-preview-accept))
 
