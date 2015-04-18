@@ -43,7 +43,7 @@
 ;; http://e-arrows.sakura.ne.jp/2010/06/dont-type-twice-el.html
 (my-require-and-when 'dont-type-twice
   (global-dont-type-twice t)
-  (setq dt2-notify-func 'dt2-growl))   ; Growlで表示
+  (setq dt2-notify-func 'dt2-message))
 
 
 ;;; drill-instructor.el ---
