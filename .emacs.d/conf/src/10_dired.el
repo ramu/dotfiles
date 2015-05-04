@@ -3,6 +3,9 @@
 
 ;;; dired
 (my-require-and-when 'dired
+  (setq dired-dwim-target t)            ; dired2つ開いてるときに、move/copy先をもう一方のdiredで開いてる場所にする
+  (setq dired-recursive-copies 'always)
+
   ;(defvar diredp-file-name 'diredp-file-name)
   (set-face-foreground 'diredp-file-name "#FFFFFF")
   (set-face-foreground 'diredp-file-suffix "#FFFFFF")
