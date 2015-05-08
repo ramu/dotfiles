@@ -122,9 +122,22 @@
 (my-require-and-when 'sr-speedbar
   (setq sr-speedbar-right-side nil)
   (setq speedbar-show-unknown-files t)
+  (add-hook 'speedbar-mode-hook (lambda ()
+                                  (define-key speedbar-file-key-map [right] 'my-speedbar-expand-line)
+                                  (define-key speedbar-file-key-map "\C-f" 'my-speedbar-expand-line)
+                                  (define-key speedbar-file-key-map [left] 'speedbar-contract-line)
+                                  (define-key speedbar-file-key-map "\C-b" 'speedbar-contract-line)
+                                  ;;(define-key speedbar-file-key-map "\C-h" 'speedbar-up-directory)
+                                  ))
   ;; configure
   (setq sr-speedbar-width-x 15)
   (setq sr-speedbar-max-width 20))
+
+(defun my-speedbar-expand-line ()
+  (interactive)
+  (if (= (point-max) (progn (speedbar-expand-line) (point-max)))
+      (save-current-buffer
+        (speedbar-edit-line))))
 
 ;;; xcscope.el
 ;; cscopeと連携
