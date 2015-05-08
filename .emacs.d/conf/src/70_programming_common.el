@@ -121,7 +121,7 @@
 ;; http://www.emacswiki.org/emacs/sr-speedbar.el
 (my-require-and-when 'sr-speedbar
   (setq sr-speedbar-right-side nil)
-  ;(sr-speedbar-open)
+  (setq speedbar-show-unknown-files t)
   ;; configure
   (setq sr-speedbar-width-x 15)
   (setq sr-speedbar-max-width 20))
