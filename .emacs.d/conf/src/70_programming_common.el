@@ -122,6 +122,7 @@
 (my-require-and-when 'sr-speedbar
   (setq sr-speedbar-right-side nil)
   (setq speedbar-show-unknown-files t)
+  (setq speedbar-use-images nil)
   (add-hook 'speedbar-mode-hook (lambda ()
                                   (define-key speedbar-file-key-map [right] 'my-speedbar-expand-line)
                                   (define-key speedbar-file-key-map "\C-f" 'my-speedbar-expand-line)
