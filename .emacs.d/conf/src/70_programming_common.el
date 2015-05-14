@@ -134,8 +134,7 @@
                                   (define-key speedbar-file-key-map [left] 'speedbar-contract-line)
                                   (define-key speedbar-file-key-map "b" 'speedbar-contract-line)
                                   (define-key speedbar-file-key-map "h" 'speedbar-up-directory)))
-  ;; configure
-  (setq sr-speedbar-width-x 15)
+  (setq sr-speedbar-width 40)
   (setq sr-speedbar-max-width 20))
 
 (defun my-speedbar-expand-line ()
