@@ -1,6 +1,7 @@
 ;;; 50_ruby.el ---
 (require '00_common)
 
+;; ruby
 (my-require-and-when 'ruby-mode
   (my-require-and-when 'ruby-block)
   (my-require-and-when 'ruby-electric)
@@ -52,3 +53,10 @@
 
   (my-require-and-when 'rhtml-mode
     (add-hook 'rhtml-mode-hook (lambda () (rinari-launch)))))
+
+(defun ruby-insert-end ()
+  (interactive)
+  (insert "end")
+  (ruby-indent-line t)
+  (end-of-line)
+  (ruby-indent-line))
