@@ -17,8 +17,7 @@ zstyle ':completion:*' completer _oldlist _complete _match _ignored \
 zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' accept-exact '*(N)'
-autoload -U compinit
-compinit
+compinit -d ~/.zsh/.zcompdump
 compdef -d rake
 
 # incremental completion

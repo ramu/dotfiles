@@ -6,8 +6,7 @@ autoload -Uz add-zsh-hook
 autoload -Uz vcs_info
 autoload -Uz zmv
 autoload -U promptinit
-autoload compinit
-compinit -u
+autoload -U compinit
 
 fpath=($HOME/.zsh/modules/cd-gitroot(N-/) $fpath)
 autoload -Uz cd-gitroot
