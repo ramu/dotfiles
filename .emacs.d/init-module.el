@@ -20,6 +20,7 @@
     grep-a-lot
     undohist
     undo-tree
+    volatile-highlights
     tree-mode
     windata
     recentf-ext

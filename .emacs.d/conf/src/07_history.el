@@ -69,3 +69,7 @@
   (setq session-save-file (expand-file-name "~/.emacs.d/var/.session"))
   (add-hook 'after-init-hook 'session-initialize))
 
+;;; volatile-highlights.el
+;; Minor mode for visual feedback on some operations in Emacs.
+(my-require-and-when 'volatile-highlights
+  (volatile-highlights-mode t))
