@@ -11,7 +11,6 @@
     popup
     switch-window
     e2wm
-    elscreen
     popwin
     python
     auto-install
@@ -41,6 +40,7 @@
     move-text
     sublimity
     nyan-mode
+    elscreen
     ;;;;;;;;;;; 10_
     anything
     anything-complete

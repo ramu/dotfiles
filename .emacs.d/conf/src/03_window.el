@@ -46,6 +46,21 @@
                    '(("M-w" . e2wm:dp-magit))
                    e2wm:prefix-key))
 
+;;; elscreen
+;; Emacs session window manager
+(my-require-and-when 'elscreen
+  (my-require-and-when 'elscreen-color-theme)
+  (my-require-and-when 'elscreen-server)
+  (my-require-and-when 'elscreen-dired)
+
+  (setq elscreen-prefix-key (kbd "C-z"))
+  (setq elscreen-tab-display-kill-screen nil)
+  (setq elscreen-tab-display-control nil)
+  (custom-set-faces '(elscreen-tab-background-face ((((class color)) (:background "#333333"))))
+                    '(elscreen-tab-current-screen-face ((((class color)) (:background "#444400" :foreground "goldenrod" :bold t :underline t))))
+                    '(elscreen-tab-other-screen-face ((((class color)) (:background "black" :foreground "#AAAAAA")))))
+  (elscreen-start))
+
 ;;; popwin.el
 ;; ヘルプバッファや補完バッファをポップアップで表示
 ;; http://d.hatena.ne.jp/m2ym/20110120/1295524932
