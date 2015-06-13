@@ -35,6 +35,7 @@
   (setq helm-enable-shortcuts 'prefix)
   (define-key helm-map "@" 'helm-select-with-prefix-shortcut)
   (setq helm-samewindow nil)
+  (setq helm-split-window-in-side-p t)
 
   ; helm-c-moccur.el
   (my-require-and-when 'helm-c-moccur
