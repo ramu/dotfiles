@@ -6,6 +6,7 @@
 
 ;;; Warp
 (my-require-and-when 'warp
+  (my-require-and-when 'warp-reload)
   (add-hook 'markdown-mode-hook 'warp-mode)
   (add-to-list 'warp-format-converter-alist
                '("\\.md\\|\\.markdown" t (lambda ()

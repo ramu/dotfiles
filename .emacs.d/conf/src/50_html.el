@@ -51,12 +51,6 @@
 ;;; less-css-mode
 (my-require-and-when 'less-css-mode)
 
-;;; Warp
-(my-require-and-when 'warp
-  (add-hook 'html-mode-hook 'warp-mode)
-  (add-hook 'web-mode-hook 'warp-mode)
-  (my-require-and-when 'warp-reload))
-
 ;;; scss-mode(http://d.hatena.ne.jp/CortYuming/20120110/p1)
 (defun my-css-electric-pair-brace ()
   (interactive)
