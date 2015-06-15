@@ -46,7 +46,8 @@
       ("%include-guard%"        . (lambda () (format "__SCHEME_%s__" (upcase (file-name-sans-extension (file-name-nondirectory buffer-file-name))))))
       ("%testee%"               . (lambda () (test-module-name)))
       ("%cap-testee%"           . (lambda () (capitalize (test-module-name))))
-      ("%test_class%"           . (lambda () (test-class-name)))))
+      ("%test_class%"           . (lambda () (test-class-name)))
+      ("%rbclass%"              . (lambda () (replace-regexp-in-string "_" "" (capitalize (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))))))
 
   (defun my-template ()
     (time-stamp)
