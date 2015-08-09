@@ -149,3 +149,6 @@ alias lma='alias | grep -e "g[0-9]=" | grep -v "m[0-9]" | sed "s/^g/alias g/g"'
 alias 644='chmod 644'
 alias 755='chmod 755'
 alias 777='chmod 777'
+
+### hub
+eval "$(hub alias -s)"
