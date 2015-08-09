@@ -3,6 +3,8 @@
 
 (my-require-and-when 'flymake
 
+  (my-require-and-when 'flymake-easy)
+
   (my-require-and-when 'flymake-extension
     ;;; flymake-extension ---
     ;; http://www.emacswiki.org/emacs/flymake-extension.el
@@ -118,6 +120,10 @@
   (add-hook 'js2-mode-hook '(lambda ()
                               (require 'flymake-jshint)
                               (flymake-jshint-load)))
+
+  ;;; flymake for haml
+  (my-require-and-when 'flymake-haml
+    (add-hook 'haml-mode-hook '(lambda () (flymake-haml-load))))
 
   ;;; etc...
   ;; minibufferに表示

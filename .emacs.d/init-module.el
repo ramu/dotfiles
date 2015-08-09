@@ -191,7 +191,9 @@
     ac-anything
     auto-complete-extension
     auto-complete-yasnippet
+    flymake-easy
     flymake-extension
+    flymake-haml
     tempbuf
     php-completion
     sdic-inline
@@ -238,7 +240,8 @@
     ;; riece
     ;; sdic
     ;; sekka
-   ))
+    haml-mode
+    ))
 (el-get 'sync my:el-get-packages)
 
 (provide 'init-module)
