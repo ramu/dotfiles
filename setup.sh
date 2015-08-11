@@ -17,7 +17,7 @@ git clone https://github.com/mollifier/cd-gitroot.git ~/.zsh/modules/cd-gitroot
 ### git
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.tigrc     ~/.tigrc
-curl https://raw.github.com/git/git/master/contrib/diff-highlight/diff-highlight > ~/bin/diff-highlight
+curl https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight > ~/bin/diff-highlight
 chmod 755 ~/bin/diff-highlight
 
 ### mercurial
