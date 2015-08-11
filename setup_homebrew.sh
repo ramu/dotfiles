@@ -6,6 +6,7 @@ brew upgrade
 brew tap phinze/homebrew-cask
 
 brew install brew-cask
+brew install ack
 brew install eck
 brew install autoconf
 brew install bazaar
