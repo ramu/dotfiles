@@ -1,6 +1,6 @@
 #!/bin/zsh
 # export 
-export ANDROIDNDK_HOME=/Users/ramusara/Android/android-ndk-r5b
+export ANDROIDNDK_HOME=$HOME_DIR/Android/android-ndk-r5b
 export ANDROID_SDK=/Applications/sdk
 export ANDROID_TOOLS=/Applications/sdk/tools
 
