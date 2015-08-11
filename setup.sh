@@ -73,7 +73,7 @@ pythonbrew switch 2.7.2
 rm pythonbrew-install
 
 ### homebrew
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 ### pry
 ln -sf ~/dotfiles/.pryrc ~/.pryrc
