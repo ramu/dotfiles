@@ -1,16 +1,10 @@
 # set - show
-set show-author          = abbreviated
-set show-date            = relative
-set show-rev-graph       = yes
-set show-refs            = yes
-set show-line-numbers    = yes
+set main-view = line-number:true,interval=1 date:relative author:abbreviated id commit-title:true,graph=true,refs=true
 
 # set - etc
-#set encoding      = "UTF-8"
 set horizontal-scroll    = 33%
 set split-view-height    = 70%
-set line-graphics        = "UTF-8"
-set line-number-interval = 1
+set line-graphics        = ascii
 set tab-size             = 4
 
 # color
