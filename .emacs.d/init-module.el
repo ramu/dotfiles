@@ -42,13 +42,8 @@
     nyan-mode
     elscreen
     ;;;;;;;;;;; 10_
-    anything
-    anything-complete
-    anything-show-completion
     ipython
-    anything-ipython
     yasnippet
-    descbinds-anything
     auto-complete
     auto-complete-clang
     ac-helm
@@ -188,7 +183,6 @@
     grep-edit
     revive
     windows
-    ac-anything
     auto-complete-extension
     auto-complete-yasnippet
     flymake-easy
@@ -215,11 +209,9 @@
     emacs-3d-demo
     keisen
     hiwin
-    anything-mac-itunes
     php-doc
     python-lite
     kill-summary
-    anything-c-moccur
     dired-ex-isearch
     wc-mode
     e-palette
@@ -227,7 +219,6 @@
     eval-sexp-fu
     lambda-mode
     emmet-mode
-    anything-howm
     esqlite
     pcsv
     git-gutter-plus
@@ -236,7 +227,6 @@
     e2wm-vcs
     ;; emacs-w3m -> autoconf error
     ;; text-translator -> bzr execute-find
-    ;; anything-c-yasnippet -> 切り捨てる？(http://d.hatena.ne.jp/sugyan/20120111/1326288445)
     ;; riece
     ;; sdic
     ;; sekka

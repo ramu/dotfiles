@@ -42,11 +42,7 @@
     (setq moccur-split-word t)
     ;(global-set-key (kbd "M-s") 'helm-c-moccur-occur-by-moccur)
     (define-key isearch-mode-map (kbd "C-o") 'helm-c-moccur-from-isearch)
-    (define-key isearch-mode-map (kbd "C-M-o") 'isearch-occur)
-    (setq anything-c-moccur-anything-idle-delay 0.1
-          anything-c-moccur-higligt-info-line-flag t
-          anything-c-moccur-enable-auto-look-flag t
-          anything-c-moccur-enable-initial-pattern t))
+    (define-key isearch-mode-map (kbd "C-M-o") 'isearch-occur))
 
   (my-require-and-when 'helm-c-moccur)
 

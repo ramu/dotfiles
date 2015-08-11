@@ -75,7 +75,6 @@
   (push '("*Completions*"            :position right :noselect t) popwin:special-display-config)
   (push '("*interpretation*"         :position right :noselect t) popwin:special-display-config)
   (push '("^\*[aA]nything.+\*$"      :position right :regexp t)   popwin:special-display-config)
-  (push '("*my-anything*"            :position right)             popwin:special-display-config)
   (push '("*my-helm*"                :position right)             popwin:special-display-config)
   (push '("^\*[hH]elm.+\*$"          :position right :regexp t)   popwin:special-display-config)
   (push '(" *undo-tree*"             :position right)             popwin:special-display-config)
