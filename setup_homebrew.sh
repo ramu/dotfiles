@@ -14,6 +14,7 @@ brew install bdw-gc
 brew install cmigemo
 brew install curl
 brew install cvs
+brew install direnv
 brew install fontconfig
 brew install fontforge
 brew install freetype
