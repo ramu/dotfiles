@@ -5,20 +5,16 @@
 (my-require-and-when 'dired
   (setq dired-dwim-target t)            ; dired2つ開いてるときに、move/copy先をもう一方のdiredで開いてる場所にする
   (setq dired-recursive-copies 'always)
+  (define-key dired-mode-map (kbd "C-x C-f") 'helm-find-files))
 
-  (define-key dired-mode-map (kbd "C-x C-f") 'helm-find-files)
-
-  ;(defvar diredp-file-name 'diredp-file-name)
+(my-require-and-when 'dired+
+  (setq diredp-hide-details-initially-flag nil)
+  (setq diredp-hide-details-propagate-flag nil)
   (set-face-foreground 'diredp-file-name "#FFFFFF")
   (set-face-foreground 'diredp-file-suffix "#FFFFFF")
-
-  ;(set-face-foreground 'diredp-dir-priv "#FFFFFF")
   (set-face-foreground 'diredp-dir-priv "#009900")
   (set-face-background 'diredp-dir-priv "#000000")
-  (set-face-foreground 'diredp-number "#DDAA33"))
-
-;;; diredでファイル名変更できる - wdired.el
-(my-require-and-when 'dired+
+  (set-face-foreground 'diredp-number "#DDAA33")
   (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode))
 
 ;;; dired-ex-isearch.el

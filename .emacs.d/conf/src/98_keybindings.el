@@ -6,8 +6,10 @@
 (setq ns-alternate-modifier (quote Super))
 
 ;;; prefix-keyとして利用できるように置き換え
+(defvar ctl-c-map (make-keymap))
 (defvar ctl-q-map (make-keymap))
 (defvar alt-g-map (make-keymap))
+(define-key global-map "\C-c" ctl-c-map)
 (define-key global-map "\C-q" ctl-q-map)
 (define-key global-map "\M-g" alt-g-map)
 

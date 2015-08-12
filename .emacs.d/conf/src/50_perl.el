@@ -3,11 +3,10 @@
 
 (my-require-and-when 'set-perl5lib-path)
 (my-require-and-when 'cperl-mode)
-(my-require-and-when 'perl-completion)
 
 ;; perlbrew
 (my-require-and-when 'perlbrew
-  (perlbrew-switch "perl-5.12.1"))
+  (perlbrew-switch "perl-5.23.1"))
 
 (my-autoload-and-when 'cperl-mode "cperl-mode"
                       (defalias 'perl-mode 'cperl-mode)
@@ -25,7 +24,6 @@
                                   (setq cperl-label-offset -4)
                                   (setq cperl-close-paren-offset -4)
                                   (setq cperl-tab-always-indent nil)
-                                  (add-to-list 'ac-sources 'ac-source-perl-completion)
                                   (hs-minor-mode t))))
 
 ;; perl-tidy

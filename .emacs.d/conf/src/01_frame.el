@@ -1,20 +1,39 @@
 ;;;; 01_frame.el
 (require '00_common)
 
-(setq initial-frame-alist
-  (append (list
-           '(foreground-color . "white")  ;; font-color
-           '(background-color . "black")  ;; background-color
-           '(border-color     . "black")  ;; border-color
-           '(mouse-color      . "white")  ;; mouse-color
-           '(cursor-color     . "white")  ;; cursor-color
-           '(width            . 202    )  ;; frame-width
-           '(height           . 62     )  ;; frame-height
-           '(top              . 1      )  ;; frame-top(Y)
-           '(left             . 1      )  ;; frame-left(X)
-           '(alpha            . (85 85))  ;; alpha
-          )
-  initial-frame-alist))
+(if window-system (progn
+  (if (string-match "jm.local" system-name)
+      ;; macbook
+      (setq initial-frame-alist (append (list
+          '(foreground-color . "white")  ;; font-color
+          '(background-color . "black")  ;; background-color
+          '(border-color     . "black")  ;; border-color
+          '(mouse-color      . "white")  ;; mouse-color
+          '(cursor-color     . "white")  ;; cursor-color
+          '(width            . 152    )  ;; frame-width
+          '(height           . 50     )  ;; frame-height
+          '(top              . 1      )  ;; frame-top(Y)
+          '(left             . 1      )  ;; frame-left(X)
+          '(alpha            . (85 85))  ;; alpha
+        )
+        initial-frame-alist))
+    ;; macbookpro
+    (setq initial-frame-alist (append (list
+        '(foreground-color . "white")  ;; font-color
+        '(background-color . "black")  ;; background-color
+        '(border-color     . "black")  ;; border-color
+        '(mouse-color      . "white")  ;; mouse-color
+        '(cursor-color     . "white")  ;; cursor-color
+        '(width            . 202    )  ;; frame-width
+        '(height           . 62     )  ;; frame-height
+        '(top              . 1      )  ;; frame-top(Y)
+        '(left             . 1      )  ;; frame-left(X)
+        '(alpha            . (85 85))  ;; alpha
+       )
+       initial-frame-alist))
+  )
+))
+
 (setq default-frame-alist initial-frame-alist)
 (setq window-min-width 1)
 

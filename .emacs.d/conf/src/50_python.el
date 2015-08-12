@@ -49,24 +49,4 @@
 
   ;;; ipython
   (my-require-and-when 'ipython
-    (setq ipython-command "/opt/local/bin/ipython"))
-
-  ;;; pysmell
-  (my-require-and-when 'pysmell
-    ; auto-complete.elから呼べるように編集
-    (defvar ac-source-pysmell '((candidates . (lambda () (pysmell-get-all-completions)))) "Source for PySmell")
-    (add-hook 'python-mode-hook
-              '(lambda ()
-                 (pysmell-mode t)
-                 (set (make-local-variable 'ac-sources) (append ac-sources '(ac-source-pysmell))))))
-
-  ;;; pymacs
-  (my-require-and-when 'pymacs
-    (autoload 'pymacs-apply "pymacs")
-    (autoload 'pymacs-call "pymacs")
-    (autoload 'pymacs-eval "pymacs" nil t)
-    (autoload 'pymacs-exec "pymacs" nil t)
-    (autoload 'pymacs-load "pymacs" nil t)
-    (eval-after-load "pymacs"
-      '(add-to-list 'pymacs-load-path "~/.emacs.d/share/plugins/python/"))))
-
+    (setq ipython-command "/opt/local/bin/ipython")))

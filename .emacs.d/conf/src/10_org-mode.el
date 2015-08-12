@@ -20,7 +20,6 @@
   (define-key org-mode-map (kbd "<C-M-S-return>") 'org-insert-heading-dwim)
 
   ; Emacs technic bible(P.277)
-  (org-remember-insinuate)
   (setq org-directory (expand-file-name "~/memo/"))
   (setq org-default-notes-file (expand-file-name "memo.org" org-directory))
   (setq org-remember-templates

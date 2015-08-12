@@ -321,9 +321,9 @@
   (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
   (setq migemo-use-pattern-alist t)
   (setq migemo-use-frequent-pattern-alist t)
-  (add-hook 'after-init-hook 'mac-change-language-to-us)
-  (add-hook 'minibuffer-setup-hook 'mac-change-language-to-us)
-  (add-hook 'isearch-mode-hook 'mac-change-language-to-us)
+  ;(add-hook 'after-init-hook 'mac-change-language-to-us)
+  ;(add-hook 'minibuffer-setup-hook 'mac-change-language-to-us)
+  ;(add-hook 'isearch-mode-hook 'mac-change-language-to-us)
   (migemo-init))
 
 ;;モードラインに検索コマンド実行中に,現在の入力にマッチするバッファ内の語数と現在のマッチ位置を表示

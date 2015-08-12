@@ -19,11 +19,6 @@
       ))
   (add-auto-mode 'php-mode "\\.ctp$")
 
-  ;;; cakephp
-  (my-require-and-when 'cake
-    (global-cake t)
-    (cake-set-default-keymap))
-
   ;;; phpdoc
   (my-require-and-when 'phpdoc
     (add-hook 'php-mode-hook (lambda () (eldoc-mode t)))))
@@ -34,19 +29,7 @@
   (c-set-offset 'arglist-intro '+)
   (c-set-offset 'arglist-close 0))
 
-(defun php-completion-hook ()
-  (my-require-and-when 'php-completion
-    (php-completion-mode t)
-    (define-key php-mode-map (kbd "C-o") 'phpcmp-complete)
-    (my-require-and-when 'auto-complete
-      (make-variable-buffer-local 'ac-sources)
-      (add-to-list 'ac-sources 'ac-source-php-completion)
-      (auto-complete-mode t))))
-
 (add-hook 'php-mode-hook 'php-indent-hook)
-(add-hook 'php-mode-hook 'php-completion-hook)
-
-
 
 ; mmm-mode in php
 (my-require-and-when 'mmm-mode
