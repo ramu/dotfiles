@@ -67,7 +67,12 @@
 (my-require-and-when 'popwin
   (setq display-buffer-function 'popwin:display-buffer)
   (setq popwin:popup-window-position 'right)
-  (setq popwin:popup-window-width 100)
+  (if window-system (progn
+                      (if (string-match "jm.local" system-name)
+                          ;; macbook
+                          (setq popwin:popup-window-width 75)
+                        ;; macbookpro
+                        (setq popwin:popup-window-width 100))))
   ;; right
   (push '("*Messages*"               :position right :noselect t) popwin:special-display-config)
   (push '("*Help*"                   :position right :noselect t) popwin:special-display-config)
