@@ -30,7 +30,7 @@
   (setq helm-input-idle-delay 0.1)
   (setq helm-candidate-number-limit 30)
   (setq helm-quick-update t)
-  (setq helm-c-filelist-file-name "/Users/ramusara/.emacs.d/share/plugins/ruby/all.filelist")
+  (setq helm-c-filelist-file-name (expand-file-name "~/.emacs.d/share/plugins/ruby/all.filelist"))
   (setq descbinds-helm-window-style 'split-window)
   (setq helm-enable-shortcuts 'prefix)
   (define-key helm-map "@" 'helm-select-with-prefix-shortcut)
@@ -65,7 +65,7 @@
     (setq helm-yas-display-key-on-candidate t)
     (global-set-key (kbd "C-c y") 'helm-yas-complete)
     (yas-global-mode 1)
-    (yas-load-directory "/Users/ramusara/.emacs.d/plugins/yasnippet/"))
+    (yas-load-directory (expand-file-name "~/.emacs.d/plugins/yasnippet/")))
 
   (my-require-and-when 'helm-descbinds
     (helm-descbinds-mode))

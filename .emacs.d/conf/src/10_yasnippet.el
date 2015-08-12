@@ -2,7 +2,7 @@
 (require '00_common)
 
 (my-require-and-when 'yasnippet
-  (setq yas-snippet-dirs '("/Users/ramusara/.emacs.d/plugins/yasnippet/snippets/text-mode"))
+  (setq yas-snippet-dirs '(expand-file-name "~/.emacs.d/plugins/yasnippet/snippets/text-mode"))
   (yas-global-mode 1)
 
   ;;; yasnippet + flymake

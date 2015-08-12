@@ -27,13 +27,13 @@
                 "/bin/"
                 "/usr/local/bin/"
                 "/opt/local/bin/"
-                "/Users/ramusara/bin/"
-                "/Users/ramusara/scala/bin/"
-                "/Users/ramusara/.pythonbrew/pythons/current/bin/"
-                "/Users/ramusara/perl5/perlbrew/bin/"
-                "/Users/ramusara/perl5/perlbrew/perls/current/bin/"
-                "/Users/ramusara/.rbenv/shims/"
-                "/Users/ramusara/.rbenv/bin/"))
+                (expand-file-name "~/bin/")
+                (expand-file-name "~/scala/bin/")
+                (expand-file-name "~/.pythonbrew/pythons/current/bin/")
+                (expand-file-name "~/perl5/perlbrew/bin/")
+                (expand-file-name "~/perl5/perlbrew/perls/current/bin/")
+                (expand-file-name "~/.rbenv/shims/")
+                (expand-file-name "~/.rbenv/bin/")))
 (when
    (setenv "PATH" (concat dirs ":" (getenv "PATH")))
    (setq exec-path (append (list dirs) exec-path))))

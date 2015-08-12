@@ -21,7 +21,7 @@
 
   ; Emacs technic bible(P.277)
   (org-remember-insinuate)
-  (setq org-directory "/Users/ramusara/memo/")
+  (setq org-directory (expand-file-name "~/memo/"))
   (setq org-default-notes-file (expand-file-name "memo.org" org-directory))
   (setq org-remember-templates
         '(("Note" ?n "** %?\n   %i\n   %a\n   %t" nil "Inbox")

@@ -3,4 +3,4 @@
 
 ;;; android-mode.el
 (my-require-and-when 'android-mode
-  (setq android-mode-sdk-dir "/Users/ramusara/Android/android-sdk-mac_x86"))
+  (setq android-mode-sdk-dir (expand-file-name "~/Android/android-sdk-mac_x86")))
