@@ -10,8 +10,8 @@
           '(border-color     . "black")  ;; border-color
           '(mouse-color      . "white")  ;; mouse-color
           '(cursor-color     . "white")  ;; cursor-color
-          '(width            . 152    )  ;; frame-width
-          '(height           . 50     )  ;; frame-height
+          '(width            . 175    )  ;; frame-width
+          '(height           . 56     )  ;; frame-height
           '(top              . 1      )  ;; frame-top(Y)
           '(left             . 1      )  ;; frame-left(X)
           '(alpha            . (85 85))  ;; alpha
