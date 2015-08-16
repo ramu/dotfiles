@@ -50,6 +50,7 @@
   (define-key rinari-minor-mode-map (kbd "C-c C-v") 'rinari-find-view)
   (define-key rinari-minor-mode-map (kbd "C-c C-r") 'rinari-find-rspec)
   (add-hook 'ruby-mode-hook 'rinari-minor-mode)
+  (add-hook 'haml-mode-hook 'rinari-minor-mode)
   (add-hook 'coffee-mode-hook 'rinari-minor-mode)
 
   (my-require-and-when 'rspec-mode
