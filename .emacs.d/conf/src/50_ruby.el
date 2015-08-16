@@ -45,6 +45,10 @@
 ;; rails
 (my-require-and-when 'rinari
   (setq rinari-minor-mode-prefixes (list "'"))
+  (define-key rinari-minor-mode-map (kbd "C-c C-m") 'rinari-find-model)
+  (define-key rinari-minor-mode-map (kbd "C-c C-c") 'rinari-find-controller)
+  (define-key rinari-minor-mode-map (kbd "C-c C-v") 'rinari-find-view)
+  (define-key rinari-minor-mode-map (kbd "C-c C-r") 'rinari-find-rspec)
   (add-hook 'ruby-mode-hook 'rinari-minor-mode)
   (add-hook 'coffee-mode-hook 'rinari-minor-mode)
 
