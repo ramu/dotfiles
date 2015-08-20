@@ -84,7 +84,7 @@ alias hs='hg status'
 alias hsc='hg showconfig'
 alias hserve='hg serve'
 alias ht='hg tag'
-alias httpserver='python -m SimpleHTTPServer 8080'
+alias httpserver='ruby -run -e httpd . -p 8080'
 alias hu='hg update'
 ## i ##
 alias ip='ifconfig | grep "inet "'
