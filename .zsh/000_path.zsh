@@ -23,7 +23,7 @@ PATH=$HOME_DIR/work/gae/go_engine:$PATH
 PATH=$HOME_DIR/work/java/maven/bin:$PATH
 PATH=/usr/local/heroku/bin:$PATH
 PATH=/Applications/MAMP/bin/php/php5.4.10/bin:$PATH
-
+PATH=$HOME_DIR/.nodenv/bin:$PATH
 
 # rbenv
 eval "$(rbenv init -)"
@@ -31,3 +31,6 @@ source /usr/local/Cellar/rbenv/0.4.0/completions/rbenv.zsh
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# nodenv
+eval "$(nodenv init -)"
