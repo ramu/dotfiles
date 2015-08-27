@@ -12,6 +12,7 @@
   (setq ruby-indent-tabs-mode nil)
   (add-auto-mode 'ruby-mode "\\.rb$" "Capfile$" "Gemfile$" "Rakefile$")
   (setq interpreter-mode-alist (append '(("ruby" . ruby-mode)) interpreter-mode-alist))
+  (defun ruby-mode-set-encoding () ())
   (add-hook 'ruby-mode-hook
             '(lambda ()
                (inf-ruby-minor-mode)
