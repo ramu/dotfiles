@@ -35,3 +35,4 @@ eval "$(direnv hook zsh)"
 
 # nodenv
 eval "$(nodenv init -)"
+PATH=$PATH:`npm bin -g`
