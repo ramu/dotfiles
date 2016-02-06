@@ -1,4 +1,0 @@
-#name : #define NAME VALUE
-# --
-#define {$1:NAME} {$2:VALUE}
-

@@ -1,3 +1,0 @@
-#name : extern type name;
-# --
-$>extern {$1:void} {$2:name};   /* comment */

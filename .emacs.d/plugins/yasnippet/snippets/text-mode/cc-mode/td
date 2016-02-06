@@ -1,4 +1,0 @@
-#name : typedef ... ...
-# --
-$>typedef ${1:basetype} ${2:newtype}
-$0

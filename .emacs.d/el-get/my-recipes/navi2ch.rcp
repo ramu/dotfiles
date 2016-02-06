@@ -1,5 +1,0 @@
-(:name navi2ch
-:type github
-:description "Navi2ch is a navigator for 2ch which works on many Emacsen like GNU Emacs, XEmacs, and Meadow."
-:pkgname "naota/navi2ch"
-:branch "master")

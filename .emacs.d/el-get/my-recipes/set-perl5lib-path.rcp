@@ -1,5 +1,0 @@
-(:name set-perl5lib-path
-:type github
-:description "setperll5lib path"
-:pkgname "hayaishi/set-perl5lib-path"
-:branch "master")

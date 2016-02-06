@@ -1,3 +1,0 @@
-#name : return XXX;
-# --
-$>return ${1:value};

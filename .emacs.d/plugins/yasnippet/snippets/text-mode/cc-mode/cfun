@@ -1,6 +1,0 @@
-#name: char function(xxx) { ... }
-# --
-char ${1:function_name}(${2:void})
-{
-    $0
-}

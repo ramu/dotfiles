@@ -1,6 +1,0 @@
-#name: void function(xxx) { ... }
-# --
-void ${1:function_name}(${2:void})
-{
-    $0
-}

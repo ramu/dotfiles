@@ -1,4 +1,0 @@
-(:name kill-summary
-:type http
-:description "kill summary"
-:url "http://mibai.tec.u-ryukyu.ac.jp/~oshiro/Programs/elisp/kill-summary.el")

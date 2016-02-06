@@ -1,4 +1,0 @@
-(:name eval-sexp-fu
-:type http
-:description "Tiny functionality enhancements for evaluating sexps."
-:url "http://www.emacswiki.org/emacs/download/eval-sexp-fu.el")

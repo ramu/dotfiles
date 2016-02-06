@@ -1,3 +1,0 @@
-#name : Data::Dumper (...)
-# --
-warn Dumper $0;

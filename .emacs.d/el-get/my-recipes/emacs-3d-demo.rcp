@@ -1,5 +1,0 @@
-(:name emacs-3d-demo
-:type github
-:description "3d demo"
-:pkgname "kiwanami/emacs-3d-demo"
-:branch "master")

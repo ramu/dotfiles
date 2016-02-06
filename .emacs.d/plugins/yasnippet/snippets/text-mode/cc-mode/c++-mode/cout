@@ -1,3 +1,0 @@
-#name: cout << ... << endl;
-# --
-cout << ${1:data} << endl;
