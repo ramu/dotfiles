@@ -1,0 +1,8 @@
+#name : FILE *fp = fopen(..., ...);
+# --
+FILE *${1:fp} = fopen(${2:"file"}, "${r}");
+$>if ( NULL == $1 ) {
+$>   fprintf(stderr, "cannot open %s(line%d:%s)\n", $2, __LINE__, strerror(errno));
+$>}
+$>$0
+$>fclose($1);

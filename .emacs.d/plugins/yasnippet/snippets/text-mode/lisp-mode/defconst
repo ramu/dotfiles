@@ -1,0 +1,3 @@
+#name : constant template
+# --
+(defconstant ${1:name} ${2:initial-value} "${3:documentation}")
