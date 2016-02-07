@@ -102,6 +102,9 @@
 ;; ツールバー非表示
 (tool-bar-mode -1)
 
+;; メニューバー非表示
+(menu-bar-mode 0)
+
 ;; .emacs.d/init.elファイルを開くショートカット
 (global-set-key [(f7)] '(lambda ()(interactive)(find-file "~/.emacs.d/init.el")))
 
