@@ -13,7 +13,3 @@
 ;(setq default-buffer-file-coding-system 'utf-8)
 
 (put 'upcase-region 'disabled nil)
-
-(my-require-and-when 'server
-  (unless (server-running-p)
-    (server-start)))
