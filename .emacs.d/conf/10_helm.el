@@ -36,6 +36,19 @@
   (define-key helm-map "@" 'helm-select-with-prefix-shortcut)
   (setq helm-samewindow nil)
   (setq helm-split-window-in-side-p t)
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(helm-ff-directory ((t (:background "Black" :foreground "Orange"))))
+   '(helm-ff-dotted-directory ((t (:background "brightyellow" :foreground "white")))))
 
   ; helm-c-moccur.el
   (my-require-and-when 'helm-c-moccur
