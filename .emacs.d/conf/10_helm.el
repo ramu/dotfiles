@@ -9,14 +9,14 @@
     "helm command for you."
     (interactive)
     (helm-other-buffer
-      '(helm-c-source-bookmarks
-        helm-c-source-buffers-list
-;        helm-c-source-imenu
-        helm-c-source-recentf
-        helm-c-source-info-pages
-;        helm-c-source-emacs-commands
-;        helm-c-source-emacs-functions
-        helm-c-source-files-in-current-dir)
+      '(helm-source-bookmarks
+        helm-source-buffers-list
+;        helm-source-imenu
+        helm-source-recentf
+        helm-source-info-pages
+;        helm-source-emacs-commands
+;        helm-source-emacs-functions
+        helm-source-files-in-current-dir)
       "*my-helm*"))
 
   ; global key設定はまとめてやる
