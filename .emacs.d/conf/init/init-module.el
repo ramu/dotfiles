@@ -39,10 +39,11 @@
     python-lite
     slim-mode
     kokopelli
+    tree-mode
     imenu-tree
+    windata
     cpp-complt
     git-gutter-plus
-    git-gutter-fringe-plus
     srep
     dont-type-twice
     drill-instructor

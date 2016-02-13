@@ -175,5 +175,5 @@
   (set-face-bold-p 'eldoc-highlight-function-argument nil))
 
 ;; git-gutter+
-(my-require-and-when 'git-gutter-fringe+
+(my-require-and-when 'git-gutter+
   (global-git-gutter+-mode))
