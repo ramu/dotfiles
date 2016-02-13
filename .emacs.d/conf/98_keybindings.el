@@ -29,6 +29,7 @@
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-h") 'delete-backward-char)     ; C-hは後退(1文字)
 (global-set-key (kbd "M-h") 'backward-kill-word)       ; M-hは後退(単語)
+(global-set-key (kbd "M-o") 'occur-by-moccur)          ; moccur
 (global-set-key (kbd "C-t") 'dmacro-exec)              ; dmacro
 (global-set-key (kbd "C-=") 'indent-region)            ; indent
 (global-set-key (kbd "C-'") 'my-helm)                  ; helm
