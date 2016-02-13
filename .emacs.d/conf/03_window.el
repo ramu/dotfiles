@@ -29,7 +29,7 @@
 ;; http://d.hatena.ne.jp/m2ym/20110120/1295524932
 (my-require-and-when 'popwin
   (setq display-buffer-function 'popwin:display-buffer)
-  (setq popwin:popup-window-position 'right)
+  (setq popwin:popup-window-position 'bottom)
   (if window-system (progn
                       (if (string-match "jm.local" system-name)
                           ;; macbook
