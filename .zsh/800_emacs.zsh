@@ -9,5 +9,3 @@ emacs_daemon_count=`ps | grep 'Emacs' | grep ' --daemon' | grep -v grep | wc -l 
 if [ $emacs_daemon_count -gt 0 ]; then
   emacsclient -e '(kill-emacs)'
 fi
-
-emacs --daemon
