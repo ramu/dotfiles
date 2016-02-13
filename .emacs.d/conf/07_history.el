@@ -18,6 +18,15 @@
 (setq history-length 1000)     ; 履歴保存件数
 (setq messagep-log-max 10000)  ; ログの記録行数
 
+;;; recentf
+(my-require-and-when 'recentf
+  (recentf-mode 1)
+  (setq recentf-save-file "~/.emacs.d/var/.recentf")
+  (setq recentf-max-saved-items 1000)
+  (setq recentf-auto-cleanup 10)
+  (setq recentf-exclude '(".recentf"))
+  (setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list)))
+
 ;;; undo-tree.el
 ; undo の履歴を木構造で表示、操作
 (my-require-and-when 'undo-tree
