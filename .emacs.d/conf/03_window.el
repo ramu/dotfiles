@@ -49,7 +49,7 @@
   (push '("*Kill Ring*"                :height 25 :position bottom)             popwin:special-display-config)
   (push '("*Shell Command Output*"     :height 25 :position bottom :noselect t) popwin:special-display-config)
   (push '("*quickrun*"                 :height 25 :position bottom :noselect t) popwin:special-display-config)
-  (push '("*Backtrace*"                                            :noselect t) popwin:special-display-config)
+  (push '("*Backtrace*"                :height 25 :position bottom :noselect t) popwin:special-display-config)
   (push '("*imenu-tree*"               :height 25 :position bottom)             popwin:special-display-config)
   (push '("*Occur*"                    :height 25 :position bottom)             popwin:special-display-config)
   (push '("*slime-apropos*"            :height 25 :position bottom)             popwin:special-display-config)
