@@ -7,6 +7,10 @@
 (my-require-and-when 'color-moccur
   (setq moccur-split-word t))
 
+;;; moccur-edit
+;; moccur結果から編集
+(my-require-and-when 'moccur-edit)
+
 ;;; grep-edit.el
 ;; grep結果から編集
 ;; http://www.emacswiki.org/emacs/grep-edit.el

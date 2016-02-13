@@ -20,6 +20,7 @@
     install-elisp
     grep-edit
     windows
+    moccur-edit
     wc-mode
     flyspell
     auto-complete-extension
