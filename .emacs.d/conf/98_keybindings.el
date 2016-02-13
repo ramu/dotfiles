@@ -1,6 +1,12 @@
 ;;;; 98_keybindings.el
 (require '00_common)
 
+;;; MEMO: mac + itermだと下記key設定が必要
+; C-" -> Send Hex Codes=0x18 0x40 0x63 0x22
+; C-' -> Send Hex Codes=0x18 0x40 0x63 0x27
+; C-; -> Send Hex Codes=0x18 0x40 0x63 0x3B
+; C-: -> Send Hex Codes=0x18 0x40 0x63 0x3A
+
 ;;; Option(ALT)はCommandと入れ替え
 (setq ns-command-modifier (quote meta))
 (setq ns-alternate-modifier (quote Super))
