@@ -48,7 +48,7 @@
 (setq completion-show-help nil)
 
 ;; 保存時に実行権限付加
-(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
+;(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 ;; ホイールマウス使用
 (mouse-wheel-mode t)
