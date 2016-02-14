@@ -124,6 +124,7 @@
   (setq speedbar-show-unknown-files t)
   (setq speedbar-use-images nil)
   (setq sr-speedbar-auto-refresh nil)
+  (setq speedbar-directory-unshown-regexp "^\\(CVS\\|RCS\\|SCCS\\|\\.\\.*$\\)\\'")
   (add-hook 'speedbar-mode-hook (lambda ()
                                   (define-key speedbar-file-key-map (kbd "C-x C-f") 'helm-find-files)
                                   (define-key speedbar-file-key-map "j" 'speedbar-next)
