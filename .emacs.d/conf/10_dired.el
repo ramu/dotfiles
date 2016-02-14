@@ -15,6 +15,14 @@
   (set-face-foreground 'diredp-dir-priv "#009900")
   (set-face-background 'diredp-dir-priv "#000000")
   (set-face-foreground 'diredp-number "#DDAA33")
+  (set-face-foreground 'diredp-dir-name "#000099")
+  (set-face-background 'diredp-dir-name "black")
+  (set-face-background 'diredp-no-priv "black")
+  (set-face-background 'diredp-dir-heading "black")
+  (set-face-background 'diredp-exec-priv "black")
+  (set-face-background 'diredp-write-priv "black")
+  (set-face-background 'diredp-rare-priv "black")
+  (set-face-background 'diredp-read-priv "black")
   (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode))
 
 ;;; dired-ex-isearch.el

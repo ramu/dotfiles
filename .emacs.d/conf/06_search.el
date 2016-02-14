@@ -5,7 +5,10 @@
 ;; moccurの改良版
 ;; http://www.emacswiki.org/emacs/color-moccur.el
 (my-require-and-when 'color-moccur
-  (setq moccur-split-word t))
+  (setq moccur-split-word t)
+  (set-face-foreground 'moccur-face "black")
+  (set-face-bold-p 'moccur-face t)
+  (set-face-background 'moccur-face "light cyan"))
 
 ;;; moccur-edit
 ;; moccur結果から編集

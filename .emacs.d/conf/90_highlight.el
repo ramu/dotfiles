@@ -18,9 +18,8 @@
 
 ;; region high-light
 (setq transient-mark-mode t)
-
-;; region color
-(set-face-background 'region "#3333BB")
+(set-face-foreground 'region "#FFFFFF")
+(set-face-background 'region "#88FF88")
 
 ;; 色々なファイルの色付け
 (my-require-and-when 'generic-x)
@@ -28,6 +27,8 @@
 ; カーソル上のシンボル自動ハイライト
 (my-require-and-when 'auto-highlight-symbol
   (global-auto-highlight-symbol-mode t)
+  (set-face-foreground 'ahs-face "black")
+  (set-face-background 'ahs-face "white")
   (ahs-set-idle-interval 0.5))
 
 ;;; highlight-indentation.el
@@ -40,9 +41,9 @@
 (my-require-and-when 'hl-line+
   (defface my-hlline-face
     '((((class color) (background dark))
-      (:background "#226688" t))
+      (:background "dark slate gray" t))
      (((class color) (background light))
-      (:background "ForestGreen"))
+      (:background "#0000A0"))
       (t (:bold t)))
     "*Face used by hi-ilne." :group 'hoge)
   (setq hl-line-face 'my-hlline-face)
