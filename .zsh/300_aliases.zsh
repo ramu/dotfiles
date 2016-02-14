@@ -12,8 +12,8 @@ fi
 alias ebc='emacs -batch -f batch-byte-compile'
 alias ei='easy_install'
 if [ `uname` = "Darwin" ]; then
-alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw'
+alias emacs='TERM=xterm-256color /Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+alias emacsclient='TERM=xterm-256color /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw'
 alias ec='emacsclient'
 fi
 ## g ##
