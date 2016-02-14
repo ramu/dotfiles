@@ -20,7 +20,7 @@
 [core]
     pager     = less
     editor    = vim
-    autocrlf  = input
+	autoCRLF = false
     quotepath = false
 	excludesfile = /Users/ramusara/.gitignore_global
     precomposeunicode = true

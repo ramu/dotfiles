@@ -1,4 +1,0 @@
-(:name python-lite
-:type http
-:description "selfish plugin for writing python (fully depends on ipython)"
-:url "https://raw.github.com/podhmo/python-ex/master/python-lite.el")

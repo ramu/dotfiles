@@ -1,4 +1,0 @@
-(:name e2wm-vcs
-:type http
-:description "e2wm-vcs.el"
-:url "https://github.com/kiwanami/emacs-window-manager/raw/master/e2wm-vcs.el")

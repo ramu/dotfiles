@@ -4,78 +4,59 @@
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
-    (url-retrieve-synchronously
-      "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
+      (url-retrieve-synchronously
+       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
     (goto-char (point-max))
-      (eval-print-last-sexp)))
+    (eval-print-last-sexp)))
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/recipes")
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/my-recipes")
 (el-get 'sync)
 
-;;; define el-get repository
 (setq my:el-get-packages
-  '(el-get
-    stripes
+  '(stripes
     deferred
     popup-select-window
-    widen-window
+    e2wm-vcs
     install-elisp
-    inertial-scroll
     grep-edit
-    revive
     windows
+    moccur-edit
+    wc-mode
+    flyspell
     auto-complete-extension
-    auto-complete-yasnippet
+    dired-ex-isearch
     flymake-easy
     flymake-extension
     flymake-haml
+    set-perl5lib-path
     tempbuf
-    sdic-inline
-    sdic-inline-pos-tip
+    auto-save-buffers
+    haml-mode
+    emmet-mode
+    lambda-mode
+    eval-sexp-fu
+    php-doc
+    mmm-mode
+    python-lite
+    slim-mode
     kokopelli
+    tree-mode
     imenu-tree
+    windata
+    cpp-complt
+    git-gutter-plus
     srep
+    dont-type-twice
     drill-instructor
     dmacro
     ddskk
-    yspel
-    dont-type-twice
-    goby
-    emacs-cake
-    auto-save-buffers
-    cpp-complt
-    emacs-3d-demo
-    keisen
-    hiwin
-    php-doc
-    python-lite
-    kill-summary
-    dired-ex-isearch
-    wc-mode
-    e-palette
-    set-perl5lib-path
-    eval-sexp-fu
-    lambda-mode
-    emmet-mode
-    esqlite
-    pcsv
-    git-gutter-plus
-    git-gutter-fringe-plus
-    neotree
-    e2wm-vcs
-    highlight
-    ;; emacs-w3m -> autoconf error
-    ;; text-translator -> bzr execute-find
-    ;; sdic
-    ;; sekka
-    haml-mode
-    slim-mode
+    ; sekka
+
     ))
 (el-get 'sync my:el-get-packages)
 
 ;; install-elisp package
 (require 'ert)
-
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -83,24 +64,18 @@
 
 (defvar install-package-list
   '(init-loader
-    linum
-    yalinum
     popup
-    switch-window
     e2wm
     popwin
-    python
     auto-install
     jaunte
     color-moccur
     grep-a-lot
-    undohist
     undo-tree
-    volatile-highlights
-    tree-mode
-    windata
-    recentf-ext
     session
+    volatile-highlights
+    nyan-mode
+    move-text
     multiple-cursors
     zlc
     hideshow
@@ -112,28 +87,18 @@
     archive-region
     open-junk-file
     migemo
-    bookmark
     anzu
-    move-text
-    sublimity
-    nyan-mode
-    ;elscreen -> https://raw.githubusercontent.com/tam17aki/elscreen/master/elscreen.el
     ;;;;;;;;;;; 10_
-    ipython
-    yasnippet
     auto-complete
-    auto-complete-clang
-    ac-helm
     pcomplete
     pos-tip
     dired+
     bf-mode
-    erc
+    flycheck
+    flycheck-color-mode-line
     flymake
     flymake-shell
     flymake-jshint
-    flycheck
-    flycheck-color-mode-line
     google-maps
     helm
     helm-c-moccur
@@ -143,48 +108,47 @@
     helm-gtags
     helm-pydoc
     helm-rails
+    ac-helm
     helm-dash
     helm-swoop
-    mew
     multi-term
     org
     w3m
+    yasnippet
     ;;;;;;;;;;; 50_
-    android-mode
     cc-mode
-    hideif
     c-eldoc
     go-mode
     groovy-mode
+    web-mode
     less-css-mode
+    scss-mode
     js2-mode
     js-comint
+    coffee-mode
+    json-mode
     lispxmp
     slime
     ac-slime
+    markdown-mode
     cperl-mode
     perlbrew
     php-mode
     cake-inflector
+    python
     python-mode
     ipython
-    pysmell
-    rhtml-mode
-    rinari
-    rspec-mode
     ruby-mode
     ruby-block
     ruby-electric
     inf-ruby
-    rsense
-    rbenv
     rubocop
+    rbenv
+    rsense
+    rinari
+    rspec-mode
+    rhtml-mode
     scala-mode
-    scss-mode
-    markdown-mode
-    coffee-mode
-    json-mode
-    web-mode
     ;;;;;;;;;;; 60_
     info
     info+
@@ -204,7 +168,6 @@
     gist
     magit
     eldoc
-    eldoc-extension
     ;;;;;;;;;;; 90_
     autoinsert
     calendar
@@ -218,20 +181,19 @@
     rainbow-delimiters
     rainbow-mode
     sequential-command
-    twittering-mode
     key-combo
     sticky
+    guide-key
     key-chord
     smartrep
     expand-region
     server
-    guide-key
     ))
 (let ((not-installed (loop for x in install-package-list
-                           when (not (package-installed-p x))
-                           collect x)))
+			   when (not (package-installed-p x))
+			   collect x)))
   (when not-installed (package-refresh-contents)
-    (dolist (pkg not-installed)
-      (package-install pkg))))
+	(dolist (pkg not-installed)
+	  (package-install pkg))))
 
 (provide 'init-module)

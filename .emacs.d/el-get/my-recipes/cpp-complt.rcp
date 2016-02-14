@@ -1,4 +1,0 @@
-(:name cpp-complt
-:type http
-:description "Inserting cpp instruction with completion and selecting header with mouse."
-:url "http://www.bookshelf.jp/elc/cpp-complt.el")

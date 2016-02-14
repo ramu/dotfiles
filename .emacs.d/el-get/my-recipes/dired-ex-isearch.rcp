@@ -1,5 +1,0 @@
-(:name dired-ex-isearch
-:type github
-:description "dired isearch"
-:pkgname "keiji0/elisp"
-:branch "master")

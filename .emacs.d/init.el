@@ -1,5 +1,7 @@
 (require 'cl)
 
+(setq user-emacs-directory "~/.emacs.d/")
+
 ;; elisps
 (add-to-list 'load-path "~/.emacs.d/conf/init/")
 
