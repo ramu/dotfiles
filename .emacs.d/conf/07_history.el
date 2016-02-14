@@ -21,7 +21,6 @@
 ;;; recentf
 (my-require-and-when 'recentf
   (recentf-mode 1)
-  (setq recentf-save-file "~/.emacs.d/var/.recentf")
   (setq recentf-max-saved-items 1000)
   (setq recentf-auto-cleanup 10)
   (setq recentf-exclude '(".recentf"))

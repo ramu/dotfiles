@@ -9,6 +9,7 @@
 
 # emacs
 .emacs.d/*.elc
+.emacs.d/recentf
 .emacs.d/conf/*.elc
 .emacs.d/conf/src/10_twittering-mode.el
 .emacs.d/elisp/

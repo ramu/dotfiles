@@ -43,6 +43,7 @@
   (set-face-foreground 'helm-ff-directory "Orange")
   (set-face-background 'helm-ff-dotted-directory "Black")
   (set-face-foreground 'helm-ff-dotted-directory "brightyellow")
+  (setq helm-ff-file-name-history-use-recentf t)
 
   ; helm-c-moccur.el
   (my-require-and-when 'helm-c-moccur
