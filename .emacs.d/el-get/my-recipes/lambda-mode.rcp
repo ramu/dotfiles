@@ -1,0 +1,4 @@
+(:name lambda-mode
+ :type http
+ :description "This library defines a minor mode that uses font-lock and overlays to display ‘lambda’"
+ :url "http://dishevelled.net/elisp/lambda-mode.el")

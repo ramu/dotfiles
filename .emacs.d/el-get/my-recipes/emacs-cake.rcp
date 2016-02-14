@@ -1,0 +1,5 @@
+(:name emacs-cake
+ :type github
+ :description "Minor Mode for editing CakePHP code in Emacs"
+ :pkgname "k1LoW/emacs-cake"
+ :branch "master")

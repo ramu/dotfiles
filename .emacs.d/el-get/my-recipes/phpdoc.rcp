@@ -1,0 +1,4 @@
+(:name php-doc
+ :type http
+ :description "PHP document helper"
+ :url "http://www.emacswiki.org/emacs/download/php-doc.el")
