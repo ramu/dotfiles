@@ -19,7 +19,7 @@
 ;; region high-light
 (setq transient-mark-mode t)
 (set-face-foreground 'region "#FFFFFF")
-(set-face-background 'region "#88FF88")
+(set-face-background 'region "#227722")
 
 ;; 色々なファイルの色付け
 (my-require-and-when 'generic-x)
@@ -29,6 +29,8 @@
   (global-auto-highlight-symbol-mode t)
   (set-face-foreground 'ahs-face "black")
   (set-face-background 'ahs-face "white")
+  (set-face-foreground 'ahs-plugin-defalt-face "black")
+  (set-face-background 'ahs-plugin-defalt-face "white")
   (ahs-set-idle-interval 0.5))
 
 ;;; highlight-indentation.el
@@ -43,7 +45,7 @@
     '((((class color) (background dark))
       (:background "dark slate gray" t))
      (((class color) (background light))
-      (:background "#0000A0"))
+      (:background "#0000FF"))
       (t (:bold t)))
     "*Face used by hi-ilne." :group 'hoge)
   (setq hl-line-face 'my-hlline-face)
@@ -89,27 +91,6 @@
     "Face used to visualize SPACE."
     :group 'blank))
 
-;;; blink cursor
-;; カーソルを虹色表示
-(lexical-let ((interval 1)
-              (colors '("red" "green" "blue" "yellow" "purple" "magenta" "cyan"))
-              (cursor-nth 0)
-              (timer nil))
-  (defun cute-cursor (flag)
-    "Start toggling cursor color when flag is true."
-    (cond
-     ((and flag timer) (cute-cursor nil))
-     (flag (setq timer (run-with-timer interval interval
-                         (lambda ()
-                            (set-cursor-color (nth cursor-nth colors))
-                            (incf cursor-nth)
-                            (if (>= cursor-nth (length colors))
-                              (setq cursor-nth 0)))))
-           (blink-cursor-mode 0))
-     (timer (cancel-timer timer)
-            (setq timer nil)))))
-(cute-cursor t)
-
 ;;; rainbow-delimiters.el
 (my-require-and-when 'rainbow-delimiters
   (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
@@ -130,6 +111,7 @@
 
 ;;; rainbow-mode.el
 (my-require-and-when 'rainbow-mode
+  (add-hook 'emacs-lisp-mode-hook 'rainbow-mode)
   (add-hook 'html-mode-hook 'rainbow-mode)
   (add-hook 'web-mode-hook 'rainbow-mode)
   (add-hook 'css-mode-hook 'rainbow-mode)
