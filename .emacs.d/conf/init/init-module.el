@@ -32,6 +32,7 @@
     tempbuf
     auto-save-buffers
     go-autocomplete
+    go-flymake
     haml-mode
     emmet-mode
     lambda-mode

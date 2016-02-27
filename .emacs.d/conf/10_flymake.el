@@ -125,6 +125,9 @@
   (my-require-and-when 'flymake-haml
     (add-hook 'haml-mode-hook '(lambda () (flymake-haml-load))))
 
+  ;;; flymake for go
+  (my-require-and-when 'go-flymake)
+
   ;;; etc...
   ;; minibufferに表示
   ; growl使うので不要
