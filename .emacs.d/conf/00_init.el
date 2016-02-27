@@ -33,7 +33,8 @@
 	       (expand-file-name "~/perl5/perlbrew/bin/")
 	       (expand-file-name "~/perl5/perlbrew/perls/current/bin/")
 	       (expand-file-name "~/.rbenv/shims/")
-	       (expand-file-name "~/.rbenv/bin/")))
+               (expand-file-name "~/.rbenv/bin/")
+               (expand-file-name "~/.gvm/pkgsets/go1.5.3/global/bin/")))    ; FIXME!!!
   (when
       (setenv "PATH" (concat dirs ":" (getenv "PATH")))
        (setq exec-path (append (list dirs) exec-path))))

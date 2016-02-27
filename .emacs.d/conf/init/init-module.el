@@ -31,6 +31,7 @@
     set-perl5lib-path
     tempbuf
     auto-save-buffers
+    go-autocomplete
     haml-mode
     emmet-mode
     lambda-mode
