@@ -22,7 +22,7 @@
     editor    = vim
 	autoCRLF = false
     quotepath = false
-	excludesfile = /Users/ramusara/.gitignore_global
+	excludesfile = ~/.gitignore_global
     precomposeunicode = true
 
 [credential]
