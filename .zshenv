@@ -2,6 +2,8 @@
 ZDOTDIR=~/.zsh
 UNAME=`uname`
 
+setopt no_global_rcs
+
 # emacs configuration
 if [[ "$EMACS" != "" ]]; then
     unsetopt zle
