@@ -25,6 +25,8 @@
 (global-set-key (kbd "C-x C-b") 'bs-show)              ; バッファ一覧をまともに
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-i") 'helm-info-at-point)
+(global-set-key (kbd "C-x p") 'git-gutter+-previous-hunk)
+(global-set-key (kbd "C-x n") 'git-gutter+-next-hunk)
 
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-h") 'delete-backward-char)     ; C-hは後退(1文字)
