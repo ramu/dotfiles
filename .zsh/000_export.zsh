@@ -18,3 +18,5 @@ export CLASSPATH="${CLASSPATH}:$JUNIT_HOME/junit.jar"
 export RSENSE_HOME='/opt/rsense/'
 
 export VIRTUALENV_USE_DISTRIBUTE=true
+
+export NODENV_ROOT=/usr/local/var/nodenv

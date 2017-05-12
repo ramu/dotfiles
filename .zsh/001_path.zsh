@@ -23,7 +23,6 @@ PATH=$HOME_DIR/work/gae/go_engine:$PATH
 PATH=$HOME_DIR/work/java/maven/bin:$PATH
 PATH=/usr/local/heroku/bin:$PATH
 PATH=/Applications/MAMP/bin/php/php5.4.10/bin:$PATH
-PATH=$HOME_DIR/.nodenv/bin:$PATH
 
 # rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
