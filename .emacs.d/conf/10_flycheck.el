@@ -5,7 +5,7 @@
 
   (flycheck-define-checker ruby-rubocop
                            "A Ruby syntax and style checker using the RuboCop tool."
-                           :command ("rubocop" "--format" "emacs" "--silent"
+                           :command ("rubocop" "--format" "emacs"
                                      (config-file "--config" flycheck-rubocoprc)
                                      source)
                            :error-patterns
