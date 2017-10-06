@@ -113,3 +113,15 @@ rails-new-and-git-setup() {
    git add .
    git commit -m 'Initialize repository'
 }
+
+#-----------------------------------------------------------
+# wip
+function git_wip() {
+  current=`git rev-parse --abbrev-ref HEAD`
+  git checkout -b $1
+  git commit --allow-empty -m "NOPR: [ci skip]"
+  git push origin $1
+  git branch -u origin/$1 $1
+  hub pull-request -m "[WIP] $1" -b $current
+}
+

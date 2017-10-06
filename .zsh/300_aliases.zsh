@@ -127,6 +127,7 @@ alias tspon='tmux set-window-option synchronize-panes on'
 alias tspoff='tmux set-window-option synchronize-panes off'
 alias val='valgrind'
 alias wcat='wget -q -O -'
+alias wip='git_wip'
 alias zmv='noglob zmv -W'
 
 ### +g(command_name)
