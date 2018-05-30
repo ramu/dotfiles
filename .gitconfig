@@ -28,6 +28,8 @@
 [credential]
 	helper = osxkeychain
 
+[rebase]
+    autosquash = true
 [merge]
     ff = false
 [pull]
