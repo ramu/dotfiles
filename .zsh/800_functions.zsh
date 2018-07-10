@@ -122,6 +122,6 @@ function git_wip() {
   git commit --allow-empty -m "NOPR: [ci skip]"
   git push origin $1
   git branch -u origin/$1 $1
-  hub pull-request -m "[WIP] $1" -b $current
+  hub pull-request -m "[WIP] $1" -b $current -a $(git config --global user.name)
 }
 
