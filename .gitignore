@@ -3,6 +3,7 @@
 .zsh/modules/
 .zsh/.zcompdump*
 .zsh/.z
+.zsh/.zcompcache
 
 # mercurial
 .hg/
