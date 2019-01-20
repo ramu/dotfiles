@@ -21,6 +21,7 @@ PATH=$PATH:/Applications/sdk/platform-tools
 PATH=$PATH:/Library/Java/ant/bin
 PATH=$PATH:/usr/share/grails/bin
 PATH=$PATH:/usr/share/griffon/bin
+PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 PATH=$PATH:$GOPATH/bin
 PATH=$HOME_DIR/work/gae/go_engine:$PATH
 PATH=$HOME_DIR/work/java/maven/bin:$PATH
