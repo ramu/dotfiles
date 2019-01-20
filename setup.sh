@@ -3,6 +3,7 @@ cd
 mkdir ~/log/
 mkdir ~/bin/
 mkdir ~/tmp/
+mkdir ~/work/
 
 ### zsh
 ln -sf ~/dotfiles/.zshrc  ~/.zshrc
