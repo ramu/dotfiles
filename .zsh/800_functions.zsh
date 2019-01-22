@@ -125,3 +125,10 @@ function git_wip() {
   hub pull-request -F ~/dotfiles/.github/PULL_REQUEST_TEMPLATE.md --edit -b $current -a $(git config --global user.name)
 }
 
+#-----------------------------------------------------------
+# git push --force origin {current_branch}
+function git_push_force_origin() {
+  current=`git rev-parse --abbrev-ref HEAD`
+  git push --force origin $current
+}
+
