@@ -18,6 +18,7 @@ PATH=$PATH:$HOME_DIR/Library/Android/sdk/tools
 PATH=$PATH:$HOME_DIR/Library/Android/sdk/platform-tools
 PATH=$PATH:/Applications/sdk/tools
 PATH=$PATH:/Applications/sdk/platform-tools
+PATH=$PATH:$HOME_DIR/work/google/flutter/flutter/bin
 PATH=$PATH:/Library/Java/ant/bin
 PATH=$PATH:/usr/share/grails/bin
 PATH=$PATH:/usr/share/griffon/bin
