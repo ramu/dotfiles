@@ -129,6 +129,6 @@ function git_wip() {
 # git push --force origin {current_branch}
 function git_push_force_origin() {
   current=`git rev-parse --abbrev-ref HEAD`
-  git push --force origin $current
+  git push --force-with-lease origin $current
 }
 
