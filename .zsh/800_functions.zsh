@@ -132,3 +132,24 @@ function git_push_force_origin() {
   git push --force-with-lease origin $current
 }
 
+#-----------------------------------------------------------
+# github pull-request merge
+function git_pull_request_merge() {
+  parent_branch_hash=`git log --decorate | grep 'commit' | grep 'origin/' | head -n 2 | tail -n 1 | awk '{ print $2 }' | tr -d "\n"`
+  parent_branch_name=`git name-rev $parent_branch_hash | awk '{ print $2 }'`
+  current_branch_name=`git rev-parse --abbrev-ref HEAD`
+
+  echo '[' $current_branch_name '] ===> [' $parent_branch_name '] merge? (y/n)'
+  read answer
+  case $answer in
+    y)
+      git checkout $parent_branch_name
+      git merge --no-ff $current_branch_name
+      git push
+      ;;
+    *)
+      echo -e "cancel pull-request merge.\n"
+      ;;
+  esac
+}
+
