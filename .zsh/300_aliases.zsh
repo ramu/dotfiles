@@ -100,6 +100,7 @@ alias ll='ls -lG'
 alias lll='ll'
 alias mv='mv'
 alias mkdir='nocorrect mkdir'
+alias mux="tmuxinator"
 alias openpr='git browse-remote --pr'
 alias pb='pythonbrew'
 alias pbl='pythonbrew list'
