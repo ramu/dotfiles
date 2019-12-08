@@ -3,9 +3,11 @@
 alias bi='brew install'
 alias bs='brew search'
 alias clean='rm -f *~'
+alias dcd='docker-compose down'
 alias dcu='docker-compose up'
 alias dce='docker-compose exec'
-alias dcr='docker-compose run'
+alias dcl='docker-compose logs -f -t --tail=20'
+alias dcr='docker-compose run --rm'
 alias df='df -H'
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff -u'
