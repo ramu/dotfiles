@@ -94,3 +94,8 @@ function afu-ad-delete-unambiguous-prefix () {
 afu-ad-delete-unambiguous-prefix afu+accept-line
 afu-ad-delete-unambiguous-prefix afu+accept-line-and-down-history
 afu-ad-delete-unambiguous-prefix afu+accept-and-hold
+
+# kubectl
+source <(kubectl completion zsh)
+complete -o default -F __start_kubectl k
+
