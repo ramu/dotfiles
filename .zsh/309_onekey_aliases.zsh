@@ -10,7 +10,7 @@ alias g='grep'                    # gcc, g++, gdb, git...
 alias h='history'
 alias i='info'
 #alias j='_z'                     # j = alias _z (z.sh)
-alias k='kill'
+alias k='kubectl'
 alias k9='kill -9'
 alias l='ls'
 alias m='mv'                      # make...
