@@ -23,7 +23,7 @@ brew install gettext
 brew install git
 brew install git-flow
 brew install html2text
-brew install hub
+brew install gh
 brew install jpeg
 brew install jq
 brew install libevent

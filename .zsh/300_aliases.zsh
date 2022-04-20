@@ -41,7 +41,7 @@ alias gcom='git commit -m'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gf='git fetch'
-alias gh='git help'
+# gh is GitHub CLI
 alias gi='mkdir_git_init'
 alias gih='git init'
 alias gis='git --bare init --shared'
@@ -163,6 +163,3 @@ alias lma='alias | grep -e "g[0-9]=" | grep -v "m[0-9]" | sed "s/^g/alias g/g"'
 alias 644='chmod 644'
 alias 755='chmod 755'
 alias 777='chmod 777'
-
-### hub
-eval "$(hub alias -s)"
