@@ -45,7 +45,7 @@ alias gf='git fetch'
 alias gi='mkdir_git_init'
 alias gih='git init'
 alias gis='git --bare init --shared'
-alias gl='git log --graph --decorate --pretty=format:"%ad [%cn] <c:%h t:%t p:%p> %n %Cgreen%d%Creset %s %n" --stat -p'
+alias gl="git log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'"
 alias gm='git merge'
 alias gp='git push --force-with-lease'
 alias gpf='git_push_force_origin'
