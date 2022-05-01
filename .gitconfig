@@ -43,3 +43,4 @@
 
 [alias]
     current-branch = symbolic-ref --short HEAD
+    s = status
