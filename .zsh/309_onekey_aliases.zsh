@@ -6,7 +6,7 @@ alias c='cc'                      # chmod...
 alias d='df'
 alias e='ec'
 alias f='file'
-alias g='grep'                    # gcc, g++, gdb, git...
+alias g='git'
 alias h='history'
 alias i='info'
 #alias j='_z'                     # j = alias _z (z.sh)
