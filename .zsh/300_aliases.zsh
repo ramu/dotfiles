@@ -105,6 +105,7 @@ alias hu='hg update'
 ## i ##
 alias ip='ifconfig | grep "inet "'
 alias javac='javac -J-Dfile.encoding=UTF8'
+alias k9='kill -9'
 alias ls='ls -AFG'
 alias ll='ls -lG'
 alias lll='ll'
