@@ -118,7 +118,7 @@ rails-new-and-git-setup() {
 # wip
 function git_wip() {
   current=`git rev-parse --abbrev-ref HEAD`
-  git checkout -b $1
+  git switch -c $1
   git commit --allow-empty -m "NOPR: [ci skip]"
   git push origin $1
   git branch -u origin/$1 $1
@@ -143,7 +143,7 @@ function git_pull_request_merge() {
   read answer
   case $answer in
     y)
-      git checkout $parent_branch_name
+      git switch $parent_branch_name
       git merge --no-ff $current_branch_name
       git push
       ;;
