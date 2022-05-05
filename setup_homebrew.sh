@@ -6,7 +6,6 @@ brew upgrade
 brew tap phinze/homebrew-cask
 
 brew install brew-cask
-brew install ack
 brew install eck
 brew install autoconf
 brew install bazaar
@@ -42,6 +41,7 @@ brew install putty
 brew install rbenv
 brew install ricty
 brew install ruby-build
+brew install the_silver_searcher
 brew install tig
 brew install tmux
 brew install tree
