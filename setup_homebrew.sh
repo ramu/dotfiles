@@ -44,7 +44,6 @@ brew install ruby-build
 brew install the_silver_searcher
 brew install tig
 brew install tmux
-brew install tree
 brew install vim
 brew install w3m
 brew install wget
