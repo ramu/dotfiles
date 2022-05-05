@@ -50,6 +50,10 @@ brew install wget
 brew install z
 brew install zsh
 
+# Install the patched fonts of powerline nerd-font
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+
 brew cask install adobe-reader
 brew cask install alfred
 brew cask install cyberduck
