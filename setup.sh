@@ -74,6 +74,17 @@ rm pythonbrew-install
 ### homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+### rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+cargo install bat
+cargo install fd-find
+cargo install git-delta
+cargo install grex
+cargo install lsd
+cargo install ripgrep
+cargo install tokei
+
 ### pry
 ln -sf ~/dotfiles/.pryrc ~/.pryrc
 
