@@ -10,28 +10,36 @@
     ui          = auto
 
 [pager]
-    log = diff-highlight | less
-    show = diff-highlight | less
-    diff = diff-highlight | less
+    log = delta
+    show = delta
+    diff = delta
 
 [push]
     default = tracking
 
 [core]
-    pager     = less
+    pager     = delta
     editor    = vim
 	autoCRLF = false
     quotepath = false
 	excludesfile = ~/.gitignore_global
     precomposeunicode = true
 
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+
 [credential]
 	helper = osxkeychain
 
 [rebase]
     autosquash = true
+[diff]
+    colorMoved = default
 [merge]
     ff = false
+    conflictstyle = diff3
 [pull]
    rebase = true
 [difftool "sourcetree"]
