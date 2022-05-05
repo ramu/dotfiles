@@ -76,3 +76,6 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 ### pry
 ln -sf ~/dotfiles/.pryrc ~/.pryrc
+
+### ripgrep
+ln -sf ~/dotfiles/.ripgrep ~/.ripgrep
