@@ -3,7 +3,7 @@
 alias a='alias'
 alias b='bg'
 alias c='cc'                      # chmod...
-alias d='df'
+alias d='delta'
 alias e='ec'
 alias f='file'
 alias g='git'
