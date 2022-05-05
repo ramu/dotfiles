@@ -1,0 +1,10 @@
+# 大文字小文字区別しない
+-i
+
+# マッチ文字を 強調 & underline 表示
+--colors=match:style:bold
+--colors=match:style:underline
+
+# 隠しファイルも検索対象とする
+--hidden
+
