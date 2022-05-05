@@ -86,6 +86,11 @@ cargo install lsd
 cargo install ripgrep
 cargo install tokei
 
+### tmux-thumbs
+git clone https://github.com/fcsonline/tmux-thumbs ~/.tmux/plugins/tmux-thumbs
+cd ~/.tmux/plugins/tmux-thumbs
+cargo build --release
+
 ### pry
 ln -sf ~/dotfiles/.pryrc ~/.pryrc
 
