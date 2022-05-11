@@ -130,6 +130,7 @@ alias rdc='rails destroy controller'
 alias rdm='rails destroy model'
 alias rds='rails destroy scaffold'
 alias reload='source ${HOME}/.zshrc'
+alias replace='replace'
 # alias rg='rails generate'   ripgrep 使うので無効
 alias rgc='rails generate controller'
 alias rgm='rails generate model'
