@@ -153,3 +153,9 @@ function git_pull_request_merge() {
   esac
 }
 
+#-----------------------------------------------------------
+# replace $1 $2
+function replace() {
+  rg -l --hidden "$1" | xargs -n 1 gsed -i "s/$1/$2/g"
+}
+

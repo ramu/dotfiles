@@ -21,6 +21,7 @@ brew install gdbm
 brew install gettext
 brew install git
 brew install git-flow
+brew install gnu-sed
 brew install html2text
 brew install gh
 brew install jpeg
