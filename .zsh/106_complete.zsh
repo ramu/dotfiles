@@ -99,3 +99,6 @@ afu-ad-delete-unambiguous-prefix afu+accept-and-hold
 source <(kubectl completion zsh)
 complete -o default -F __start_kubectl k
 
+# gh completion
+eval "$(gh completion -s zsh)"
+
