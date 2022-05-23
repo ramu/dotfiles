@@ -32,7 +32,7 @@ PATH=/Applications/MAMP/bin/php/php5.4.10/bin:$PATH
 # rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
 eval "$(rbenv init -)"
-source /usr/local/Cellar/rbenv/1.1.2/completions/rbenv.zsh
+source /usr/local/Cellar/rbenv/1.2.0/completions/rbenv.zsh
 
 # direnv
 eval "$(direnv hook zsh)"
