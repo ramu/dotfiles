@@ -113,6 +113,7 @@ alias lll='ll'
 alias mv='mv'
 alias mkdir='nocorrect mkdir'
 alias mux="tmuxinator"
+alias mypr='gh pr list -s all -a ramu'
 alias openpr='git browse-remote --pr'
 alias pb='pythonbrew'
 alias pbl='pythonbrew list'
