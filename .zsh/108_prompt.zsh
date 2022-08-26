@@ -32,5 +32,5 @@ case ${UID} in
     PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
   ;;
 esac
-
+RPROMPT='$(kube_ps1) '$RPROMPT
 
