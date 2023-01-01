@@ -5,6 +5,8 @@ autoload -Uz is-at-least
 autoload -Uz add-zsh-hook
 autoload -Uz vcs_info
 autoload -Uz zmv
+autoload -Uz compinit && compinit
+autoload -U bashcompinit && bashcompinit
 autoload -U promptinit
 autoload -U compinit
 autoload bashcompinit && bashcompinit

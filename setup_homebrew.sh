@@ -5,6 +5,7 @@ brew upgrade
 
 brew tap phinze/homebrew-cask
 
+brew install bash-completion@2
 brew install brew-cask
 brew install eck
 brew install autoconf
