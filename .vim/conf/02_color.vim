@@ -25,5 +25,5 @@ augroup highlightIdegraphicSpace
 augroup END
 
 " colorscheme
-colorscheme default
+colorscheme pablo
 
