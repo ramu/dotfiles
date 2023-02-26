@@ -8,8 +8,6 @@ brew tap phinze/homebrew-cask
 brew install brew-cask
 brew install eck
 brew install autoconf
-brew install bazaar
-brew install bdw-gc
 brew install cmigemo
 brew install curl
 brew install cvs
@@ -31,7 +29,6 @@ brew install libpng
 brew install libtiff
 brew install markdown
 brew install maven
-brew install mercurial
 brew install nkf
 brew install nmap
 brew install node
@@ -69,5 +66,3 @@ brew cask install skype
 brew cask install sourcetree
 brew cask install the-unarchiver
 brew cask install vagrant
-brew cask install virtualbox
-brew cask install yorufukurou

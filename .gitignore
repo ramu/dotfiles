@@ -5,9 +5,6 @@
 .zsh/.z
 .zsh/.zcompcache
 
-# mercurial
-.hg/
-
 # emacs
 .emacs.d/*.elc
 .emacs.d/recentf

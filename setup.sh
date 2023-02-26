@@ -20,11 +20,6 @@ git clone https://github.com/mollifier/cd-gitroot.git ~/.zsh/modules/cd-gitroot
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.tigrc     ~/.tigrc
 
-### mercurial
-ln -sf ~/dotfiles/.hgrc ~/.hgrc
-mkdir ~/dotfiles/.hg
-curl http://mercurial.selenic.com/wiki/InfoExtension?action=AttachFile&do=get&target=info.py > ~/dotfiles/.hg/info.py
-
 ### emacs
 ln -sf ~/dotfiles/.emacs.d ~/.emacs.d
 mkdir ~/dotfiles/.emacs.d/history
