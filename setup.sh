@@ -37,7 +37,6 @@ ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.vim ~/.vim
 mkdir -p ~/.vim/bundle
 mkdir -p ~/.vim/tmp
-git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 ### curl
 HOSTNAME=`hostname`
@@ -51,25 +50,27 @@ then
   exit 255
 fi
 
+# TODO: 要見直し
 ### perlbrew
-curl -L http://xrl.us/perlbrewinstall | bash
-~/perl5/perlbrew/bin/perlbrew init
-source ~/perl5/perlbrew/etc/bashrc
-perlbrew install -j 5 perl-5.14.1
-perlbrew switch perl-5.14.1
-perlbrew install-cpanm
+#curl -L https://install.perlbrew.pl | bash
+#~/perl5/perlbrew/bin/perlbrew init
+#source ~/perl5/perlbrew/etc/bashrc
+#perlbrew install -j 5 perl-5.14.1
+#perlbrew switch perl-5.14.1
+#perlbrew install-cpanm
 
+# TODO: 要見直し
 ### pythonbrew
-curl -kLO https://github.com/utahta/pythonbrew/raw/master/pythonbrew-install
-chmod +x pythonbrew-install
-./pythonbrew-install
-source ~/.pythonbrew/etc/bashrc
-pythonbrew install 2.7.2
-pythonbrew switch 2.7.2
-rm pythonbrew-install
+#curl -kLO https://github.com/utahta/pythonbrew/raw/master/pythonbrew-install
+#chmod +x pythonbrew-install
+#./pythonbrew-install
+#source ~/.pythonbrew/etc/bashrc
+#pythonbrew install 2.7.2
+#pythonbrew switch 2.7.2
+#rm pythonbrew-install
 
 ### homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 ### rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
