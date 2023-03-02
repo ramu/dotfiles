@@ -1,7 +1,7 @@
 #!/bin/zsh
 # completion
 # zsh-syntax-highlighting ... https://github.com/nicoulaj/zsh-syntax-highlighting
-source ~/.zsh/modules/zsh-syntax-highlighting.zsh
+source ~/.zsh/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 # auto-fu                 ... http://d.hatena.ne.jp/hchbaw/20100526/1274886125   @hchbaw

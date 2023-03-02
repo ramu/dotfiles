@@ -4,6 +4,7 @@ HOME_DIR=~
 
 # path
 PATH=$HOME_DIR/bin
+PATH=$PATH:/opt/homebrew/bin
 PATH=$HOME_DIR/.rbenv/bin:$PATH
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/local/sbin
@@ -30,9 +31,9 @@ PATH=/usr/local/heroku/bin:$PATH
 PATH=/Applications/MAMP/bin/php/php5.4.10/bin:$PATH
 
 # rbenv
-export RBENV_ROOT=/usr/local/var/rbenv
+export RBENV_ROOT=/opt/homebrew/Cellar/rbenv
 eval "$(rbenv init -)"
-source /usr/local/Cellar/rbenv/1.2.0/completions/rbenv.zsh
+source /opt/homebrew/Cellar/rbenv/1.2.0/completions/rbenv.zsh
 
 # direnv
 eval "$(direnv hook zsh)"
