@@ -20,9 +20,9 @@
 [core]
     pager     = delta
     editor    = vim
-	autoCRLF = false
+    autoCRLF = false
     quotepath = false
-	excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
     precomposeunicode = true
 
 [interactive]
