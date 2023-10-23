@@ -21,6 +21,7 @@
     pager     = delta
     editor    = vim
     autoCRLF = false
+    ignorecase = false
     quotepath = false
     excludesfile = ~/.gitignore_global
     precomposeunicode = true
