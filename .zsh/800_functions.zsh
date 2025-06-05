@@ -85,7 +85,8 @@ function cde () {
 #------------------------------------------------------------
 # gem install/uninstall + rehash
 function gem() {
-  /usr/local/var/rbenv/shims/gem $*
+  #~/.rbenv/shims/gem $*
+  /opt/homebrew/Cellar/rbenv/shims/gem $*
   if [ "$1" = "install" ] || [ "$1" = "i" ] || [ "$1" = "uninstall" ] || [ "$1" = "uni" ]
   then
     rbenv rehash
