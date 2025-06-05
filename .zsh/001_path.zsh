@@ -35,7 +35,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # rbenv
 export RBENV_ROOT=/opt/homebrew/Cellar/rbenv
 eval "$(rbenv init -)"
-FPATH=/opt/homebrew/Cellar/rbenv/1.3.2/completions:"$FPATH"
+FPATH=$RBENV_ROOT/1.3.2/completions:$FPATH
 
 # direnv
 eval "$(direnv hook zsh)"
