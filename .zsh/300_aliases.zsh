@@ -1,5 +1,6 @@
 #!/bin/zsh
 # alias
+alias be='bundle exec'
 alias bi='brew install'
 alias bs='brew search'
 alias ccd='claude --dangerously-skip-permissions'
