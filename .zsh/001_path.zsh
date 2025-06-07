@@ -4,7 +4,6 @@ HOME_DIR=~
 
 # path
 PATH=$HOME_DIR/bin
-PATH=$PATH:/opt/homebrew/bin
 PATH=$HOME_DIR/.rbenv/bin:$PATH
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/local/sbin
@@ -29,6 +28,9 @@ PATH=$HOME_DIR/work/gae/go_engine:$PATH
 PATH=$HOME_DIR/work/java/maven/bin:$PATH
 PATH=/usr/local/heroku/bin:$PATH
 PATH=/Applications/MAMP/bin/php/php5.4.10/bin:$PATH
+
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # rbenv
 export RBENV_ROOT=/opt/homebrew/Cellar/rbenv
