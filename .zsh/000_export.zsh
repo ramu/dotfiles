@@ -18,8 +18,6 @@ export RSENSE_HOME='/opt/rsense/'
 
 export VIRTUALENV_USE_DISTRIBUTE=true
 
-export NODENV_ROOT=/usr/local/var/nodenv
-
 export GOPATH=$HOME_DIR
 
 export RIPGREP_CONFIG_PATH=$HOME_DIR/.ripgreprc
