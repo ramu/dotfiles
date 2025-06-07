@@ -11,9 +11,9 @@ ln -sf ~/dotfiles/.zshenv ~/.zshenv
 ln -sf ~/dotfiles/.zsh    ~/.zsh
 mkdir ~/log/.zsh_history/
 mkdir ~/.zsh/modules/
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/modules/
-git clone git@github.com:jonmosco/kube-ps1.git ~/.zsh/modules/kube-ps1/ 
-git clone git://github.com/hchbaw/auto-fu.zsh.git ~/.zsh/modules/auto-fu/
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/modules/zsh-syntax-highlighting
+git clone https://github.com/jonmosco/kube-ps1.git ~/.zsh/modules/kube-ps1 
+git clone https://github.com/hchbaw/auto-fu.zsh.git ~/.zsh/modules/auto-fu
 git clone https://github.com/mollifier/cd-gitroot.git ~/.zsh/modules/cd-gitroot
 
 ### git
