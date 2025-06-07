@@ -1,16 +1,16 @@
 #!/bin/bash
 cd
-mkdir ~/log/
-mkdir ~/bin/
-mkdir ~/tmp/
-mkdir ~/work/
+mkdir -p ~/log/
+mkdir -p ~/bin/
+mkdir -p ~/tmp/
+mkdir -p ~/work/
 
 ### zsh
 ln -sf ~/dotfiles/.zshrc  ~/.zshrc
 ln -sf ~/dotfiles/.zshenv ~/.zshenv
 ln -sf ~/dotfiles/.zsh    ~/.zsh
-mkdir ~/log/.zsh_history/
-mkdir ~/.zsh/modules/
+mkdir -p ~/log/.zsh_history/
+mkdir -p ~/.zsh/modules/
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/modules/zsh-syntax-highlighting
 git clone https://github.com/jonmosco/kube-ps1.git ~/.zsh/modules/kube-ps1 
 git clone https://github.com/hchbaw/auto-fu.zsh.git ~/.zsh/modules/auto-fu
@@ -22,8 +22,8 @@ ln -sf ~/dotfiles/.tigrc     ~/.tigrc
 
 ### emacs
 ln -sf ~/dotfiles/.emacs.d ~/.emacs.d
-mkdir ~/dotfiles/.emacs.d/history
-mkdir ~/dotfiles/.emacs.d/var/.docsets
+mkdir -p ~/dotfiles/.emacs.d/history
+mkdir -p ~/dotfiles/.emacs.d/var/.docsets
 
 ### screen
 ln -sf ~/dotfiles/.screenrc ~/.screenrc
