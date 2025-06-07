@@ -92,4 +92,4 @@ cargo build --release
 ln -sf ~/dotfiles/.pryrc ~/.pryrc
 
 ### ripgrep
-ln -sf ~/dotfiles/.ripgrep ~/.ripgrep
+ln -sf ~/dotfiles/.ripgreprc ~/.ripgreprc
