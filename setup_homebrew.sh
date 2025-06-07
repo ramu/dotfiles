@@ -3,10 +3,7 @@ brew update
 
 brew upgrade
 
-brew tap phinze/homebrew-cask
-
 brew install bash-completion@2
-brew install brew-cask
 brew install eck
 brew install autoconf
 brew install cmigemo
@@ -50,20 +47,6 @@ brew install z
 brew install zsh
 
 # Install the patched fonts of powerline nerd-font
-brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 
-brew cask install adobe-reader
-brew cask install alfred
-brew cask install cyberduck
-brew cask install dropbox
-brew cask install github
-brew cask install google-chrome
-brew cask install google-drive
-brew cask install google-hangouts
-brew cask install iterm2
-brew cask install sequel-pro
-brew cask install skype
-brew cask install sourcetree
-brew cask install the-unarchiver
-brew cask install vagrant
+brew install --cask iterm2
