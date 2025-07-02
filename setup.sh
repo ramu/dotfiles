@@ -5,6 +5,9 @@ mkdir -p ~/bin/
 mkdir -p ~/tmp/
 mkdir -p ~/work/
 
+### claude code
+ln -sf ~/dotfiles/.claude/settings.json ~/.claude/settings.json
+
 ### zsh
 ln -sf ~/dotfiles/.zshrc  ~/.zshrc
 ln -sf ~/dotfiles/.zshenv ~/.zshenv
