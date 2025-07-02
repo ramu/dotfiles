@@ -20,8 +20,16 @@
   "permissions": {
     "allow": [
       "Bash(find:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
       "Bash(ls:*)",
+      "Bash(npm:*)",
       "Bash(osascript -e:*)",
+      "Bash(pnpm:*)",
+      "Bash(yarn:*)",
       "Read(./**)"
     ],
     "deny": [
