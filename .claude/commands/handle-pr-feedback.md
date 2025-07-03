@@ -19,7 +19,7 @@ Review and address the latest feedback comments for Pull Request #$ARGUMENT.
 
 ## Implementation Guidelines
 
-- **Commit messages**: Include PR number in commit messages (format: "fix: description (#$ARGUMENT)")
+- **Commit messages**: Include the Pull Request number in commit messages (format: "fix: description (#$ARGUMENT)")
 - **Code changes**: Follow existing code style and conventions
 - **Testing**: Run relevant tests after making changes
 - **Documentation**: Update documentation if changes affect public APIs
@@ -29,7 +29,7 @@ Review and address the latest feedback comments for Pull Request #$ARGUMENT.
 - [ ] All feedback comments addressed
 - [ ] Tests passing
 - [ ] Code follows project conventions
-- [ ] Commit messages include PR numbers
+- [ ] Commit messages include the Pull Request numbers
 - [ ] Summary comment posted to Pull Request with changes made
 
 ## Error Handling
