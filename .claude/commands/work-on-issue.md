@@ -24,7 +24,7 @@ Check the contents of Issue #$ARGUMENT and follow the work rules below.
 
 ### Issue Start Comment
 
-この issue に着手します。
+この issue の作業を開始します。
 
 ### Issue Completion Comment
 
