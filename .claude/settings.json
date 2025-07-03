@@ -35,7 +35,6 @@
     "deny": [
       "Bash(curl:*)",
       "Bash(git branch:*)",
-      "Bash(git checkout:*)",
       "Bash(git rebase:*)",
       "Bash(git reset:*)",
       "Bash(git switch:*)",
