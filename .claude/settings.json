@@ -48,8 +48,12 @@
       "Read(./**)"
     ],
     "deny": [
+      "Bash(brew install:*)",
+      "Bash(chmod 777:*)",
       "Bash(curl:*)",
+      "Bash(gh repo delete:*)",
       "Bash(git branch:*)",
+      "Bash(git config:*)",
       "Bash(git rebase:*)",
       "Bash(git reset:*)",
       "Bash(git switch:*)",
