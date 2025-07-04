@@ -2,6 +2,7 @@
 # alias
 alias bi='brew install'
 alias bs='brew search'
+alias ccd='claude --dangerously-skip-permissions'
 alias clean='rm -f *~'
 alias dcd='docker-compose down'
 alias dcu='docker-compose up'
