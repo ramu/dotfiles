@@ -4,6 +4,17 @@
     "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "true"
   },
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/deny-check.sh"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "matcher": "",
