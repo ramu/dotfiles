@@ -34,6 +34,8 @@
       "Bash(gh issue comment:*)",
       "Bash(gh issue view:*)",
       "Bash(gh pr create:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
       "Bash(git checkout -b:*)",
       "Bash(git status:*)",
       "Bash(git diff:*)",
