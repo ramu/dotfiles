@@ -9,6 +9,7 @@ mkdir -p ~/work/
 ln -sf ~/dotfiles/.claude/settings.json ~/.claude/settings.json
 ln -sf ~/dotfiles/.claude/commands ~/.claude/commands
 ln -sf ~/dotfiles/.claude/scripts ~/.claude/scripts
+ln -sf ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 
 ### zsh
 ln -sf ~/dotfiles/.zshrc  ~/.zshrc
