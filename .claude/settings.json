@@ -62,12 +62,14 @@
       "Bash(head:*)",
       "Bash(jq:*)",
       "Bash(ls:*)",
+      "Bash(mkdir:*)",
       "Bash(npm:*)",
       "Bash(osascript -e:*)",
       "Bash(pnpm:*)",
       "Bash(yarn:*)",
       "Edit(./**)",
-      "Read(./**)"
+      "Read(./**)",
+      "Write(./**)"
     ],
     "deny": [
       "Bash(brew install:*)",
