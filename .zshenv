@@ -27,7 +27,7 @@ if [ -d $ZDOTDIR/$UNAME ]; then
 fi
 
 # tmux
-if [[ $TERM != "screen-256color" && $EMACS = "" && $IDEA_INITIAL_DIRECTORY = "" ]]; then
+if [[ $TERM != "tmux-256color" && $EMACS = "" && $IDEA_INITIAL_DIRECTORY = "" ]]; then
     tmux
 fi
 
