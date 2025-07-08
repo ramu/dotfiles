@@ -44,6 +44,8 @@
       "Bash(git log:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
+      "Bash(grep:*)",
+      "Bash(head:*)",
       "Bash(ls:*)",
       "Bash(npm:*)",
       "Bash(osascript -e:*)",
