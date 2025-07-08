@@ -30,6 +30,7 @@
   "model": "opus",
   "permissions": {
     "allow": [
+      "Bash(bundle exec:*)",
       "Bash(find:*)",
       "Bash(gh issue comment:*)",
       "Bash(gh issue view:*)",
