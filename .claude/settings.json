@@ -46,6 +46,7 @@
       "Bash(awk:*)",
       "Bash(bundle exec:*)",
       "Bash(find:*)",
+      "Bash(gh issue close:*)",
       "Bash(gh issue comment:*)",
       "Bash(gh issue view:*)",
       "Bash(gh issue list:*)",
