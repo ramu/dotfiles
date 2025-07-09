@@ -5,6 +5,7 @@ HOME_DIR=~
 # path
 PATH=$HOME_DIR/bin
 PATH=$HOME_DIR/.rbenv/bin:$PATH
+PATH=$HOME_DIR/.rbenv/shims:$PATH
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/opt/local/bin
