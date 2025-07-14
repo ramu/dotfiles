@@ -43,4 +43,4 @@ eval "$(direnv hook zsh)"
 
 # nodenv
 eval "$(nodenv init -)"
-PATH=$PATH:`npm bin -g`
+PATH=$PATH:$HOME_DIR/.nodenv/shims
