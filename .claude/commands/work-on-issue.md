@@ -5,7 +5,8 @@ Check the contents of Issue #$ARGUMENT and follow the work rules below.
 ## Workflow
 
 - [ ] Post a comment on the issue to indicate you have started working on it
-- [ ] Analyze issue #$ARGUMENT requirements and acceptance criteria
+- [ ] Use `gh issue view` command to retrieve detailed information about issue #$ARGUMENT
+- [ ] Analyze issue #$ARGUMENT requirements and acceptance criteria based on the retrieved details
 - [ ] Create feature branch for issue #$ARGUMENT
 - [ ] Implement the requested changes
 - [ ] Write tests if applicable
