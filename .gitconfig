@@ -55,3 +55,6 @@
     s = status
     sw = switch
 
+[include]
+    path = ~/.gitconfig_private
+
