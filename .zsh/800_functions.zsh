@@ -47,7 +47,7 @@ alias -g RED='2> >(redrev)'
 
 #------------------------------------------------------------
 # cdup
-fucntion cdup () {
+function cdup () {
   echo
   cd ..
   zle reset-prompt
