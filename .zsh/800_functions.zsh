@@ -160,3 +160,97 @@ function replace() {
   rg -l --hidden "$1" | xargs -n 1 gsed -i "s/$1/$2/g"
 }
 
+#-----------------------------------------------------------
+# git worktree functions
+
+# git worktree 作成(ブランチの有無を判別してコマンド分岐)
+function git_worktree_add() {
+  local branch_name=$1
+
+  if [ -z "$branch_name" ]; then
+    echo "Usage: git_worktree_add <branch-name>"
+    return 1
+  fi
+
+  # ブランチが存在するか確認してコマンドを分岐
+  if git show-ref --verify --quiet "refs/heads/${branch_name}"; then
+    # 既存ブランチ
+    echo "Checking out existing branch: ${branch_name}"
+    git worktree add "../${branch_name}" "${branch_name}"
+  else
+    # 新規ブランチ
+    echo "Creating new branch: ${branch_name}"
+    git worktree add "../${branch_name}" -b "${branch_name}"
+  fi
+}
+
+# git worktree 削除(どのディレクトリにいても worktree 名で指定可能)
+function git_worktree_remove() {
+  local worktree_name=$1
+
+  if [ -z "$worktree_name" ]; then
+    echo "Usage: git_worktree_remove <worktree-name>"
+    echo "Options: git_worktree_remove -f <worktree-name>  (force delete branch)"
+    /usr/bin/git worktree list
+    return 1
+  fi
+
+  # -f オプションでブランチ強制削除
+  local force_delete=false
+  if [ "$worktree_name" = "-f" ]; then
+    force_delete=true
+    worktree_name=$2
+    if [ -z "$worktree_name" ]; then
+      echo "Usage: git_worktree_remove -f <worktree-name>"
+      return 1
+    fi
+  fi
+
+  # worktree listから該当するパスを探す
+  local -a worktree_info
+  worktree_info=("${(@f)$(/usr/bin/git worktree list | /usr/bin/grep "${worktree_name}[[:space:]]")}")
+
+  if [ ${#worktree_info} -eq 0 ]; then
+    echo "Worktree '${worktree_name}' not found"
+    /usr/bin/git worktree list
+    return 1
+  fi
+
+  # 最初のフィールド（パス）を取得
+  local path="${worktree_info[1]%% *}"
+
+  # 3番目のフィールド（ブランチ名）を取得して [] を削除
+  local branch="${worktree_info[1]}"
+  branch="${branch##*\[}"
+  branch="${branch%%\]*}"
+
+  # worktreeを削除
+  echo "Removing worktree: ${path}"
+  /usr/bin/git worktree remove "$path"
+
+  if [ $? -ne 0 ]; then
+    echo "Failed to remove worktree"
+    return 1
+  fi
+
+  # ブランチが取得できた場合のみブランチ削除を試みる
+  if [ -n "$branch" ]; then
+    if [ "$force_delete" = true ]; then
+      # 強制削除
+      echo "Force deleting branch: ${branch}"
+      /usr/bin/git branch -D "$branch"
+    else
+      # マージ済みかチェック
+      if /usr/bin/git branch --merged | /usr/bin/grep -q "^[* ]*${branch}\$"; then
+        echo "Branch '${branch}' is merged. Deleting..."
+        /usr/bin/git branch -d "$branch"
+      else
+        echo "⚠️  Branch '${branch}' is NOT merged yet."
+        echo "To keep the branch: Do nothing"
+        echo "To delete anyway: wtr -f ${worktree_name}"
+        return 0
+      fi
+    fi
+  fi
+}
+
