@@ -40,7 +40,6 @@
       }
     ]
   },
-  "model": "opus",
   "permissions": {
     "allow": [
       "Bash(awk:*)",
