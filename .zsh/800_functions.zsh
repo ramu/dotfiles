@@ -254,3 +254,29 @@ function git_worktree_remove() {
   fi
 }
 
+#-----------------------------------------------------------
+# retry until failure (useful for detecting flaky tests)
+function retry_until_fail() {
+  local count=0
+
+  if [ $# -eq 0 ]; then
+    echo "Usage: retry_until_fail <command> [args...]"
+    echo "Example: retry_until_fail bin/rspec spec/some_spec.rb:123"
+    return 1
+  fi
+
+  while true; do
+    count=$((count + 1))
+    echo "[retry_until_fail] Attempt $count"
+    "$@"
+    local exit_code=$?
+
+    if [ $exit_code -ne 0 ]; then
+      echo "Command failed with exit code $exit_code after $count attempts"
+      return 0
+    fi
+
+    echo "[retry_until_fail] Command succeeded, running again..."
+  done
+}
+
