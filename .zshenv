@@ -1,5 +1,6 @@
 #!/bin/zsh
 ZDOTDIR=~/.zsh
+HISTFILE=~/log/.zsh_history/.zsh_history
 UNAME=`uname`
 
 setopt no_global_rcs
