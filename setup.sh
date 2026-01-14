@@ -56,25 +56,6 @@ then
   exit 255
 fi
 
-# TODO: 要見直し
-### perlbrew
-#curl -L https://install.perlbrew.pl | bash
-#~/perl5/perlbrew/bin/perlbrew init
-#source ~/perl5/perlbrew/etc/bashrc
-#perlbrew install -j 5 perl-5.14.1
-#perlbrew switch perl-5.14.1
-#perlbrew install-cpanm
-
-# TODO: 要見直し
-### pythonbrew
-#curl -kLO https://github.com/utahta/pythonbrew/raw/master/pythonbrew-install
-#chmod +x pythonbrew-install
-#./pythonbrew-install
-#source ~/.pythonbrew/etc/bashrc
-#pythonbrew install 2.7.2
-#pythonbrew switch 2.7.2
-#rm pythonbrew-install
-
 ### homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
