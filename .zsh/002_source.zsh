@@ -5,3 +5,6 @@
 
 [[ -s ~/.cargo/env ]] && source ~/.cargo/env
 
+# uv (Python version/package manager)
+(( $+commands[uv] )) && eval "$(uv generate-shell-completion zsh)"
+
