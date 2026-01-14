@@ -43,6 +43,7 @@ brew install tmux
 brew install vim
 brew install w3m
 brew install wget
+brew install uv
 brew install z
 brew install zsh
 
