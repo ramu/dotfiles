@@ -102,3 +102,6 @@ complete -o default -F __start_kubectl k
 # gh completion
 eval "$(gh completion -s zsh)"
 
+# uv (Python version/package manager)
+(( $+commands[uv] )) && eval "$(uv generate-shell-completion zsh)"
+
