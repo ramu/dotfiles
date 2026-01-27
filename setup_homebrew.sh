@@ -13,6 +13,7 @@ brew install direnv
 brew install fontconfig
 brew install fontforge
 brew install freetype
+brew install fzf
 brew install gdbm
 brew install gettext
 brew install ghq
