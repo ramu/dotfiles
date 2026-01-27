@@ -14,3 +14,8 @@ export GOPATH=$HOME_DIR
 
 export RIPGREP_CONFIG_PATH=$HOME_DIR/.ripgreprc
 
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND='fd --type f'
+export FZF_ALT_C_COMMAND='fd --type d'
+

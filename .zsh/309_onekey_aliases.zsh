@@ -5,7 +5,7 @@ alias b='bg'
 alias c='cc'                      # chmod...
 alias d='delta'
 alias e='ec'
-alias f='file'
+# f は function(fzf)
 alias g='git'
 alias h='history'
 alias i='info'
