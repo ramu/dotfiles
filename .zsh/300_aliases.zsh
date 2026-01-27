@@ -24,7 +24,6 @@ if [ `uname` = "Darwin" ]; then
   alias emacsclient='TERM=xterm-256color /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw'
   alias ec='emacsclient'
 fi
-alias fd='fd -HI'
 ## g ##
 alias ga='git add'
 alias gau='git add -u'
