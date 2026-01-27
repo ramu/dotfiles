@@ -15,6 +15,7 @@ brew install fontforge
 brew install freetype
 brew install gdbm
 brew install gettext
+brew install ghq
 brew install git
 brew install git-flow
 brew install gnu-sed
