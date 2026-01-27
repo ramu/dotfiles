@@ -4,6 +4,7 @@
 .zsh/.zcompdump*
 .zsh/.z
 .zsh/.zcompcache
+.zsh/.zsh_history
 
 # emacs
 .emacs.d/*.elc
