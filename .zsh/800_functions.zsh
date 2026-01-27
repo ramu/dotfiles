@@ -280,3 +280,19 @@ function retry_until_fail() {
   done
 }
 
+#-----------------------------------------------------------
+# ghq-cd
+function ghq-cd () {
+  if [ -n "$1" ]; then
+    dir="$(ghq list --full-path --exact "$1")"
+    if [ -z "$dir" ]; then
+      echo "no directories found for '$1'"
+      return 1
+    fi
+    cd "$dir"
+    return
+  fi
+  echo 'usage: ghq-cd $repo'
+  return 1
+}
+
