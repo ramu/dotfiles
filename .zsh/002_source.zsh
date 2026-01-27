@@ -5,4 +5,5 @@
 
 [[ -s ~/.cargo/env ]] && source ~/.cargo/env
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
