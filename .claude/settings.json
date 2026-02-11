@@ -114,5 +114,9 @@
     ]
   },
   "alwaysThinkingEnabled": true,
-  "preferredNotifChannel": "iterm2"
+  "preferredNotifChannel": "iterm2",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/scripts/statusline.sh"
+  }
 }
