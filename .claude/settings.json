@@ -107,7 +107,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"タスクが完了しました\" with title \"'$(basename \"$PWD\")'\" sound name \"Glass\"'"
+            "command": "~/.claude/scripts/notify-stop.sh"
           }
         ]
       }
