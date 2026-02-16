@@ -9,6 +9,7 @@
     "allow": [
       "Bash(awk:*)",
       "Bash(bundle exec:*)",
+      "Bash(echo:*)",
       "Bash(find:*)",
       "Bash(gh issue close:*)",
       "Bash(gh issue comment:*)",
@@ -32,6 +33,7 @@
       "Bash(osascript -e:*)",
       "Bash(pnpm:*)",
       "Bash(yarn:*)",
+      "Skill(smart-commit)",
       "Edit(./**)",
       "Read(./**)",
       "Write(./**)"
