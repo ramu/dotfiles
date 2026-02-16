@@ -85,7 +85,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Claude Codeが許可を求めています\" with title \"Claude Code\" sound name \"Glass\"'"
+            "command": "~/.claude/scripts/notify-permission.sh"
           }
         ]
       }
@@ -113,10 +113,10 @@
       }
     ]
   },
-  "alwaysThinkingEnabled": true,
-  "preferredNotifChannel": "iterm2",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/scripts/statusline.sh"
-  }
+  },
+  "alwaysThinkingEnabled": true,
+  "preferredNotifChannel": "iterm2"
 }

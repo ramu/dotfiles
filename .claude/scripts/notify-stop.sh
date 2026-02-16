@@ -3,6 +3,13 @@
 # 連続する Stop イベント（サブエージェント終了等）をまとめ、
 # 最後の Stop から一定時間経過後に1回だけ通知する
 
+# claude -p (パイプモード) での実行時は通知を抑制
+source "$(dirname "$0")/is-pipe-mode.sh"
+
+if is_pipe_mode || [ "${CLAUDE_NO_NOTIFY:-}" = "1" ]; then
+    exit 0
+fi
+
 DEBOUNCE_SECONDS=3
 PID_FILE="/tmp/claude-code-notify-stop.pid"
 
