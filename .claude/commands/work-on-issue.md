@@ -1,37 +1,37 @@
-# Issue work instructions
+# Issue 作業手順
 
-Check the contents of Issue #$ARGUMENT and follow the work rules below.
+Issue #$ARGUMENT の内容を確認し、以下の作業ルールに従って対応してください。
 
-## Workflow
+## ワークフロー
 
-- [ ] Post a comment on the issue to indicate you have started working on it
-- [ ] Use `gh issue view` command to retrieve detailed information about issue #$ARGUMENT
-- [ ] Analyze issue #$ARGUMENT requirements and acceptance criteria based on the retrieved details
-- [ ] Create feature branch for issue #$ARGUMENT
-- [ ] Implement the requested changes
-- [ ] Write tests if applicable
-- [ ] Run tests and ensure they pass
-- [ ] Create a pull request with `closes #$ARGUMENT` in the description
-- [ ] Post a comment on the issue with work details and pull request URL
+- [ ] Issue に作業開始のコメントを投稿する
+- [ ] `gh issue view` コマンドで Issue #$ARGUMENT の詳細情報を取得する
+- [ ] 取得した詳細に基づいて Issue #$ARGUMENT の要件と受け入れ基準を分析する
+- [ ] Issue #$ARGUMENT 用のフィーチャーブランチを作成する
+- [ ] 要求された変更を実装する
+- [ ] 必要に応じてテストを作成する
+- [ ] テストを実行し、すべて通過することを確認する
+- [ ] 説明に `closes #$ARGUMENT` を含めた Pull Request を作成する
+- [ ] Issue に作業内容と Pull Request の URL をコメントする
 
-## Rules
+## ルール
 
-- Include the issue number in all commit messages
-- Follow the project's coding standards and conventions
-- Ensure all changes are tested before submitting the pull request
-- Keep the pull request focused on the specific issue requirements
+- すべてのコミットメッセージに Issue 番号を含める
+- プロジェクトのコーディング規約に従う
+- Pull Request を提出する前にすべての変更がテスト済みであることを確認する
+- Pull Request は Issue の要件に焦点を当てた内容にする
 
-## Templates
+## テンプレート
 
-### Issue Start Comment
+### 作業開始コメント
 
 この issue の作業を開始します。
 
-### Issue Completion Comment
+### 作業完了コメント
 
 この issue の作業が完了しました。
 
 対応内容:
-- [List key changes]
+- [主な変更点を記載]
 
 Pull Request: [PR URL]

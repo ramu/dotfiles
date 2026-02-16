@@ -1,46 +1,46 @@
-# Pull Request feedback response instructions
+# Pull Request フィードバック対応手順
 
-Review and address the latest feedback comments for Pull Request #$ARGUMENT.
+Pull Request #$ARGUMENT の最新のフィードバックコメントを確認し、対応してください。
 
-## Pre-work Validation
+## 事前確認
 
-- Verify that Pull Request #$ARGUMENT exists and is accessible
-- Check if you have the necessary permissions to make changes
-- If the Pull Request number is invalid, prompt the user for the correct Pull Request number
+- Pull Request #$ARGUMENT が存在し、アクセス可能であることを確認
+- 変更に必要な権限があることを確認
+- Pull Request 番号が無効な場合は、正しい番号をユーザーに確認
 
-## Review Process
+## レビュープロセス
 
-1. **Fetch Pull Request details**: Get the current state of the Pull Request using `gh pr view $ARGUMENT`
-2. **Identify feedback**: Parse comments to identify:
-   - Unresolved review comments
-   - Requested changes
-   - Priority level (critical, important, minor)
-3. **Prioritize**: Address critical issues first, then important, then minor
+1. **Pull Request の詳細を取得**: `gh pr view $ARGUMENT` を使用して現在の状態を確認
+2. **フィードバックの特定**: コメントを解析して以下を特定:
+   - 未解決のレビューコメント
+   - 変更リクエスト
+   - 優先度レベル（致命的、重要、軽微）
+3. **優先順位付け**: 致命的な問題から順に、重要、軽微の順で対応
 
-## Implementation Guidelines
+## 実装ガイドライン
 
-- **Commit messages**: Include the Pull Request number in commit messages (format: "fix: description (#$ARGUMENT)")
-- **Code changes**: Follow existing code style and conventions
-- **Testing**: Run relevant tests after making changes
-- **Documentation**: Update documentation if changes affect public APIs
+- **コミットメッセージ**: コミットメッセージに Pull Request 番号を含める（形式: "fix: 説明 (#$ARGUMENT)"）
+- **コード変更**: 既存のコードスタイルと規約に従う
+- **テスト**: 変更後に関連するテストを実行
+- **ドキュメント**: 公開 API に影響する変更がある場合はドキュメントを更新
 
-## Completion Checklist
+## 完了チェックリスト
 
-- [ ] All feedback comments addressed
-- [ ] Tests passing
-- [ ] Code follows project conventions
-- [ ] Commit messages include the Pull Request numbers
-- [ ] Summary comment posted to Pull Request with changes made
+- [ ] すべてのフィードバックコメントに対応済み
+- [ ] テストが通過している
+- [ ] プロジェクトの規約に従ったコードになっている
+- [ ] コミットメッセージに Pull Request 番号が含まれている
+- [ ] Pull Request に変更内容のサマリーコメントを投稿済み
 
-## Error Handling
+## エラーハンドリング
 
-- If Pull Request is closed or merged, inform the user and ask for confirmation
-- If access is denied, provide instructions for authentication
-- If multiple unrelated feedback items exist, ask the user to prioritize
+- Pull Request がクローズまたはマージ済みの場合、ユーザーに通知して確認を求める
+- アクセスが拒否された場合、認証方法の手順を案内する
+- 関連性のない複数のフィードバックがある場合、ユーザーに優先順位を確認する
 
-## Post-completion
+## 完了後の対応
 
-After addressing all feedback, post a summary comment to the Pull Request describing:
-- What issues were addressed
-- What changes were made
-- Any remaining items that need clarification
+すべてのフィードバックに対応した後、Pull Request に以下の内容をまとめたサマリーコメントを投稿:
+- 対応した課題の内容
+- 行った変更の内容
+- 確認が必要な残項目
