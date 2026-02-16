@@ -8,6 +8,7 @@
   "permissions": {
     "allow": [
       "Bash(awk:*)",
+      "Bash(basename:*)",
       "Bash(bundle exec:*)",
       "Bash(echo:*)",
       "Bash(find:*)",
