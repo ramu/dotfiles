@@ -1,74 +1,74 @@
 ---
 allowed-tools: Bash(gh pr create:*), Bash(git status:*), Bash(git diff:*), Bash(git checkout:*), Bash(git add:*), Bash(git commit:*), Bash(git push:*), Bash(git rev-parse:*), Bash(git branch:*)
-description: Create a new branch and pull request
+description: 新しいブランチと Pull Request を作成する
 ---
 
-# Create a new branch and pull request command
+# ブランチ作成と Pull Request 提出コマンド
 
-Automates the process of creating a feature branch, organizing commits, and submitting a pull request.
+フィーチャーブランチの作成、コミットの整理、Pull Request の提出を自動化します。
 
-## Prerequisites
-- Repository has changes you intend to commit (staged or unstaged)
-- GitHub CLI (`gh`) configured and authenticated
-- Push access to the repository
-- No unwanted untracked files; ensure only intentional changes are present
+## 前提条件
+- リポジトリにコミットする予定の変更がある（ステージ済みまたは未ステージ）
+- GitHub CLI (`gh`) が設定済みで認証済みであること
+- リポジトリへのプッシュ権限があること
+- 意図しない未追跡ファイルがないこと（意図的な変更のみが存在する状態）
 
-## Usage
+## 使用方法
 ```bash
 /create-branch-and-pr
 ```
 
-## Behavior
-- Records the current branch name (this becomes the parent for branch creation and the base for the PR)
-- Creates a new branch from the recorded parent branch, preserving all staged and unstaged changes
-- Analyzes changes and automatically splits into logical commits when appropriate
-- Each commit focuses on a single logical change or feature
-- Creates descriptive commit messages for each logical unit
-- Pushes branch to remote
-- Creates pull request with proper summary and test plan, using the recorded parent branch as base
+## 動作
+- 現在のブランチ名を記録する（ブランチ作成の親および PR のベースブランチとなる）
+- 記録した親ブランチから新しいブランチを作成し、すべてのステージ済み・未ステージの変更を保持する
+- 変更を分析し、適切な場合は論理的なコミットに自動分割する
+- 各コミットは単一の論理的な変更または機能に焦点を当てる
+- 各論理単位に対して説明的なコミットメッセージを作成する
+- ブランチをリモートにプッシュする
+- 適切なサマリーとテスト計画を含む Pull Request を作成する（記録した親ブランチをベースとして使用）
 
-## Guidelines for Automatic Commit Splitting
-- Split commits by feature, component, or concern
-- Keep related file changes together in the same commit
-- Separate refactoring from feature additions
-- Ensure each commit can be understood independently
-- Multiple unrelated changes should be split into separate commits
+## 自動コミット分割のガイドライン
+- 機能、コンポーネント、または関心事ごとにコミットを分割する
+- 関連するファイル変更は同じコミットにまとめる
+- リファクタリングと機能追加は分離する
+- 各コミットが独立して理解できるようにする
+- 関連性のない複数の変更は別々のコミットに分割する
 
-## Examples
+## 使用例
 
-### Example 1: Single feature addition
+### 例 1: 単一機能の追加
 ```bash
-# Initial state: Added new authentication feature
+# 初期状態: 新しい認証機能を追加
 $ git status
 modified:   app/controllers/auth_controller.rb
 new file:   app/services/auth_service.rb
 modified:   spec/controllers/auth_controller_spec.rb
 
-# Running the command
+# コマンドを実行
 /create-branch-and-pr
 
-# Output:
+# 出力:
 Created branch: feature/add-authentication-service
-Base branch: <detected-base>
+Base branch: <検出されたベース>
 Created 1 commit: "feat: add authentication service with JWT support"
 Pull Request created: https://github.com/user/repository/pull/123
 ```
 
-### Example 2: Multiple logical changes
+### 例 2: 複数の論理的な変更
 ```bash
-# Initial state: Refactoring + bug fix + new feature
+# 初期状態: リファクタリング + バグ修正 + 新機能
 $ git status
 modified:   frontend/src/components/Header.tsx
 modified:   frontend/src/utils/validators.ts
 modified:   api/app/models/user.rb
 new file:   api/db/migrate/add_role_to_users.rb
 
-# Running the command
+# コマンドを実行
 /create-branch-and-pr
 
-# Output:
+# 出力:
 Created branch: feature/user-roles-and-fixes
-Base branch: <detected-base>
+Base branch: <検出されたベース>
 Created 3 commits:
   - "refactor: simplify Header component structure"
   - "fix: correct email validation regex"
@@ -76,17 +76,17 @@ Created 3 commits:
 Pull Request created: https://github.com/user/repository/pull/124
 ```
 
-## Technical Details
+## 技術詳細
 
-### Branch Naming Convention
-Branch names are automatically generated based on the type and scope of changes:
-- `feature/` - New features or enhancements
+### ブランチ命名規則
+ブランチ名は変更の種類とスコープに基づいて自動生成されます:
+- `feature/` - 新機能または機能強化
 
-Examples:
+例:
 - `feature/add-user-authentication`
 
-### Commit Message Format
-Follows Conventional Commits specification:
+### コミットメッセージ形式
+Conventional Commits 仕様に従います:
 ```text
 <type>(<scope>): <subject>
 
@@ -95,31 +95,31 @@ Follows Conventional Commits specification:
 <footer>
 ```
 
-Types:
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `refactor`: Code refactoring
-- `test`: Test additions or changes
-- `chore`: Maintenance tasks
+タイプ:
+- `feat`: 新機能
+- `fix`: バグ修正
+- `docs`: ドキュメント変更
+- `refactor`: コードリファクタリング
+- `test`: テストの追加または変更
+- `chore`: メンテナンスタスク
 
-### Pull Request Details
-The PR is created with:
-- **Status**: Draft (to allow for review and adjustments before marking as ready)
-- **Title**: Descriptive summary of changes (in Japanese)
-- **Base branch**: The parent branch from which the current branch was created
-- **Description** (in Japanese): Includes:
-  - Summary of changes
-  - Expressing ER diagrams and sequence diagrams in Mermaid (if it helps code reviewers understand)
-  - List of commits
-  - Test plan or validation steps
-  - Related issues (if detected)
+### Pull Request の詳細
+PR は以下の内容で作成されます:
+- **ステータス**: ドラフト（レビューと調整のためにレディにする前に確認可能）
+- **タイトル**: 変更内容の説明的なサマリー（日本語）
+- **ベースブランチ**: 現在のブランチが作成された親ブランチ
+- **説明**（日本語）: 以下を含む:
+  - 変更のサマリー
+  - ER 図やシーケンス図を Mermaid で表現（コードレビューの理解に役立つ場合）
+  - コミット一覧
+  - テスト計画または検証手順
+  - 関連する Issue（検出された場合）
 
-Note: Pull request titles and descriptions are written in Japanese to facilitate team communication.
+注: Pull Request のタイトルと説明はチームコミュニケーションを円滑にするために日本語で記述されます。
 
-#### Mermaid Diagram Examples
+#### Mermaid ダイアグラムの例
 
-**ER Diagram Example (for database changes):**
+**ER 図の例（データベース変更の場合）:**
 ```mermaid
 erDiagram
     User ||--o{ Order : places
@@ -139,7 +139,7 @@ erDiagram
     }
 ```
 
-**Sequence Diagram Example (for API flow):**
+**シーケンス図の例（API フローの場合）:**
 ```mermaid
 sequenceDiagram
     participant C as Client
@@ -157,7 +157,7 @@ sequenceDiagram
     A-->>C: 200 OK {token, user}
 ```
 
-**State Diagram Example (for status transitions):**
+**状態遷移図の例（ステータス遷移の場合）:**
 ```mermaid
 stateDiagram-v2
     [*] --> Draft: 書類作成
@@ -170,7 +170,7 @@ stateDiagram-v2
     Completed --> [*]
 ```
 
-**Class Diagram Example (for service architecture):**
+**クラス図の例（サービスアーキテクチャの場合）:**
 ```mermaid
 classDiagram
     class AuthService {
@@ -196,19 +196,19 @@ classDiagram
     AuthService --> JWTService : uses
 ```
 
-#### Internal Implementation
-The command internally uses:
+#### 内部実装
+コマンドの内部処理:
 ```bash
-# Step 1: Record parent branch BEFORE creating new branch
+# ステップ 1: 新しいブランチを作成する前に親ブランチを記録
 parent_branch=$(git rev-parse --abbrev-ref HEAD)
 
-# Step 2: Create and checkout new branch
+# ステップ 2: 新しいブランチを作成してチェックアウト
 git checkout -b "feature/new-feature-name"
 
-# Step 3: Make commits...
-# (commit creation steps)
+# ステップ 3: コミットを作成...
+# （コミット作成手順）
 
-# Step 4: Create PR with the parent branch recorded in Step 1
+# ステップ 4: ステップ 1 で記録した親ブランチを使って PR を作成
 gh pr create \
   --draft \
   --base "$parent_branch" \
@@ -228,9 +228,8 @@ gh pr create \
 - [ ] 権限チェックが適切に機能すること"
 ```
 
-## Output
-- Branch name
-- Base branch name
-- Commit messages
+## 出力
+- ブランチ名
+- ベースブランチ名
+- コミットメッセージ
 - Pull Request URL
-
