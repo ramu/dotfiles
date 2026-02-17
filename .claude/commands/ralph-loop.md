@@ -101,7 +101,8 @@ description: タスクリストファイルを元に Ralph Loop（自動実装�
 - `~/.claude/commands/smart-commit.md` の手順を読み込み、その内容に従って変更を分析し論理的なコミットに分割・実行する
 
 #### Step 7: 進捗ログ追記
-- 進捗ログファイル（Phase 0 で特定したパス）に以下の形式で追記:
+- 進捗ログファイル（Phase 0 で特定したパス）に Edit ツールで追記する（Bash の `cat >>` やヒアドキュメントは使わない）
+- 追記する形式:
 
 ```markdown
 ## [YYYY-MM-DD] - イテレーション N
