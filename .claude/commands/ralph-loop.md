@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git status *), Bash(git diff *), Bash(git add *), Bash(git commit *), Bash(git log *), Bash(git checkout -b *), Bash(git rev-parse *), Bash(mkdir *), Bash(npm test *), Bash(pnpm test *), Bash(make test *), Bash(cargo test *), Bash(pytest *), Bash(go test *), Read, Edit, Write(~/tmp/ralph-loop/**)
+allowed-tools: Bash(git status *), Bash(git diff *), Bash(git add *), Bash(git commit *), Bash(git log *), Bash(git switch -c *), Bash(git rev-parse *), Bash(mkdir *), Bash(npm test *), Bash(pnpm test *), Bash(make test *), Bash(cargo test *), Bash(pytest *), Bash(go test *), Read, Edit, Write, Glob, Grep
 description: タスクリストファイルを元に Ralph Loop（自動実装ループ）を実行する
 ---
 
@@ -54,7 +54,7 @@ description: タスクリストファイルを元に Ralph Loop（自動実装�
    - プロジェクト名を特定する（Git リポジトリ外の場合はカレントディレクトリ名）:
      1. `git rev-parse --show-toplevel` でリポジトリルートの絶対パスを取得
      2. 取得したパスの末尾のディレクトリ名をプロジェクト名とする（例: `/Users/foo/my-project` → `my-project`）
-   - 進捗ログファイルのパス: `~/tmp/ralph-loop/{プロジェクト名}/{タスクファイル名の拡張子なし}.progress.md`
+   - 進捗ログファイルのパス: `~/tmp/claude-dev/{プロジェクト名}/{タスクファイル名の拡張子なし}.progress.md`
    - ディレクトリがなければ `mkdir -p` で作成
    - 既存の進捗ログがあれば読み込み、過去の学びを把握する
 4. プロジェクトのテストコマンドを検出する（以下の優先順位で確認）:
