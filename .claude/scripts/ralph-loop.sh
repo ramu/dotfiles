@@ -22,7 +22,7 @@ fi
 PROJECT_NAME=$(basename "$(git rev-parse --show-toplevel 2>/dev/null || pwd)")
 
 # 進捗ログの保存先
-PROGRESS_DIR="$HOME/tmp/ralph-loop/$PROJECT_NAME"
+PROGRESS_DIR="$HOME/tmp/claude-dev/$PROJECT_NAME"
 mkdir -p "$PROGRESS_DIR"
 TASK_BASENAME=$(basename "$TASK_FILE")
 PROGRESS_FILE="$PROGRESS_DIR/${TASK_BASENAME%.*}.progress.md"
@@ -76,6 +76,8 @@ echo "📋 タスクファイル: $TASK_FILE"
 echo "📝 進捗ログ: $PROGRESS_FILE"
 echo "🔄 最大イテレーション: $MAX_ITERATIONS"
 echo ""
+
+consecutive_failures=0
 
 for i in $(seq 1 "$MAX_ITERATIONS"); do
   echo "═══ イテレーション $i/$MAX_ITERATIONS ═══"
@@ -131,7 +133,26 @@ $(if [ -f "$PROGRESS_FILE" ]; then cat "$PROGRESS_FILE"; else echo "(まだ進�
 PROMPT_EOF
 
   echo "🤖 Claude 実行中..."
-  claude -p < "$PROMPT_TMPFILE" || true
+  exit_code=0
+  claude -p < "$PROMPT_TMPFILE" || exit_code=$?
+  if [ "$exit_code" -ne 0 ]; then
+    echo "⚠️  Claude がエラーで終了しました (exit code: $exit_code)"
+    consecutive_failures=$((consecutive_failures + 1))
+    if [ "$consecutive_failures" -ge 3 ]; then
+      echo "❌ 連続 $consecutive_failures 回の失敗のため中断します"
+      rm -f "$PROMPT_TMPFILE"
+      PROMPT_TMPFILE=""
+      exit 1
+    fi
+    rm -f "$PROMPT_TMPFILE"
+    PROMPT_TMPFILE=""
+    echo ""
+    echo "⏳ イテレーション $i 失敗（リトライします）"
+    sleep 2
+    continue
+  else
+    consecutive_failures=0
+  fi
   rm -f "$PROMPT_TMPFILE"
   PROMPT_TMPFILE=""
 
