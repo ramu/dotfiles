@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(gh pr create:*), Bash(git status:*), Bash(git diff:*), Bash(git checkout:*), Bash(git add:*), Bash(git commit:*), Bash(git push:*), Bash(git rev-parse:*), Bash(git branch:*), Bash(git log:*)
+allowed-tools: Bash(gh pr create *), Bash(git status *), Bash(git diff *), Bash(git checkout *), Bash(git add *), Bash(git commit *), Bash(git push *), Bash(git rev-parse *), Bash(git branch *), Bash(git log *)
 description: 新しいブランチと Pull Request を作成する
 ---
 

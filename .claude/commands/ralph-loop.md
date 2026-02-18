@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git add:*), Bash(git commit:*), Bash(git log:*), Bash(git checkout -b:*), Bash(git rev-parse:*), Bash(mkdir:*), Edit(~/tmp/ralph-loop/**), Read(~/tmp/ralph-loop/**), Write(~/tmp/ralph-loop/**)
+allowed-tools: Bash(git status *), Bash(git diff *), Bash(git add *), Bash(git commit *), Bash(git log *), Bash(git checkout -b *), Bash(git rev-parse *), Bash(mkdir *), Bash(npm test *), Bash(pnpm test *), Bash(make test *), Bash(cargo test *), Bash(pytest *), Bash(go test *), Read, Edit, Write(~/tmp/ralph-loop/**)
 description: タスクリストファイルを元に Ralph Loop（自動実装ループ）を実行する
 ---
 

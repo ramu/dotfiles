@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(gh pr create:*), Bash(git push:*), Bash(git log:*), Bash(git diff:*), Bash(git rev-parse:*), Bash(git branch:*)
+allowed-tools: Bash(gh pr create *), Bash(git push *), Bash(git log *), Bash(git diff *), Bash(git rev-parse *), Bash(git branch *)
 description: Pull Request を作成する
 ---
 
