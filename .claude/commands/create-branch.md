@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git status *), Bash(git checkout *), Bash(git rev-parse *), Bash(git branch *)
+allowed-tools: Bash(git status *), Bash(git switch *), Bash(git rev-parse *), Bash(git branch *)
 description: 新しいフィーチャーブランチを作成する
 ---
 
