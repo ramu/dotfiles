@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(basename:*), Bash(git status:*), Bash(git diff:*), Bash(git add:*), Bash(git commit:*), Bash(git log:*), Bash(git checkout -b:*), Bash(git rev-parse:*), Bash(mkdir:*), Edit(~/tmp/ralph-loop/**), Read(~/tmp/ralph-loop/**), Write(~/tmp/ralph-loop/**)
+allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git add:*), Bash(git commit:*), Bash(git log:*), Bash(git checkout -b:*), Bash(git rev-parse:*), Bash(mkdir:*), Edit(~/tmp/ralph-loop/**), Read(~/tmp/ralph-loop/**), Write(~/tmp/ralph-loop/**)
 description: タスクリストファイルを元に Ralph Loop（自動実装ループ）を実行する
 ---
 
@@ -53,7 +53,7 @@ description: タスクリストファイルを元に Ralph Loop（自動実装�
 3. 進捗ログの準備:
    - プロジェクト名を特定する（Git リポジトリ外の場合はカレントディレクトリ名）:
      1. `git rev-parse --show-toplevel` でリポジトリルートの絶対パスを取得
-     2. 取得したパスを引数にして `basename <パス>` でディレクトリ名を取得
+     2. 取得したパスの末尾のディレクトリ名をプロジェクト名とする（例: `/Users/foo/my-project` → `my-project`）
    - 進捗ログファイルのパス: `~/tmp/ralph-loop/{プロジェクト名}/{タスクファイル名の拡張子なし}.progress.md`
    - ディレクトリがなければ `mkdir -p` で作成
    - 既存の進捗ログがあれば読み込み、過去の学びを把握する
