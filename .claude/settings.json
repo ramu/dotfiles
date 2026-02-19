@@ -36,8 +36,11 @@
       "Bash(yarn:*)",
       "Skill(smart-commit)",
       "Edit(./**)",
+      "Edit(~/tmp/claude-dev/**)",
       "Read(./**)",
-      "Write(./**)"
+      "Read(~/tmp/claude-dev/**)",
+      "Write(./**)",
+      "Write(~/tmp/claude-dev/**)"
     ],
     "deny": [
       "Bash(brew install:*)",
