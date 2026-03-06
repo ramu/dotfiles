@@ -96,11 +96,13 @@ afu-ad-delete-unambiguous-prefix afu+accept-line-and-down-history
 afu-ad-delete-unambiguous-prefix afu+accept-and-hold
 
 # kubectl
-source <(kubectl completion zsh)
-complete -o default -F __start_kubectl k
+if (( $+commands[kubectl] )); then
+    source <(kubectl completion zsh)
+    complete -o default -F __start_kubectl k
+fi
 
 # gh completion
-eval "$(gh completion -s zsh)"
+(( $+commands[gh] )) && eval "$(gh completion -s zsh)"
 
 # uv (Python version/package manager)
 (( $+commands[uv] )) && eval "$(uv generate-shell-completion zsh)"
