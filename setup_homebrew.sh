@@ -8,7 +8,6 @@ brew install eck
 brew install autoconf
 brew install cmigemo
 brew install curl
-brew install cvs
 brew install direnv
 brew install fontconfig
 brew install fontforge
