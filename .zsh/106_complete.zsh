@@ -25,7 +25,7 @@ function () { # precompile
     local A
     A=~/.zsh/modules/auto-fu/auto-fu.zsh
     [[ -e "${A:r}.zwc" ]] && [[ "$A" -ot "${A:r}.zwc" ]] ||
-    zsh -c "source $A; auto-fu-zcompile $A ${A:h}" >/dev/null 2>&1
+    zsh -f -c "source $A; auto-fu-zcompile $A ${A:h}" >/dev/null 2>&1
 }
 source ~/.zsh/modules/auto-fu/auto-fu; auto-fu-install
 function zle-line-init () { auto-fu-init }
