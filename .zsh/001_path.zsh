@@ -28,10 +28,6 @@ FPATH=$RBENV_ROOT/1.3.2/completions:$FPATH
 # direnv
 eval "$(direnv hook zsh)"
 
-# nodenv
-eval "$(nodenv init -)"
-PATH=$PATH:$HOME_DIR/.nodenv/shims
-
 # mise
 eval "$(mise activate zsh)"
 
