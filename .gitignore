@@ -1,6 +1,7 @@
 # .gitignore
 # zsh
 .zsh/modules/
+.zsh/999_local.zsh
 .zsh/.zcompdump*
 .zsh/.z
 .zsh/.zcompcache
