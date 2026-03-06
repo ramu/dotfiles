@@ -1,0 +1,19 @@
+#!/bin/zsh
+# Local configuration (per-machine, not tracked by git)
+#
+# Usage:
+#   cp 999_local.zsh.example 999_local.zsh
+#   Edit 999_local.zsh with your machine-specific settings
+#
+# This file is loaded last, so you can override any previous settings.
+
+# Example: machine-specific environment variables
+# export CORP_PROXY="http://proxy.example.com:8080"
+# export AWS_PROFILE="company"
+# export JAVA_HOME="/usr/lib/jvm/java-17"
+
+# Example: machine-specific PATH additions
+# path=(/opt/company-tools/bin $path)
+
+# Example: machine-specific aliases
+# alias vpn="sudo openconnect vpn.example.com"
