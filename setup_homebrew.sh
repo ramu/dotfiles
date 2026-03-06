@@ -28,6 +28,7 @@ brew install libpng
 brew install libtiff
 brew install markdown
 brew install maven
+brew install mise
 brew install nkf
 brew install nmap
 brew install node
