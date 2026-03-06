@@ -4,6 +4,7 @@ mkdir -p ~/log/
 mkdir -p ~/bin/
 mkdir -p ~/tmp/
 mkdir -p ~/work/
+mkdir -p ~/.claude/
 
 ### claude code
 ln -sf ~/dotfiles/.claude/settings.json ~/.claude/settings.json
