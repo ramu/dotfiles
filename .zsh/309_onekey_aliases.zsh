@@ -2,7 +2,7 @@
 # alias - 1 key
 alias a='alias'
 alias b='bg'
-alias c='cc'                      # chmod...
+alias c='claude'                  # cc, chmod...
 alias d='delta'
 alias e='ec'
 # f は function(fzf)
