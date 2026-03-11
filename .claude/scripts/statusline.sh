@@ -7,7 +7,6 @@ eval "$(echo "$input" | jq -r '
   @sh "MODEL=\(.model.display_name // "---")",
   @sh "PCT=\(.context_window.used_percentage // 0 | floor)",
   @sh "COST=\(.cost.total_cost_usd // 0)",
-  @sh "API_MS=\(.cost.total_api_duration_ms // 0 | floor)",
   @sh "AGENT=\(.agent.name // "")",
   @sh "DIR=\(.workspace.current_dir // "")"
 ')"
@@ -26,54 +25,35 @@ MAGENTA='\033[35m'
 DIM='\033[2m'
 RESET='\033[0m'
 
-# Progress bar with color based on usage
-if [ "$PCT" -ge 90 ]; then BAR_COLOR="$RED"
-elif [ "$PCT" -ge 70 ]; then BAR_COLOR="$YELLOW"
-else BAR_COLOR="$GREEN"; fi
-
-BAR_WIDTH=20
-FILLED=$((PCT * BAR_WIDTH / 100))
-EMPTY=$((BAR_WIDTH - FILLED))
-BAR=""
-[ "$FILLED" -gt 0 ] && BAR=$(printf "%${FILLED}s" | tr ' ' '█')
-[ "$EMPTY" -gt 0 ] && BAR="${BAR}$(printf "%${EMPTY}s" | tr ' ' '░')"
-
-# Format cost
-COST_FMT=$(printf '$%.4f' "$COST")
-
-# Format API duration
-API_SEC=$((API_MS / 1000))
-API_MINS=$((API_SEC / 60))
-API_SECS=$((API_SEC % 60))
-if [ "$API_MINS" -gt 0 ]; then
-  DURATION_FMT="${API_MINS}m${API_SECS}s"
-else
-  DURATION_FMT="${API_SECS}s"
-fi
+# Context usage color
+if [ "$PCT" -ge 90 ]; then CTX_COLOR="$RED"
+elif [ "$PCT" -ge 70 ]; then CTX_COLOR="$YELLOW"
+else CTX_COLOR="$GREEN"; fi
 
 # Agent name display
 AGENT_FMT=""
 [ -n "$AGENT" ] && AGENT_FMT=" ${MAGENTA}🤖 ${AGENT}${RESET}"
 
-# Model + agent
-printf '%b' "${CYAN}[${MODEL}${RESET}]${AGENT_FMT} | "
-# Progress bar + cost + duration
-printf '%b' "${BAR_COLOR}${BAR}${RESET} ${DIM}${PCT}%${RESET} | 💰 ${YELLOW}${COST_FMT}${RESET} | ⏱️  ${BLUE}${DURATION_FMT}${RESET}\n"
+# Line 1: Model + duration + dir + git
+printf '%b' "${CYAN}[${MODEL}${RESET}]${AGENT_FMT}"
 
-# Git status with colors
 if git rev-parse --git-dir > /dev/null 2>&1; then
     BRANCH=$(git branch --show-current 2>/dev/null)
-    STAGED=$(git diff --cached --numstat 2>/dev/null | wc -l | tr -d ' ')
     MODIFIED=$(git diff --numstat 2>/dev/null | wc -l | tr -d ' ')
+    LINES_ADDED=$(git diff --numstat 2>/dev/null | awk '{s+=$1} END {print s+0}')
+    LINES_REMOVED=$(git diff --numstat 2>/dev/null | awk '{s+=$2} END {print s+0}')
 
     GIT_STATUS=""
-    [ "$STAGED" -gt 0 ] && GIT_STATUS="${GREEN}+${STAGED}${RESET}"
-    [ "$MODIFIED" -gt 0 ] && GIT_STATUS="${GIT_STATUS}${YELLOW}~${MODIFIED}${RESET}"
+    [ "$MODIFIED" -gt 0 ] && GIT_STATUS=" | ${YELLOW}M:${MODIFIED}${RESET} (${GREEN}+${LINES_ADDED}${RESET}/${RED}-${LINES_REMOVED}${RESET})"
 
-    printf '%b' "📁 ${DIR##*/} | 🌿 ${CYAN}${BRANCH}${RESET} ${GIT_STATUS}"
+    printf '%b' " | 📁 ${DIR##*/} | 🌿 ${CYAN}${BRANCH}${RESET}${GIT_STATUS}"
 else
-    printf '%b' "📁 ${DIR##*/}"
+    printf '%b' " | 📁 ${DIR##*/}"
 fi
+printf '\n'
+
+# Line 2: Context + rate limits
+printf '%b' "Context: ${CTX_COLOR}${PCT}%${RESET}"
 
 # --- Rate limit usage (OAuth API with cache) ---
 CACHE_FILE="/tmp/claude-usage-cache.json"
