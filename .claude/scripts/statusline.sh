@@ -5,8 +5,6 @@ input=$(cat)
 # Extract all fields in a single jq call
 eval "$(echo "$input" | jq -r '
   @sh "MODEL=\(.model.display_name // "---")",
-  @sh "TOTAL_IN=\(.context_window.total_input_tokens // 0)",
-  @sh "TOTAL_OUT=\(.context_window.total_output_tokens // 0)",
   @sh "PCT=\(.context_window.used_percentage // 0 | floor)",
   @sh "COST=\(.cost.total_cost_usd // 0)",
   @sh "API_MS=\(.cost.total_api_duration_ms // 0 | floor)",
@@ -27,25 +25,6 @@ BLUE='\033[34m'
 MAGENTA='\033[35m'
 DIM='\033[2m'
 RESET='\033[0m'
-
-# Format tokens in pure bash (e.g. 15234 -> 15.2k)
-fmt_tokens() {
-  local t=$1
-  if [ "$t" -ge 1000000 ]; then
-    local whole=$((t / 1000000))
-    local frac=$(( (t % 1000000) / 100000 ))
-    printf '%d.%dM' "$whole" "$frac"
-  elif [ "$t" -ge 1000 ]; then
-    local whole=$((t / 1000))
-    local frac=$(( (t % 1000) / 100 ))
-    printf '%d.%dk' "$whole" "$frac"
-  else
-    printf '%d' "$t"
-  fi
-}
-
-IN_FMT=$(fmt_tokens "$TOTAL_IN")
-OUT_FMT=$(fmt_tokens "$TOTAL_OUT")
 
 # Progress bar with color based on usage
 if [ "$PCT" -ge 90 ]; then BAR_COLOR="$RED"
@@ -76,8 +55,8 @@ fi
 AGENT_FMT=""
 [ -n "$AGENT" ] && AGENT_FMT=" ${MAGENTA}🤖 ${AGENT}${RESET}"
 
-# Model + tokens + agent
-printf '%b' "${CYAN}[${MODEL}${RESET}] | 📥 ${IN_FMT} 📤 ${OUT_FMT}${AGENT_FMT} | "
+# Model + agent
+printf '%b' "${CYAN}[${MODEL}${RESET}]${AGENT_FMT} | "
 # Progress bar + cost + duration
 printf '%b' "${BAR_COLOR}${BAR}${RESET} ${DIM}${PCT}%${RESET} | 💰 ${YELLOW}${COST_FMT}${RESET} | ⏱️  ${BLUE}${DURATION_FMT}${RESET}\n"
 
