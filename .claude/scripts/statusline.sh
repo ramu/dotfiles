@@ -6,36 +6,85 @@ input=$(cat)
 eval "$(echo "$input" | jq -r '
   @sh "MODEL=\(.model.display_name // "---")",
   @sh "PCT=\(.context_window.used_percentage // 0 | floor)",
-  @sh "COST=\(.cost.total_cost_usd // 0)",
   @sh "AGENT=\(.agent.name // "")",
-  @sh "DIR=\(.workspace.current_dir // "")"
+  @sh "DIR=\(.workspace.current_dir // "")",
+  @sh "FIVE_PCT=\(.rate_limits.five_hour.used_percentage // -1 | floor)",
+  @sh "FIVE_RESET=\(.rate_limits.five_hour.resets_at // "")",
+  @sh "SEVEN_PCT=\(.rate_limits.seven_day.used_percentage // -1 | floor)",
+  @sh "SEVEN_RESET=\(.rate_limits.seven_day.resets_at // "")"
 ')"
 
-# Sanitize PCT to ensure it's a valid integer
-PCT=${PCT:-0}
-[[ "$PCT" =~ ^[0-9]+$ ]] || PCT=0
+# Sanitize to ensure valid integers
+PCT=${PCT:-0}; [[ "$PCT" =~ ^[0-9]+$ ]] || PCT=0
+FIVE_PCT=${FIVE_PCT:--1}; [[ "$FIVE_PCT" =~ ^-?[0-9]+$ ]] || FIVE_PCT=-1
+SEVEN_PCT=${SEVEN_PCT:--1}; [[ "$SEVEN_PCT" =~ ^-?[0-9]+$ ]] || SEVEN_PCT=-1
 
 # Colors
 CYAN='\033[36m'
 GREEN='\033[32m'
 YELLOW='\033[33m'
 RED='\033[31m'
-BLUE='\033[34m'
 MAGENTA='\033[35m'
 DIM='\033[2m'
 RESET='\033[0m'
 
-# Context usage color
-if [ "$PCT" -ge 90 ]; then CTX_COLOR="$RED"
-elif [ "$PCT" -ge 70 ]; then CTX_COLOR="$YELLOW"
-else CTX_COLOR="$GREEN"; fi
+# Ring Meter: ○◔◑◕● (5 levels)
+ring_meter() {
+  local pct=$1
+  if [ "$pct" -lt 20 ]; then   echo "○"
+  elif [ "$pct" -lt 40 ]; then echo "◔"
+  elif [ "$pct" -lt 60 ]; then echo "◑"
+  elif [ "$pct" -lt 80 ]; then echo "◕"
+  else                         echo "●"
+  fi
+}
 
-# Agent name display
+# Color by percentage threshold
+pct_color() {
+  local pct=$1
+  if [ "$pct" -ge 90 ]; then   printf '%s' "$RED"
+  elif [ "$pct" -ge 70 ]; then printf '%s' "$YELLOW"
+  else                         printf '%s' "$GREEN"
+  fi
+}
+
+# Format reset timestamp to local time (e.g. "3pm")
+format_reset_time() {
+  local reset_at=$1
+  [ -z "$reset_at" ] || [ "$reset_at" = "null" ] && return
+
+  local ts formatted
+  # Unix timestamp (seconds)
+  if [[ "$reset_at" =~ ^[0-9]+$ ]]; then
+    ts=$reset_at
+  # Unix timestamp (milliseconds)
+  elif [[ "$reset_at" =~ ^[0-9]{13}$ ]]; then
+    ts=$(( reset_at / 1000 ))
+  # ISO 8601 format
+  else
+    if command -v gdate &>/dev/null; then
+      formatted=$(gdate -d "$reset_at" '+%-I%P' 2>/dev/null)
+    else
+      formatted=$(LC_TIME=C date -jf '%Y-%m-%dT%H:%M:%S' "${reset_at%%.*}" '+%-I%p' 2>/dev/null || \
+        LC_TIME=C date -jf '%Y-%m-%dT%H:%M:%SZ' "${reset_at%%.*}Z" '+%-I%p' 2>/dev/null) || true
+      formatted=$(echo "$formatted" | tr '[:upper:]' '[:lower:]')
+    fi
+    [ -n "$formatted" ] && echo "$formatted" || echo "${reset_at:11:5}"
+    return
+  fi
+
+  # Format from unix timestamp
+  formatted=$(LC_TIME=C date -r "$ts" '+%-I%p' 2>/dev/null) || true
+  formatted=$(echo "$formatted" | tr '[:upper:]' '[:lower:]')
+  [ -n "$formatted" ] && echo "$formatted"
+}
+
+# --- Line 1: Model + Agent + Dir + Git ---
 AGENT_FMT=""
 [ -n "$AGENT" ] && AGENT_FMT=" ${MAGENTA}🤖 ${AGENT}${RESET}"
 
-# Line 1: Model + duration + dir + git
-printf '%b' "${CYAN}[${MODEL}${RESET}]${AGENT_FMT}"
+CTX_COLOR=$(pct_color "$PCT")
+printf '%b' "${CYAN}[${MODEL}]${RESET}${AGENT_FMT}"
 
 if git rev-parse --git-dir > /dev/null 2>&1; then
     BRANCH=$(git branch --show-current 2>/dev/null)
@@ -52,104 +101,29 @@ else
 fi
 printf '\n'
 
-# Line 2: Context + rate limits
-printf '%b' "Context: ${CTX_COLOR}${PCT}%${RESET}"
+# --- Line 2: Context + Rate Limits (Ring Meter) ---
+CTX_RING=$(ring_meter "$PCT")
+printf '%b' "Context: ${CTX_COLOR}${CTX_RING} ${PCT}%${RESET}"
 
-# --- Rate limit usage (OAuth API with cache) ---
-CACHE_FILE="/tmp/claude-usage-cache.json"
-CACHE_TTL=360
+if [ "$FIVE_PCT" -ge 0 ]; then
+  FIVE_COLOR=$(pct_color "$FIVE_PCT")
+  FIVE_RING=$(ring_meter "$FIVE_PCT")
+  FIVE_RESET_FMT=$(format_reset_time "$FIVE_RESET")
 
-usage_color() {
-  local pct=$1
-  if [ "$pct" -ge 90 ]; then printf '%s' "$RED"
-  elif [ "$pct" -ge 70 ]; then printf '%s' "$YELLOW"
-  else printf '%s' "$GREEN"; fi
-}
-
-fetch_usage() {
-  local now
-  now=$(date +%s)
-
-  # Check cache
-  if [ -f "$CACHE_FILE" ]; then
-    local cached_at
-    cached_at=$(jq -r '.cached_at // 0' "$CACHE_FILE" 2>/dev/null)
-    if [ $(( now - cached_at )) -lt "$CACHE_TTL" ]; then
-      cat "$CACHE_FILE"
-      return
-    fi
-  fi
-
-  # Get OAuth token from macOS keychain
-  local token access_token
-  token=$(security find-generic-password -s "Claude Code-credentials" -w 2>/dev/null || true)
-  access_token=$(echo "$token" | jq -r '.claudeAiOauth.accessToken // .accessToken // .access_token // empty' 2>/dev/null || true)
-
-  if [ -z "$access_token" ]; then
-    return 1
-  fi
-
-  # Call usage API
-  local response
-  response=$(curl -sf --max-time 5 \
-    -H "Authorization: Bearer ${access_token}" \
-    -H "anthropic-beta: oauth-2025-04-20" \
-    "https://api.anthropic.com/api/oauth/usage" 2>/dev/null)
-
-  if [ -z "$response" ]; then
-    return 1
-  fi
-
-  # Save to cache with timestamp
-  echo "$response" | jq --arg ts "$now" '. + {cached_at: ($ts | tonumber)}' > "$CACHE_FILE" 2>/dev/null
-  echo "$response" | jq --arg ts "$now" '. + {cached_at: ($ts | tonumber)}'
-}
-
-format_reset_time() {
-  local reset_at=$1
-  if [ -z "$reset_at" ] || [ "$reset_at" = "null" ]; then
-    return
-  fi
-  # Convert to local 12-hour format (e.g. "8pm", "7am")
-  if command -v gdate &>/dev/null; then
-    gdate -d "$reset_at" '+%-I%P' 2>/dev/null
-  else
-    local formatted
-    formatted=$(LC_TIME=C date -jf '%Y-%m-%dT%H:%M:%S' "${reset_at%%.*}" '+%-I%p' 2>/dev/null || \
-      LC_TIME=C date -jf '%Y-%m-%dT%H:%M:%SZ' "${reset_at%%.*}Z" '+%-I%p' 2>/dev/null) || true
-    formatted=$(echo "$formatted" | tr '[:upper:]' '[:lower:]')
-    if [ -n "$formatted" ]; then
-      echo "$formatted"
-    else
-      echo "${reset_at:11:5}"
-    fi
-  fi
-}
-
-usage_json=$(fetch_usage 2>/dev/null)
-
-if [ -n "$usage_json" ]; then
-  five_util=$(echo "$usage_json" | jq -r '.five_hour.utilization // empty' 2>/dev/null)
-  five_reset=$(echo "$usage_json" | jq -r '.five_hour.resets_at // empty' 2>/dev/null)
-  seven_util=$(echo "$usage_json" | jq -r '.seven_day.utilization // empty' 2>/dev/null)
-  seven_reset=$(echo "$usage_json" | jq -r '.seven_day.resets_at // empty' 2>/dev/null)
-
-  five_pct=0
-  seven_pct=0
-  [ -n "$five_util" ] && five_pct=$(printf '%.0f' "$five_util")
-  [ -n "$seven_util" ] && seven_pct=$(printf '%.0f' "$seven_util")
-
-  five_reset_fmt=$(format_reset_time "$five_reset")
-  seven_reset_fmt=$(format_reset_time "$seven_reset")
-
-  five_color=$(usage_color "$five_pct")
-  seven_color=$(usage_color "$seven_pct")
-
-  printf '%b' " | Session: ${five_color}${five_pct}%${RESET}"
-  [ -n "$five_reset_fmt" ] && printf '%b' " ${DIM}(reset ${five_reset_fmt})${RESET}"
-  printf '%b' " | Week: ${seven_color}${seven_pct}%${RESET}"
-  [ -n "$seven_reset_fmt" ] && printf '%b' " ${DIM}(reset ${seven_reset_fmt})${RESET}"
-  printf '\n'
+  printf '%b' " | Session: ${FIVE_COLOR}${FIVE_RING} ${FIVE_PCT}%${RESET}"
+  [ -n "$FIVE_RESET_FMT" ] && printf '%b' " ${DIM}(${FIVE_RESET_FMT})${RESET}"
 else
-  printf '\n'
+  printf '%b' " | Session: ${DIM}○ ---%${RESET}"
 fi
+
+if [ "$SEVEN_PCT" -ge 0 ]; then
+  SEVEN_COLOR=$(pct_color "$SEVEN_PCT")
+  SEVEN_RING=$(ring_meter "$SEVEN_PCT")
+  SEVEN_RESET_FMT=$(format_reset_time "$SEVEN_RESET")
+
+  printf '%b' " | Week: ${SEVEN_COLOR}${SEVEN_RING} ${SEVEN_PCT}%${RESET}"
+  [ -n "$SEVEN_RESET_FMT" ] && printf '%b' " ${DIM}(${SEVEN_RESET_FMT})${RESET}"
+else
+  printf '%b' " | Week: ${DIM}○ ---%${RESET}"
+fi
+printf '\n'
