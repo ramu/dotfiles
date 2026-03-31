@@ -5,7 +5,6 @@
     "BASH_MAX_TIMEOUT_MS": "1200000"
   },
   "permissions": {
-    "defaultMode": "auto",
     "allow": [
       "Bash(awk:*)",
       "Bash(basename:*)",
@@ -83,7 +82,8 @@
       "Write(~/.config/gcloud/*)",
       "Write(~/.kube/*)",
       "Write(~/.ssh/*)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
   "enableAllProjectMcpServers": false,
   "hooks": {
@@ -126,5 +126,6 @@
     "command": "~/.claude/scripts/statusline.sh"
   },
   "alwaysThinkingEnabled": true,
-  "preferredNotifChannel": "iterm2"
+  "preferredNotifChannel": "iterm2",
+  "skipAutoPermissionPrompt": true
 }
