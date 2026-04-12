@@ -5,6 +5,7 @@ mkdir -p ~/bin/
 mkdir -p ~/tmp/
 mkdir -p ~/work/
 mkdir -p ~/.claude/
+mkdir -p ~/.config
 
 ### claude code
 ln -sf ~/dotfiles/.claude/settings.json ~/.claude/settings.json
@@ -77,7 +78,6 @@ cd ~/.tmux/plugins/tmux-thumbs
 cargo build --release
 
 ### wezterm
-mkdir -p ~/.config
 ln -sf ~/dotfiles/.config/wezterm ~/.config/wezterm
 
 ### pry
