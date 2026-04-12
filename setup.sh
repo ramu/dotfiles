@@ -76,6 +76,10 @@ git clone https://github.com/fcsonline/tmux-thumbs ~/.tmux/plugins/tmux-thumbs
 cd ~/.tmux/plugins/tmux-thumbs
 cargo build --release
 
+### wezterm
+mkdir -p ~/.config
+ln -sf ~/dotfiles/.config/wezterm ~/.config/wezterm
+
 ### pry
 ln -sf ~/dotfiles/.pryrc ~/.pryrc
 
