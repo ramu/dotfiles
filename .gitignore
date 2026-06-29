@@ -24,6 +24,9 @@
 .emacs.d/el-get/*
 !/.emacs.d/el-get/my-recipes/*
 
+# claude
+.claude/settings.local.json
+
 # vim
 .vim/.netrwhist
 .vim/autoload/

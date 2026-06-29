@@ -126,6 +126,8 @@
     "command": "~/.claude/scripts/statusline.sh"
   },
   "alwaysThinkingEnabled": true,
+  "preferredNotifChannel": "iterm2",
   "skipAutoPermissionPrompt": true,
-  "preferredNotifChannel": "iterm2"
+  "skipDangerousModePermissionPrompt": true
 }
+
