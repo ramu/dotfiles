@@ -129,6 +129,5 @@
   "skipDangerousModePermissionPrompt": true,
   "preferredNotifChannel": "iterm2",
   "skipAutoPermissionPrompt": true,
-  "skipDangerousModePermissionPrompt": true,
-  "preferredNotifChannel": "iterm2"
+  "skipDangerousModePermissionPrompt": true
 }
