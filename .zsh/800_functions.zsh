@@ -295,3 +295,15 @@ function ghq-cd () {
   return 1
 }
 
+#-----------------------------------------------------------
+# claude: settings.local.json は Local scope(cwd依存)でしか自動読込されないため、
+# 明示的に --settings で読み込ませて全ディレクトリに適用させる(ファイルが無い環境ではそのまま起動)
+function claude() {
+  local local_settings=~/dotfiles/.claude/settings.local.json
+  if [ -f "$local_settings" ]; then
+    command claude --settings "$local_settings" "$@"
+  else
+    command claude "$@"
+  fi
+}
+
