@@ -300,6 +300,11 @@ function ghq-cd () {
 # 明示的に --settings で読み込ませて全ディレクトリに適用させる(ファイルが無い環境ではそのまま起動)
 function claude() {
   local local_settings=~/dotfiles/.claude/settings.local.json
+  # remote-control サブコマンドは --settings を受け付けないため素通しする
+  if [ "$1" = "remote-control" ]; then
+    command claude "$@"
+    return
+  fi
   if [ -f "$local_settings" ]; then
     command claude --settings "$local_settings" "$@"
   else
