@@ -39,9 +39,7 @@
       "Edit(./**)",
       "Edit(~/tmp/claude-dev/**)",
       "Read(./**)",
-      "Read(~/tmp/claude-dev/**)",
-      "Write(./**)",
-      "Write(~/tmp/claude-dev/**)"
+      "Read(~/tmp/claude-dev/**)"
     ],
     "deny": [
       "Bash(brew install:*)",
@@ -72,14 +70,7 @@
       "Read(~/.aws/*)",
       "Read(~/.config/gcloud/*)",
       "Read(~/.kube/*)",
-      "Read(~/.ssh/*)",
-      "Write(.env)",
-      "Write(.envrc)",
-      "Write(.env.*)",
-      "Write(~/.aws/*)",
-      "Write(~/.config/gcloud/*)",
-      "Write(~/.kube/*)",
-      "Write(~/.ssh/*)"
+      "Read(~/.ssh/*)"
     ],
     "defaultMode": "auto"
   },
