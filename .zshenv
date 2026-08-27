@@ -27,8 +27,9 @@ if [ -d $ZDOTDIR/$UNAME ]; then
     unset rc
 fi
 
-# tmux
-if [[ $TERM != "tmux-256color" && $EMACS = "" && $IDEA_INITIAL_DIRECTORY = "" && $TERM_PROGRAM != "vscode" ]]; then
-    tmux
+# herdr
+# 非対話シェル/TTY なしで起動すると herdr が panic するため必ずガードする
+if [[ -o interactive && -t 1 && $HERDR_ENV != "1" && $EMACS = "" && $IDEA_INITIAL_DIRECTORY = "" && $TERM_PROGRAM != "vscode" ]]; then
+    herdr
 fi
 

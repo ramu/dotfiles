@@ -69,7 +69,7 @@ config.keys = {
   -- Toggle fullscreen
   { key = "Enter", mods = "CMD", action = wezterm.action.ToggleFullScreen },
 
-  -- Pane splitting (like tmux)
+  -- Pane splitting
   { key = "d", mods = "CMD", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
   { key = "d", mods = "CMD|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 

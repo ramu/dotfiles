@@ -18,6 +18,7 @@ brew install gettext
 brew install ghq
 brew install git
 brew install git-flow
+brew install herdr
 brew install gnu-sed
 brew install html2text
 brew install gh
@@ -41,7 +42,6 @@ brew install ricty
 brew install ruby-build
 brew install the_silver_searcher
 brew install tig
-brew install tmux
 brew install vim
 brew install w3m
 brew install wget

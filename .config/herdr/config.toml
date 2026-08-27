@@ -1,0 +1,182 @@
+# ~/.config/herdr/config.toml  (dotfiles/.config/herdr/config.toml へのシンボリックリンク)
+#
+# 変更後は prefix + Shift+R もしくは `herdr server reload-config` で再読み込みできる。
+# 設定の妥当性は `herdr config check` で確認できる。
+
+onboarding = false
+
+[theme]
+# 端末そのままの配色を使う
+name = "terminal"
+
+[terminal]
+default_shell = "/bin/zsh"
+shell_mode = "auto"
+# 新規ペイン/タブは元のペインの cwd を引き継ぐ
+new_cwd = "follow"
+
+[keys]
+prefix = "ctrl+z"
+
+# --- tab ---
+new_tab = "prefix+c"
+close_tab = "prefix+shift+k"
+rename_tab = "prefix+shift+t"
+previous_tab = "prefix+p"
+next_tab = "prefix+n"
+
+# prefix+2 / prefix+3 をペイン分割に使うため、番号によるタブ切り替えは無効化している
+# (herdr では switch_tab が split より優先されるので両立できない)。
+# 番号で切り替えたい場合は switch_tab = "prefix+1..9" を有効にし、
+# split_horizontal / split_vertical を別のキーへ移すこと。
+# タブ移動は prefix+n / prefix+p、一覧からの選択は prefix+0 (navigate mode) で行う。
+switch_tab = ""
+
+# --- pane ---
+split_horizontal = "prefix+2"  # 上下に分割
+split_vertical   = "prefix+3"  # 左右に分割
+close_pane = "prefix+k"
+rename_pane = "prefix+shift+p"
+
+# prefix の2度押しは「リテラルの prefix 送信」に予約されているため
+# prefix+ctrl+z は割り当てられない
+zoom = "prefix+z"
+
+# prefix+h/j/k/l は close_pane (prefix+k) と衝突するため矢印キーを使う。
+# h/j/k/l を使いたい場合は close_pane を prefix+x などへ移すこと。
+focus_pane_left  = "prefix+left"
+focus_pane_down  = "prefix+down"
+focus_pane_up    = "prefix+up"
+focus_pane_right = "prefix+right"
+cycle_pane_next     = "prefix+tab"
+cycle_pane_previous = "prefix+shift+tab"
+last_pane = ""
+
+# 単発リサイズと、連続してリサイズできる resize mode の両方を用意する
+resize_pane_left  = "prefix+ctrl+h"
+resize_pane_down  = "prefix+ctrl+j"
+resize_pane_up    = "prefix+ctrl+k"
+resize_pane_right = "prefix+ctrl+l"
+resize_mode = "prefix+shift+r"
+
+# 既定の prefix+shift+h/j/k/l は close_tab (prefix+shift+k) と衝突するため矢印に変更
+swap_pane_left  = "prefix+shift+left"
+swap_pane_down  = "prefix+shift+down"
+swap_pane_up    = "prefix+shift+up"
+swap_pane_right = "prefix+shift+right"
+
+# --- copy / scrollback ---
+copy_mode = "prefix+@"         # モード内のキー操作は vi 風で固定
+edit_scrollback = "prefix+e"   # スクロールバックを $EDITOR で開く
+
+# --- その他 ---
+reload_config = "prefix+r"
+goto = "prefix+0"              # navigate mode (全ペイン/タブから選んで移動)
+workspace_picker = "prefix+w"
+help = "prefix+?"
+settings = "prefix+s"
+detach = "prefix+q"
+toggle_sidebar = "prefix+b"
+open_notification_target = "prefix+o"
+
+# --- workspace ---
+new_workspace = "prefix+shift+n"
+rename_workspace = "prefix+shift+w"
+close_workspace = "prefix+shift+d"
+switch_workspace = "prefix+shift+1..9"
+previous_workspace = ""
+next_workspace = ""
+
+# --- git worktree ---
+new_worktree = "prefix+shift+g"
+
+# --- agent 間の移動 ---
+# prefix+o が「通知を出した agent へ飛ぶ」、alt+1..9 が直接指定。
+# a は順送りで、複数 agent を回して様子を見るとき用。
+previous_agent = "prefix+shift+a"
+next_agent = "prefix+a"
+focus_agent = "prefix+alt+1..9"
+
+# --- plugin: persiyanov/herdr-reviewr ---
+# エージェントの diff を隣のペインで読み、行コメントを付けて送り返す。
+# ペイン内は j/k 移動、]/[ で hunk 送り、v 選択、c コメント、s 送信。
+# u/b/t/g で差分の範囲 (未コミット / ベースブランチ比較 / 直近ターン / コミット指定)。
+[[keys.command]]
+key = "prefix+v"
+type = "plugin_action"
+command = "persiyanov.reviewr.toggle"
+description = "reviewr: toggle pane"
+
+# ポップアップでコマンドを実行する例
+# [[keys.command]]
+# key = "prefix+alt+g"
+# type = "popup"
+# command = "lazygit"
+# width = "80%"
+# height = "80%"
+
+[ui]
+accent = "cyan"
+
+# 内側の区切り線のみ (外枠なし・ペイン間の隙間なし)
+pane_borders = true
+pane_outer_borders = false
+pane_gaps = false
+pane_scrollbars = true
+
+mouse_capture = true
+copy_on_select = true
+mouse_scroll_lines = 3
+
+# タブ名は作成時に自分で付ける
+prompt_new_tab_name = true
+prompt_new_workspace_name = false
+confirm_close = true
+
+window_title = "{workspace}: {tab}"
+
+# タブバー右端のステータス (herdr は右寄せのみ)
+tab_bar_position = "top"
+tab_bar_right_separator = " "
+tab_bar_right = [
+  { type = "zoom" },
+  { type = "command", command = "~/.config/herdr/status.sh", interval_seconds = 5, timeout_seconds = 5 },
+  { type = "datetime", format = "[%Y/%m/%d %H:%M:%S]" },
+]
+
+status_indicators = "dots"
+agent_panel_sort = "spaces"
+sidebar_width = 26
+
+# agent の状態変化を取りこぼさないよう通知を有効化 (不要なら delivery = "off")
+[ui.toast]
+# herdr = herdr の画面内にトースト / terminal = 端末経由のデスクトップ通知
+# / system = OS の通知センター / off = 無効
+# 端末から離れて作業することが多いなら "terminal" か "system" にする
+delivery = "herdr"
+delay_seconds = 1
+
+[ui.sound]
+enabled = true
+
+[session]
+# herdr サーバ再起動後も agent のセッションを復元する
+resume_agents_on_restore = true
+
+[experimental]
+# サーバ再起動後にペインの画面内容も復元する。
+# 既定ではレイアウトと cwd しか戻らず、画面は空のシェルになる。
+pane_history = true
+
+# prefix モード中だけ入力ソースを ASCII 配列に切り替え、抜けたら元に戻す (macOS)。
+# IME を有効にしたままでも prefix+c / prefix+2 などが確実に効く。
+switch_ascii_input_source_in_prefix = true
+
+# TUI が自前でカーソルを描くと IME の変換候補ウィンドウが位置を見失うため、
+# 対象 agent のペインでは外側の端末にカーソルを見せる。
+# 対象を絞らないと vim のノーマルモードなどで余分なカーソルが見えるので限定する。
+reveal_hidden_cursor_for_cjk_ime = true
+cjk_ime_agents = ["claude", "codex"]
+
+[advanced]
+scrollback_limit_bytes = 10000000
