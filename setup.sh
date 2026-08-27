@@ -45,6 +45,7 @@ mkdir -p ~/dotfiles/.config/herdr/projects
 ln -sfn ~/dotfiles/.config/herdr/config.toml ~/.config/herdr/config.toml
 ln -sfn ~/dotfiles/.config/herdr/status.sh   ~/.config/herdr/status.sh
 ln -sfn ~/dotfiles/.config/herdr/lib.sh      ~/.config/herdr/lib.sh
+ln -sfn ~/dotfiles/.config/herdr/project.sh.example ~/.config/herdr/project.sh.example
 ln -sfn ~/dotfiles/.config/herdr/projects    ~/.config/herdr/projects
 # herdr plugins
 herdr plugin install persiyanov/herdr-reviewr --yes
