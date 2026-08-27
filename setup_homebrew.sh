@@ -50,6 +50,6 @@ brew install z
 brew install zsh
 
 # Install the patched fonts of powerline nerd-font
-brew install --cask font-hack-nerd-font
+brew install --cask font-jetbrains-mono-nerd-font
 
 brew install --cask iterm2
