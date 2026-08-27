@@ -1,0 +1,34 @@
+#!/bin/sh
+# herdr プロジェクト定義のサンプル。
+#
+#   cp project.sh.example projects/myapp.sh
+#   hd myapp
+#
+# projects/ 配下は .gitignore 済み (業務プロジェクトを含められる)。
+
+. "${HERDR_DIR:-$HOME/.config/herdr}/lib.sh"
+
+root=$HOME/work/myapp
+
+# --- 1枚目のタブ: エディタ + dev server ---
+hd_workspace "${HD_NAME:-myapp}" "$root"
+hd_rename_tab dev
+hd_rename_pane editor
+hd_run "vim"
+
+hd_split right
+hd_rename_pane dev
+hd_run "npm run dev"
+
+hd_split down
+hd_rename_pane test
+hd_run "npm test -- --watch"
+
+# --- 2枚目のタブ: AI agent ---
+hd_tab agent "$root"
+hd_agent main claude
+
+hd_split right "$root"
+hd_agent reviewer codex
+
+hd_focus

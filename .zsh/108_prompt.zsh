@@ -21,8 +21,8 @@ case ${UID} in
   SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
   ;;
 *)
-  [ -n "$TMUX" ] &&
-     PROMPT='%{${fg[blue]}%}$(tmux display -p "[#I-#P]")${reset_color}'
+  [ -n "$HERDR_ENV" ] &&
+     PROMPT='%{${fg[blue]}%}[${HERDR_TAB_ID#*:}-${HERDR_PANE_ID#*:}]${reset_color}'
   PROMPT="${PROMPT}${WINDOW:+[$WINDOW]}[$RED%n@%m$GREEN:%~%{$reset_color%}]%#
 %(?.%{$fg[yellow]%}.%{$fg[blue]%})%(?!(*'-') <!(*;-;%)? <)%{${reset_color}%} "
   PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "

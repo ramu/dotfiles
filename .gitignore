@@ -33,3 +33,7 @@
 .vim/bundle/
 .vim/neobundle/
 .vim/tmp/
+
+# herdr
+# 業務プロジェクトの定義を含むためリポジトリ管理対象外
+.config/herdr/projects/

@@ -100,17 +100,6 @@ fbr() {
 }
 
 #-----------------------------------------------------------
-# ftpane - fzf + tmux switch pane 
-ftpane() {
-  local cur sel id
-  cur=$(tmux display-message -p '#I.#P')
-  sel=$(tmux list-panes -s -F '#I.#P [#W] #{pane_current_path} #{pane_current_command}' \
-    | grep -v "^$cur " | fzf +m) || return
-  id=${sel%% *}
-  tmux select-pane -t "$id" && tmux select-window -t "${id%%.*}"
-}
-
-#-----------------------------------------------------------
 # fgqh - fzf + ghq 
 fghq() {
   local repo

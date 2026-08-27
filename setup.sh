@@ -11,6 +11,7 @@ mkdir -p ~/.config
 ln -sf ~/dotfiles/.claude/settings.json ~/.claude/settings.json
 ln -sf ~/dotfiles/.claude/commands ~/.claude/commands
 ln -sf ~/dotfiles/.claude/scripts ~/.claude/scripts
+ln -sfn ~/dotfiles/.claude/hooks ~/.claude/hooks
 ln -sf ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 
 ### zsh
@@ -36,9 +37,17 @@ mkdir -p ~/dotfiles/.emacs.d/var/.docsets
 ### screen
 ln -sf ~/dotfiles/.screenrc ~/.screenrc
 
-### tmux
-ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+### herdr
+# ~/.config/herdr は herdr 自身がソケット・ログ・session.json を置くため
+# ディレクトリごとではなくファイル単位でリンクする
+mkdir -p ~/.config/herdr
+mkdir -p ~/dotfiles/.config/herdr/projects
+ln -sfn ~/dotfiles/.config/herdr/config.toml ~/.config/herdr/config.toml
+ln -sfn ~/dotfiles/.config/herdr/status.sh   ~/.config/herdr/status.sh
+ln -sfn ~/dotfiles/.config/herdr/lib.sh      ~/.config/herdr/lib.sh
+ln -sfn ~/dotfiles/.config/herdr/projects    ~/.config/herdr/projects
+# herdr plugins
+herdr plugin install persiyanov/herdr-reviewr --yes
 
 ### vim
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
@@ -71,11 +80,6 @@ cargo install grex
 cargo install lsd
 cargo install ripgrep
 cargo install tokei
-
-### tmux-thumbs
-git clone https://github.com/fcsonline/tmux-thumbs ~/.tmux/plugins/tmux-thumbs
-cd ~/.tmux/plugins/tmux-thumbs
-cargo build --release
 
 ### wezterm
 ln -sf ~/dotfiles/.config/wezterm ~/.config/wezterm
