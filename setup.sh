@@ -85,6 +85,9 @@ cargo install tokei
 ### wezterm
 ln -sf ~/dotfiles/.config/wezterm ~/.config/wezterm
 
+### ghostty
+ln -sfn ~/dotfiles/.config/ghostty ~/.config/ghostty
+
 ### pry
 ln -sf ~/dotfiles/.pryrc ~/.pryrc
 

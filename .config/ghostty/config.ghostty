@@ -1,0 +1,25 @@
+# テーマ
+theme = TokyoNight Night
+
+# 背景透過
+background-opacity = 0.95
+
+# フルスクリーン
+fullscreen = true
+
+# ウィンドウ終了時に確認を要求するか
+confirm-close-surface = false
+
+# font
+font-family = JetBrainsMono Nerd Font
+font-size = 12
+font-thicken = true
+
+# cursor
+cursor-style = block
+cursor-opacity = 0.7
+
+# mouse
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 5
+cursor-style-blink = false
