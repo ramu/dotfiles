@@ -15,7 +15,7 @@ PATH=$PATH:/usr/sbin
 PATH=$PATH:/bin
 PATH=$PATH:/sbin
 PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
-PATH=$PATH:$GOPATH/bin
+PATH=$PATH:$HOME/go/bin
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -30,4 +30,8 @@ eval "$(direnv hook zsh)"
 
 # mise
 eval "$(mise activate zsh)"
+
+# go
+GOPATH=$HOME/go
+GOBIN=$GOPATH/bin
 
