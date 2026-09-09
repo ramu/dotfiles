@@ -8,7 +8,7 @@ background-opacity = 0.95
 fullscreen = true
 
 # ウィンドウ終了時に確認を要求するか
-confirm-close-surface = false
+confirm-close-surface = true
 
 # font
 font-family = JetBrainsMono Nerd Font
@@ -25,3 +25,12 @@ custom-shader-animation = true
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 5
 cursor-style-blink = false
+
+# scrollback
+# 100000000 = 100MB（バイト単位で指定する）
+# surface(split)ごとの上限。遅延確保のため、上げても使った分しか消費しない
+scrollback-limit = 100000000
+
+# keybind
+# スクロールバック全体を一時ファイルへ書き出してエディタで開く
+keybind = super+shift+s=write_scrollback_file:open
