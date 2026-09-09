@@ -11,7 +11,10 @@ eval "$(echo "$input" | jq -r '
   @sh "FIVE_PCT=\(.rate_limits.five_hour.used_percentage // -1 | floor)",
   @sh "FIVE_RESET=\(.rate_limits.five_hour.resets_at // "")",
   @sh "SEVEN_PCT=\(.rate_limits.seven_day.used_percentage // -1 | floor)",
-  @sh "SEVEN_RESET=\(.rate_limits.seven_day.resets_at // "")"
+  @sh "SEVEN_RESET=\(.rate_limits.seven_day.resets_at // "")",
+  @sh "PR_NUM=\(.pr.number // "")",
+  @sh "PR_URL=\(.pr.url // "")",
+  @sh "PR_STATE=\(.pr.review_state // "")"
 ')"
 
 # Sanitize to ensure valid integers
@@ -26,6 +29,7 @@ YELLOW='\033[33m'
 RED='\033[31m'
 MAGENTA='\033[35m'
 DIM='\033[2m'
+UNDERLINE='\033[4m'
 RESET='\033[0m'
 
 # Ring Meter: ○◔◑◕● (5 levels)
@@ -46,6 +50,12 @@ pct_color() {
   elif [ "$pct" -ge 70 ]; then printf '%s' "$YELLOW"
   else                         printf '%s' "$GREEN"
   fi
+}
+
+# OSC 8 hyperlink. BEL-terminated form is what Claude Code's ANSI
+# sanitizer passes through; other ESC sequences get stripped.
+osc8() {
+  printf '\033]8;;%s\007%s\033]8;;\007' "$1" "$2"
 }
 
 # Format reset timestamp to local time (e.g. "3pm")
@@ -83,6 +93,24 @@ format_reset_time() {
 AGENT_FMT=""
 [ -n "$AGENT" ] && AGENT_FMT=" ${MAGENTA}🤖 ${AGENT}${RESET}"
 
+PR_FMT=""
+if [ -n "$PR_NUM" ]; then
+  case "$PR_STATE" in
+    approved)          PR_COLOR=$GREEN ;;
+    changes_requested) PR_COLOR=$RED ;;
+    draft)             PR_COLOR=$DIM ;;
+    *)                 PR_COLOR=$YELLOW ;;
+  esac
+  PR_LABEL="PR: #${PR_NUM}"
+  if [ -n "$PR_URL" ]; then
+    # Underline explicitly: OSC 8 carries no styling, and terminals only
+    # underline a hyperlink while it is hovered with the open modifier held.
+    PR_FMT=" | ${PR_COLOR}${UNDERLINE}$(osc8 "$PR_URL" "$PR_LABEL")${RESET}"
+  else
+    PR_FMT=" | ${PR_COLOR}${PR_LABEL}${RESET}"
+  fi
+fi
+
 CTX_COLOR=$(pct_color "$PCT")
 printf '%b' "${CYAN}[${MODEL}]${RESET}${AGENT_FMT}"
 
@@ -95,9 +123,9 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
     GIT_STATUS=""
     [ "$MODIFIED" -gt 0 ] && GIT_STATUS=" | ${YELLOW}M:${MODIFIED}${RESET} (${GREEN}+${LINES_ADDED}${RESET}/${RED}-${LINES_REMOVED}${RESET})"
 
-    printf '%b' " | 📁 ${DIR##*/} | 🌿 ${CYAN}${BRANCH}${RESET}${GIT_STATUS}"
+    printf '%b' " | 📁 ${DIR##*/} | 🌿 ${CYAN}${BRANCH}${RESET}${GIT_STATUS}${PR_FMT}"
 else
-    printf '%b' " | 📁 ${DIR##*/}"
+    printf '%b' " | 📁 ${DIR##*/}${PR_FMT}"
 fi
 printf '\n'
 
