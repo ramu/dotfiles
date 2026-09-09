@@ -48,9 +48,11 @@ focus_pane_left  = "prefix+left"
 focus_pane_down  = "prefix+down"
 focus_pane_up    = "prefix+up"
 focus_pane_right = "prefix+right"
-cycle_pane_next     = "prefix+tab"
-cycle_pane_previous = "prefix+shift+tab"
-last_pane = ""
+# tmux の prefix+o の指の記憶に合わせる。i が前、o が次でキーの左右と対応させる
+cycle_pane_next     = "prefix+o"
+cycle_pane_previous = "prefix+i"
+# 直前の pane へ戻る。2 pane の往復は循環より短い
+last_pane = "prefix+;"
 
 # 単発リサイズと、連続してリサイズできる resize mode の両方を用意する
 resize_pane_left  = "prefix+ctrl+h"
@@ -77,7 +79,7 @@ help = "prefix+?"
 settings = "prefix+s"
 detach = "prefix+q"
 toggle_sidebar = "prefix+b"
-open_notification_target = "prefix+o"
+open_notification_target = "prefix+g"
 
 # --- workspace ---
 new_workspace = "prefix+shift+n"
@@ -91,7 +93,8 @@ next_workspace = ""
 new_worktree = "prefix+shift+g"
 
 # --- agent 間の移動 ---
-# prefix+o が「通知を出した agent へ飛ぶ」、alt+1..9 が直接指定。
+# prefix+g が「通知を出した agent へ飛ぶ」、alt+1..9 が直接指定。
+# (prefix+o は pane 循環に使うため g へ移設した)
 # a は順送りで、複数 agent を回して様子を見るとき用。
 previous_agent = "prefix+shift+a"
 next_agent = "prefix+a"
