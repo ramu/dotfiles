@@ -11,10 +11,15 @@
 
 is_pipe_mode() {
     local pid=$$
-    while [ "$pid" -gt 1 ]; do
-        local args
+    local args cmd
+    while [[ "$pid" =~ ^[0-9]+$ ]] && [ "$pid" -gt 1 ]; do
         args=$(ps -o args= -p "$pid" 2>/dev/null)
-        if [[ "$args" == *claude* ]] && [[ "$args" =~ (^|[[:space:]])(-p|--print)([[:space:]]|$) ]]; then
+        # 実行ファイル名が claude であることを確かめてから -p を探す。
+        # 引数のどこかに claude という文字列があるだけで判定すると、
+        # Claude Code が起動するシェルの引数には常に ~/.claude/... が含まれるため、
+        # 無関係な -p (mkdir -p 等) を拾って誤判定する。
+        cmd="${args%% *}"
+        if [ "${cmd##*/}" = "claude" ] && [[ "$args" =~ (^|[[:space:]])(-p|--print)([[:space:]]|$) ]]; then
             return 0
         fi
         pid=$(ps -o ppid= -p "$pid" 2>/dev/null | tr -d ' ')
