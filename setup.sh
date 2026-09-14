@@ -18,7 +18,7 @@ ln -sf ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf ~/dotfiles/.zshrc  ~/.zshrc
 ln -sf ~/dotfiles/.zshenv ~/.zshenv
 ln -sf ~/dotfiles/.zsh    ~/.zsh
-mkdir -p ~/log/.zsh_history/
+mkdir -p ~/log/zsh/history/
 mkdir -p ~/.zsh/modules/
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/modules/zsh-syntax-highlighting
 git clone https://github.com/jonmosco/kube-ps1.git ~/.zsh/modules/kube-ps1 

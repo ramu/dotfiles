@@ -15,9 +15,16 @@ zstyle ':completion:*' remote-access false
 zstyle ':completion:*' completer _oldlist _complete _match _ignored \
     _approximate _list _history
 zstyle ':completion:*' use-cache yes
+# use-cache の保存先。未指定だと $ZDOTDIR (= dotfiles) 配下の .zcompcache へ書かれる。
+# ZSH_STATE_DIR は .zshenv でのみ定義されるため、そこを経由しない再読み込みに備えて既定値を持たせる。
+zstyle ':completion:*' cache-path ${ZSH_STATE_DIR:-~/log/zsh}/.zcompcache
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' accept-exact '*(N)'
-compinit -d ~/.zsh/.zcompdump
+# 補完ダンプの出力先。同じディレクトリに compinit の一時ファイル (.zcompdump.<host>.<pid>) も
+# 作られるため、dotfiles ではなく ~/log/zsh へ逃がす。
+compinit -d ${ZSH_STATE_DIR:-~/log/zsh}/.zcompdump
+# bash 向け補完 (kubectl / npm) を使うため、compinit の後に初期化する
+bashcompinit
 compdef -d rake
 
 # incremental completion

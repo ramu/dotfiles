@@ -2,10 +2,6 @@
 # zsh
 .zsh/modules/
 .zsh/999_local.zsh
-.zsh/.zcompdump*
-.zsh/.z
-.zsh/.zcompcache
-.zsh/.zsh_history
 
 # emacs
 .emacs.d/*.elc
