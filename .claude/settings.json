@@ -34,6 +34,7 @@
       "Bash(npm:*)",
       "Bash(osascript -e:*)",
       "Bash(pnpm:*)",
+      "Bash(trash:*)",
       "Bash(yarn:*)",
       "Skill(smart-commit)",
       "Edit(./**)",
@@ -125,7 +126,7 @@
     ],
     "SessionStart": [
       {
-        "matcher": "*",
+        "matcher": "",
         "hooks": [
           {
             "type": "command",

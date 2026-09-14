@@ -178,19 +178,13 @@ matches_deny_pattern() {
   fi
 }
 
-# Get deny patterns with caching
-get_deny_patterns() {
-  local cache_file="${HOME}/.claude/claude_deny_patterns_$$"
-
-  if [ ! -f "$cache_file" ] || [ "$SETTINGS_FILE" -nt "$cache_file" ]; then
-    jq -r '.permissions.deny[] | select(startswith("Bash(")) | gsub("^Bash\\("; "") | gsub("\\)$"; "")' "$SETTINGS_FILE" 2>/dev/null > "$cache_file"
-
-    if [ $? -ne 0 ]; then
-      error_exit "Failed to parse deny patterns from settings.json" 1
-    fi
-  fi
-
-  cat "$cache_file"
+# deny パターンは 1 回だけ読み込んで使い回す。
+# 以前はキャッシュファイルを作っていたが、ファイル名に $$ を含むため
+# プロセスをまたいで再利用されず、~/.claude に取り残しが溜まるだけだった。
+DENY_PATTERNS=""
+load_deny_patterns() {
+  DENY_PATTERNS=$(jq -r '.permissions.deny[] | select(startswith("Bash(")) | gsub("^Bash\\("; "") | gsub("\\)$"; "")' "$SETTINGS_FILE" 2>/dev/null) ||
+    error_exit "Failed to parse deny patterns from settings.json" 1
 }
 
 # Check command against deny patterns
@@ -200,9 +194,6 @@ check_command() {
   normalized=$(normalize_command "$command")
   [ -n "$normalized" ] || return 0
 
-  local deny_patterns
-  deny_patterns=$(get_deny_patterns)
-
   while IFS= read -r pattern; do
     # skip blank lines
     [ -z "$pattern" ] && continue
@@ -211,13 +202,14 @@ check_command() {
       log_message "DENY" "Command blocked: '$command' (pattern: '$pattern')"
       error_exit "コマンドが拒否されました: '$command' (パターン: '$pattern')"
     fi
-  done <<<"$deny_patterns"
+  done <<<"$DENY_PATTERNS"
 }
 
 # Main execution
 main() {
   check_dependencies
   parse_input
+  load_deny_patterns
 
   # Only check Bash commands
   if [ "$tool_name" != "Bash" ]; then
@@ -239,12 +231,6 @@ main() {
   log_message "ALLOW" "Command allowed: $command"
   exit 0
 }
-
-# Cleanup on exit
-cleanup() {
-  rm -f "${HOME}/.claude/claude_deny_patterns_$$" 2>/dev/null
-}
-trap cleanup EXIT
 
 # Run main function
 main

@@ -9,7 +9,6 @@ mkdir -p ~/.config
 
 ### claude code
 ln -sf ~/dotfiles/.claude/settings.json ~/.claude/settings.json
-ln -sf ~/dotfiles/.claude/commands ~/.claude/commands
 ln -sf ~/dotfiles/.claude/scripts ~/.claude/scripts
 ln -sfn ~/dotfiles/.claude/hooks ~/.claude/hooks
 ln -sf ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
