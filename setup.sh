@@ -10,8 +10,11 @@ mkdir -p ~/.config
 ### claude code
 ln -sf ~/dotfiles/.claude/settings.json ~/.claude/settings.json
 ln -sf ~/dotfiles/.claude/scripts ~/.claude/scripts
-ln -sfn ~/dotfiles/.claude/hooks ~/.claude/hooks
 ln -sf ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
+# ~/.claude/hooks は herdr が自身のフックを直接設置するディレクトリのため、
+# ディレクトリごとリンクしない。dotfiles で管理したいフックが増えたときは
+# herdr の config と同じくファイル単位でリンクする。
+mkdir -p ~/.claude/hooks
 
 ### zsh
 ln -sf ~/dotfiles/.zshrc  ~/.zshrc
