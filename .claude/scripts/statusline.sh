@@ -64,12 +64,13 @@ format_reset_time() {
   [ -z "$reset_at" ] || [ "$reset_at" = "null" ] && return
 
   local ts formatted
-  # Unix timestamp (seconds)
-  if [[ "$reset_at" =~ ^[0-9]+$ ]]; then
-    ts=$reset_at
   # Unix timestamp (milliseconds)
-  elif [[ "$reset_at" =~ ^[0-9]{13}$ ]]; then
+  # 秒より先に判定する。逆にすると 13 桁が秒として扱われ、西暦 5 万年台になる
+  if [[ "$reset_at" =~ ^[0-9]{13}$ ]]; then
     ts=$(( reset_at / 1000 ))
+  # Unix timestamp (seconds)
+  elif [[ "$reset_at" =~ ^[0-9]+$ ]]; then
+    ts=$reset_at
   # ISO 8601 format
   else
     if command -v gdate &>/dev/null; then
@@ -114,11 +115,15 @@ fi
 CTX_COLOR=$(pct_color "$PCT")
 printf '%b' "${CYAN}[${MODEL}]${RESET}${AGENT_FMT}"
 
-if git rev-parse --git-dir > /dev/null 2>&1; then
-    BRANCH=$(git branch --show-current 2>/dev/null)
-    MODIFIED=$(git diff --numstat 2>/dev/null | wc -l | tr -d ' ')
-    LINES_ADDED=$(git diff --numstat 2>/dev/null | awk '{s+=$1} END {print s+0}')
-    LINES_REMOVED=$(git diff --numstat 2>/dev/null | awk '{s+=$2} END {print s+0}')
+# git の対象は JSON の current_dir に合わせる。
+# プロセスのカレントディレクトリと食い違うと、別リポジトリのブランチを表示してしまう
+[ -n "$DIR" ] || DIR=$PWD
+
+if git -C "$DIR" rev-parse --git-dir > /dev/null 2>&1; then
+    BRANCH=$(git -C "$DIR" branch --show-current 2>/dev/null)
+    # numstat は 1 回だけ実行し、ファイル数と増減行をまとめて集計する
+    read -r MODIFIED LINES_ADDED LINES_REMOVED <<<"$(git -C "$DIR" diff --numstat 2>/dev/null |
+        awk '{files++; added+=$1; removed+=$2} END {print files+0, added+0, removed+0}')"
 
     GIT_STATUS=""
     [ "$MODIFIED" -gt 0 ] && GIT_STATUS=" | ${YELLOW}M:${MODIFIED}${RESET} (${GREEN}+${LINES_ADDED}${RESET}/${RED}-${LINES_REMOVED}${RESET})"
