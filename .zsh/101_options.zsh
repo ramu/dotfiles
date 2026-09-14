@@ -16,7 +16,8 @@ setopt extended_glob       # '#' '~' '^'
 setopt extended_history    # timestamp
 setopt hist_ignore_dups    #
 setopt hist_ignore_space   #
-setopt list_packed         # 
+setopt inc_append_history  # 終了時の一括上書きでなく都度追記 (pane 別履歴の消失防止)
+setopt list_packed         #
 setopt list_types          # 補完候補一覧でファイル種別表示
 setopt magic_equal_subst   #
 setopt mark_dirs           # Directory / auto
