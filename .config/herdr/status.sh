@@ -38,4 +38,16 @@ else
 fi
 [ "$batt_int" -lt 0 ] && batt='?'
 
-printf '%s CPU %s %s %s\n' "$cpu_icon" "$cpu" "$batt_icon" "$batt"
+# Codex が起動中のときだけ、タブバーに codex 情報を表示
+codex_status=''
+if pgrep -f '[c]odex' >/dev/null 2>&1; then
+  # API キー認証などで情報取得できない場合も、Codex が動作中であることは表示する。
+  codex_usage=$(python3 ~/.config/herdr/codex-usage.py 2>/dev/null)
+  if [ -n "$codex_usage" ]; then
+    codex_status="🤖 Codex ${codex_usage} "
+  else
+    codex_status='🤖 Codex '
+  fi
+fi
+
+printf '%s%s CPU %s %s %s\n' "$codex_status" "$cpu_icon" "$cpu" "$batt_icon" "$batt"

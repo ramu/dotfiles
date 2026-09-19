@@ -143,11 +143,12 @@ tab_bar_position = "top"
 tab_bar_right_separator = " "
 tab_bar_right = [
   { type = "zoom" },
-  { type = "command", command = "~/.config/herdr/status.sh", interval_seconds = 5, timeout_seconds = 5 },
+  # Codex 利用枠の初回取得では App Server の起動時間を見込む。
+  { type = "command", command = "~/.config/herdr/status.sh", interval_seconds = 5, timeout_seconds = 8 },
   { type = "datetime", format = "[%Y/%m/%d %H:%M:%S]" },
 ]
 
-status_indicators = "dots"
+status_indicators = "symbols"
 agent_panel_sort = "spaces"
 sidebar_width = 26
 
