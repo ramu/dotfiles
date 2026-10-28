@@ -19,3 +19,5 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND='fd --type f'
 export FZF_ALT_C_COMMAND='fd --type d'
 
+export NODE_EXTRA_CA_CERTS="$SSL_CERT_FILE"
+
