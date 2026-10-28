@@ -141,11 +141,12 @@
     "type": "command",
     "command": "~/.claude/scripts/statusline.sh"
   },
+  "enabledPlugins": {},
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
   "preferredNotifChannel": "iterm2",
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "enabledPlugins": {}
+  "feedbackDrafts": "off"
 }
