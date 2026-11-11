@@ -148,7 +148,7 @@ tab_bar_right = [
   { type = "datetime", format = "[%Y/%m/%d %H:%M:%S]" },
 ]
 
-status_indicators = "symbols"
+status_indicators = "dots"
 agent_panel_sort = "spaces"
 sidebar_width = 26
 
