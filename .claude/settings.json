@@ -111,6 +111,15 @@
             "command": "~/.claude/scripts/deny-check.sh"
           }
         ]
+      },
+      {
+        "matcher": "mcp__.*__wrap_up",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/scripts/japanese-guard/japanese-guard.py"
+          }
+        ]
       }
     ],
     "Stop": [
@@ -120,6 +129,15 @@
           {
             "type": "command",
             "command": "~/.claude/scripts/notify-stop.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/scripts/japanese-guard/japanese-guard.py"
           }
         ]
       }
